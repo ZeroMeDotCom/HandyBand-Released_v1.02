@@ -9,8 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        button_sample_play(filename: "sample_drum_one_Edited.wav")
-//        button_sample_play()
+        PlaySampleDrumsGroup()
+
     }
 }
 

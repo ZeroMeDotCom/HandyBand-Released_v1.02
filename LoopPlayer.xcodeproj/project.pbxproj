@@ -15,6 +15,10 @@
 		2B781360272AA025002A8972 /* PlaySample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78135F272AA025002A8972 /* PlaySample.swift */; };
 		2B781362272AA477002A8972 /* sample_drum_one.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B781361272AA477002A8972 /* sample_drum_one.mp3 */; };
 		2B781368272AAB40002A8972 /* sample_drum_one_Edited.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */; };
+		2B81F680272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */; };
+		2B81F683272B2DBF0081BCB6 /* sample_drum_three.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */; };
+		2B81F684272B2DBF0081BCB6 /* sample_drum_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */; };
+		2B81F686272B2E770081BCB6 /* PlaySampleBassGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81F685272B2E770081BCB6 /* PlaySampleBassGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		2B78135F272AA025002A8972 /* PlaySample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySample.swift; sourceTree = "<group>"; };
 		2B781361272AA477002A8972 /* sample_drum_one.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample_drum_one.mp3; sourceTree = "<group>"; };
 		2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_one_Edited.wav; sourceTree = "<group>"; };
+		2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySampleDrumsGroup.swift; sourceTree = "<group>"; };
+		2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_three.wav; sourceTree = "<group>"; };
+		2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_two.wav; sourceTree = "<group>"; };
+		2B81F685272B2E770081BCB6 /* PlaySampleBassGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySampleBassGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +68,16 @@
 			isa = PBXGroup;
 			children = (
 				2B78135D272A8B0B002A8972 /* button_sample_play.swift */,
+				2B81F685272B2E770081BCB6 /* PlaySampleBassGroup.swift */,
+				2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */,
 				2B78135F272AA025002A8972 /* PlaySample.swift */,
 				2B781351272A8A68002A8972 /* ContentView.swift */,
 				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
 				2B781353272A8A6A002A8972 /* Assets.xcassets */,
 				2B781361272AA477002A8972 /* sample_drum_one.mp3 */,
 				2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */,
+				2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */,
+				2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */,
 				2B781355272A8A6A002A8972 /* Preview Content */,
 			);
 			path = LoopPlayer;
@@ -138,9 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B781357272A8A6A002A8972 /* Preview Assets.xcassets in Resources */,
+				2B81F683272B2DBF0081BCB6 /* sample_drum_three.wav in Resources */,
 				2B781362272AA477002A8972 /* sample_drum_one.mp3 in Resources */,
 				2B781368272AAB40002A8972 /* sample_drum_one_Edited.wav in Resources */,
 				2B781354272A8A6A002A8972 /* Assets.xcassets in Resources */,
+				2B81F684272B2DBF0081BCB6 /* sample_drum_two.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +167,10 @@
 			files = (
 				2B781352272A8A68002A8972 /* ContentView.swift in Sources */,
 				2B78135E272A8B0B002A8972 /* button_sample_play.swift in Sources */,
+				2B81F686272B2E770081BCB6 /* PlaySampleBassGroup.swift in Sources */,
 				2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */,
 				2B781360272AA025002A8972 /* PlaySample.swift in Sources */,
+				2B81F680272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
