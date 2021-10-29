@@ -18,19 +18,19 @@ class SamplePlyer {
     var filename : String
     var url : URL
     var path : String
-    var volume = 0 //mush be changed by a shifter
+    var volume : Double = 1
     
     init(filename: String, isLooping: Bool) {
         self.filename = filename
-        self.volume = 1
         self.samplePlayer.isLooping = isLooping
         path = Bundle.main.path(forResource: filename, ofType:nil)!
         url = URL(fileURLWithPath: path)
         engine.output = samplePlayer
+        samplePlayer.volume = AUValue(self.volume)
     }
     
-    func changeVolume() {
-        samplePlayer.volume = 0.3
+    func changeVolume(value: Double) {
+        samplePlayer.volume = AUValue(value)
     }
     
     func play() {

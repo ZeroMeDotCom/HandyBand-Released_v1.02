@@ -15,7 +15,6 @@ struct PlaySampleDrumsGroup: View {
                 button_sample_play(filename: "sample_drum_110_8_two.wav")
                 button_sample_play(filename: "sample_drum_110_8_three.wav")
             }
-            VolumeSlider()
         }
     }
 }

@@ -5,10 +5,13 @@
 //  Created by Dan on 10/28/21.
 //  What's this file for?
         //Define the play button
+        //.. and teh slider
 
 import SwiftUI
 
 struct button_sample_play: View {
+    @State private var value : Double = 50
+    @State private var isOn = false
     var samplePlyer : SamplePlyer!
     var filename : String
     init(filename: String){
@@ -16,15 +19,27 @@ struct button_sample_play: View {
         samplePlyer = SamplePlyer(filename: filename, isLooping: true)
     }
     var body: some View {
-        Button("▷") {
-            //
-        }
-        .buttonStyle(MyButtonStyle(color: .gray))
-        .clipShape(Circle())
-        .gesture(TapGesture(count: 1).onEnded { samplePlyer.play() })
-        .simultaneousGesture(TapGesture(count: 2).onEnded { samplePlyer.stop() })
-    }
+        VStack {
+            Button(isOn ? "□" : "▷") {
+                //
+            }
+            .buttonStyle(MyButtonStyle(color: .gray))
+            .clipShape(Circle())
+            .gesture(TapGesture(count: 1).onEnded {
+                samplePlyer.play()
+                isOn = true
+            })
+            .simultaneousGesture(TapGesture(count: 2).onEnded {
+                samplePlyer.stop()
+                isOn = false
+            })
+            
+            Slider(value: $value, in: 0...100, onEditingChanged: {_ in
+                samplePlyer.changeVolume(value: $value.wrappedValue)
+            })
 
+        }
+    }
 }
 
 
