@@ -19,6 +19,14 @@
 		2B81F683272B2DBF0081BCB6 /* sample_drum_three.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */; };
 		2B81F684272B2DBF0081BCB6 /* sample_drum_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */; };
 		2B81F686272B2E770081BCB6 /* PlaySampleBassGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81F685272B2E770081BCB6 /* PlaySampleBassGroup.swift */; };
+		2B81F68A272BC0460081BCB6 /* sample_drum_110_8_three.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F687272BC0460081BCB6 /* sample_drum_110_8_three.wav */; };
+		2B81F68B272BC0460081BCB6 /* sample_drum_110_8_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F688272BC0460081BCB6 /* sample_drum_110_8_two.wav */; };
+		2B81F68C272BC0460081BCB6 /* sample_drum_110_8_one.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F689272BC0460081BCB6 /* sample_drum_110_8_one.wav */; };
+		2B81F690272BC1BD0081BCB6 /* sample_bass_110_8_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F68D272BC1BC0081BCB6 /* sample_bass_110_8_two.wav */; };
+		2B81F691272BC1BD0081BCB6 /* sample_bass_110_8_one.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F68E272BC1BC0081BCB6 /* sample_bass_110_8_one.wav */; };
+		2B81F692272BC1BD0081BCB6 /* sample_bass_110_8_three.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */; };
+		2B81F695272BC73E0081BCB6 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B81F694272BC73E0081BCB6 /* AudioKit */; };
+		2B81F698272BF5640081BCB6 /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81F697272BF5640081BCB6 /* VolumeSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +43,13 @@
 		2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_three.wav; sourceTree = "<group>"; };
 		2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_two.wav; sourceTree = "<group>"; };
 		2B81F685272B2E770081BCB6 /* PlaySampleBassGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySampleBassGroup.swift; sourceTree = "<group>"; };
+		2B81F687272BC0460081BCB6 /* sample_drum_110_8_three.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_110_8_three.wav; sourceTree = "<group>"; };
+		2B81F688272BC0460081BCB6 /* sample_drum_110_8_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_110_8_two.wav; sourceTree = "<group>"; };
+		2B81F689272BC0460081BCB6 /* sample_drum_110_8_one.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_110_8_one.wav; sourceTree = "<group>"; };
+		2B81F68D272BC1BC0081BCB6 /* sample_bass_110_8_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_bass_110_8_two.wav; sourceTree = "<group>"; };
+		2B81F68E272BC1BC0081BCB6 /* sample_bass_110_8_one.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_bass_110_8_one.wav; sourceTree = "<group>"; };
+		2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_bass_110_8_three.wav; sourceTree = "<group>"; };
+		2B81F697272BF5640081BCB6 /* VolumeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B81F695272BC73E0081BCB6 /* AudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,17 +83,19 @@
 		2B78134E272A8A68002A8972 /* LoopPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				2B78135D272A8B0B002A8972 /* button_sample_play.swift */,
-				2B81F685272B2E770081BCB6 /* PlaySampleBassGroup.swift */,
-				2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */,
+				2B81F696272BCE210081BCB6 /* Views */,
 				2B78135F272AA025002A8972 /* PlaySample.swift */,
-				2B781351272A8A68002A8972 /* ContentView.swift */,
-				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
 				2B781353272A8A6A002A8972 /* Assets.xcassets */,
 				2B781361272AA477002A8972 /* sample_drum_one.mp3 */,
 				2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */,
 				2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */,
 				2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */,
+				2B81F689272BC0460081BCB6 /* sample_drum_110_8_one.wav */,
+				2B81F687272BC0460081BCB6 /* sample_drum_110_8_three.wav */,
+				2B81F688272BC0460081BCB6 /* sample_drum_110_8_two.wav */,
+				2B81F68E272BC1BC0081BCB6 /* sample_bass_110_8_one.wav */,
+				2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */,
+				2B81F68D272BC1BC0081BCB6 /* sample_bass_110_8_two.wav */,
 				2B781355272A8A6A002A8972 /* Preview Content */,
 			);
 			path = LoopPlayer;
@@ -89,6 +107,19 @@
 				2B781356272A8A6A002A8972 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		2B81F696272BCE210081BCB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B78135D272A8B0B002A8972 /* button_sample_play.swift */,
+				2B81F685272B2E770081BCB6 /* PlaySampleBassGroup.swift */,
+				2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */,
+				2B81F697272BF5640081BCB6 /* VolumeSlider.swift */,
+				2B781351272A8A68002A8972 /* ContentView.swift */,
+				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +138,9 @@
 			dependencies = (
 			);
 			name = LoopPlayer;
+			packageProductDependencies = (
+				2B81F694272BC73E0081BCB6 /* AudioKit */,
+			);
 			productName = LoopPlayer;
 			productReference = 2B78134C272A8A68002A8972 /* LoopPlayer.app */;
 			productType = "com.apple.product-type.application";
@@ -135,6 +169,9 @@
 				Base,
 			);
 			mainGroup = 2B781343272A8A68002A8972;
+			packageReferences = (
+				2B81F693272BC73E0081BCB6 /* XCRemoteSwiftPackageReference "AudioKit" */,
+			);
 			productRefGroup = 2B78134D272A8A68002A8972 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -149,12 +186,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B81F692272BC1BD0081BCB6 /* sample_bass_110_8_three.wav in Resources */,
 				2B781357272A8A6A002A8972 /* Preview Assets.xcassets in Resources */,
 				2B81F683272B2DBF0081BCB6 /* sample_drum_three.wav in Resources */,
 				2B781362272AA477002A8972 /* sample_drum_one.mp3 in Resources */,
 				2B781368272AAB40002A8972 /* sample_drum_one_Edited.wav in Resources */,
+				2B81F690272BC1BD0081BCB6 /* sample_bass_110_8_two.wav in Resources */,
 				2B781354272A8A6A002A8972 /* Assets.xcassets in Resources */,
+				2B81F68C272BC0460081BCB6 /* sample_drum_110_8_one.wav in Resources */,
+				2B81F68A272BC0460081BCB6 /* sample_drum_110_8_three.wav in Resources */,
+				2B81F691272BC1BD0081BCB6 /* sample_bass_110_8_one.wav in Resources */,
 				2B81F684272B2DBF0081BCB6 /* sample_drum_two.wav in Resources */,
+				2B81F68B272BC0460081BCB6 /* sample_drum_110_8_two.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B781352272A8A68002A8972 /* ContentView.swift in Sources */,
+				2B81F698272BF5640081BCB6 /* VolumeSlider.swift in Sources */,
 				2B78135E272A8B0B002A8972 /* button_sample_play.swift in Sources */,
 				2B81F686272B2E770081BCB6 /* PlaySampleBassGroup.swift in Sources */,
 				2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */,
@@ -375,6 +419,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2B81F693272BC73E0081BCB6 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2B81F694272BC73E0081BCB6 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B81F693272BC73E0081BCB6 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2B781344272A8A68002A8972 /* Project object */;
 }

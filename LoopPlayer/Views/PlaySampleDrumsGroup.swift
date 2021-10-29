@@ -9,10 +9,13 @@ import SwiftUI
 
 struct PlaySampleDrumsGroup: View {
     var body: some View {
-        HStack {
-            button_sample_play(filename: "sample_drum_one_Edited.wav")
-            button_sample_play(filename: "sample_drum_two.wav")
-            button_sample_play(filename: "sample_drum_three.wav")
+        VStack {
+            HStack {
+                button_sample_play(filename: "sample_drum_110_8_one.wav")
+                button_sample_play(filename: "sample_drum_110_8_two.wav")
+                button_sample_play(filename: "sample_drum_110_8_three.wav")
+            }
+            VolumeSlider()
         }
     }
 }

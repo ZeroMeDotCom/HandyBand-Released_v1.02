@@ -9,35 +9,81 @@
 
 import Foundation
 import AVFoundation
-
+import AudioUnit
+import AudioKit
 
 class SamplePlyer {
-    
-    var samplePlayer : AVAudioPlayer?
+    let engine = AudioEngine()
+    var samplePlayer = AudioPlayer()
     var filename : String
     var url : URL
     var path : String
-    var loopNumber : Int
+    var volume = 0 //mush be changed by a shifter
     
-    init(filename: String, loopNumber: Int){
+    init(filename: String, isLooping: Bool) {
         self.filename = filename
-        self.loopNumber = loopNumber
+        self.volume = 1
+        self.samplePlayer.isLooping = isLooping
         path = Bundle.main.path(forResource: filename, ofType:nil)!
         url = URL(fileURLWithPath: path)
+        engine.output = samplePlayer
+    }
+    
+    func changeVolume() {
+        samplePlayer.volume = 0.3
     }
     
     func play() {
         do {
-            samplePlayer = try AVAudioPlayer(contentsOf: url)
-            samplePlayer?.numberOfLoops = loopNumber
-        
-            samplePlayer?.play()
+            try engine.start()
+        } catch {
+            //
+        }
+        do {
+            try samplePlayer.load(url: url)
+            samplePlayer.play()
+
         } catch {
             // couldn't load file :(
         }
+        
     }
-    
+
     func stop() {
-        samplePlayer?.stop()
+        engine.stop()
     }
 }
+
+
+
+//Basic Version One
+//class SamplePlyer {
+//
+//    var samplePlayer : AVAudioPlayer?
+//    var filename : String
+//    var url : URL
+//    var path : String
+//    var loopNumber : Int
+//
+//    init(filename: String, loopNumber: Int){
+//        self.filename = filename
+//        self.loopNumber = loopNumber
+//        path = Bundle.main.path(forResource: filename, ofType:nil)!
+//        url = URL(fileURLWithPath: path)
+//    }
+//
+//    func play() {
+//        do {
+//            samplePlayer = try AVAudioPlayer(contentsOf: url)
+//            samplePlayer?.numberOfLoops = loopNumber
+//
+//            samplePlayer?.play()
+//        } catch {
+//            // couldn't load file :(
+//        }
+//    }
+//
+//    func stop() {
+//        samplePlayer?.stop()
+//    }
+//}

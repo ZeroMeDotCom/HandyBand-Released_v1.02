@@ -13,7 +13,7 @@ struct button_sample_play: View {
     var filename : String
     init(filename: String){
         self.filename = filename
-        samplePlyer = SamplePlyer(filename: filename, loopNumber: 100)
+        samplePlyer = SamplePlyer(filename: filename, isLooping: true)
     }
     var body: some View {
         Button("▷") {

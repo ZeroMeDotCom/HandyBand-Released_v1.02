@@ -9,7 +9,11 @@ import SwiftUI
 
 struct PlaySampleBassGroup: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            button_sample_play(filename: "sample_bass_110_8_one.wav")
+            button_sample_play(filename: "sample_bass_110_8_two.wav")
+            button_sample_play(filename: "sample_bass_110_8_three.wav")
+        }
     }
 }
 
