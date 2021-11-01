@@ -27,6 +27,7 @@ class SamplePlyer {
     
     //Delay Setting
     var delay : Delay
+    var reverbMixer : DryWetMixer
     var dryWetMixer : DryWetMixer
     var delaySetting = DelaySetting()
     
@@ -40,13 +41,14 @@ class SamplePlyer {
         
         //Reverb
         reverb = Reverb(samplePlayer)
-        reverb.dryWetMix = 50
+        reverb.dryWetMix = 100
         reverb.loadFactoryPreset(.mediumHall2)
+        reverbMixer = DryWetMixer(samplePlayer, reverb)
         
         
         //Delay Setting
         delay = Delay(samplePlayer)
-        dryWetMixer = DryWetMixer(samplePlayer, delay)
+        dryWetMixer = DryWetMixer(reverbMixer, delay, balance: AUValue(0.5)) //Using reverbMixers as input
         
         delay.time = delaySetting.time
         delay.feedback = delaySetting.feedback
@@ -63,22 +65,22 @@ class SamplePlyer {
         case "mediumChamber":
             print("mediumChamber")
             reverb.loadFactoryPreset(.mediumChamber)
-            engine.output = reverb
+//            engine.output = reverb
         case "cathedral":
             reverb.loadFactoryPreset(.cathedral)
-            engine.output = reverb
+//            engine.output = reverb
         case "largeHall":
             reverb.loadFactoryPreset(.largeHall)
-            engine.output = reverb
+//            engine.output = reverb
         case "largeHall2":
             reverb.loadFactoryPreset(.largeHall2)
-            engine.output = reverb
+//            engine.output = reverb
         case "largeRoom":
             reverb.loadFactoryPreset(.largeRoom)
-            engine.output = reverb
+//            engine.output = reverb
         default:
             reverb.loadFactoryPreset(.mediumChamber)
-            engine.output = reverb
+//            engine.output = reverb
         }
 
     }
