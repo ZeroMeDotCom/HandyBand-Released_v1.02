@@ -10,9 +10,16 @@
 import SwiftUI
 
 struct button_sample_play: View {
+    //Delay: varible for slider
+    @State private var delay_balance : Double = 0.5
+    @State private var delay_feedback : Double = 0.5
+    @State private var delay_time : Double = 0.01
     @State private var value : Double = 50
     @State private var isOn = false
+    
+
     var samplePlyer : SamplePlyer!
+    
     var filename : String
     init(filename: String){
         self.filename = filename
@@ -37,7 +44,21 @@ struct button_sample_play: View {
             Slider(value: $value, in: 0...100, onEditingChanged: {_ in
                 samplePlyer.changeVolume(value: $value.wrappedValue)
             })
-
+            
+            //Delay Setting
+            Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
+                samplePlyer.changeDelay_time(delay_time: $delay_time.wrappedValue)
+            })
+            Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                samplePlyer.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
+            })
+            Slider(value: $delay_balance, in: 0...99, onEditingChanged: {_ in
+                samplePlyer.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
+            })
+            
+            //Reverb Setting
+            ReverbPicker(samplePlayer: samplePlyer)
+            
         }
     }
 }

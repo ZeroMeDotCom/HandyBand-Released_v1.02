@@ -11,6 +11,9 @@ struct PlaySampleDrumsGroup: View {
     var body: some View {
         VStack {
             HStack {
+                //Test
+                button_sample_play(filename: "Old Dark Ages.mp3")
+                
                 button_sample_play(filename: "sample_drum_110_8_one.wav")
                 button_sample_play(filename: "sample_drum_110_8_two.wav")
                 button_sample_play(filename: "sample_drum_110_8_three.wav")

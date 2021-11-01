@@ -28,6 +28,10 @@
 		2B81F695272BC73E0081BCB6 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B81F694272BC73E0081BCB6 /* AudioKit */; };
 		2B81F698272BF5640081BCB6 /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81F697272BF5640081BCB6 /* VolumeSlider.swift */; };
 		2B9DA5FC272C6C250085365C /* SliderView_PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */; };
+		2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC8725C272D8A4B00AD500A /* DelaySetting.swift */; };
+		2BC87260272D8C5400AD500A /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2BC8725F272D8C5400AD500A /* SoundpipeAudioKit */; };
+		2BDB9E8F272EDC1E00BADB99 /* ReverbPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */; };
+		2BDB9E912730759C00BADB99 /* Old Dark Ages.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2BDB9E902730759C00BADB99 /* Old Dark Ages.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +56,9 @@
 		2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_bass_110_8_three.wav; sourceTree = "<group>"; };
 		2B81F697272BF5640081BCB6 /* VolumeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
 		2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView_PlayButton.swift; sourceTree = "<group>"; };
+		2BC8725C272D8A4B00AD500A /* DelaySetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelaySetting.swift; sourceTree = "<group>"; };
+		2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverbPicker.swift; sourceTree = "<group>"; };
+		2BDB9E902730759C00BADB99 /* Old Dark Ages.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Old Dark Ages.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BC87260272D8C5400AD500A /* SoundpipeAudioKit in Frameworks */,
 				2B81F695272BC73E0081BCB6 /* AudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +95,7 @@
 			children = (
 				2B81F696272BCE210081BCB6 /* Views */,
 				2B78135F272AA025002A8972 /* PlaySample.swift */,
+				2BC8725C272D8A4B00AD500A /* DelaySetting.swift */,
 				2B781353272A8A6A002A8972 /* Assets.xcassets */,
 				2B781361272AA477002A8972 /* sample_drum_one.mp3 */,
 				2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */,
@@ -98,6 +107,7 @@
 				2B81F68E272BC1BC0081BCB6 /* sample_bass_110_8_one.wav */,
 				2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */,
 				2B81F68D272BC1BC0081BCB6 /* sample_bass_110_8_two.wav */,
+				2BDB9E902730759C00BADB99 /* Old Dark Ages.mp3 */,
 				2B781355272A8A6A002A8972 /* Preview Content */,
 			);
 			path = LoopPlayer;
@@ -121,6 +131,7 @@
 				2B781351272A8A68002A8972 /* ContentView.swift */,
 				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
 				2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */,
+				2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -143,6 +154,7 @@
 			name = LoopPlayer;
 			packageProductDependencies = (
 				2B81F694272BC73E0081BCB6 /* AudioKit */,
+				2BC8725F272D8C5400AD500A /* SoundpipeAudioKit */,
 			);
 			productName = LoopPlayer;
 			productReference = 2B78134C272A8A68002A8972 /* LoopPlayer.app */;
@@ -174,6 +186,7 @@
 			mainGroup = 2B781343272A8A68002A8972;
 			packageReferences = (
 				2B81F693272BC73E0081BCB6 /* XCRemoteSwiftPackageReference "AudioKit" */,
+				2BC8725E272D8C5400AD500A /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
 			);
 			productRefGroup = 2B78134D272A8A68002A8972 /* Products */;
 			projectDirPath = "";
@@ -192,6 +205,7 @@
 				2B81F692272BC1BD0081BCB6 /* sample_bass_110_8_three.wav in Resources */,
 				2B781357272A8A6A002A8972 /* Preview Assets.xcassets in Resources */,
 				2B81F683272B2DBF0081BCB6 /* sample_drum_three.wav in Resources */,
+				2BDB9E912730759C00BADB99 /* Old Dark Ages.mp3 in Resources */,
 				2B781362272AA477002A8972 /* sample_drum_one.mp3 in Resources */,
 				2B781368272AAB40002A8972 /* sample_drum_one_Edited.wav in Resources */,
 				2B81F690272BC1BD0081BCB6 /* sample_bass_110_8_two.wav in Resources */,
@@ -212,7 +226,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B781352272A8A68002A8972 /* ContentView.swift in Sources */,
+				2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */,
 				2B81F698272BF5640081BCB6 /* VolumeSlider.swift in Sources */,
+				2BDB9E8F272EDC1E00BADB99 /* ReverbPicker.swift in Sources */,
 				2B78135E272A8B0B002A8972 /* button_sample_play.swift in Sources */,
 				2B81F686272B2E770081BCB6 /* PlaySampleBassGroup.swift in Sources */,
 				2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */,
@@ -433,6 +449,14 @@
 				kind = branch;
 			};
 		};
+		2BC8725E272D8C5400AD500A /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/SoundpipeAudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -440,6 +464,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2B81F693272BC73E0081BCB6 /* XCRemoteSwiftPackageReference "AudioKit" */;
 			productName = AudioKit;
+		};
+		2BC8725F272D8C5400AD500A /* SoundpipeAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2BC8725E272D8C5400AD500A /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */;
+			productName = SoundpipeAudioKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
