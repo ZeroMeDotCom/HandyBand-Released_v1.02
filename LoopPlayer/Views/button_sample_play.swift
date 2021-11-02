@@ -59,6 +59,8 @@ struct button_sample_play: View {
             //Reverb Setting
             ReverbPicker(samplePlayer: samplePlyer)
             
+            //Convolution Setting
+            ConvolutionSlider(samplePlayer: samplePlyer)
         }
     }
 }

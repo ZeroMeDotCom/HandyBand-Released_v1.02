@@ -30,9 +30,10 @@ struct ReverbPicker: View {
         }
         .pickerStyle(.menu)
         .onChange(of: selection, perform: {
-            newValue in print("Selected Unit: \(places[newValue])", "Selected Index: \(newValue)")
+            newValue in
+//            print("Selected Unit: \(places[newValue])", "Selected Index: \(newValue)")
+            samplePlayer.changeDelay_balance(delay_balance: 0)
             samplePlayer.change_reverb(place: places[newValue])
-            print("after verver")
         })
         
     }

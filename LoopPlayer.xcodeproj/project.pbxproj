@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B72799F27311D2A008047DA /* salt_one.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B72799D27311D2A008047DA /* salt_one.wav */; };
+		2B7279A027311D2A008047DA /* salt_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B72799E27311D2A008047DA /* salt_two.wav */; };
+		2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7279A12731256F008047DA /* ConvolutionSlider.swift */; };
 		2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */; };
 		2B781352272A8A68002A8972 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B781351272A8A68002A8972 /* ContentView.swift */; };
 		2B781354272A8A6A002A8972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B781353272A8A6A002A8972 /* Assets.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B72799D27311D2A008047DA /* salt_one.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_one.wav; sourceTree = "<group>"; };
+		2B72799E27311D2A008047DA /* salt_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_two.wav; sourceTree = "<group>"; };
+		2B7279A12731256F008047DA /* ConvolutionSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvolutionSlider.swift; sourceTree = "<group>"; };
 		2B78134C272A8A68002A8972 /* LoopPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoopPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopPlayerApp.swift; sourceTree = "<group>"; };
 		2B781351272A8A68002A8972 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +114,8 @@
 				2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */,
 				2B81F68D272BC1BC0081BCB6 /* sample_bass_110_8_two.wav */,
 				2BDB9E902730759C00BADB99 /* Old Dark Ages.mp3 */,
+				2B72799D27311D2A008047DA /* salt_one.wav */,
+				2B72799E27311D2A008047DA /* salt_two.wav */,
 				2B781355272A8A6A002A8972 /* Preview Content */,
 			);
 			path = LoopPlayer;
@@ -132,6 +140,7 @@
 				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
 				2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */,
 				2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */,
+				2B7279A12731256F008047DA /* ConvolutionSlider.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,11 +219,13 @@
 				2B781368272AAB40002A8972 /* sample_drum_one_Edited.wav in Resources */,
 				2B81F690272BC1BD0081BCB6 /* sample_bass_110_8_two.wav in Resources */,
 				2B781354272A8A6A002A8972 /* Assets.xcassets in Resources */,
+				2B7279A027311D2A008047DA /* salt_two.wav in Resources */,
 				2B81F68C272BC0460081BCB6 /* sample_drum_110_8_one.wav in Resources */,
 				2B81F68A272BC0460081BCB6 /* sample_drum_110_8_three.wav in Resources */,
 				2B81F691272BC1BD0081BCB6 /* sample_bass_110_8_one.wav in Resources */,
 				2B81F684272B2DBF0081BCB6 /* sample_drum_two.wav in Resources */,
 				2B81F68B272BC0460081BCB6 /* sample_drum_110_8_two.wav in Resources */,
+				2B72799F27311D2A008047DA /* salt_one.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +238,7 @@
 			files = (
 				2B781352272A8A68002A8972 /* ContentView.swift in Sources */,
 				2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */,
+				2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */,
 				2B81F698272BF5640081BCB6 /* VolumeSlider.swift in Sources */,
 				2BDB9E8F272EDC1E00BADB99 /* ReverbPicker.swift in Sources */,
 				2B78135E272A8B0B002A8972 /* button_sample_play.swift in Sources */,

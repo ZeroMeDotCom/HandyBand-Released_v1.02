@@ -22,6 +22,15 @@ class SamplePlyer {
     var path : String
     var volume : Double = 1
     
+    
+    //convolution
+    var convolutionSalt_one : Convolution
+    var convolutionSalt_two : Convolution
+    var convolutionMixer : DryWetMixer
+    var saltMixer : DryWetMixer
+    var url_convolutionSalt_one : URL
+    var url_convolutionSalt_two : URL
+    
     //Reverb
     var reverb : Reverb
     
@@ -39,11 +48,23 @@ class SamplePlyer {
         path = Bundle.main.path(forResource: filename, ofType:nil)!
         url = URL(fileURLWithPath: path)
         
+        
+        //Convolution
+        //Path for convolution
+        self.url_convolutionSalt_one = Bundle.main.url(forResource: "salt_one", withExtension: "wav")!
+        self.url_convolutionSalt_two = Bundle.main.url(forResource: "salt_two", withExtension: "wav")!
+        convolutionSalt_one = Convolution(samplePlayer, impulseResponseFileURL: url_convolutionSalt_one, partitionLength: 8_192)
+        convolutionSalt_two = Convolution(samplePlayer, impulseResponseFileURL: url_convolutionSalt_two, partitionLength: 8_192)
+        
+        //make a mixser
+        saltMixer = DryWetMixer(convolutionSalt_one, convolutionSalt_two, balance: AUValue(0.5))
+        convolutionMixer = DryWetMixer(samplePlayer, saltMixer, balance: AUValue(0.5))
+
         //Reverb
         reverb = Reverb(samplePlayer)
         reverb.dryWetMix = 100
         reverb.loadFactoryPreset(.mediumHall2)
-        reverbMixer = DryWetMixer(samplePlayer, reverb)
+        reverbMixer = DryWetMixer(convolutionMixer, reverb, balance: AUValue(0.5))
         
         
         //Delay Setting
@@ -84,6 +105,10 @@ class SamplePlyer {
         }
 
     }
+    
+    func changeConvolution_balance(convolution_balance: AUValue){
+        saltMixer.balance = convolution_balance
+    }
 
     func changeDelay_balance(delay_balance: Double) {
         dryWetMixer.balance = AUValue(delay_balance)
@@ -112,6 +137,11 @@ class SamplePlyer {
             //Delay Setting
             delay.feedback = 0.9
             delay.time = 0.01
+            
+            //convolution start
+            convolutionSalt_one.start()
+            convolutionSalt_two.start()
+            
             samplePlayer.play()
 
         } catch {
