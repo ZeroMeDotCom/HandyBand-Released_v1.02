@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B5A795F27341B01000C5437 /* SoundCardPlugIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A795E27341B01000C5437 /* SoundCardPlugIn.swift */; };
+		2B5A796127341B6C000C5437 /* SoundCardPlugInLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */; };
+		2B5A79652734233B000C5437 /* SoundCardPlugInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */; };
+		2B5A7967273426A1000C5437 /* PlugInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A7966273426A1000C5437 /* PlugInView.swift */; };
 		2B72799F27311D2A008047DA /* salt_one.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B72799D27311D2A008047DA /* salt_one.wav */; };
 		2B7279A027311D2A008047DA /* salt_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B72799E27311D2A008047DA /* salt_two.wav */; };
 		2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7279A12731256F008047DA /* ConvolutionSlider.swift */; };
@@ -38,6 +42,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B5A795E27341B01000C5437 /* SoundCardPlugIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugIn.swift; sourceTree = "<group>"; };
+		2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugInLogic.swift; sourceTree = "<group>"; };
+		2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugInView.swift; sourceTree = "<group>"; };
+		2B5A7966273426A1000C5437 /* PlugInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugInView.swift; sourceTree = "<group>"; };
 		2B72799D27311D2A008047DA /* salt_one.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_one.wav; sourceTree = "<group>"; };
 		2B72799E27311D2A008047DA /* salt_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_two.wav; sourceTree = "<group>"; };
 		2B7279A12731256F008047DA /* ConvolutionSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvolutionSlider.swift; sourceTree = "<group>"; };
@@ -80,6 +88,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5A79592734196B000C5437 /* SingleButton */ = {
+			isa = PBXGroup;
+			children = (
+				2B78135D272A8B0B002A8972 /* button_sample_play.swift */,
+			);
+			path = SingleButton;
+			sourceTree = "<group>";
+		};
+		2B5A795A2734199E000C5437 /* InstrumentsGroup */ = {
+			isa = PBXGroup;
+			children = (
+				2B81F685272B2E770081BCB6 /* PlaySampleBassGroup.swift */,
+				2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */,
+			);
+			path = InstrumentsGroup;
+			sourceTree = "<group>";
+		};
+		2B5A795B273419B9000C5437 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2B81F697272BF5640081BCB6 /* VolumeSlider.swift */,
+				2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */,
+				2B7279A12731256F008047DA /* ConvolutionSlider.swift */,
+				2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		2B5A795C27341A1E000C5437 /* Logic_Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */,
+				2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */,
+				2B78135F272AA025002A8972 /* PlaySample.swift */,
+				2BC8725C272D8A4B00AD500A /* DelaySetting.swift */,
+			);
+			path = Logic_Model;
+			sourceTree = "<group>";
+		};
+		2B5A795D27341A6A000C5437 /* UI_Design */ = {
+			isa = PBXGroup;
+			children = (
+				2B5A7966273426A1000C5437 /* PlugInView.swift */,
+				2B781351272A8A68002A8972 /* ContentView.swift */,
+				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
+			);
+			path = UI_Design;
+			sourceTree = "<group>";
+		};
 		2B781343272A8A68002A8972 = {
 			isa = PBXGroup;
 			children = (
@@ -99,9 +156,9 @@
 		2B78134E272A8A68002A8972 /* LoopPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				2B5A795C27341A1E000C5437 /* Logic_Model */,
 				2B81F696272BCE210081BCB6 /* Views */,
-				2B78135F272AA025002A8972 /* PlaySample.swift */,
-				2BC8725C272D8A4B00AD500A /* DelaySetting.swift */,
+				2B5A795D27341A6A000C5437 /* UI_Design */,
 				2B781353272A8A6A002A8972 /* Assets.xcassets */,
 				2B781361272AA477002A8972 /* sample_drum_one.mp3 */,
 				2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */,
@@ -132,15 +189,10 @@
 		2B81F696272BCE210081BCB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2B78135D272A8B0B002A8972 /* button_sample_play.swift */,
-				2B81F685272B2E770081BCB6 /* PlaySampleBassGroup.swift */,
-				2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */,
-				2B81F697272BF5640081BCB6 /* VolumeSlider.swift */,
-				2B781351272A8A68002A8972 /* ContentView.swift */,
-				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
-				2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */,
-				2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */,
-				2B7279A12731256F008047DA /* ConvolutionSlider.swift */,
+				2B5A795E27341B01000C5437 /* SoundCardPlugIn.swift */,
+				2B5A795B273419B9000C5437 /* Helper */,
+				2B5A79592734196B000C5437 /* SingleButton */,
+				2B5A795A2734199E000C5437 /* InstrumentsGroup */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,10 +291,14 @@
 				2B781352272A8A68002A8972 /* ContentView.swift in Sources */,
 				2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */,
 				2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */,
+				2B5A796127341B6C000C5437 /* SoundCardPlugInLogic.swift in Sources */,
 				2B81F698272BF5640081BCB6 /* VolumeSlider.swift in Sources */,
 				2BDB9E8F272EDC1E00BADB99 /* ReverbPicker.swift in Sources */,
 				2B78135E272A8B0B002A8972 /* button_sample_play.swift in Sources */,
+				2B5A795F27341B01000C5437 /* SoundCardPlugIn.swift in Sources */,
 				2B81F686272B2E770081BCB6 /* PlaySampleBassGroup.swift in Sources */,
+				2B5A7967273426A1000C5437 /* PlugInView.swift in Sources */,
+				2B5A79652734233B000C5437 /* SoundCardPlugInView.swift in Sources */,
 				2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */,
 				2B9DA5FC272C6C250085365C /* SliderView_PlayButton.swift in Sources */,
 				2B781360272AA025002A8972 /* PlaySample.swift in Sources */,

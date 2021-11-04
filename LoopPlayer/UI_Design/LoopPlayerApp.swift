@@ -12,6 +12,7 @@ struct LoopPlayerApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            PlugInView()
         }
     }
 }

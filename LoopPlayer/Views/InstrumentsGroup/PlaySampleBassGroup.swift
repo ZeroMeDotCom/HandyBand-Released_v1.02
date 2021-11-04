@@ -17,6 +17,7 @@ struct PlaySampleBassGroup: View {
     }
 }
 
+
 struct PlaySampleBassGroup_Previews: PreviewProvider {
     static var previews: some View {
         PlaySampleBassGroup()
