@@ -17,11 +17,11 @@ class SoundCardPlugInLogic: ObservableObject {
     init(){
         if let engineInput = engine.input {
             inputSession = engineInput
+//            print("This is a demo有創建近來的")
             if let inputSignalData = inputSession {
+//                print("This is a demo")
 //                var soundOutput = inputSignalData
                 engine.output = Mixer(inputSignalData)
-                
-            print("This is a demo")
             }
         } else {
             print("No data")

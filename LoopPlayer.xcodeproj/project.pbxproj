@@ -46,6 +46,7 @@
 		2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugInLogic.swift; sourceTree = "<group>"; };
 		2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugInView.swift; sourceTree = "<group>"; };
 		2B5A7966273426A1000C5437 /* PlugInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugInView.swift; sourceTree = "<group>"; };
+		2B5A796827344D74000C5437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2B72799D27311D2A008047DA /* salt_one.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_one.wav; sourceTree = "<group>"; };
 		2B72799E27311D2A008047DA /* salt_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_two.wav; sourceTree = "<group>"; };
 		2B7279A12731256F008047DA /* ConvolutionSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvolutionSlider.swift; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 		2B78134E272A8A68002A8972 /* LoopPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				2B5A796827344D74000C5437 /* Info.plist */,
 				2B5A795C27341A1E000C5437 /* Logic_Model */,
 				2B81F696272BCE210081BCB6 /* Views */,
 				2B5A795D27341A6A000C5437 /* UI_Design */,
@@ -436,6 +438,8 @@
 				DEVELOPMENT_TEAM = KC6UBJYB5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoopPlayer/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "plase allow Microphone setting";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -466,6 +470,8 @@
 				DEVELOPMENT_TEAM = KC6UBJYB5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LoopPlayer/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "plase allow Microphone setting";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
