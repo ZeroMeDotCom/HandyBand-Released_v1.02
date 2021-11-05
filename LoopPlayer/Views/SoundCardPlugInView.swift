@@ -20,30 +20,33 @@ struct SoundCardPlugInView: View {
         self.stopFlag = true
     }
     var body: some View {
-        HStack {
-            Text("Session!!")
-            Button(action: {
-                self.stopFlag ? self.soundCardPlugIn.stopSession() : self.soundCardPlugIn.openSession()
-                self.stopFlag = !self.stopFlag
-                
-            }, label: {
-    //            self.stopFlag ? Text("◼︎") : Text("►")
-                Image(systemName: self.stopFlag ? "stop.fill" : "play.fill")
-            })
-        }
-        
-        //delay
         VStack {
-            Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
-                soundCardPlugIn.changeDelay_time(delay_time: $delay_time.wrappedValue)
-            })
-            Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
-                soundCardPlugIn.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
-            })
-            Slider(value: $delay_balance, in: 0...99, onEditingChanged: {_ in
-                soundCardPlugIn.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
-            })
+            HStack {
+                Text("Session!!")
+                Button(action: {
+                    self.stopFlag ? self.soundCardPlugIn.stopSession() : self.soundCardPlugIn.openSession()
+                    self.stopFlag = !self.stopFlag
+                    
+                }, label: {
+        //            self.stopFlag ? Text("◼︎") : Text("►")
+                    Image(systemName: self.stopFlag ? "stop.fill" : "play.fill")
+                })
+            }
+            
+            //delay
+            VStack {
+                Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
+                    soundCardPlugIn.changeDelay_time(delay_time: $delay_time.wrappedValue)
+                })
+                Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                    soundCardPlugIn.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
+                })
+                Slider(value: $delay_balance, in: 0...99, onEditingChanged: {_ in
+                    soundCardPlugIn.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
+                })
+            }
         }
+
 
     }
 }

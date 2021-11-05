@@ -12,7 +12,9 @@
 		2B5A79652734233B000C5437 /* SoundCardPlugInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */; };
 		2B5A7967273426A1000C5437 /* PlugInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A7966273426A1000C5437 /* PlugInView.swift */; };
 		2B5A796A273580E9000C5437 /* SoundCardPlugInControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A7969273580E9000C5437 /* SoundCardPlugInControl.swift */; };
-		2B5A796C273588D5000C5437 /* CaputureLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A796B273588D5000C5437 /* CaputureLogic.swift */; };
+		2B5A79932735B04A000C5437 /* PlaySampleStringsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A79922735B04A000C5437 /* PlaySampleStringsGroup.swift */; };
+		2B5A79952735B08A000C5437 /* PlaySamplePianoGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A79942735B08A000C5437 /* PlaySamplePianoGroup.swift */; };
+		2B5A79972735B2BB000C5437 /* UITools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A79962735B2BB000C5437 /* UITools.swift */; };
 		2B72799F27311D2A008047DA /* salt_one.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B72799D27311D2A008047DA /* salt_one.wav */; };
 		2B7279A027311D2A008047DA /* salt_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B72799E27311D2A008047DA /* salt_two.wav */; };
 		2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7279A12731256F008047DA /* ConvolutionSlider.swift */; };
@@ -50,7 +52,9 @@
 		2B5A7966273426A1000C5437 /* PlugInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugInView.swift; sourceTree = "<group>"; };
 		2B5A796827344D74000C5437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2B5A7969273580E9000C5437 /* SoundCardPlugInControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugInControl.swift; sourceTree = "<group>"; };
-		2B5A796B273588D5000C5437 /* CaputureLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaputureLogic.swift; sourceTree = "<group>"; };
+		2B5A79922735B04A000C5437 /* PlaySampleStringsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySampleStringsGroup.swift; sourceTree = "<group>"; };
+		2B5A79942735B08A000C5437 /* PlaySamplePianoGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySamplePianoGroup.swift; sourceTree = "<group>"; };
+		2B5A79962735B2BB000C5437 /* UITools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITools.swift; sourceTree = "<group>"; };
 		2B72799D27311D2A008047DA /* salt_one.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_one.wav; sourceTree = "<group>"; };
 		2B72799E27311D2A008047DA /* salt_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_two.wav; sourceTree = "<group>"; };
 		2B7279A12731256F008047DA /* ConvolutionSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvolutionSlider.swift; sourceTree = "<group>"; };
@@ -106,6 +110,8 @@
 			children = (
 				2B81F685272B2E770081BCB6 /* PlaySampleBassGroup.swift */,
 				2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */,
+				2B5A79922735B04A000C5437 /* PlaySampleStringsGroup.swift */,
+				2B5A79942735B08A000C5437 /* PlaySamplePianoGroup.swift */,
 			);
 			path = InstrumentsGroup;
 			sourceTree = "<group>";
@@ -124,7 +130,6 @@
 		2B5A795C27341A1E000C5437 /* Logic_Model */ = {
 			isa = PBXGroup;
 			children = (
-				2B5A796B273588D5000C5437 /* CaputureLogic.swift */,
 				2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */,
 				2B78135F272AA025002A8972 /* PlaySample.swift */,
 				2BC8725C272D8A4B00AD500A /* DelaySetting.swift */,
@@ -135,6 +140,7 @@
 		2B5A795D27341A6A000C5437 /* UI_Design */ = {
 			isa = PBXGroup;
 			children = (
+				2B5A79962735B2BB000C5437 /* UITools.swift */,
 				2B5A7966273426A1000C5437 /* PlugInView.swift */,
 				2B781351272A8A68002A8972 /* ContentView.swift */,
 				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
@@ -298,8 +304,11 @@
 			files = (
 				2B781352272A8A68002A8972 /* ContentView.swift in Sources */,
 				2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */,
+				2B5A79932735B04A000C5437 /* PlaySampleStringsGroup.swift in Sources */,
 				2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */,
+				2B5A79972735B2BB000C5437 /* UITools.swift in Sources */,
 				2B5A796127341B6C000C5437 /* SoundCardPlugInLogic.swift in Sources */,
+				2B5A79952735B08A000C5437 /* PlaySamplePianoGroup.swift in Sources */,
 				2B81F698272BF5640081BCB6 /* VolumeSlider.swift in Sources */,
 				2BDB9E8F272EDC1E00BADB99 /* ReverbPicker.swift in Sources */,
 				2B78135E272A8B0B002A8972 /* button_sample_play.swift in Sources */,
@@ -311,7 +320,6 @@
 				2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */,
 				2B9DA5FC272C6C250085365C /* SliderView_PlayButton.swift in Sources */,
 				2B781360272AA025002A8972 /* PlaySample.swift in Sources */,
-				2B5A796C273588D5000C5437 /* CaputureLogic.swift in Sources */,
 				2B81F680272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

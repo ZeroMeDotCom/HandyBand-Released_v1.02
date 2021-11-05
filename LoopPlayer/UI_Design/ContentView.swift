@@ -9,25 +9,51 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack {
-            VStack{
-                Text("Drum Group")
-                PlaySampleDrumsGroup()
+        VStack {
+            
+            HStack(alignment: .top) {
+                VStack{
+                    Text("Drum Group").border(.black, width: 1)
+                    PlaySampleDrumsGroup()
+                }
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+
+                VStack {
+                    Text("Bass Group")
+                    PlaySampleBassGroup()
+                }
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
             }
-            .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 100))
-            VStack {
-                Text("Bass Group")
-                PlaySampleBassGroup()
+            .border(Color.blue, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+            
+            HStack {
+                VStack {
+                    Text("String Group")
+                    PlaySampleBassGroup()
+                }
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                
+                VStack {
+                    Text("Piano Group")
+                    PlaySampleBassGroup()
+                }
+                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
             }
-            .padding(EdgeInsets(top: 10, leading: 100, bottom: 10, trailing: 10))
+            .border(Color.blue, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
         }
-        .padding(EdgeInsets(top: 10, leading: 10, bottom: 500, trailing: 10))
+        .border(.yellow, width: 2)
+        .padding(0)
+        //整体四个
     }
 }
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        if #available(iOS 15.0, *) {
+            ContentView().previewInterfaceOrientation(.landscapeLeft)
+        } else {
+            // Fallback on earlier versions
+        }
     }
 }

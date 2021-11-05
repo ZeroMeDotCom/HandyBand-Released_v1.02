@@ -10,7 +10,6 @@ import SwiftUI
 struct PlugInView: View {
     var body: some View {
         SoundCardPlugInView()
-            .padding(.init(top: -400, leading: 10, bottom: 400, trailing: 10))
     }
 }
 

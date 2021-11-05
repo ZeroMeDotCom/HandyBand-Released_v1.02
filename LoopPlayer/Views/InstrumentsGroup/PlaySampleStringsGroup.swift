@@ -1,13 +1,13 @@
 //
-//  PlaySampleDrumsGroup.swift
+//  PlaySampleStringsGroup.swift
 //  LoopPlayer
 //
-//  Created by Dan on 10/29/21.
+//  Created by Dan on 11/6/21.
 //
 
 import SwiftUI
 
-struct PlaySampleDrumsGroup: View {
+struct PlaySampleStringsGroup: View {
     var body: some View {
         HStack {
             button_sample_play(filename: "sample_drum_110_8_one.wav")
@@ -17,8 +17,8 @@ struct PlaySampleDrumsGroup: View {
     }
 }
 
-struct PlaySampleDrumsGroup_Previews: PreviewProvider {
+struct PlaySampleStringsGroup_Previews: PreviewProvider {
     static var previews: some View {
-        PlaySampleDrumsGroup()
+        PlaySampleStringsGroup()
     }
 }

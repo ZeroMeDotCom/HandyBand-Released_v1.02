@@ -10,6 +10,7 @@
 import SwiftUI
 
 struct button_sample_play: View {
+    @State private var selection = 0
     //Delay: varible for slider
     @State private var delay_balance : Double = 0.5
     @State private var delay_feedback : Double = 0.5
@@ -45,22 +46,33 @@ struct button_sample_play: View {
                 samplePlyer.changeVolume(value: $value.wrappedValue)
             })
             
-            //Delay Setting
-            Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
-                samplePlyer.changeDelay_time(delay_time: $delay_time.wrappedValue)
-            })
-            Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
-                samplePlyer.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
-            })
-            Slider(value: $delay_balance, in: 0...99, onEditingChanged: {_ in
-                samplePlyer.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
-            })
+            Picker(selection: $selection, label: Text("controlPicker")) {
+                Text("Delay").tag(0)
+                Text("Reverb").tag(1)
+                Text("Convolution").tag(2)
+            }.pickerStyle(.segmented)
             
-            //Reverb Setting
-            ReverbPicker(samplePlayer: samplePlyer)
+            if selection == 0 {
+                //Delay Setting
+                Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
+                    samplePlyer.changeDelay_time(delay_time: $delay_time.wrappedValue)
+                })
             
-            //Convolution Setting
-            ConvolutionSlider(samplePlayer: samplePlyer)
+                Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                    samplePlyer.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
+                })
+                Slider(value: $delay_balance, in: 0...99, onEditingChanged: {_ in
+                    samplePlyer.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
+                })
+            } else if selection == 1 {
+                //Reverb Setting
+                ReverbPicker(samplePlayer: samplePlyer)
+                
+            } else if selection == 2 {
+               //Convolution Setting
+               ConvolutionSlider(samplePlayer: samplePlyer)
+            }
+
         }
     }
 }
