@@ -33,10 +33,10 @@ class SamplePlyer {
     
     //Reverb
     var reverb : Reverb
+    var reverbMixer : DryWetMixer
     
     //Delay Setting
     var delay : Delay
-    var reverbMixer : DryWetMixer
     var dryWetMixer : DryWetMixer
     var delaySetting = DelaySetting()
     
