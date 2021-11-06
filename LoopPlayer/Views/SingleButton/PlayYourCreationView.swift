@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct PlayYourCreationView: View {
-    var fileManage = FileManageLogic()
+    @StateObject var fileManage = FileManageLogic()
     var body: some View {
-        Button("TTTT"){
-            fileManage.playResuting()
-        }
+        Button(action: {
+            fileManage.isPause = !fileManage.isPause
+            fileManage.isPause ? fileManage.pauseThepProcessing() : fileManage.playResuting()
+        }, label: {
+            Image(systemName: fileManage.isPause ? "infinity.circle" : "infinity.circle.fill")
+        })
     }
 }
 

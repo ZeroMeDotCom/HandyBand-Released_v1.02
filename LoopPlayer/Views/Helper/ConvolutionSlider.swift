@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AudioToolbox
+import AudioKit
 
 struct ConvolutionSlider: View {
     @State private var saltMixerBalance : AUValue = 0.5
@@ -26,7 +27,7 @@ struct ConvolutionSlider: View {
 
 struct ConvolutionSlider_Previews: PreviewProvider {
     static var previews: some View {
-        let samplePlayer = SamplePlyer(filename: "sample_drum_one.wav", isLooping: true)
+        let samplePlayer = SamplePlyer(filename: "", url: URL(fileURLWithPath: ""), path: "", engine: AudioEngine(), samplePlayer: AudioPlayer(), isLooping: false)
         ConvolutionSlider(samplePlayer: samplePlayer)
     }
 }

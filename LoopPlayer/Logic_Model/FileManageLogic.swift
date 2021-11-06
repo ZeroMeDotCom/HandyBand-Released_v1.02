@@ -15,27 +15,27 @@
 import Foundation
 import AudioKit
 
-class FileManageLogic {
+class FileManageLogic: ObservableObject {
     var fileNames : [String] = ["sample_drum_110_8_one.wav", "sample_bass_110_8_two.wav", "sample_bass_110_8_three.wav"]
-
+    @Published var isPause: Bool = true
     
     var singleFileName: String
     var url : URL
     var path : String
-    let engine = AudioEngine()
-    var samplePlayer = AudioPlayer()
+    @Published var engine = AudioEngine()
+    @Published var samplePlayer = AudioPlayer()
     
     var singleFileName2: String
     var url2 : URL
     var path2 : String
-    let engine2 = AudioEngine()
-    var samplePlayer2 = AudioPlayer()
+    @Published var engine2 = AudioEngine()
+    @Published var samplePlayer2 = AudioPlayer()
     
     var singleFileName3: String
     var url3 : URL
-    var path3 : String
-    let engine3 = AudioEngine()
-    var samplePlayer3 = AudioPlayer()
+   var path3 : String
+    @Published var engine3 = AudioEngine()
+    @Published var samplePlayer3 = AudioPlayer()
     
 
 //    var singleFileName4: String
@@ -87,11 +87,11 @@ class FileManageLogic {
     }
     
     func playResuting(){
-
+        self.isPause = false
         Timer.scheduledTimer(withTimeInterval: 60 / Double(110) * 8, repeats: true) { timer in
-//            self.playSingle(url: self.url, samplePlayer: self.samplePlayer, engine: self.engine)
-//
-//            self.playSingle(url: self.url2, samplePlayer: self.samplePlayer2, engine: self.engine2)
+            self.playSingle(url: self.url, samplePlayer: self.samplePlayer, engine: self.engine)
+
+            self.playSingle(url: self.url2, samplePlayer: self.samplePlayer2, engine: self.engine2)
 //
 //            self.playSingle(url: self.url3, samplePlayer: self.samplePlayer3, engine: self.engine3)
 //
@@ -99,6 +99,13 @@ class FileManageLogic {
             
         }
 
+    }
+    
+    func pauseThepProcessing(){
+        self.isPause = true
+        samplePlayer.stop()
+        samplePlayer2.stop()
+        samplePlayer3.stop()
     }
     
     func reloding(){

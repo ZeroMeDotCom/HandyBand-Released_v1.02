@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AudioKit
 
 //Reverb places
 var places = ["cathedral", "largeHall", "largeHall2", "largeRoom", "mediumChamber"]
@@ -48,7 +49,7 @@ struct ReverbPicker: View {
 
 struct ReverbPicker_Previews: PreviewProvider {
     static var previews: some View {
-        let samplePlayer = SamplePlyer(filename: "sample_drum_one", isLooping: true)
+        let samplePlayer = SamplePlyer(filename: "", url: URL(fileURLWithPath: ""), path: "", engine: AudioEngine(), samplePlayer: AudioPlayer(), isLooping: false)
         ReverbPicker(samplePlayer: samplePlayer)
     }
 }

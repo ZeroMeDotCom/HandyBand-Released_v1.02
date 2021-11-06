@@ -8,6 +8,7 @@
         //.. and teh slider
 
 import SwiftUI
+import AudioKit
 
 struct button_sample_play: View {
     @State private var selection = 0
@@ -21,10 +22,11 @@ struct button_sample_play: View {
 
     var samplePlyer : SamplePlyer!
     
-    var filename : String
-    init(filename: String){
-        self.filename = filename
-        samplePlyer = SamplePlyer(filename: filename, isLooping: true)
+//    var filename : String
+    
+    init(filename: String, url: URL, path: String, engine: AudioEngine, samplePlayer: AudioPlayer, isLooping: Bool){
+//        self.filename = filename
+        samplePlyer = SamplePlyer(filename: filename, url: url, path: path, engine: engine, samplePlayer: samplePlayer, isLooping: isLooping)
     }
     var body: some View {
         VStack {
@@ -107,6 +109,6 @@ struct MyButtonStyle: ButtonStyle {
 
 struct button_sample_play_Previews: PreviewProvider {
     static var previews: some View {
-        button_sample_play(filename: "sample_drum_one_Edited.wav")
+        button_sample_play(filename: "", url: URL(fileURLWithPath: ""), path: "", engine: AudioEngine(), samplePlayer: AudioPlayer(), isLooping: false)
     }
 }

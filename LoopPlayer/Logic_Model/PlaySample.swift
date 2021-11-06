@@ -15,13 +15,14 @@ import AudioKit
 import SoundpipeAudioKit
 
 class SamplePlyer {
-    let engine = AudioEngine()
-    var samplePlayer = AudioPlayer()
+//    let engine = AudioEngine()
+//    var samplePlayer = AudioPlayer()
+    let engine: AudioEngine
+    var samplePlayer: AudioPlayer
     var filename : String
     var url : URL
     var path : String
     var volume : Double = 1
-    
     
     //convolution
     var convolutionSalt_one : Convolution
@@ -42,11 +43,13 @@ class SamplePlyer {
     
     
     
-    init(filename: String, isLooping: Bool) {
+    init(filename: String, url: URL, path: String, engine: AudioEngine, samplePlayer: AudioPlayer, isLooping: Bool) {
         self.filename = filename
-        self.samplePlayer.isLooping = isLooping
-        path = Bundle.main.path(forResource: filename, ofType:nil)!
-        url = URL(fileURLWithPath: path)
+//        self.samplePlayer.isLooping = isLooping
+        self.path = Bundle.main.path(forResource: filename, ofType:nil)!
+        self.url = URL(fileURLWithPath: path)
+        self.engine = engine
+        self.samplePlayer = samplePlayer
         
         
         //Convolution
