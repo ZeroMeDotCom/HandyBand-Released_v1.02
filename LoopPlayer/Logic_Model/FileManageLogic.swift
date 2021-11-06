@@ -97,15 +97,19 @@ class FileManageLogic: ObservableObject {
 //
 //            self.playSingle(url: self.url4, samplePlayer: self.samplePlayer4, engine: self.engine4)
             
+            if self.isPause == true {
+                timer.invalidate()
+            }
+            
         }
 
     }
     
     func pauseThepProcessing(){
         self.isPause = true
-        samplePlayer.stop()
-        samplePlayer2.stop()
-        samplePlayer3.stop()
+//        samplePlayer.stop()
+//        samplePlayer2.stop()
+//        samplePlayer3.stop()
     }
     
     func reloding(){
