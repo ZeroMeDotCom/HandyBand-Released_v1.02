@@ -11,6 +11,11 @@ import SwiftUI
 struct LoopPlayerApp: App {
     var body: some Scene {
         WindowGroup {
+            //頭部
+            HStack {
+                DangDangDangView()
+            }
+            .border(.green, width: 2)
             VStack {
                 ContentView()
                 //整體四個
