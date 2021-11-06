@@ -16,7 +16,18 @@ import Foundation
 import AudioKit
 
 class FileManageLogic: ObservableObject {
-    var fileNames : [String] = ["sample_drum_110_8_one.wav", "sample_bass_110_8_two.wav", "sample_bass_110_8_three.wav"]
+    var fileNames : [String : [String : String]] = [
+        "track1" : ["isPause" : "true",
+                    "fileWay" : "sample_drum_110_8_one.wav",
+                   ],
+        "track2" : ["isPause" : "true",
+                    "fileWay" : "sample_bass_110_8_two.wav",
+                   ],
+        "track3" : ["isPause" : "true",
+                    "fileWay" : "sample_bass_110_8_three.wav",
+                   ],
+    ]
+    
     @Published var isPause: Bool = true
     
     var singleFileName: String
@@ -50,15 +61,16 @@ class FileManageLogic: ObservableObject {
     
     
     init() {
-        self.singleFileName = fileNames[0]
+        self.singleFileName = fileNames["track1"]!["fileWay"]!
+        print(singleFileName)
         self.path = Bundle.main.path(forResource: singleFileName, ofType:nil)!
         self.url = URL(fileURLWithPath: path)
         
-        self.singleFileName2 = fileNames[1]
+        self.singleFileName2 = fileNames["track2"]!["fileWay"]!
         self.path2 = Bundle.main.path(forResource: singleFileName2, ofType:nil)!
         self.url2 = URL(fileURLWithPath: path2)
         
-        self.singleFileName3 = fileNames[2]
+        self.singleFileName3 = fileNames["track3"]!["fileWay"]!
         self.path3 = Bundle.main.path(forResource: singleFileName3, ofType:nil)!
         self.url3 = URL(fileURLWithPath: path3)
         
