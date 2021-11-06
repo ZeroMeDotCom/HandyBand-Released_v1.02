@@ -9,11 +9,8 @@ import SwiftUI
 
 struct DangDangDangView: View {
     @State var speedValue: Int = 60
-    var dangDangDangModel = TimeCountLogic()
-    
-    var metros: Int = 4
-
-    var emoji = ["😀", "😬", "😄", "🙂", "😗", "🤓", "😏", "😕", "😟", "😎", "😜", "😍", "🤪"]
+    @State var isSpeedCountOpen: Bool = true
+    @StateObject var dangDangDangModel = TimeCountLogic()
 
     var body: some View {
         HStack {
@@ -28,20 +25,28 @@ struct DangDangDangView: View {
 //                // Fallback on earlier versions
 //            }
             
-            //Timeer version
+            //Timer version
+            
+            
             Button(action: {
-                dangDangDangModel.dangDangDang()
+//                isSpeedCountOpen = !isSpeedCountOpen
+                dangDangDangModel.isOpening = !dangDangDangModel.isOpening
+                dangDangDangModel.isOpening ? dangDangDangModel.oldStyleCount(speed: Double(speedValue)) : dangDangDangModel.oldStyleCountStop()
             }) {
-                Image(systemName: "play.circle")
-                Text("Lead count")
+                Image(systemName: dangDangDangModel.isOpening ? "pause.circle" : "play.circle")
+                Text("Ready?:\(dangDangDangModel.metros)")
             }
-            Stepper("BPM: \(speedValue)", onIncrement: {
-                speedValue += 1
-            }, onDecrement: {
-                speedValue -= 1
-            }, onEditingChanged: {_ in
-                print("Create a new speed")
-            })
+            HStack
+            {
+                Stepper("BPM: \(speedValue)", onIncrement: {
+                    speedValue += 1
+                }, onDecrement: {
+                    speedValue -= 1
+                }, onEditingChanged: {_ in
+                    print("Create a new speed")
+                })
+                .frame(width: 300, alignment: .trailing)
+            }
         }
 
     }

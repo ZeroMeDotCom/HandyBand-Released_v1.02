@@ -28,7 +28,6 @@ struct SoundCardPlugInView: View {
                     self.stopFlag = !self.stopFlag
                     
                 }, label: {
-        //            self.stopFlag ? Text("◼︎") : Text("►")
                     Image(systemName: self.stopFlag ? "stop.fill" : "play.fill")
                 })
             }
