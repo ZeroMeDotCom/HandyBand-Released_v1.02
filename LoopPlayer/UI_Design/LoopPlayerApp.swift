@@ -14,6 +14,7 @@ struct LoopPlayerApp: App {
             //頭部
             HStack {
                 DangDangDangView()
+                PlayYourCreationView()
             }
             .border(.green, width: 2)
             VStack {

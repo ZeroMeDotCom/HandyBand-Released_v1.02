@@ -46,6 +46,8 @@
 		2BC87260272D8C5400AD500A /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2BC8725F272D8C5400AD500A /* SoundpipeAudioKit */; };
 		2BDB9E8F272EDC1E00BADB99 /* ReverbPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */; };
 		2BDB9E912730759C00BADB99 /* Old Dark Ages.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2BDB9E902730759C00BADB99 /* Old Dark Ages.mp3 */; };
+		2BF6F8BA2736CED100FA1C26 /* FileManageLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6F8B92736CED100FA1C26 /* FileManageLogic.swift */; };
+		2BF6F8E92736E93000FA1C26 /* PlayYourCreationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF6F8E82736E93000FA1C26 /* PlayYourCreationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +90,8 @@
 		2BC8725C272D8A4B00AD500A /* DelaySetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelaySetting.swift; sourceTree = "<group>"; };
 		2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverbPicker.swift; sourceTree = "<group>"; };
 		2BDB9E902730759C00BADB99 /* Old Dark Ages.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Old Dark Ages.mp3"; sourceTree = "<group>"; };
+		2BF6F8B92736CED100FA1C26 /* FileManageLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManageLogic.swift; sourceTree = "<group>"; };
+		2BF6F8E82736E93000FA1C26 /* PlayYourCreationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayYourCreationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		2B5A79592734196B000C5437 /* SingleButton */ = {
 			isa = PBXGroup;
 			children = (
+				2BF6F8E82736E93000FA1C26 /* PlayYourCreationView.swift */,
 				2B78135D272A8B0B002A8972 /* button_sample_play.swift */,
 			);
 			path = SingleButton;
@@ -136,6 +141,7 @@
 		2B5A795C27341A1E000C5437 /* Logic_Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BF6F8B92736CED100FA1C26 /* FileManageLogic.swift */,
 				2B5A7998273667AC000C5437 /* TimeCountLogic.swift */,
 				2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */,
 				2B78135F272AA025002A8972 /* PlaySample.swift */,
@@ -317,6 +323,8 @@
 				2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */,
 				2B5A79932735B04A000C5437 /* PlaySampleStringsGroup.swift in Sources */,
 				2B5A799D27366E31000C5437 /* DangDangDangView.swift in Sources */,
+				2BF6F8BA2736CED100FA1C26 /* FileManageLogic.swift in Sources */,
+				2BF6F8E92736E93000FA1C26 /* PlayYourCreationView.swift in Sources */,
 				2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */,
 				2B5A79972735B2BB000C5437 /* UITools.swift in Sources */,
 				2B5A796127341B6C000C5437 /* SoundCardPlugInLogic.swift in Sources */,
