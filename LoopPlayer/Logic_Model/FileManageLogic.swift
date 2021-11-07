@@ -28,6 +28,93 @@ class FileManageLogic: ObservableObject {
                    ],
     ]
     
+    //Notes
+    //C
+    var singleFileName_C: String
+    var url_C : URL
+    var path_C : String
+    @Published var engine_C = AudioEngine()
+    @Published var samplePlayer_C = AudioPlayer()
+    
+    //#C
+    var singleFileName_PlusC: String
+    var url_PlusC : URL
+    var path_PlusC : String
+    @Published var engine_PlusC = AudioEngine()
+    @Published var samplePlayer_PlusC = AudioPlayer()
+    
+    //D
+    var singleFileName_D: String
+    var url_D : URL
+    var path_D : String
+    @Published var engine_D = AudioEngine()
+    @Published var samplePlayer_D = AudioPlayer()
+    
+    //#D
+    var singleFileName_PlusD: String
+    var url_PlusD : URL
+    var path_PlusD : String
+    @Published var engine_PlusD = AudioEngine()
+    @Published var samplePlayer_PlusD = AudioPlayer()
+    
+    //E
+    var singleFileName_E: String
+    var url_E : URL
+    var path_E : String
+    @Published var engine_E = AudioEngine()
+    @Published var samplePlayer_E = AudioPlayer()
+    
+    //F
+    var singleFileName_F: String
+    var url_F : URL
+    var path_F : String
+    @Published var engine_F = AudioEngine()
+    @Published var samplePlayer_F = AudioPlayer()
+    
+    //#F
+    var singleFileName_PlusF: String
+    var url_PlusF : URL
+    var path_PlusF : String
+    @Published var engine_PlusF = AudioEngine()
+    @Published var samplePlayer_PlusF = AudioPlayer()
+    
+    //G
+    var singleFileName_G: String
+    var url_G : URL
+    var path_G : String
+    @Published var engine_G = AudioEngine()
+    @Published var samplePlayer_G = AudioPlayer()
+    
+    //#G
+    var singleFileName_PlusG: String
+    var url_PlusG : URL
+    var path_PlusG : String
+    @Published var engine_PlusG = AudioEngine()
+    @Published var samplePlayer_PlusG = AudioPlayer()
+    
+    //A
+    var singleFileName_A: String
+    var url_A : URL
+    var path_A : String
+    @Published var engine_A = AudioEngine()
+    @Published var samplePlayer_A = AudioPlayer()
+    
+    //#A
+    var singleFileName_PlusA: String
+    var url_PlusA : URL
+    var path_PlusA : String
+    @Published var engine_PlusA = AudioEngine()
+    @Published var samplePlayer_PlusA = AudioPlayer()
+    
+    
+    //B
+    var singleFileName_B: String
+    var url_B : URL
+    var path_B : String
+    @Published var engine_B = AudioEngine()
+    @Published var samplePlayer_B = AudioPlayer()
+    
+    //Samples
     @Published var isPause: Bool = true
     
     var singleFileName: String
@@ -127,6 +214,7 @@ class FileManageLogic: ObservableObject {
             
             if self.isPause == true {
                 timer.invalidate()
+                self.pauseThepProcessing()
             }
             
         }
@@ -135,9 +223,12 @@ class FileManageLogic: ObservableObject {
     
     func pauseThepProcessing(){
         self.isPause = true
-//        samplePlayer.stop()
-//        samplePlayer2.stop()
-//        samplePlayer3.stop()
+//        engine.stop()
+//        engine2.stop()
+//        engine3.stop()
+        samplePlayer.stop()
+        samplePlayer2.stop()
+        samplePlayer3.stop()
     }
     
     func reloding(){
