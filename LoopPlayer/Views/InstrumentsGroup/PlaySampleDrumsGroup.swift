@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct PlaySampleDrumsGroup: View {
-    @StateObject var fileManager = FileManageLogic()
+    @EnvironmentObject var fileManage : FileManageLogic
     var body: some View {
         HStack {
-            button_sample_play(filename: fileManager.singleFileName, url: fileManager.url, path: fileManager.path, engine: fileManager.engine, samplePlayer: fileManager.samplePlayer, isLooping: false)
-            button_sample_play(filename: fileManager.singleFileName2, url: fileManager.url2, path: fileManager.path2, engine: fileManager.engine2, samplePlayer: fileManager.samplePlayer2, isLooping: false)
-            button_sample_play(filename: fileManager.singleFileName3, url: fileManager.url3, path: fileManager.path3, engine: fileManager.engine3, samplePlayer: fileManager.samplePlayer3, isLooping: false)
+            button_sample_play(filename: fileManage.singleFileName, url: fileManage.url, path: fileManage.path, engine: fileManage.engine, samplePlayer: fileManage.samplePlayer, isLooping: false, trackID: "track1")
+            button_sample_play(filename: fileManage.singleFileName2, url: fileManage.url2, path: fileManage.path2, engine: fileManage.engine2, samplePlayer: fileManage.samplePlayer2, isLooping: false, trackID: "track2")
+            button_sample_play(filename: fileManage.singleFileName3, url: fileManage.url3, path: fileManage.path3, engine: fileManage.engine3, samplePlayer: fileManage.samplePlayer3, isLooping: false, trackID: "track3")
         }
     }
 }

@@ -7,10 +7,12 @@
 
 import SwiftUI
 
+
 struct PlayYourCreationView: View {
-    @StateObject var fileManage = FileManageLogic()
+    @EnvironmentObject var fileManage : FileManageLogic
     var body: some View {
         Button(action: {
+            fileManage.isWish = !fileManage.isWish
             fileManage.isPause = !fileManage.isPause
             fileManage.isPause ? fileManage.pauseThepProcessing() : fileManage.playResuting()
         }, label: {

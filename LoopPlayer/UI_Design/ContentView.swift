@@ -8,19 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var fileManage : FileManageLogic
     var body: some View {
         VStack {
             
             HStack(alignment: .top) {
                 VStack{
                     Text("Drum Group").border(.black, width: 1)
-                    PlaySampleDrumsGroup()
+                    PlaySampleDrumsGroup().environmentObject(fileManage)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
 
                 VStack {
                     Text("Bass Group")
-                    PlaySampleBassGroup()
+                    PlaySampleBassGroup().environmentObject(fileManage)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
             }
@@ -29,13 +30,13 @@ struct ContentView: View {
             HStack {
                 VStack {
                     Text("String Group")
-                    PlaySampleBassGroup()
+                    PlaySampleBassGroup().environmentObject(fileManage)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
                 
                 VStack {
                     Text("Piano Group")
-                    PlaySampleBassGroup()
+                    PlaySampleBassGroup().environmentObject(fileManage)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
             }

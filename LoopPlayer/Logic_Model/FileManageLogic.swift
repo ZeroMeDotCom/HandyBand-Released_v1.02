@@ -35,18 +35,21 @@ class FileManageLogic: ObservableObject {
     var path : String
     @Published var engine = AudioEngine()
     @Published var samplePlayer = AudioPlayer()
+    @Published var isWish: Bool = false
     
     var singleFileName2: String
     var url2 : URL
     var path2 : String
     @Published var engine2 = AudioEngine()
     @Published var samplePlayer2 = AudioPlayer()
+    @Published var isWish2: Bool = false
     
     var singleFileName3: String
     var url3 : URL
-   var path3 : String
+    var path3 : String
     @Published var engine3 = AudioEngine()
     @Published var samplePlayer3 = AudioPlayer()
+    @Published var isWish3: Bool = false
     
 
 //    var singleFileName4: String
@@ -61,6 +64,7 @@ class FileManageLogic: ObservableObject {
     
     
     init() {
+        print("This is a demo")
         self.singleFileName = fileNames["track1"]!["fileWay"]!
         print(singleFileName)
         self.path = Bundle.main.path(forResource: singleFileName, ofType:nil)!
@@ -101,9 +105,20 @@ class FileManageLogic: ObservableObject {
     func playResuting(){
         self.isPause = false
         Timer.scheduledTimer(withTimeInterval: 60 / Double(110) * 8, repeats: true) { timer in
-            self.playSingle(url: self.url, samplePlayer: self.samplePlayer, engine: self.engine)
+            if self.isWish == true {
+                print("play tack1....")
+                self.playSingle(url: self.url, samplePlayer: self.samplePlayer, engine: self.engine)
+            }
+            if self.isWish2 == true {
+                print("play tack2....")
+                self.playSingle(url: self.url2, samplePlayer: self.samplePlayer2, engine: self.engine2)
+            }
+            if self.isWish3 == true {
+                print("play tack2....")
+                self.playSingle(url: self.url3, samplePlayer: self.samplePlayer3, engine: self.engine3)
+            }
 
-            self.playSingle(url: self.url2, samplePlayer: self.samplePlayer2, engine: self.engine2)
+//            self.playSingle(url: self.url2, samplePlayer: self.samplePlayer2, engine: self.engine2)
 //
 //            self.playSingle(url: self.url3, samplePlayer: self.samplePlayer3, engine: self.engine3)
 //

@@ -9,16 +9,17 @@ import SwiftUI
 
 @main
 struct LoopPlayerApp: App {
+    var fileManage = FileManageLogic()
     var body: some Scene {
         WindowGroup {
             //頭部
             HStack {
                 DangDangDangView()
-                PlayYourCreationView()
+                PlayYourCreationView().environmentObject(fileManage)
             }
             .border(.green, width: 2)
             VStack {
-                ContentView()
+                ContentView().environmentObject(fileManage)
                 //整體四個
                 .frame(width: fourGroupWidth, height: fourGroupHeight, alignment: .center)
                 .position(x: screenWidth / 2, y: fourGroupHeight - 150)
