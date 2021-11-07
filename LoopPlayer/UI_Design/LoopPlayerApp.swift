@@ -31,7 +31,7 @@ struct LoopPlayerApp: App {
                     Text("Plug-in").tag(1)
                 }.pickerStyle(.segmented)
                 if selection == 0 {
-                    PodKeyBoard()
+                    PodKeyBoard().environmentObject(fileManage)
                 } else if selection == 1 {
                     //PlUGIN-Guitar/Bass
                     PlugInView()
