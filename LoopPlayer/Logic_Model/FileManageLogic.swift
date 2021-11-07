@@ -105,6 +105,7 @@ class FileManageLogic: ObservableObject {
     func playResuting(){
         self.isPause = false
         Timer.scheduledTimer(withTimeInterval: 60 / Double(110) * 8, repeats: true) { timer in
+            print("track1:\(self.isWish)")
             if self.isWish == true {
                 print("play tack1....")
                 self.playSingle(url: self.url, samplePlayer: self.samplePlayer, engine: self.engine)
