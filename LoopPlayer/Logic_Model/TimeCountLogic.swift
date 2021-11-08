@@ -57,7 +57,9 @@ class TimeCountLogic: ObservableObject {
             if self.metros == self.metroWish {
                 print(self.metros)
                 timerDeliver.invalidate()
+                print("老 變回來之前: \(self.isOpening)")
                 self.isOpening = !self.isOpening
+                print("老 變回來之後: \(self.isOpening)")
                 self.metros = 1
                 
 //                sleep(1)

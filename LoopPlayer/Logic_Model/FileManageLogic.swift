@@ -19,14 +19,42 @@ class FileManageLogic: ObservableObject {
     
     var fileNames : [String : [String : String]] = [
         "track1" : ["isPause" : "true",
-                    "fileWay" : "sample_drum_110_8_one.wav",
+                    "fileWay" : "track1_drum1.wav",
                    ],
         "track2" : ["isPause" : "true",
-                    "fileWay" : "sample_bass_110_8_two.wav",
+                    "fileWay" : "track2_drum2.wav",
                    ],
         "track3" : ["isPause" : "true",
-                    "fileWay" : "sample_bass_110_8_three.wav",
+                    "fileWay" : "track3_drum3.wav",
                    ],
+        "track4" : ["isPause" : "true",
+                    "fileWay" : "track4_bass1.wav",
+                   ],
+        "track5" : ["isPause" : "true",
+                    "fileWay" : "track5_bass2.wav",
+                   ],
+        "track6" : ["isPause" : "true",
+                    "fileWay" : "track6_bass3.wav",
+                   ],
+        "track7" : ["isPause" : "true",
+                    "fileWay" : "track7_string1.wav",
+                   ],
+        "track8" : ["isPause" : "true",
+                    "fileWay" : "track8_string2.wav",
+                   ],
+        "track9" : ["isPause" : "true",
+                    "fileWay" : "track9_string3.wav",
+                   ],
+        "track10" : ["isPause" : "true",
+                    "fileWay" : "track10_piano1.wav",
+                   ],
+        "track11" : ["isPause" : "true",
+                    "fileWay" : "track11_piano2.wav",
+                   ],
+        "track12" : ["isPause" : "true",
+                    "fileWay" : "track12_piano3.wav",
+                   ],
+
     ]
     
     var BassNoteFileNames : [String : String] = [
@@ -247,15 +275,15 @@ class FileManageLogic: ObservableObject {
         self.url_B = URL(fileURLWithPath: path_B)
         
         //Sample init
-        self.singleFileName = fileNames["track1"]!["fileWay"]!
+        self.singleFileName = "sample_drum_110_8_one.wav"
         self.path = Bundle.main.path(forResource: singleFileName, ofType:nil)!
         self.url = URL(fileURLWithPath: path)
         
-        self.singleFileName2 = fileNames["track2"]!["fileWay"]!
+        self.singleFileName2 = "sample_drum_110_8_one.wav"
         self.path2 = Bundle.main.path(forResource: singleFileName2, ofType:nil)!
         self.url2 = URL(fileURLWithPath: path2)
         
-        self.singleFileName3 = fileNames["track3"]!["fileWay"]!
+        self.singleFileName3 = "sample_drum_110_8_one.wav"
         self.path3 = Bundle.main.path(forResource: singleFileName3, ofType:nil)!
         self.url3 = URL(fileURLWithPath: path3)
         
