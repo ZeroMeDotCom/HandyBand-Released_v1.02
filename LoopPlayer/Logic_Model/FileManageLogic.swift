@@ -17,6 +17,7 @@ import AudioKit
 
 class FileManageLogic: ObservableObject {
     
+    //需要刪除優化？
     var fileNames : [String : [String : String]] = [
         "track1" : ["isPause" : "true",
                     "fileWay" : "track1_drum1.wav",

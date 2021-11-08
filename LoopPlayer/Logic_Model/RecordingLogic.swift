@@ -25,26 +25,30 @@ class RecordingLogic: ObservableObject {
     @Published var isRecording: Bool = false
     @Published var isListening: Bool = false
     
+    //Button controller
+    @Published var buttonLights : [Bool] = [true, false, false, false, false, false, false, false, false, false, false, false, false]
+    @Published var whichButtonLight : Int = 0
+    
     var avPlayer = AVAudioPlayer()
     var url: URL?
     var path: String?
     var filename: String = ""
     var trackTimes = 1
     
-    var saveFileNames : [String : String] = [
-        "track1" : "",
-        "track2" : "",
-    ]
+    var saveFileNames = SavedFileNames()
     
-    var audioFileName = "track1" + ".m4a"
-    var audioFileName2 = "track2" + ".m4a"
-    var audioFileName3 = "track3" + ".m4a"
+    var audioFileName : String!
+    var audioFileName2 : String!
+    var audioFileName3 : String!
     
     private var sampleRecorder: AVAudioRecorder?
     var audioSession = AVAudioSession.sharedInstance()
-    var soundURL : String = ""
+
     
     init() {
+        audioFileName = saveFileNames.fileNames["track1"]!["fileWay"]!
+        audioFileName = saveFileNames.fileNames["track2"]!["fileWay"]!
+        audioFileName = saveFileNames.fileNames["track3"]!["fileWay"]!
 //        var myDouble = 60 / speed
 //        var doubleStr = String(format: "%.3f", myDouble)
 //
@@ -58,7 +62,8 @@ class RecordingLogic: ObservableObject {
          
          let audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
         print(audioFileURL)
-         soundURL = audioFileName       // Sound URL to be stored in CoreData
+        
+
          
          // Setup audio session
          let audioSession = AVAudioSession.sharedInstance()
@@ -79,6 +84,46 @@ class RecordingLogic: ObservableObject {
     }
     
     func startRecording() {
+        //Settings before recording: choose Which FILE to save
+        let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:
+            FileManager.SearchPathDomainMask.userDomainMask).first // as! NSURL
+        
+        //Old times Text using
+         trackTimes += 1
+         var audioFileURL = directoryURL!.appendingPathComponent(audioFileName2)
+         if trackTimes == 2 {
+             audioFileURL = directoryURL!.appendingPathComponent(audioFileName2)
+             print(audioFileURL)
+         } else if trackTimes == 3 {
+             audioFileURL = directoryURL!.appendingPathComponent(audioFileName3)
+             print(audioFileURL)
+         } else {
+             audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
+             print(audioFileURL)
+         }
+        
+        //New style
+//        if 
+
+        // Setup audio session
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playAndRecord, mode: .default, options: [])
+        } catch {
+            //
+        }
+
+        // Define the recorder setting
+        let recorderSetting = [AVFormatIDKey: NSNumber(value: kAudioFormatMPEG4AAC as UInt32),
+                               AVSampleRateKey: 44100.0,
+                               AVNumberOfChannelsKey: 2 ]
+
+         sampleRecorder = try? AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
+         sampleRecorder?.isMeteringEnabled = true
+         sampleRecorder?.prepareToRecord()
+        
+        
+        //THE REAL Recording
         if let recorder = sampleRecorder {
             if !recorder.isRecording {
                 let audioSession = AVAudioSession.sharedInstance()
@@ -130,6 +175,16 @@ class RecordingLogic: ObservableObject {
         }
     }
     
+    func onlyOneButtonLights(index: Int) {
+        for i in 1..<self.buttonLights.count {
+            buttonLights[i] = false
+            print("第\(i) 個: \(buttonLights[i])")
+        }
+        buttonLights[index] = true
+        print("第\(index) 個: \(buttonLights[index])")
+
+    }
+    
     func stopRecording() {
         if let recorder = sampleRecorder {
             if recorder.isRecording {
@@ -145,39 +200,39 @@ class RecordingLogic: ObservableObject {
             }
             
 //     Set the audio recorder ready to record the next audio with a unique audioFileName
-           let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:
-               FileManager.SearchPathDomainMask.userDomainMask).first // as! NSURL
-            trackTimes += 1
-            var audioFileURL = directoryURL!.appendingPathComponent(audioFileName2)
-            if trackTimes == 2 {
-                audioFileURL = directoryURL!.appendingPathComponent(audioFileName2)
-                print(audioFileURL)
-            } else if trackTimes == 3 {
-                audioFileURL = directoryURL!.appendingPathComponent(audioFileName3)
-                print(audioFileURL)
-            } else {
-                audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
-                print(audioFileURL)
-            }
-
-           soundURL = audioFileName       // Sound URL to be stored in CoreData
-
-           // Setup audio session
-           let audioSession = AVAudioSession.sharedInstance()
-           do {
-               try audioSession.setCategory(.playAndRecord, mode: .default, options: [])
-           } catch {
-               //
-           }
-
-           // Define the recorder setting
-           let recorderSetting = [AVFormatIDKey: NSNumber(value: kAudioFormatMPEG4AAC as UInt32),
-                                  AVSampleRateKey: 44100.0,
-                                  AVNumberOfChannelsKey: 2 ]
-
-            sampleRecorder = try? AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
-            sampleRecorder?.isMeteringEnabled = true
-            sampleRecorder?.prepareToRecord()
+//           let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:
+//               FileManager.SearchPathDomainMask.userDomainMask).first // as! NSURL
+//            trackTimes += 1
+//            var audioFileURL = directoryURL!.appendingPathComponent(audioFileName2)
+//            if trackTimes == 2 {
+//                audioFileURL = directoryURL!.appendingPathComponent(audioFileName2)
+//                print(audioFileURL)
+//            } else if trackTimes == 3 {
+//                audioFileURL = directoryURL!.appendingPathComponent(audioFileName3)
+//                print(audioFileURL)
+//            } else {
+//                audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
+//                print(audioFileURL)
+//            }
+//
+//           soundURL = audioFileName       // Sound URL to be stored in CoreData
+//
+//           // Setup audio session
+//           let audioSession = AVAudioSession.sharedInstance()
+//           do {
+//               try audioSession.setCategory(.playAndRecord, mode: .default, options: [])
+//           } catch {
+//               //
+//           }
+//
+//           // Define the recorder setting
+//           let recorderSetting = [AVFormatIDKey: NSNumber(value: kAudioFormatMPEG4AAC as UInt32),
+//                                  AVSampleRateKey: 44100.0,
+//                                  AVNumberOfChannelsKey: 2 ]
+//
+//            sampleRecorder = try? AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
+//            sampleRecorder?.isMeteringEnabled = true
+//            sampleRecorder?.prepareToRecord()
             
         }
     }

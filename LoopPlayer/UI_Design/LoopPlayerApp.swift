@@ -11,12 +11,15 @@ import SwiftUI
 struct LoopPlayerApp: App {
     var fileManage = FileManageLogic()
     var recorderPlayer = RecordingLogic()
+//    var savedFileNames = SavedFileNames()
     @State private var selection = 0
     var body: some Scene {
         WindowGroup {
             //頭部
             HStack {
-                DangDangDangView().environmentObject(recorderPlayer)
+                DangDangDangView()
+                    .environmentObject(recorderPlayer)
+//                    .environmentObject(savedFileNames)
                 PlayYourCreationView().environmentObject(fileManage)
             }
             .border(.green, width: 2)

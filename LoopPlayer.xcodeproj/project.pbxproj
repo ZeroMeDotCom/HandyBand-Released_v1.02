@@ -55,6 +55,7 @@
 		2B5A7999273667AD000C5437 /* TimeCountLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A7998273667AC000C5437 /* TimeCountLogic.swift */; };
 		2B5A799B27366BBB000C5437 /* dangDangDang.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 2B5A799A27366BBB000C5437 /* dangDangDang.m4a */; };
 		2B5A799D27366E31000C5437 /* DangDangDangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A799C27366E31000C5437 /* DangDangDangView.swift */; };
+		2B6D9E382739AF7700273A83 /* SavedFileNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B6D9E372739AF7700273A83 /* SavedFileNames.swift */; };
 		2B72799F27311D2A008047DA /* salt_one.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B72799D27311D2A008047DA /* salt_one.wav */; };
 		2B7279A027311D2A008047DA /* salt_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B72799E27311D2A008047DA /* salt_two.wav */; };
 		2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7279A12731256F008047DA /* ConvolutionSlider.swift */; };
@@ -139,6 +140,7 @@
 		2B5A7998273667AC000C5437 /* TimeCountLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCountLogic.swift; sourceTree = "<group>"; };
 		2B5A799A27366BBB000C5437 /* dangDangDang.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = dangDangDang.m4a; sourceTree = "<group>"; };
 		2B5A799C27366E31000C5437 /* DangDangDangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangDangDangView.swift; sourceTree = "<group>"; };
+		2B6D9E372739AF7700273A83 /* SavedFileNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedFileNames.swift; sourceTree = "<group>"; };
 		2B72799D27311D2A008047DA /* salt_one.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_one.wav; sourceTree = "<group>"; };
 		2B72799E27311D2A008047DA /* salt_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_two.wav; sourceTree = "<group>"; };
 		2B7279A12731256F008047DA /* ConvolutionSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvolutionSlider.swift; sourceTree = "<group>"; };
@@ -292,7 +294,7 @@
 				2B5A7998273667AC000C5437 /* TimeCountLogic.swift */,
 				2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */,
 				2B78135F272AA025002A8972 /* PlaySample.swift */,
-				2BC8725C272D8A4B00AD500A /* DelaySetting.swift */,
+				2B6D9E362739AF4B00273A83 /* Pure Model */,
 			);
 			path = Logic_Model;
 			sourceTree = "<group>";
@@ -306,6 +308,15 @@
 				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
 			);
 			path = UI_Design;
+			sourceTree = "<group>";
+		};
+		2B6D9E362739AF4B00273A83 /* Pure Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BC8725C272D8A4B00AD500A /* DelaySetting.swift */,
+				2B6D9E372739AF7700273A83 /* SavedFileNames.swift */,
+			);
+			path = "Pure Model";
 			sourceTree = "<group>";
 		};
 		2B781343272A8A68002A8972 = {
@@ -510,6 +521,7 @@
 				2B5A79932735B04A000C5437 /* PlaySampleStringsGroup.swift in Sources */,
 				2B5A799D27366E31000C5437 /* DangDangDangView.swift in Sources */,
 				2BF6F8BA2736CED100FA1C26 /* FileManageLogic.swift in Sources */,
+				2B6D9E382739AF7700273A83 /* SavedFileNames.swift in Sources */,
 				2BF6F8E92736E93000FA1C26 /* PlayYourCreationView.swift in Sources */,
 				2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */,
 				2B5A79972735B2BB000C5437 /* UITools.swift in Sources */,
