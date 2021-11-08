@@ -3,7 +3,10 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/6/21.
-//
+// What is DangDangDang:
+    // 1.show the navagation
+    // 2.show all the status
+    // 3.metro, speed, recordiing? which track light, playResutingButton, timeDate, StudentNumber
 
 import SwiftUI
 
@@ -11,6 +14,7 @@ struct DangDangDangView: View {
     @State var speedValue: Int = 60
     @State var isSpeedCountOpen: Bool = true
     @StateObject var dangDangDangModel = TimeCountLogic()
+    @EnvironmentObject var recorderPlayer : RecordingLogic
 
     var body: some View {
         HStack {
@@ -25,9 +29,24 @@ struct DangDangDangView: View {
 //                // Fallback on earlier versions
 //            }
             
-            //Timer version
             
-            
+            //Recording view: light instruction, start recording
+            HStack {
+                Button(action: {
+                    recorderPlayer.isRecording ? recorderPlayer.stopRecording() : recorderPlayer.startRecording()
+                    recorderPlayer.isRecording = !recorderPlayer.isRecording
+                }, label: {
+                    Image(systemName: recorderPlayer.isRecording ? "record.circle.fill" : "record.circle")
+                })
+                Button(action: {
+                    recorderPlayer.isRecording ? recorderPlayer.listeningStop() : recorderPlayer.playThePotencial(filename: recorderPlayer.audioFileName, samplePlayer: recorderPlayer.samplePlayer, engine: recorderPlayer.engine)
+                    recorderPlayer.isListening = !recorderPlayer.isListening
+                }, label: {
+                    Image(systemName: recorderPlayer.isListening ? "playpause" : "playpause.fill")
+                })
+
+            }
+            //Counter view: adjust speed, start count button
             Button(action: {
 //                isSpeedCountOpen = !isSpeedCountOpen
                 dangDangDangModel.isOpening = !dangDangDangModel.isOpening

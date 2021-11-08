@@ -3,12 +3,15 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/6/21.
-//
+// What is the file?
+    // 1. counter, text speed
+    // 2. after 4 counters, start recording and stop at metroWish
 
 import Foundation
 import AudioKit
 
 class TimeCountLogic: ObservableObject {
+//    var audioInputRecorder = RecordingLogic()
     var engine = AudioEngine()
     var dangDangDangPlayer = AudioPlayer()
     var url: URL
@@ -16,7 +19,7 @@ class TimeCountLogic: ObservableObject {
     var speed: Double = 130
     @Published var isOpening: Bool = false
     var timerDeliver = Timer()
-    @Published var metros: Int = 1
+    var metros: Int = 1
     var metroWish: Int = 5 //真正的是8 - 4
     
     init() {
@@ -61,6 +64,7 @@ class TimeCountLogic: ObservableObject {
 //                self.readyDangDang(speed: speed)
                 
                 //開始錄製
+                
             }
         }
 

@@ -79,6 +79,8 @@
 		2B81F695272BC73E0081BCB6 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B81F694272BC73E0081BCB6 /* AudioKit */; };
 		2B81F698272BF5640081BCB6 /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81F697272BF5640081BCB6 /* VolumeSlider.swift */; };
 		2B9DA5FC272C6C250085365C /* SliderView_PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */; };
+		2BBD242427385D10003FC4B2 /* RecordingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBD242327385D10003FC4B2 /* RecordingLogic.swift */; };
+		2BBD242627385F80003FC4B2 /* SampleRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBD242527385F80003FC4B2 /* SampleRecordView.swift */; };
 		2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC8725C272D8A4B00AD500A /* DelaySetting.swift */; };
 		2BC87260272D8C5400AD500A /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2BC8725F272D8C5400AD500A /* SoundpipeAudioKit */; };
 		2BDB9E8F272EDC1E00BADB99 /* ReverbPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */; };
@@ -161,6 +163,8 @@
 		2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_bass_110_8_three.wav; sourceTree = "<group>"; };
 		2B81F697272BF5640081BCB6 /* VolumeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
 		2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView_PlayButton.swift; sourceTree = "<group>"; };
+		2BBD242327385D10003FC4B2 /* RecordingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingLogic.swift; sourceTree = "<group>"; };
+		2BBD242527385F80003FC4B2 /* SampleRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRecordView.swift; sourceTree = "<group>"; };
 		2BC8725C272D8A4B00AD500A /* DelaySetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelaySetting.swift; sourceTree = "<group>"; };
 		2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverbPicker.swift; sourceTree = "<group>"; };
 		2BDB9E902730759C00BADB99 /* Old Dark Ages.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Old Dark Ages.mp3"; sourceTree = "<group>"; };
@@ -283,6 +287,7 @@
 		2B5A795C27341A1E000C5437 /* Logic_Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BBD242327385D10003FC4B2 /* RecordingLogic.swift */,
 				2BF6F8B92736CED100FA1C26 /* FileManageLogic.swift */,
 				2B5A7998273667AC000C5437 /* TimeCountLogic.swift */,
 				2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */,
@@ -358,6 +363,7 @@
 		2B81F696272BCE210081BCB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2BBD242527385F80003FC4B2 /* SampleRecordView.swift */,
 				2B5A799C27366E31000C5437 /* DangDangDangView.swift */,
 				2B5A7969273580E9000C5437 /* SoundCardPlugInControl.swift */,
 				2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */,
@@ -500,6 +506,7 @@
 				2B781352272A8A68002A8972 /* ContentView.swift in Sources */,
 				2B5A7999273667AD000C5437 /* TimeCountLogic.swift in Sources */,
 				2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */,
+				2BBD242627385F80003FC4B2 /* SampleRecordView.swift in Sources */,
 				2B5A79932735B04A000C5437 /* PlaySampleStringsGroup.swift in Sources */,
 				2B5A799D27366E31000C5437 /* DangDangDangView.swift in Sources */,
 				2BF6F8BA2736CED100FA1C26 /* FileManageLogic.swift in Sources */,
@@ -513,6 +520,7 @@
 				2B78135E272A8B0B002A8972 /* button_sample_play.swift in Sources */,
 				2B5A795F27341B01000C5437 /* SoundCardPlugIn.swift in Sources */,
 				2B81F686272B2E770081BCB6 /* PlaySampleBassGroup.swift in Sources */,
+				2BBD242427385D10003FC4B2 /* RecordingLogic.swift in Sources */,
 				2B38A3382737F4820041B1EC /* PodKeyBoard.swift in Sources */,
 				2B5A7967273426A1000C5437 /* PlugInView.swift in Sources */,
 				2B5A796A273580E9000C5437 /* SoundCardPlugInControl.swift in Sources */,

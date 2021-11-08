@@ -21,7 +21,7 @@ struct ContentView: View {
 
                 VStack {
                     Text("Bass Group")
-//                    PlaySampleBassGroup().environmentObject(fileManage)
+                    PlaySampleBassGroup().environmentObject(fileManage)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
             }
@@ -30,13 +30,13 @@ struct ContentView: View {
             HStack {
                 VStack {
                     Text("String Group")
-//                    PlaySampleBassGroup().environmentObject(fileManage)
+                    PlaySampleBassGroup().environmentObject(fileManage)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
                 
                 VStack {
                     Text("Piano Group")
-//                    PlaySampleBassGroup().environmentObject(fileManage)
+                    PlaySampleBassGroup().environmentObject(fileManage)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
             }
