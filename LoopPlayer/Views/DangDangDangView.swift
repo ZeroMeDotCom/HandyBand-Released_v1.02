@@ -18,17 +18,6 @@ struct DangDangDangView: View {
 
     var body: some View {
         HStack {
-            //Timeline Version
-//            if #available(iOS 15.0, *) {
-//                TimelineView(.periodic(from: .now, by: 60 / Double(speedValue))) { content in
-//                    Text(content.date.formatted(date: .omitted, time: .standard))
-//                    let randomEmoji = emoji.randomElement() ?? ""
-//                    Text(randomEmoji)
-//                }
-//            } else {
-//                // Fallback on earlier versions
-//            }
-            
             
             //Recording view: light instruction, start recording
             HStack {
@@ -168,13 +157,13 @@ struct DangDangDangView: View {
                     Image(systemName: recorderPlayer.isRecording ?  "record.circle.fill" : "record.circle" )
                 })
                 // Listening 等會兒會被下面真正的按鈕取代
-                Button(action: {
-                    recorderPlayer.isListening = !recorderPlayer.isListening
-                    recorderPlayer.isListening ? recorderPlayer.playThePotencial(filename: recorderPlayer.audioFileName, samplePlayer: recorderPlayer.samplePlayer, engine: recorderPlayer.engine) : recorderPlayer.listeningStop()
-                    
-                }, label: {
-                    Image(systemName: recorderPlayer.isListening ? "playpause" : "playpause.fill")
-                })
+//                Button(action: {
+//                    recorderPlayer.isListening = !recorderPlayer.isListening
+//                    recorderPlayer.isListening ? recorderPlayer.playThePotencial(filename: recorderPlayer.audioFileName2, samplePlayer: recorderPlayer.samplePlayer, engine: recorderPlayer.engine) : recorderPlayer.listeningStop()
+//                    
+//                }, label: {
+//                    Image(systemName: recorderPlayer.isListening ? "playpause" : "playpause.fill")
+//                })
 
             }
             //Counter view: adjust speed, start count button

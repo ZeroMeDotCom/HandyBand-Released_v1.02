@@ -11,6 +11,7 @@ import SwiftUI
 struct LoopPlayerApp: App {
     var fileManage = FileManageLogic()
     var recorderPlayer = RecordingLogic()
+    var playCreationModel = playCreationsModel()
 //    var savedFileNames = SavedFileNames()
     @State private var selection = 0
     var body: some Scene {
@@ -24,7 +25,9 @@ struct LoopPlayerApp: App {
             }
             .border(.green, width: 2)
             VStack {
-                ContentView().environmentObject(fileManage)
+                ContentView()
+                    .environmentObject(fileManage)
+                    .environmentObject(playCreationModel)
                 //整體四個
                 .frame(width: fourGroupWidth, height: fourGroupHeight, alignment: .center)
                 .position(x: screenWidth / 2, y: fourGroupHeight - 150)

@@ -33,41 +33,33 @@ struct button_sample_play: View {
     }
     var body: some View {
         VStack {
-            Button(isOn ? "□" : "▷") {
-                //
-            }
-            .buttonStyle(MyButtonStyle(color: .gray))
-            .clipShape(Circle())
-            .gesture(TapGesture(count: 1).onEnded {
-                samplePlyer.samplePlayer.isLooping = true
-                samplePlyer.play()
-                isOn = true
-//                if self.trackID == "track1" {
-//                    fileManage.isWish = true
-//                    print("track1 is: \(fileManage.isWish)")
-//                } else if self.trackID == "track2" {
-//                    fileManage.isWish2 = true
-//                    print("track2 is: \(fileManage.isWish2)")
-//                } else if self.trackID == "track3" {
-//                    fileManage.isWish3 = true
-//                    print("track3 is: \(fileManage.isWish3)")
-//                }
-            })
-            .simultaneousGesture(TapGesture(count: 2).onEnded {
-                samplePlyer.stop()
-                isOn = false
-//                if self.trackID == "track1" {
-//                    fileManage.isWish = false
-//                    print("track1 is: \(fileManage.isWish)")
-//                } else if self.trackID == "track2" {
-//                    fileManage.isWish2 = false
-//                    print("track2 is: \(fileManage.isWish2)")
-//                } else if self.trackID == "track3" {
-//                    fileManage.isWish3 = false
-//                    print("track3 is: \(fileManage.isWish3)")
-//                }
+            HStack {
+                Button(isOn ? "□" : "▷") {
+                    //
+                }
+                .buttonStyle(MyButtonStyle(color: .gray))
+                .clipShape(Circle())
+                .gesture(TapGesture(count: 1).onEnded {
+//                    samplePlyer.samplePlayer.isLooping = true
+                    samplePlyer.play()
+                    isOn = true
+                })
+                .simultaneousGesture(TapGesture(count: 2).onEnded {
+                    samplePlyer.stop()
+                    isOn = false
 
-            })
+                })
+                
+                //Send to Bus
+                Button(action: {
+                    fileManage.addingToPlayNextTime(trackID: self.trackID) ? fileManage.setToEdit(trackID: self.trackID) : fileManage.setReady(trackID: self.trackID)
+                    print(fileManage.whichToPlay)
+                    
+                }, label: {
+                    Image(systemName: fileManage.addingToPlayNextTime(trackID: self.trackID) ? "arrow.up.circle.fill" : "arrow.up.circle")
+                })
+            }
+
             
             Slider(value: $value, in: 0...100, onEditingChanged: {_ in
                 samplePlyer.changeVolume(value: $value.wrappedValue)

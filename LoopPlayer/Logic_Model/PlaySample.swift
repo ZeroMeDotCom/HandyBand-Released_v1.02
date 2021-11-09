@@ -19,6 +19,7 @@ class SamplePlyer {
 //    var samplePlayer = AudioPlayer()
     let engine: AudioEngine
     var samplePlayer: AudioPlayer
+    var isLooping : Bool
     var filename : String
     var url : URL
     var path : String
@@ -47,11 +48,13 @@ class SamplePlyer {
     init(fileURL: String, filename: String, url: URL, path: String, engine: AudioEngine, samplePlayer: AudioPlayer, isLooping: Bool) {
         self.filename = filename
 //        self.samplePlayer.isLooping = isLooping
+        self.isLooping = isLooping
         self.path = Bundle.main.path(forResource: filename, ofType:nil)!
         self.url = URL(fileURLWithPath: path)
         self.fileURL = fileURL
         self.engine = engine
         self.samplePlayer = samplePlayer
+        self.samplePlayer.isLooping = self.isLooping
         
         
         //Convolution
@@ -149,6 +152,7 @@ class SamplePlyer {
         }
         do {
             try samplePlayer.load(url: getFileURL(fileURL: fileURL))
+            print("單獨播放的文件:\(getFileURL(fileURL: fileURL))")
 //            samplePlayer.load(url: url)
             //Delay Setting
             delay.feedback = 0.9
@@ -158,7 +162,9 @@ class SamplePlyer {
             convolutionSalt_one.start()
             convolutionSalt_two.start()
             
+
             samplePlayer.play()
+            dryWetMixer.play()
 
         } catch {
             // couldn't load file :(

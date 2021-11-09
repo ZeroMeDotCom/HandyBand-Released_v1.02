@@ -9,19 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var fileManage : FileManageLogic
+    @EnvironmentObject var playCreationModel : playCreationsModel
     var body: some View {
         VStack {
             
             HStack(alignment: .top) {
                 VStack{
                     Text("Drum Group").border(.black, width: 1)
-                    PlaySampleDrumsGroup().environmentObject(fileManage)
+                    PlaySampleDrumsGroup()
+                        .environmentObject(fileManage)
+                        .environmentObject(playCreationModel)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
 
                 VStack {
                     Text("Bass Group")
-                    PlaySampleBassGroup().environmentObject(fileManage)
+                    PlaySampleBassGroup()
+                        .environmentObject(fileManage)
+                        .environmentObject(playCreationModel)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
             }
@@ -30,13 +35,17 @@ struct ContentView: View {
             HStack {
                 VStack {
                     Text("String Group")
-                    PlaySampleBassGroup().environmentObject(fileManage)
+                    PlaySampleStringsGroup()
+                        .environmentObject(fileManage)
+                        .environmentObject(playCreationModel)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
                 
                 VStack {
                     Text("Piano Group")
-                    PlaySampleBassGroup().environmentObject(fileManage)
+                    PlaySamplePianoGroup()
+                        .environmentObject(fileManage)
+                        .environmentObject(playCreationModel)
                 }
                 .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
             }

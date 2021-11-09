@@ -17,6 +17,9 @@ import AudioKit
 
 class FileManageLogic: ObservableObject {
     var savedFileNames = SavedFileNames()
+    @Published var whichToPlay: [Bool] = [true, false, false, false, false, false, false, false, false, false, false, false, false, true]
+    private var trackID : String = ""
+    var geSystemPathWay = GetSystemPathWay()
     //需要刪除優化？
     var fileNames : [String : [String : String]] = [
         "track1" : ["isPause" : "true",
@@ -190,6 +193,7 @@ class FileManageLogic: ObservableObject {
     @Published var samplePlayer_B = AudioPlayer()
     
     //Samples
+    //The tracks
     @Published var isPause: Bool = true
     
     var singleFileName: String
@@ -213,16 +217,68 @@ class FileManageLogic: ObservableObject {
     @Published var samplePlayer3 = AudioPlayer()
     @Published var isWish3: Bool = false
     
-
-//    var singleFileName4: String
-//    var url4 : URL
-//    var path4 : String
-//    let engine4 = AudioEngine()
-//    var samplePlayer4 = AudioPlayer()
-
-
-//    var url5 : URL
-//    var url6 : URL
+    var singleFileName4: String
+    var url4 : URL
+    var path4 : String
+    @Published var engine4 = AudioEngine()
+    @Published var samplePlayer4 = AudioPlayer()
+    @Published var isWish4: Bool = false
+    
+    var singleFileName5: String
+    var url5 : URL
+    var path5 : String
+    @Published var engine5 = AudioEngine()
+    @Published var samplePlayer5 = AudioPlayer()
+    @Published var isWish5: Bool = false
+    
+    var singleFileName6: String
+    var url6 : URL
+    var path6 : String
+    @Published var engine6 = AudioEngine()
+    @Published var samplePlayer6 = AudioPlayer()
+    @Published var isWish6: Bool = false
+    
+    var singleFileName7: String
+    var url7 : URL
+    var path7 : String
+    @Published var engine7 = AudioEngine()
+    @Published var samplePlayer7 = AudioPlayer()
+    @Published var isWish7: Bool = false
+    
+    var singleFileName8: String
+    var url8 : URL
+    var path8 : String
+    @Published var engine8 = AudioEngine()
+    @Published var samplePlayer8 = AudioPlayer()
+    @Published var isWish8: Bool = false
+    
+    var singleFileName9: String
+    var url9 : URL
+    var path9 : String
+    @Published var engine9 = AudioEngine()
+    @Published var samplePlayer9 = AudioPlayer()
+    @Published var isWish9: Bool = false
+    
+    var singleFileName10: String
+    var url10 : URL
+    var path10 : String
+    @Published var engine10 = AudioEngine()
+    @Published var samplePlayer10 = AudioPlayer()
+    @Published var isWish10: Bool = false
+    
+    var singleFileName11: String
+    var url11 : URL
+    var path11 : String
+    @Published var engine11 = AudioEngine()
+    @Published var samplePlayer11 = AudioPlayer()
+    @Published var isWish11: Bool = false
+    
+    var singleFileName12: String
+    var url12 : URL
+    var path12 : String
+    @Published var engine12 = AudioEngine()
+    @Published var samplePlayer12 = AudioPlayer()
+    @Published var isWish12: Bool = false
     
     
     init() {
@@ -290,14 +346,54 @@ class FileManageLogic: ObservableObject {
         self.path3 = Bundle.main.path(forResource: singleFileName3, ofType:nil)!
         self.url3 = URL(fileURLWithPath: path3)
         
-//        self.singleFileName4 = fileNames[3]
-//        self.path4 = Bundle.main.path(forResource: singleFileName4, ofType:nil)!
-//        self.url4 = URL(fileURLWithPath: path4)
+        self.singleFileName4 = "sample_drum_110_8_one.wav"
+        self.path4 = Bundle.main.path(forResource: singleFileName4, ofType:nil)!
+        self.url4 = URL(fileURLWithPath: path4)
+        
+        self.singleFileName5 = "sample_drum_110_8_one.wav"
+        self.path5 = Bundle.main.path(forResource: singleFileName5, ofType:nil)!
+        self.url5 = URL(fileURLWithPath: path5)
+        
+        self.singleFileName6 = "sample_drum_110_8_one.wav"
+        self.path6 = Bundle.main.path(forResource: singleFileName6, ofType:nil)!
+        self.url6 = URL(fileURLWithPath: path6)
+        
+        self.singleFileName7 = "sample_drum_110_8_one.wav"
+        self.path7 = Bundle.main.path(forResource: singleFileName7, ofType:nil)!
+        self.url7 = URL(fileURLWithPath: path7)
+        
+        self.singleFileName8 = "sample_drum_110_8_one.wav"
+        self.path8 = Bundle.main.path(forResource: singleFileName8, ofType:nil)!
+        self.url8 = URL(fileURLWithPath: path8)
+        
+        self.singleFileName9 = "sample_drum_110_8_one.wav"
+        self.path9 = Bundle.main.path(forResource: singleFileName9, ofType:nil)!
+        self.url9 = URL(fileURLWithPath: path9)
+        
+        self.singleFileName10 = "sample_drum_110_8_one.wav"
+        self.path10 = Bundle.main.path(forResource: singleFileName10, ofType:nil)!
+        self.url10 = URL(fileURLWithPath: path10)
+        
+        self.singleFileName11 = "sample_drum_110_8_one.wav"
+        self.path11 = Bundle.main.path(forResource: singleFileName11, ofType:nil)!
+        self.url11 = URL(fileURLWithPath: path11)
+        
+        self.singleFileName12 = "sample_drum_110_8_one.wav"
+        self.path12 = Bundle.main.path(forResource: singleFileName12, ofType:nil)!
+        self.url12 = URL(fileURLWithPath: path12)
         
         engine.output = samplePlayer
         engine2.output = samplePlayer2
         engine3.output = samplePlayer3
-//        engine4.output = samplePlayer4
+        engine4.output = samplePlayer4
+        engine5.output = samplePlayer5
+        engine6.output = samplePlayer6
+        engine7.output = samplePlayer7
+        engine8.output = samplePlayer8
+        engine9.output = samplePlayer9
+        engine10.output = samplePlayer10
+        engine11.output = samplePlayer11
+        engine12.output = samplePlayer12
         
         
         //Notes connect
@@ -470,11 +566,11 @@ class FileManageLogic: ObservableObject {
     }
     
     func playSingle(url: URL, samplePlayer: AudioPlayer, engine: AudioEngine){
-        do {
-            try engine.start()
-        } catch {
-            //
-        }
+//        do {
+//            try engine.start()
+//        } catch {
+//            //
+//        }
         do {
             try samplePlayer.load(url: url)
             samplePlayer.play()
@@ -483,57 +579,263 @@ class FileManageLogic: ObservableObject {
         }
     }
     
+    func playSingleTrack(fileURL: String, samplePlayer: AudioPlayer, engine: AudioEngine){
+        do {
+            try engine.start()
+        } catch {
+            print(error)
+        }
+        do {
+
+            try samplePlayer.load(url: geSystemPathWay.getFileURL(fileURL: fileURL))
+            print("正在播放的文件:\(geSystemPathWay.getFileURL(fileURL: fileURL))")
+            samplePlayer.play()
+            print("當前播放器的狀態:\(samplePlayer.isPlaying)")
+            print("當前引擎的狀態:\(engine.output?.isStarted)")
+
+        } catch {
+            // couldn't load file :(
+        }
+    }
+    
     func playResuting(){
         self.isPause = false
-        Timer.scheduledTimer(withTimeInterval: 60 / Double(110) * 8, repeats: true) { timer in
-            print("track1:\(self.isWish)")
-            if self.isWish == true {
-                print("play tack1....")
-                self.playSingle(url: self.url, samplePlayer: self.samplePlayer, engine: self.engine)
+        //self-Looping version
+        for i in 1..<13 {
+            print("第\(i)次掃描")
+//            if self.whichToPlay[i] {
+//                self.playSingle(fileURL: fileNames["track\(i)"]!["fileWay"]!, samplePlayer: self.samplePlayer, engine: self.engine)
+//            }
+            if self.whichToPlay[i] && i == 1 {
+                self.playSingleTrack(fileURL: fileNames["track1"]!["fileWay"]!, samplePlayer: self.samplePlayer, engine: self.engine)
+            } else if i == 2 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track2"]!["fileWay"]!, samplePlayer: self.samplePlayer2, engine: self.engine2)
+            } else if i == 3 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track3"]!["fileWay"]!, samplePlayer: self.samplePlayer3, engine: self.engine3)
+            } else if i == 4 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track4"]!["fileWay"]!, samplePlayer: self.samplePlayer4, engine: self.engine4)
+            } else if i == 5 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track5"]!["fileWay"]!, samplePlayer: self.samplePlayer5, engine: self.engine5)
+            } else if i == 6 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track6"]!["fileWay"]!, samplePlayer: self.samplePlayer6, engine: self.engine6)
+            } else if i == 7 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track7"]!["fileWay"]!, samplePlayer: self.samplePlayer7, engine: self.engine7)
+            } else if i == 8 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track8"]!["fileWay"]!, samplePlayer: self.samplePlayer8, engine: self.engine8)
+            } else if i == 9 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track9"]!["fileWay"]!, samplePlayer: self.samplePlayer9, engine: self.engine9)
+            } else if i == 10 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track10"]!["fileWay"]!, samplePlayer: self.samplePlayer10, engine: self.engine10)
+            } else if i == 11 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track11"]!["fileWay"]!, samplePlayer: self.samplePlayer11, engine: self.engine11)
+            } else if i == 12 && self.whichToPlay[i] {
+                self.playSingleTrack(fileURL: fileNames["track12"]!["fileWay"]!, samplePlayer: self.samplePlayer12, engine: self.engine12)
             }
-            if self.isWish2 == true {
-                print("play tack2....")
-                self.playSingle(url: self.url2, samplePlayer: self.samplePlayer2, engine: self.engine2)
-            }
-            if self.isWish3 == true {
-                print("play tack2....")
-                self.playSingle(url: self.url3, samplePlayer: self.samplePlayer3, engine: self.engine3)
-            }
+        }
+        
+//        Timer.scheduledTimer(withTimeInterval: 60 / Double(110) * 8, repeats: true) { timer in
+//            print("track1:\(self.isWish)")
+//            if self.isWish == true {
+//                print("play tack1....")
+//                self.playSingle(url: self.url, samplePlayer: self.samplePlayer, engine: self.engine)
+//            }
+//            if self.isWish2 == true {
+//                print("play tack2....")
+//                self.playSingle(url: self.url2, samplePlayer: self.samplePlayer2, engine: self.engine2)
+//            }
+//            if self.isWish3 == true {
+//                print("play tack2....")
+//                self.playSingle(url: self.url3, samplePlayer: self.samplePlayer3, engine: self.engine3)
+//            }
 
 //            self.playSingle(url: self.url2, samplePlayer: self.samplePlayer2, engine: self.engine2)
 //
 //            self.playSingle(url: self.url3, samplePlayer: self.samplePlayer3, engine: self.engine3)
 //
 //            self.playSingle(url: self.url4, samplePlayer: self.samplePlayer4, engine: self.engine4)
-            
-            if self.isPause == true {
-                timer.invalidate()
-                self.pauseThepProcessing()
-            }
-            
+        
+//            if self.isPause == true {
+//    //                timer.invalidate()
+//                self.pauseThepProcessing()
+//            }
+//        }
+        
+        if self.isPause == true {
+            self.pauseThepProcessing()
         }
 
     }
     
+    //Stop play
     func pauseThepProcessing(){
         self.isPause = true
 //        engine.stop()
 //        engine2.stop()
 //        engine3.stop()
+//        engine4.stop()
+//        engine5.stop()
+//        engine6.stop()
+//        engine7.stop()
+//        engine8.stop()
+//        engine9.stop()
+//        engine10.stop()
+//        engine11.stop()
+//        engine12.stop()
+        
         samplePlayer.stop()
         samplePlayer2.stop()
         samplePlayer3.stop()
+        samplePlayer4.stop()
+        samplePlayer5.stop()
+        samplePlayer6.stop()
+        samplePlayer7.stop()
+        samplePlayer8.stop()
+        samplePlayer9.stop()
+        samplePlayer10.stop()
+        samplePlayer11.stop()
+        samplePlayer12.stop()
+        
+    }
+    
+    func setToEdit(trackID: String) {
+        self.trackID = trackID
+        switch self.trackID {
+        case "track1":
+            whichToPlay[1] = false
+//            return whichToPlay[1]
+        case "track2":
+            whichToPlay[2] = false
+//            return whichToPlay[2]
+        case "track3":
+            whichToPlay[3] = false
+//            return whichToPlay[3]
+        case "track4":
+            whichToPlay[4] = false
+//            return whichToPlay[4]
+        case "track5":
+            whichToPlay[5] = false
+//            return whichToPlay[5]
+        case "track6":
+            whichToPlay[6] = false
+//            return whichToPlay[6]
+        case "track7":
+            whichToPlay[7] = false
+//            return whichToPlay[7]
+        case "track8":
+            whichToPlay[8] = false
+//            return whichToPlay[8]
+        case "track9":
+            whichToPlay[9] = false
+//            return whichToPlay[9]
+        case "track10":
+            whichToPlay[10] = false
+//            return whichToPlay[10]
+        case "track11":
+            whichToPlay[11] = false
+//            return whichToPlay[11]
+        case "track12":
+            whichToPlay[12] = false
+//            return whichToPlay[12]
+        default:
+            whichToPlay[13] = false
+//            return whichToPlay[13]
+        }
+    }
+    
+    func setReady(trackID: String) {
+        self.trackID = trackID
+        switch self.trackID {
+        case "track1":
+            whichToPlay[1] = true
+//            return whichToPlay[1]
+        case "track2":
+            whichToPlay[2] = true
+//            return whichToPlay[2]
+        case "track3":
+            whichToPlay[3] = true
+//            return whichToPlay[3]
+        case "track4":
+            whichToPlay[4] = true
+//            return whichToPlay[4]
+        case "track5":
+            whichToPlay[5] = true
+//            return whichToPlay[5]
+        case "track6":
+            whichToPlay[6] = true
+//            return whichToPlay[6]
+        case "track7":
+            whichToPlay[7] = true
+//            return whichToPlay[7]
+        case "track8":
+            whichToPlay[8] = true
+//            return whichToPlay[8]
+        case "track9":
+            whichToPlay[9] = true
+//            return whichToPlay[9]
+        case "track10":
+            whichToPlay[10] = true
+//            return whichToPlay[10]
+        case "track11":
+            whichToPlay[11] = true
+//            return whichToPlay[11]
+        case "track12":
+            whichToPlay[12] = true
+//            return whichToPlay[12]
+        default:
+            whichToPlay[13] = false
+//            return whichToPlay[13]
+        }
     }
     
     func reloding(){
         
     }
     
-    func addingToPlayNextTime(){
-        
+    func addingToPlayNextTime(trackID: String) -> Bool {
+        self.trackID = trackID
+        switch self.trackID {
+        case "track1":
+//            whichToPlay[1] = true
+            return whichToPlay[1]
+        case "track2":
+//            whichToPlay[2] = true
+            return whichToPlay[2]
+        case "track3":
+//            whichToPlay[3] = true
+            return whichToPlay[3]
+        case "track4":
+//            whichToPlay[4] = true
+            return whichToPlay[4]
+        case "track5":
+//            whichToPlay[5] = true
+            return whichToPlay[5]
+        case "track6":
+//            whichToPlay[6] = true
+            return whichToPlay[6]
+        case "track7":
+//            whichToPlay[7] = true
+            return whichToPlay[7]
+        case "track8":
+//            whichToPlay[8] = true
+            return whichToPlay[8]
+        case "track9":
+//            whichToPlay[9] = true
+            return whichToPlay[9]
+        case "track10":
+//            whichToPlay[10] = true
+            return whichToPlay[10]
+        case "track11":
+//            whichToPlay[11] = true
+            return whichToPlay[11]
+        case "track12":
+//            whichToPlay[12] = true
+            return whichToPlay[12]
+        default:
+//            whichToPlay[13] = false
+            return whichToPlay[13]
+        }
     }
     
-
 }
 
 
