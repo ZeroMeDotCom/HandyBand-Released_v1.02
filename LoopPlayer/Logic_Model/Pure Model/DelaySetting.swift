@@ -9,7 +9,13 @@ import Foundation
 import AudioKit
 
 struct DelaySetting {
-    var time : AUValue = 0.1
+    
+    // 0.01 ~ 0.5 is enough for this project
+    var time : AUValue = 0.01
+    
+    // 0 ~ 1 is enough
     var balance : AUValue = 0.5
-    var feedback : AUValue = 90
+    
+    // 0 ~ 0.9 is ok for this project
+    var feedback : AUValue = 0.9
 }

@@ -191,10 +191,10 @@ struct DangDangDangView: View {
             }
             HStack
             {
-                Stepper("BPM: \(speedValue)", onIncrement: {
-                    speedValue += 1
+                Stepper("BPM: \(recorderPlayer.speed)", onIncrement: {
+                    recorderPlayer.speed += 1
                 }, onDecrement: {
-                    speedValue -= 1
+                    recorderPlayer.speed -= 1
                 }, onEditingChanged: {_ in
                     print("Create a new speed")
                 })

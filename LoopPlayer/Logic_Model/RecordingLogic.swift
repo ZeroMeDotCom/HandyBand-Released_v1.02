@@ -11,9 +11,9 @@ import AudioKit
 
 class RecordingLogic: ObservableObject {
     private var smallDangDang = TimeCountLogic()
-    private var speed: Double = 60
+    @Published var speed: Double = 60
     private var currentMetro: Int = 1
-    private var metroWish: Int = 4
+    private var metroWish: Int = 8 // how many metro wishing to record based on current speed, after 4 intro beats
     
     @Published var engine = AudioEngine()
     @Published var samplePlayer = AudioPlayer()
@@ -105,7 +105,6 @@ class RecordingLogic: ObservableObject {
        self.sampleRecorder = try? AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
        self.sampleRecorder?.isMeteringEnabled = true
        self.sampleRecorder?.prepareToRecord()
-       print("有没初始化？： \(sampleRecorder)")
     }
     
     func startRecording(toWhichLights: Int) {
@@ -127,7 +126,6 @@ class RecordingLogic: ObservableObject {
             audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track3"]!["fileWay"]!)
         case 4:
             audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track4"]!["fileWay"]!)
-            print("選擇的4: \(audioFileURL)")
         case 5:
             audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track5"]!["fileWay"]!)
         case 6:
@@ -203,10 +201,7 @@ class RecordingLogic: ObservableObject {
                         timerDeliver.invalidate()
 //                        self.isRecording = !self.isRecording
                         self.currentMetro = 1
-                        
-        //                sleep(1)
-        //                self.readyDangDang(speed: speed)
-                        
+                                            
                         //開始錄製
                         sleep(1)
 //                        usleep(useconds_t(1000000 * Double(doubleStr)))

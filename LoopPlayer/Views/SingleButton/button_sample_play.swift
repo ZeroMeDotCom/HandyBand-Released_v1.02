@@ -39,6 +39,7 @@ struct button_sample_play: View {
             .buttonStyle(MyButtonStyle(color: .gray))
             .clipShape(Circle())
             .gesture(TapGesture(count: 1).onEnded {
+                samplePlyer.samplePlayer.isLooping = true
                 samplePlyer.play()
                 isOn = true
 //                if self.trackID == "track1" {
@@ -80,14 +81,14 @@ struct button_sample_play: View {
             
             if selection == 0 {
                 //Delay Setting
-                Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
+                Slider(value: $delay_time, in: 0...0.5, onEditingChanged: {_ in
                     samplePlyer.changeDelay_time(delay_time: $delay_time.wrappedValue)
                 })
             
-                Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                Slider(value: $delay_feedback, in: 0...10, onEditingChanged: {_ in
                     samplePlyer.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
                 })
-                Slider(value: $delay_balance, in: 0...99, onEditingChanged: {_ in
+                Slider(value: $delay_balance, in: 0...50, onEditingChanged: {_ in
                     samplePlyer.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
                 })
             } else if selection == 1 {
