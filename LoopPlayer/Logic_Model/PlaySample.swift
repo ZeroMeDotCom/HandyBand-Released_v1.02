@@ -22,6 +22,7 @@ class SamplePlyer {
     var filename : String
     var url : URL
     var path : String
+    var fileURL : String
     var volume : Double = 1
     
     //convolution
@@ -43,11 +44,12 @@ class SamplePlyer {
     
     
     
-    init(filename: String, url: URL, path: String, engine: AudioEngine, samplePlayer: AudioPlayer, isLooping: Bool) {
+    init(fileURL: String, filename: String, url: URL, path: String, engine: AudioEngine, samplePlayer: AudioPlayer, isLooping: Bool) {
         self.filename = filename
 //        self.samplePlayer.isLooping = isLooping
         self.path = Bundle.main.path(forResource: filename, ofType:nil)!
         self.url = URL(fileURLWithPath: path)
+        self.fileURL = fileURL
         self.engine = engine
         self.samplePlayer = samplePlayer
         
@@ -129,6 +131,16 @@ class SamplePlyer {
         samplePlayer.volume = AUValue(value)
     }
     
+    //直接獲取URL版本播放
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+        }
+    func getFileURL(fileURL: String) -> URL {
+        let path = getDocumentsDirectory().appendingPathComponent(fileURL)
+        return path as URL
+        }
+    
     func play() {
         do {
             try engine.start()
@@ -136,7 +148,8 @@ class SamplePlyer {
             //
         }
         do {
-            try samplePlayer.load(url: url)
+            try samplePlayer.load(url: getFileURL(fileURL: fileURL))
+//            samplePlayer.load(url: url)
             //Delay Setting
             delay.feedback = 0.9
             delay.time = 0.01

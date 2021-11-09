@@ -27,9 +27,9 @@ struct button_sample_play: View {
     
 //    var filename : String
     
-    init(filename: String, url: URL, path: String, engine: AudioEngine, samplePlayer: AudioPlayer, isLooping: Bool, trackID: String){
+    init(fileURL: String, filename: String, url: URL, path: String, engine: AudioEngine, samplePlayer: AudioPlayer, isLooping: Bool, trackID: String){
         self.trackID = trackID
-        samplePlyer = SamplePlyer(filename: filename, url: url, path: path, engine: engine, samplePlayer: samplePlayer, isLooping: isLooping)
+        samplePlyer = SamplePlyer(fileURL: fileURL, filename: filename, url: url, path: path, engine: engine, samplePlayer: samplePlayer, isLooping: isLooping)
     }
     var body: some View {
         VStack {
@@ -39,32 +39,32 @@ struct button_sample_play: View {
             .buttonStyle(MyButtonStyle(color: .gray))
             .clipShape(Circle())
             .gesture(TapGesture(count: 1).onEnded {
-//                samplePlyer.play()
+                samplePlyer.play()
                 isOn = true
-                if self.trackID == "track1" {
-                    fileManage.isWish = true
-                    print("track1 is: \(fileManage.isWish)")
-                } else if self.trackID == "track2" {
-                    fileManage.isWish2 = true
-                    print("track2 is: \(fileManage.isWish2)")
-                } else if self.trackID == "track3" {
-                    fileManage.isWish3 = true
-                    print("track3 is: \(fileManage.isWish3)")
-                }
+//                if self.trackID == "track1" {
+//                    fileManage.isWish = true
+//                    print("track1 is: \(fileManage.isWish)")
+//                } else if self.trackID == "track2" {
+//                    fileManage.isWish2 = true
+//                    print("track2 is: \(fileManage.isWish2)")
+//                } else if self.trackID == "track3" {
+//                    fileManage.isWish3 = true
+//                    print("track3 is: \(fileManage.isWish3)")
+//                }
             })
             .simultaneousGesture(TapGesture(count: 2).onEnded {
-//                samplePlyer.stop()
+                samplePlyer.stop()
                 isOn = false
-                if self.trackID == "track1" {
-                    fileManage.isWish = false
-                    print("track1 is: \(fileManage.isWish)")
-                } else if self.trackID == "track2" {
-                    fileManage.isWish2 = false
-                    print("track2 is: \(fileManage.isWish2)")
-                } else if self.trackID == "track3" {
-                    fileManage.isWish3 = false
-                    print("track3 is: \(fileManage.isWish3)")
-                }
+//                if self.trackID == "track1" {
+//                    fileManage.isWish = false
+//                    print("track1 is: \(fileManage.isWish)")
+//                } else if self.trackID == "track2" {
+//                    fileManage.isWish2 = false
+//                    print("track2 is: \(fileManage.isWish2)")
+//                } else if self.trackID == "track3" {
+//                    fileManage.isWish3 = false
+//                    print("track3 is: \(fileManage.isWish3)")
+//                }
 
             })
             
@@ -133,6 +133,6 @@ struct MyButtonStyle: ButtonStyle {
 
 struct button_sample_play_Previews: PreviewProvider {
     static var previews: some View {
-        button_sample_play(filename: "", url: URL(fileURLWithPath: ""), path: "", engine: AudioEngine(), samplePlayer: AudioPlayer(), isLooping: false, trackID: "")
+        button_sample_play(fileURL: "", filename: "", url: URL(fileURLWithPath: ""), path: "", engine: AudioEngine(), samplePlayer: AudioPlayer(), isLooping: false, trackID: "")
     }
 }

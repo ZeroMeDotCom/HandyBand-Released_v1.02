@@ -162,7 +162,7 @@ struct DangDangDangView: View {
                     print("開始的時候: \(recorderPlayer.isRecording)")
                     recorderPlayer.isRecording = !recorderPlayer.isRecording
                     print("點擊之後: \(recorderPlayer.isRecording)")
-                    recorderPlayer.isRecording ? recorderPlayer.startRecording() : recorderPlayer.stopRecording()
+                    recorderPlayer.isRecording ? recorderPlayer.startRecording(toWhichLights: recorderPlayer.whichButtonLight) : recorderPlayer.stopRecording()
 //                    recorderPlayer.isRecording = !recorderPlayer.isRecording
                 }, label: {
                     Image(systemName: recorderPlayer.isRecording ?  "record.circle.fill" : "record.circle" )

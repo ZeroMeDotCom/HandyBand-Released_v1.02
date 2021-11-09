@@ -47,8 +47,8 @@ class RecordingLogic: ObservableObject {
     
     init() {
         audioFileName = saveFileNames.fileNames["track1"]!["fileWay"]!
-        audioFileName = saveFileNames.fileNames["track2"]!["fileWay"]!
-        audioFileName = saveFileNames.fileNames["track3"]!["fileWay"]!
+        audioFileName2 = saveFileNames.fileNames["track2"]!["fileWay"]!
+        audioFileName3 = saveFileNames.fileNames["track3"]!["fileWay"]!
 //        var myDouble = 60 / speed
 //        var doubleStr = String(format: "%.3f", myDouble)
 //
@@ -56,55 +56,109 @@ class RecordingLogic: ObservableObject {
         engine2.output = samplePlayer2
         engine3.output = samplePlayer3
         
-        // Set the audio file
-         let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:
-             FileManager.SearchPathDomainMask.userDomainMask).first
-         
-         let audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
-        print(audioFileURL)
+        //配置存查空間 audioFileURL - 設置
+//         let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:
+//             FileManager.SearchPathDomainMask.userDomainMask).first
+//
+//         let audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
+//        print(audioFileURL)
+//
+//
+//
+//         // Setup audio session
+//         let audioSession = AVAudioSession.sharedInstance()
+//         do {
+//             try audioSession.setCategory(.playAndRecord, mode: .default, options: [])
+//         } catch {
+//             //
+//         }
+//
+//         // Define the recorder setting
+//         let recorderSetting = [AVFormatIDKey: NSNumber(value: kAudioFormatMPEG4AAC as UInt32),
+//                                AVSampleRateKey: 44100.0,
+//                                AVNumberOfChannelsKey: 2 ]
+//
+//        //配置存查空間 audioFileURL - 注入
+//        self.sampleRecorder = try? AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
+//        self.sampleRecorder?.isMeteringEnabled = true
+//        self.sampleRecorder?.prepareToRecord()
+//        print("初始化有没有recorder?:\(self.sampleRecorder?.url)")
+        let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:
+            FileManager.SearchPathDomainMask.userDomainMask).first
         
-
-         
-         // Setup audio session
-         let audioSession = AVAudioSession.sharedInstance()
-         do {
-             try audioSession.setCategory(.playAndRecord, mode: .default, options: [])
-         } catch {
-             //
-         }
-         
-         // Define the recorder setting
-         let recorderSetting = [AVFormatIDKey: NSNumber(value: kAudioFormatMPEG4AAC as UInt32),
-                                AVSampleRateKey: 44100.0,
-                                AVNumberOfChannelsKey: 2 ]
-         
-        self.sampleRecorder = try? AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
-        self.sampleRecorder?.isMeteringEnabled = true
-        self.sampleRecorder?.prepareToRecord()
+        let audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
+       print(audioFileURL)
+        
+        // Setup audio session
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playAndRecord, mode: .default, options: [])
+        } catch {
+            //
+        }
+        
+        // Define the recorder setting
+        let recorderSetting = [AVFormatIDKey: NSNumber(value: kAudioFormatMPEG4AAC as UInt32),
+                               AVSampleRateKey: 44100.0,
+                               AVNumberOfChannelsKey: 2 ]
+        
+       self.sampleRecorder = try? AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
+       self.sampleRecorder?.isMeteringEnabled = true
+       self.sampleRecorder?.prepareToRecord()
+       print("有没初始化？： \(sampleRecorder)")
     }
     
-    func startRecording() {
+    func startRecording(toWhichLights: Int) {
+        print("進入錄製函數")
         //Settings before recording: choose Which FILE to save
         let directoryURL = FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in:
             FileManager.SearchPathDomainMask.userDomainMask).first // as! NSURL
         
         //Old times Text using
-         trackTimes += 1
-         var audioFileURL = directoryURL!.appendingPathComponent(audioFileName2)
-         if trackTimes == 2 {
-             audioFileURL = directoryURL!.appendingPathComponent(audioFileName2)
-             print(audioFileURL)
-         } else if trackTimes == 3 {
-             audioFileURL = directoryURL!.appendingPathComponent(audioFileName3)
-             print(audioFileURL)
-         } else {
-             audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
-             print(audioFileURL)
-         }
+//         trackTimes += 1
+        var audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
+        print("進入switch之前: \(audioFileURL)")
+        switch toWhichLights {
+        case 1:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track1"]!["fileWay"]!)
+        case 2:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track2"]!["fileWay"]!)
+        case 3:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track3"]!["fileWay"]!)
+        case 4:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track4"]!["fileWay"]!)
+            print("選擇的4: \(audioFileURL)")
+        case 5:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["trac5"]!["fileWay"]!)
+        case 6:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track6"]!["fileWay"]!)
+        case 7:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track7"]!["fileWay"]!)
+        case 8:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track8"]!["fileWay"]!)
+        case 9:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track9"]!["fileWay"]!)
+        case 10:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track10"]!["fileWay"]!)
+        case 11:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track11"]!["fileWay"]!)
+        case 12:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track12"]!["fileWay"]!)
+        default:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track1"]!["fileWay"]!)
+        }
+//         if trackTimes == 2 {
+//             audioFileURL = directoryURL!.appendingPathComponent(audioFileName2)
+//             print(audioFileURL)
+//         } else if trackTimes == 3 {
+//             audioFileURL = directoryURL!.appendingPathComponent(audioFileName3)
+//             print(audioFileURL)
+//         } else {
+//             audioFileURL = directoryURL!.appendingPathComponent(audioFileName)
+//             print(audioFileURL)
+//         }
         
-        //New style
-//        if 
-
+        print("錄製的路徑：\(audioFileURL)")
         // Setup audio session
         let audioSession = AVAudioSession.sharedInstance()
         do {
@@ -118,14 +172,18 @@ class RecordingLogic: ObservableObject {
                                AVSampleRateKey: 44100.0,
                                AVNumberOfChannelsKey: 2 ]
 
-         sampleRecorder = try? AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
-         sampleRecorder?.isMeteringEnabled = true
-         sampleRecorder?.prepareToRecord()
+        self.sampleRecorder = try? AVAudioRecorder(url: audioFileURL, settings: recorderSetting)
+        self.sampleRecorder?.isMeteringEnabled = true
+        self.sampleRecorder?.prepareToRecord()
         
-        
+        print(sampleRecorder)
+        print("進入正式錄製函數之前")
+        print("錄製通道: \(toWhichLights)")
         //THE REAL Recording
         if let recorder = sampleRecorder {
+            print("進入正式錄製函數")
             if !recorder.isRecording {
+                print("还在录制吗？")
                 let audioSession = AVAudioSession.sharedInstance()
                 
                 do {
@@ -156,6 +214,8 @@ class RecordingLogic: ObservableObject {
                         recorder.record()
                         print(" 開始錄製了 。。")
                         print("現在的錄製狀態: \(self.isRecording)")
+                        
+                        //多久之後結束 60 / speed 響4下的長度
                         Timer.scheduledTimer(withTimeInterval: 60 / self.speed, repeats: true) { timerDeliver in
                             self.smallDangDang.dangDangDang()
                             print(self.currentMetro)
@@ -178,17 +238,15 @@ class RecordingLogic: ObservableObject {
     func onlyOneButtonLights(index: Int) {
         for i in 1..<self.buttonLights.count {
             buttonLights[i] = false
-            print("第\(i) 個: \(buttonLights[i])")
         }
         buttonLights[index] = true
-        print("第\(index) 個: \(buttonLights[index])")
-
     }
     
     func stopRecording() {
         if let recorder = sampleRecorder {
             if recorder.isRecording {
                 sampleRecorder?.stop()
+                print("进入了停止函数:\(sampleRecorder?.isRecording)")
                 let audioSession = AVAudioSession.sharedInstance()
                 do {
                     try audioSession.setActive(false)

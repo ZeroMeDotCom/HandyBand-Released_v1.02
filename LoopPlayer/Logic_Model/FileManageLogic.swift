@@ -16,44 +16,44 @@ import Foundation
 import AudioKit
 
 class FileManageLogic: ObservableObject {
-    
+    var savedFileNames = SavedFileNames()
     //需要刪除優化？
     var fileNames : [String : [String : String]] = [
         "track1" : ["isPause" : "true",
-                    "fileWay" : "track1_drum1.wav",
+                    "fileWay" : "track1_drum1.m4a",
                    ],
         "track2" : ["isPause" : "true",
-                    "fileWay" : "track2_drum2.wav",
+                    "fileWay" : "track2_drum2.m4a",
                    ],
         "track3" : ["isPause" : "true",
-                    "fileWay" : "track3_drum3.wav",
+                    "fileWay" : "track3_drum3.m4a",
                    ],
         "track4" : ["isPause" : "true",
-                    "fileWay" : "track4_bass1.wav",
+                    "fileWay" : "track4_bass1.m4a",
                    ],
         "track5" : ["isPause" : "true",
-                    "fileWay" : "track5_bass2.wav",
+                    "fileWay" : "track5_bass2.m4a",
                    ],
         "track6" : ["isPause" : "true",
-                    "fileWay" : "track6_bass3.wav",
+                    "fileWay" : "track6_bass3.m4a",
                    ],
         "track7" : ["isPause" : "true",
-                    "fileWay" : "track7_string1.wav",
+                    "fileWay" : "track7_string1.m4a",
                    ],
         "track8" : ["isPause" : "true",
-                    "fileWay" : "track8_string2.wav",
+                    "fileWay" : "track8_string2.m4a",
                    ],
         "track9" : ["isPause" : "true",
-                    "fileWay" : "track9_string3.wav",
+                    "fileWay" : "track9_string3.m4a",
                    ],
         "track10" : ["isPause" : "true",
-                    "fileWay" : "track10_piano1.wav",
+                    "fileWay" : "track10_piano1.m4a",
                    ],
         "track11" : ["isPause" : "true",
-                    "fileWay" : "track11_piano2.wav",
+                    "fileWay" : "track11_piano2.m4a",
                    ],
         "track12" : ["isPause" : "true",
-                    "fileWay" : "track12_piano3.wav",
+                    "fileWay" : "track12_piano3.m4a",
                    ],
 
     ]
@@ -274,6 +274,8 @@ class FileManageLogic: ObservableObject {
         self.singleFileName_B = BassNoteFileNames["B"]!
         self.path_B = Bundle.main.path(forResource: singleFileName_B, ofType:nil)!
         self.url_B = URL(fileURLWithPath: path_B)
+        
+        
         
         //Sample init
         self.singleFileName = "sample_drum_110_8_one.wav"

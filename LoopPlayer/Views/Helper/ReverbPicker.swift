@@ -49,7 +49,7 @@ struct ReverbPicker: View {
 
 struct ReverbPicker_Previews: PreviewProvider {
     static var previews: some View {
-        let samplePlayer = SamplePlyer(filename: "", url: URL(fileURLWithPath: ""), path: "", engine: AudioEngine(), samplePlayer: AudioPlayer(), isLooping: false)
+        let samplePlayer = SamplePlyer(fileURL: "", filename: "", url: URL(fileURLWithPath: ""), path: "", engine: AudioEngine(), samplePlayer: AudioPlayer(), isLooping: false)
         ReverbPicker(samplePlayer: samplePlayer)
     }
 }
