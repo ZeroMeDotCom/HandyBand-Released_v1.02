@@ -129,7 +129,7 @@ class RecordingLogic: ObservableObject {
             audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track4"]!["fileWay"]!)
             print("選擇的4: \(audioFileURL)")
         case 5:
-            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["trac5"]!["fileWay"]!)
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track5"]!["fileWay"]!)
         case 6:
             audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track6"]!["fileWay"]!)
         case 7:
@@ -176,7 +176,6 @@ class RecordingLogic: ObservableObject {
         self.sampleRecorder?.isMeteringEnabled = true
         self.sampleRecorder?.prepareToRecord()
         
-        print(sampleRecorder)
         print("進入正式錄製函數之前")
         print("錄製通道: \(toWhichLights)")
         //THE REAL Recording
@@ -249,11 +248,14 @@ class RecordingLogic: ObservableObject {
                 print("进入了停止函数:\(sampleRecorder?.isRecording)")
                 let audioSession = AVAudioSession.sharedInstance()
                 do {
-                    try audioSession.setActive(false)
+                    print("設定活躍執勤啊")
+//                    try audioSession.setActive(false)
                 } catch {
-                    //
+                    print(error)
                 }
 //                isRecording = !isRecording
+
+
                 print("停止")
             }
             
