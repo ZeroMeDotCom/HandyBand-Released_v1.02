@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewStylePlayButton: View {
     @EnvironmentObject var fileManage : FileManageLogic
+    @State private var selection: Int = 0
     @State private var delay_balance : Double = 0.5
     @State private var delay_feedback : Double = 50
     @State private var delay_time : Double = 0.1
@@ -31,8 +32,31 @@ struct NewStylePlayButton: View {
             Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
                 fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
             })
+            
+            Picker(selection: self.$selection, label: myPickerStyleLabel()) {
+                Text("cathedral").tag(0)
+                Text("largeHall").tag(1)
+                Text("largeHall2").tag(2)
+                Text("largeRoom").tag(3)
+                Text("mediumChamber").tag(4)
+
+            }
+            .pickerStyle(.menu)
+            .onChange(of: selection, perform: {
+                newValue in
+    //            print("Selected Unit: \(places[newValue])", "Selected Index: \(newValue)")
+                fileManage.changeDelay_balance(delay_balance: 0)
+                fileManage.change_reverb(place: places[newValue])
+            })
         }
 
+    }
+}
+
+
+struct myPickerStyleLabel: View {
+    var body: some View {
+        Text("Reverb")
     }
 }
 

@@ -289,19 +289,32 @@ class FileManageLogic: ObservableObject {
     var delaySetting = DelaySetting()
     var engine777 = AudioEngine()
     var samplePlayer777 = AudioPlayer()
+    
+    //Reverb
+    var reverb : Reverb
+    var reverbMixer : DryWetMixer
+    
 
     
-    
     init() {
-        
+        //Delay
         delay = Delay(samplePlayer777)
         dryWetMixer = DryWetMixer(samplePlayer777, delay, balance: AUValue(0.5)) //Using reverbMixers as input
-        
         delay.time = delaySetting.time
         delay.feedback = delaySetting.feedback
         delay.dryWetMix = 100
         dryWetMixer.balance = delaySetting.balance
-        engine777.output = dryWetMixer
+        
+        //Reverb
+        reverb = Reverb(dryWetMixer)
+        reverb.dryWetMix = 100
+        reverb.loadFactoryPreset(.cathedral)
+        reverbMixer = DryWetMixer(dryWetMixer, reverb, balance: AUValue(0.5))
+        engine777.output = reverbMixer
+        
+        
+        
+        
         
         //Notes Init C~B
         self.singleFileName_C = BassNoteFileNames["C"]!
@@ -871,6 +884,29 @@ class FileManageLogic: ObservableObject {
         }
     }
     
+    func change_reverb(place: String) {
+        switch place {
+        case "mediumChamber":
+            reverb.loadFactoryPreset(.mediumChamber)
+//            engine.output = reverb
+        case "cathedral":
+            reverb.loadFactoryPreset(.cathedral)
+//            engine.output = reverb
+        case "largeHall":
+            reverb.loadFactoryPreset(.largeHall)
+//            engine.output = reverb
+        case "largeHall2":
+            reverb.loadFactoryPreset(.largeHall2)
+//            engine.output = reverb
+        case "largeRoom":
+            reverb.loadFactoryPreset(.largeRoom)
+//            engine.output = reverb
+        default:
+            reverb.loadFactoryPreset(.mediumChamber)
+//            engine.output = reverb
+        }
+
+    }
 
     func changeDelay_balance(delay_balance: Double) {
         dryWetMixer.balance = AUValue(delay_balance)
