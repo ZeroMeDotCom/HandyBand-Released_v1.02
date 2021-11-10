@@ -202,15 +202,15 @@ class FileManageLogic: ObservableObject {
     var singleFileName: String
     var url : URL
     var path : String
-    @Published var engine = AudioEngine()
-    @Published var samplePlayer = AudioPlayer()
+//    @Published var engine = AudioEngine()
+//    @Published var samplePlayer = AudioPlayer()
     @Published var isWish: Bool = false
     
     var singleFileName2: String
     var url2 : URL
     var path2 : String
-    @Published var engine2 = AudioEngine()
-    @Published var samplePlayer2 = AudioPlayer()
+//    @Published var engine2 = AudioEngine()
+//    @Published var samplePlayer2 = AudioPlayer()
     @Published var isWish2: Bool = false
     
     var singleFileName3: String
@@ -283,55 +283,95 @@ class FileManageLogic: ObservableObject {
     @Published var samplePlayer12 = AudioPlayer()
     @Published var isWish12: Bool = false
     
+    
+    //Engine and Player - 1
+    var engine1 = AudioEngine()
+    var samplePlayer1 = AudioPlayer()
     //Delay Setting
-    var delay : Delay
-    var dryWetMixer : DryWetMixer
-    var delaySetting = DelaySetting()
-    var engine777 = AudioEngine()
-    var samplePlayer777 = AudioPlayer()
-    
+    var delay1 : Delay
+    var dryWetMixer1 : DryWetMixer
+    var delaySetting1 = DelaySetting()
     //Reverb
-    var reverb : Reverb
-    var reverbMixer : DryWetMixer
-    
+    var reverb1 : Reverb
+    var reverbMixer1 : DryWetMixer
     //convolution
-    var convolutionSalt_one : Convolution
-    var convolutionSalt_two : Convolution
-    var convolutionMixer : DryWetMixer
-    var saltMixer : DryWetMixer
-    var url_convolutionSalt_one : URL
-    var url_convolutionSalt_two : URL
+    var convolutionSalt_one1 : Convolution
+    var convolutionSalt_two1 : Convolution
+    var convolutionMixer1 : DryWetMixer
+    var saltMixer1 : DryWetMixer
+    var url_convolutionSalt_one1 : URL
+    var url_convolutionSalt_two1 : URL
     
-
+    //Engine and Player - 2
+    var engine2 = AudioEngine()
+    var samplePlayer2 = AudioPlayer()
+    //Delay Setting
+    var delay2 : Delay
+    var dryWetMixer2 : DryWetMixer
+    var delaySetting2 = DelaySetting()
+    //Reverb
+    var reverb2 : Reverb
+    var reverbMixer2 : DryWetMixer
+    //convolution
+    var convolutionSalt_one2 : Convolution
+    var convolutionSalt_two2 : Convolution
+    var convolutionMixer2 : DryWetMixer
+    var saltMixer2 : DryWetMixer
+    var url_convolutionSalt_one2 : URL
+    var url_convolutionSalt_two2 : URL
+    
     
     init() {
+        
+        //Engine and Player - 1
         //Delay
-        delay = Delay(samplePlayer777)
-        dryWetMixer = DryWetMixer(samplePlayer777, delay, balance: AUValue(0.5)) //Using reverbMixers as input
-        delay.time = delaySetting.time
-        delay.feedback = delaySetting.feedback
-        delay.dryWetMix = 100
-        dryWetMixer.balance = delaySetting.balance
-        
+        delay1 = Delay(samplePlayer1)
+        dryWetMixer1 = DryWetMixer(samplePlayer1, delay1, balance: AUValue(0.5)) //Using reverbMixers as input
+        delay1.time = delaySetting1.time
+        delay1.feedback = delaySetting1.feedback
+        delay1.dryWetMix = 100
+        dryWetMixer1.balance = delaySetting1.balance
         //Reverb
-        reverb = Reverb(dryWetMixer)
-        reverb.dryWetMix = 100
-        reverb.loadFactoryPreset(.cathedral)
-        reverbMixer = DryWetMixer(dryWetMixer, reverb, balance: AUValue(0.5))
-
-        
+        reverb1 = Reverb(dryWetMixer1)
+        reverb1.dryWetMix = 100
+        reverb1.loadFactoryPreset(.cathedral)
+        reverbMixer1 = DryWetMixer(dryWetMixer1, reverb1, balance: AUValue(0.5))
         //Convolution
         //Path for convolution
-        self.url_convolutionSalt_one = Bundle.main.url(forResource: "salt_one", withExtension: "wav")!
-        self.url_convolutionSalt_two = Bundle.main.url(forResource: "salt_two", withExtension: "wav")!
-        convolutionSalt_one = Convolution(samplePlayer777, impulseResponseFileURL: url_convolutionSalt_one, partitionLength: 8_192)
-        convolutionSalt_two = Convolution(samplePlayer777, impulseResponseFileURL: url_convolutionSalt_two, partitionLength: 8_192)
-        
+        url_convolutionSalt_one1 = Bundle.main.url(forResource: "salt_one", withExtension: "wav")!
+        url_convolutionSalt_two1 = Bundle.main.url(forResource: "salt_two", withExtension: "wav")!
+        convolutionSalt_one1 = Convolution(samplePlayer1, impulseResponseFileURL: url_convolutionSalt_one1, partitionLength: 8_192)
+        convolutionSalt_two1 = Convolution(samplePlayer1, impulseResponseFileURL: url_convolutionSalt_two1, partitionLength: 8_192)
         //make a mixser
-        saltMixer = DryWetMixer(convolutionSalt_one, convolutionSalt_two, balance: AUValue(0.5))
-        convolutionMixer = DryWetMixer(reverbMixer, saltMixer, balance: AUValue(0.5))
+        saltMixer1 = DryWetMixer(convolutionSalt_one1, convolutionSalt_two1, balance: AUValue(0.5))
+        convolutionMixer1 = DryWetMixer(reverbMixer1, saltMixer1, balance: AUValue(0.5))
+        engine1.output = convolutionMixer1
         
-        engine777.output = convolutionMixer
+        
+        //Engine and Player - 2
+        //Delay
+        delay2 = Delay(samplePlayer2)
+        dryWetMixer2 = DryWetMixer(samplePlayer2, delay2, balance: AUValue(0.5)) //Using reverbMixers as input
+        delay2.time = delaySetting2.time
+        delay2.feedback = delaySetting2.feedback
+        delay2.dryWetMix = 100
+        dryWetMixer2.balance = delaySetting2.balance
+        //Reverb
+        reverb2 = Reverb(dryWetMixer2)
+        reverb2.dryWetMix = 100
+        reverb2.loadFactoryPreset(.cathedral)
+        reverbMixer2 = DryWetMixer(dryWetMixer2, reverb2, balance: AUValue(0.5))
+        //Convolution
+        //Path for convolution
+        url_convolutionSalt_one2 = Bundle.main.url(forResource: "salt_one", withExtension: "wav")!
+        url_convolutionSalt_two2 = Bundle.main.url(forResource: "salt_two", withExtension: "wav")!
+        convolutionSalt_one2 = Convolution(samplePlayer2, impulseResponseFileURL: url_convolutionSalt_one2, partitionLength: 8_192)
+        convolutionSalt_two2 = Convolution(samplePlayer2, impulseResponseFileURL: url_convolutionSalt_two2, partitionLength: 8_192)
+        //make a mixser
+        saltMixer2 = DryWetMixer(convolutionSalt_one2, convolutionSalt_two2, balance: AUValue(0.5))
+        convolutionMixer2 = DryWetMixer(reverbMixer2, saltMixer2, balance: AUValue(0.5))
+        engine2.output = convolutionMixer2
+        
         
         //Notes Init C~B
         self.singleFileName_C = BassNoteFileNames["C"]!
@@ -433,18 +473,6 @@ class FileManageLogic: ObservableObject {
         self.path12 = Bundle.main.path(forResource: singleFileName12, ofType:nil)!
         self.url12 = URL(fileURLWithPath: path12)
         
-//        engine.output = samplePlayer
-//        engine2.output = samplePlayer2
-//        engine3.output = samplePlayer3
-//        engine4.output = samplePlayer4
-//        engine5.output = samplePlayer5
-//        engine6.output = samplePlayer6
-//        engine7.output = samplePlayer7
-//        engine8.output = samplePlayer8
-//        engine9.output = samplePlayer9
-//        engine10.output = samplePlayer10
-//        engine11.output = samplePlayer11
-//        engine12.output = samplePlayer12
         
         
         //Notes connect
@@ -665,7 +693,7 @@ class FileManageLogic: ObservableObject {
     func playResuting(){
         self.isPause = false
 //        playSingle(url: url_D, samplePlayer: samplePlayer_D, engine: engine_D)
-        playSingleTrack(fileURL: fileNames["track1"]!["fileWay"]!, samplePlayer: self.samplePlayer, engine: self.engine)
+//        playSingleTrack(fileURL: fileNames["track1"]!["fileWay"]!, samplePlayer: self.samplePlayer, engine: self.engine)
 //        for i in 1..<13 {
 //            print("第\(i)次掃描")
 ////            if self.whichToPlay[i] {
@@ -734,7 +762,7 @@ class FileManageLogic: ObservableObject {
     //Stop play
     func pauseThepProcessing(){
         self.isPause = true
-        engine.stop()
+        engine1.stop()
         engine2.stop()
         engine3.stop()
         engine4.stop()
@@ -747,7 +775,7 @@ class FileManageLogic: ObservableObject {
         engine11.stop()
         engine12.stop()
         
-        samplePlayer.stop()
+        samplePlayer1.stop()
         samplePlayer2.stop()
         samplePlayer3.stop()
         samplePlayer4.stop()
@@ -902,11 +930,12 @@ class FileManageLogic: ObservableObject {
     }
     
     
-    func changeConvolution_balance(convolution_balance: AUValue){
+    //Sound effects Settings
+    func changeConvolution_balance(convolution_balance: AUValue, saltMixer: DryWetMixer){
         saltMixer.balance = convolution_balance
     }
     
-    func change_reverb(place: String) {
+    func change_reverb(place: String, reverb: Reverb) {
         switch place {
         case "mediumChamber":
             reverb.loadFactoryPreset(.mediumChamber)
@@ -930,39 +959,39 @@ class FileManageLogic: ObservableObject {
 
     }
 
-    func changeDelay_balance(delay_balance: Double) {
+    func changeDelay_balance(delay_balance: Double, dryWetMixer: DryWetMixer) {
         dryWetMixer.balance = AUValue(delay_balance)
     }
     
-    func changeDelay_feedback(delay_feedback: Double) {
+    func changeDelay_feedback(delay_feedback: Double, delay: Delay) {
         delay.feedback = AUValue(delay_feedback)
     }
     
-    func changeDelay_time(delay_time: Double) {
+    func changeDelay_time(delay_time: Double, delay: Delay) {
         delay.time = AUValue(delay_time)
     }
     
-    func playNewButton() {
+    func playNewButton(engine: AudioEngine, samplePlayer: AudioPlayer) {
         do {
-            try engine777.start()
+            try engine.start()
         } catch {
             //
         }
         do {
 //            try samplePlayer.load(url: getFileURL(fileURL: fileURL))
 //            print("單獨播放的文件:\(getFileURL(fileURL: "track1_drum1.m4a"))")
-            try samplePlayer777.load(url : URL(fileURLWithPath: Bundle.main.path(forResource: "sample_drum_110_8_one.wav", ofType:nil)!))
+            try samplePlayer.load(url : URL(fileURLWithPath: Bundle.main.path(forResource: "sample_drum_110_8_one.wav", ofType:nil)!))
             //Delay Setting
-            delay.feedback = 0.9
-            delay.time = 0.1
+//            delay1.feedback = 0.9
+//            delay1.time = 0.1
             
             //convolution start
 //            convolutionSalt_one.start()
 //            convolutionSalt_two.start()
             
-            samplePlayer777.isLooping = true
-            samplePlayer777.play()
-//            dryWetMixer.play()
+            samplePlayer.isLooping = true
+            samplePlayer.play()
+
 
         } catch {
             // couldn't load file :(

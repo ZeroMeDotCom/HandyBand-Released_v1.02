@@ -62,6 +62,8 @@
 		2B7279A027311D2A008047DA /* salt_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B72799E27311D2A008047DA /* salt_two.wav */; };
 		2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7279A12731256F008047DA /* ConvolutionSlider.swift */; };
 		2B7804F6273C373700E18FA2 /* NewStylePlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7804F5273C373700E18FA2 /* NewStylePlayButton.swift */; };
+		2B7804FE273C495800E18FA2 /* Track_One.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7804FD273C495800E18FA2 /* Track_One.swift */; };
+		2B780500273C49AE00E18FA2 /* Track_Two.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7804FF273C49AE00E18FA2 /* Track_Two.swift */; };
 		2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */; };
 		2B781352272A8A68002A8972 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B781351272A8A68002A8972 /* ContentView.swift */; };
 		2B781354272A8A6A002A8972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B781353272A8A6A002A8972 /* Assets.xcassets */; };
@@ -150,6 +152,8 @@
 		2B72799E27311D2A008047DA /* salt_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = salt_two.wav; sourceTree = "<group>"; };
 		2B7279A12731256F008047DA /* ConvolutionSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvolutionSlider.swift; sourceTree = "<group>"; };
 		2B7804F5273C373700E18FA2 /* NewStylePlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStylePlayButton.swift; sourceTree = "<group>"; };
+		2B7804FD273C495800E18FA2 /* Track_One.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track_One.swift; sourceTree = "<group>"; };
+		2B7804FF273C49AE00E18FA2 /* Track_Two.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track_Two.swift; sourceTree = "<group>"; };
 		2B78134C272A8A68002A8972 /* LoopPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoopPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopPlayerApp.swift; sourceTree = "<group>"; };
 		2B781351272A8A68002A8972 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -335,6 +339,16 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		2B7804F7273C488800E18FA2 /* TrackButtons */ = {
+			isa = PBXGroup;
+			children = (
+				2B7804F5273C373700E18FA2 /* NewStylePlayButton.swift */,
+				2B7804FD273C495800E18FA2 /* Track_One.swift */,
+				2B7804FF273C49AE00E18FA2 /* Track_Two.swift */,
+			);
+			path = TrackButtons;
+			sourceTree = "<group>";
+		};
 		2B781343272A8A68002A8972 = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +404,7 @@
 		2B81F696272BCE210081BCB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2B7804F7273C488800E18FA2 /* TrackButtons */,
 				2BBD242527385F80003FC4B2 /* SampleRecordView.swift */,
 				2B5A799C27366E31000C5437 /* DangDangDangView.swift */,
 				2B5A7969273580E9000C5437 /* SoundCardPlugInControl.swift */,
@@ -398,7 +413,6 @@
 				2B5A795B273419B9000C5437 /* Helper */,
 				2B5A79592734196B000C5437 /* SingleButton */,
 				2B5A795A2734199E000C5437 /* InstrumentsGroup */,
-				2B7804F5273C373700E18FA2 /* NewStylePlayButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -555,7 +569,9 @@
 				2BBD242427385D10003FC4B2 /* RecordingLogic.swift in Sources */,
 				2B38A3382737F4820041B1EC /* PodKeyBoard.swift in Sources */,
 				2B5A7967273426A1000C5437 /* PlugInView.swift in Sources */,
+				2B780500273C49AE00E18FA2 /* Track_Two.swift in Sources */,
 				2B5A796A273580E9000C5437 /* SoundCardPlugInControl.swift in Sources */,
+				2B7804FE273C495800E18FA2 /* Track_One.swift in Sources */,
 				2B5A79652734233B000C5437 /* SoundCardPlugInView.swift in Sources */,
 				2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */,
 				2B9DA5FC272C6C250085365C /* SliderView_PlayButton.swift in Sources */,
