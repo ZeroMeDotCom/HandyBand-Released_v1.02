@@ -13,7 +13,9 @@
 //
 
 import Foundation
+import AudioUnit
 import AudioKit
+import SoundpipeAudioKit
 
 class FileManageLogic: ObservableObject {
     var savedFileNames = SavedFileNames()
@@ -281,8 +283,26 @@ class FileManageLogic: ObservableObject {
     @Published var samplePlayer12 = AudioPlayer()
     @Published var isWish12: Bool = false
     
+    //Delay Setting
+    var delay : Delay
+    var dryWetMixer : DryWetMixer
+    var delaySetting = DelaySetting()
+    var engine777 = AudioEngine()
+    var samplePlayer777 = AudioPlayer()
+
+    
     
     init() {
+        
+        delay = Delay(samplePlayer777)
+        dryWetMixer = DryWetMixer(samplePlayer777, delay, balance: AUValue(0.5)) //Using reverbMixers as input
+        
+        delay.time = delaySetting.time
+        delay.feedback = delaySetting.feedback
+        delay.dryWetMix = 100
+        dryWetMixer.balance = delaySetting.balance
+        engine777.output = dryWetMixer
+        
         //Notes Init C~B
         self.singleFileName_C = BassNoteFileNames["C"]!
         self.path_C = Bundle.main.path(forResource: singleFileName_C, ofType:nil)!
@@ -849,6 +869,47 @@ class FileManageLogic: ObservableObject {
 //            whichToPlay[13] = false
             return whichToPlay[13]
         }
+    }
+    
+
+    func changeDelay_balance(delay_balance: Double) {
+        dryWetMixer.balance = AUValue(delay_balance)
+    }
+    
+    func changeDelay_feedback(delay_feedback: Double) {
+        delay.feedback = AUValue(delay_feedback)
+    }
+    
+    func changeDelay_time(delay_time: Double) {
+        delay.time = AUValue(delay_time)
+    }
+    
+    func playNewButton() {
+        do {
+            try engine777.start()
+        } catch {
+            //
+        }
+        do {
+//            try samplePlayer.load(url: getFileURL(fileURL: fileURL))
+//            print("單獨播放的文件:\(getFileURL(fileURL: "track1_drum1.m4a"))")
+            try samplePlayer777.load(url : URL(fileURLWithPath: Bundle.main.path(forResource: "sample_drum_110_8_one.wav", ofType:nil)!))
+            //Delay Setting
+            delay.feedback = 0.9
+            delay.time = 0.1
+            
+            //convolution start
+//            convolutionSalt_one.start()
+//            convolutionSalt_two.start()
+            
+            samplePlayer777.isLooping = true
+            samplePlayer777.play()
+//            dryWetMixer.play()
+
+        } catch {
+            // couldn't load file :(
+        }
+        
     }
     
 }

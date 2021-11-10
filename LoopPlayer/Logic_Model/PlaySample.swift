@@ -83,7 +83,7 @@ class SamplePlyer : ObservableObject {
         dryWetMixer.balance = delaySetting.balance
         
 
-        engine.output = dryWetMixer
+        engine.output = convolutionMixer
         samplePlayer.volume = AUValue(self.volume)
     }
     
