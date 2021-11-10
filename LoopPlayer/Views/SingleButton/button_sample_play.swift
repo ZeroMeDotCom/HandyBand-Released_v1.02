@@ -40,7 +40,6 @@ struct button_sample_play: View {
                 .buttonStyle(MyButtonStyle(color: .gray))
                 .clipShape(Circle())
                 .gesture(TapGesture(count: 1).onEnded {
-//                    samplePlyer.samplePlayer.isLooping = true
                     samplePlyer.play()
                     isOn = true
                 })

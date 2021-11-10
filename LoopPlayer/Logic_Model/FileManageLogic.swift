@@ -566,11 +566,11 @@ class FileManageLogic: ObservableObject {
     }
     
     func playSingle(url: URL, samplePlayer: AudioPlayer, engine: AudioEngine){
-//        do {
-//            try engine.start()
-//        } catch {
-//            //
-//        }
+        do {
+            try engine.start()
+        } catch {
+            print(error)
+        }
         do {
             try samplePlayer.load(url: url)
             samplePlayer.play()

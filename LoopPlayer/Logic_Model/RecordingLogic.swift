@@ -41,7 +41,7 @@ class RecordingLogic: ObservableObject {
 //    var audioFileName : String!
 //    var audioFileName2 : String!
 //    var audioFileName3 : String!
-    
+//    
     private var sampleRecorder: AVAudioRecorder?
     var audioSession = AVAudioSession.sharedInstance()
 
@@ -203,7 +203,7 @@ class RecordingLogic: ObservableObject {
                         
                         //多久之後結束 60 / speed 響4下的長度
                         Timer.scheduledTimer(withTimeInterval: 60 / self.speed, repeats: true) { timerDeliver in
-                            self.smallDangDang.dangDangDang()
+//                            self.smallDangDang.dangDangDang()
                             print(self.currentMetro)
                             self.currentMetro += 1
                             

@@ -162,9 +162,9 @@ class SamplePlyer {
             convolutionSalt_one.start()
             convolutionSalt_two.start()
             
-
+            samplePlayer.isLooping = true
             samplePlayer.play()
-            dryWetMixer.play()
+//            dryWetMixer.play()
 
         } catch {
             // couldn't load file :(
