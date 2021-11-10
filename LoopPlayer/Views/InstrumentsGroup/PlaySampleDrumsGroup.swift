@@ -14,6 +14,7 @@ struct PlaySampleDrumsGroup: View {
         HStack {
             Track_One().environmentObject(fileManage)
             Track_Two().environmentObject(fileManage)
+            Track_Three().environmentObject(fileManage)
             
 //            button_sample_play(fileURL: fileManage.savedFileNames.fileNames["track1"]!["fileWay"]!, filename: fileManage.singleFileName, url: fileManage.url, path: fileManage.path, engine: fileManage.engine, samplePlayer: fileManage.samplePlayer, isLooping: false, trackID: "track1")
 //                .environmentObject(fileManage)

@@ -12,6 +12,9 @@ struct PlaySamplePianoGroup: View {
 //    @EnvironmentObject var playCreationModel : playCreationsModel
     var body: some View {
         HStack {
+            Track_Ten().environmentObject(fileManage)
+            Track_Eleven().environmentObject(fileManage)
+            Track_Twelve().environmentObject(fileManage)
 //            button_sample_play(fileURL: fileManage.savedFileNames.fileNames["track10"]!["fileWay"]!, filename: fileManage.singleFileName, url: fileManage.url, path: fileManage.path, engine: fileManage.engine, samplePlayer: fileManage.samplePlayer, isLooping: false, trackID: "track10")
 //                .environmentObject(fileManage)
 //            

@@ -8,7 +8,7 @@
 import SwiftUI
 import AudioKit
 
-struct NewStylePlayButton: View {
+struct TrackPlayControl_MODEL: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @State private var selection: Int = 0
     @State private var delay_balance : Double = 0.5
@@ -19,7 +19,7 @@ struct NewStylePlayButton: View {
     var body: some View {
         VStack {
             Button("T") {
-                fileManage.playNewButton(engine: fileManage.engine1, samplePlayer: fileManage.samplePlayer1)
+                fileManage.playNewButton(engine: fileManage.engine1, samplePlayer: fileManage.samplePlayer1, fileURL: fileManage.savedFileNames.fileNames["track1"]!["fileWay"]!)
             }
             .buttonStyle(MyButtonStyle2(color: .gray))
             .clipShape(Circle())
@@ -97,6 +97,6 @@ struct MyButtonStyle2: ButtonStyle {
     
 struct NewStylePlayButton_Previews: PreviewProvider {
     static var previews: some View {
-        NewStylePlayButton()
+        TrackPlayControl_MODEL()
     }
 }

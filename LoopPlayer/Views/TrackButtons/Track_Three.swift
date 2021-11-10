@@ -1,5 +1,5 @@
 //
-//  Track_One.swift
+//  Track_Three.swift
 //  LoopPlayer
 //
 //  Created by Dan on 11/11/21.
@@ -8,10 +8,9 @@
 import SwiftUI
 import AudioKit
 
-struct Track_One: View {
+struct Track_Three: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @State private var selection: Int = 0
-    @State private var selection_effect: Int = 0
     @State private var delay_balance : Double = 0.5
     @State private var delay_feedback : Double = 50
     @State private var delay_time : Double = 0.1
@@ -20,17 +19,17 @@ struct Track_One: View {
         VStack {
             HStack {
                 Button("T") {
-                    fileManage.playNewButton(engine: fileManage.engine1, samplePlayer: fileManage.samplePlayer1, fileURL: fileManage.savedFileNames.fileNames["track1"]!["fileWay"]!)
+                    fileManage.playNewButton(engine: fileManage.engine3, samplePlayer: fileManage.samplePlayer3, fileURL: fileManage.savedFileNames.fileNames["track3"]!["fileWay"]!)
                 }
                 .buttonStyle(MyButtonStyle2(color: .gray))
                 .clipShape(Circle())
-                
+                //Send to Bus
                 Button(action: {
-                    fileManage.addingToPlayNextTime(trackID: "track1") ? fileManage.setToEdit(trackID: "track1") : fileManage.setReady(trackID: "track1")
+                    fileManage.addingToPlayNextTime(trackID: "track3") ? fileManage.setToEdit(trackID: "track3") : fileManage.setReady(trackID: "track3")
                     print(fileManage.whichToPlay)
                     
                 }, label: {
-                    Image(systemName: fileManage.addingToPlayNextTime(trackID: "track1") ? "arrow.up.circle.fill" : "arrow.up.circle")
+                    Image(systemName: fileManage.addingToPlayNextTime(trackID: "track3") ? "arrow.up.circle.fill" : "arrow.up.circle")
                 })
             }
 
@@ -38,14 +37,14 @@ struct Track_One: View {
             
             //Delay Setting
             Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
-                fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay1)
+                fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay3)
             })
         
             Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
-                fileManage.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue, delay: fileManage.delay1)
+                fileManage.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue, delay: fileManage.delay3)
             })
             Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
-                fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer1)
+                fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer3)
             })
             
             Picker(selection: self.$selection, label: myPickerStyleLabel()) {
@@ -59,13 +58,12 @@ struct Track_One: View {
             .pickerStyle(.menu)
             .onChange(of: selection, perform: {
                 newValue in
-    //            print("Selected Unit: \(places[newValue])", "Selected Index: \(newValue)")
-                fileManage.changeDelay_balance(delay_balance: 0, dryWetMixer: fileManage.dryWetMixer1)
-                fileManage.change_reverb(place: places[newValue], reverb: fileManage.reverb1)
+                fileManage.changeDelay_balance(delay_balance: 0, dryWetMixer: fileManage.dryWetMixer3)
+                fileManage.change_reverb(place: places[newValue], reverb: fileManage.reverb3)
             })
             
             Slider(value: $saltMixerBalance, in: 0...1, onEditingChanged: {_ in
-                fileManage.changeConvolution_balance(convolution_balance: $saltMixerBalance.wrappedValue, saltMixer: fileManage.saltMixer1)
+                fileManage.changeConvolution_balance(convolution_balance: $saltMixerBalance.wrappedValue, saltMixer: fileManage.saltMixer3)
                 print("\($saltMixerBalance.wrappedValue)")
             })
         }
@@ -73,8 +71,8 @@ struct Track_One: View {
     }
 }
 
-struct Track_One_Previews: PreviewProvider {
+struct Track_Three_Previews: PreviewProvider {
     static var previews: some View {
-        Track_One()
+        Track_Three()
     }
 }

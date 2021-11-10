@@ -17,11 +17,22 @@ struct Track_Two: View {
     @State private var saltMixerBalance : AUValue = 0.5
     var body: some View {
         VStack {
-            Button("T") {
-                fileManage.playNewButton(engine: fileManage.engine2, samplePlayer: fileManage.samplePlayer2)
+            HStack {
+                Button("T") {
+                    fileManage.playNewButton(engine: fileManage.engine2, samplePlayer: fileManage.samplePlayer2, fileURL: fileManage.savedFileNames.fileNames["track2"]!["fileWay"]!)
+                }
+                .buttonStyle(MyButtonStyle2(color: .gray))
+                .clipShape(Circle())
+                
+                Button(action: {
+                    fileManage.addingToPlayNextTime(trackID: "track2") ? fileManage.setToEdit(trackID: "track2") : fileManage.setReady(trackID: "track2")
+                    print(fileManage.whichToPlay)
+                    
+                }, label: {
+                    Image(systemName: fileManage.addingToPlayNextTime(trackID: "track2") ? "arrow.up.circle.fill" : "arrow.up.circle")
+                })
             }
-            .buttonStyle(MyButtonStyle2(color: .gray))
-            .clipShape(Circle())
+
             
             //Delay Setting
             Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
