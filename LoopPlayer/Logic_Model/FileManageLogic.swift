@@ -17,9 +17,10 @@ import AudioKit
 
 class FileManageLogic: ObservableObject {
     var savedFileNames = SavedFileNames()
+//    var fileURL : String
     @Published var whichToPlay: [Bool] = [true, false, false, false, false, false, false, false, false, false, false, false, false, true]
     private var trackID : String = ""
-    var geSystemPathWay = GetSystemPathWay()
+//    var geSystemPathWay = GetSystemPathWay()
     //需要刪除優化？
     var fileNames : [String : [String : String]] = [
         "track1" : ["isPause" : "true",
@@ -382,18 +383,18 @@ class FileManageLogic: ObservableObject {
         self.path12 = Bundle.main.path(forResource: singleFileName12, ofType:nil)!
         self.url12 = URL(fileURLWithPath: path12)
         
-        engine.output = samplePlayer
-        engine2.output = samplePlayer2
-        engine3.output = samplePlayer3
-        engine4.output = samplePlayer4
-        engine5.output = samplePlayer5
-        engine6.output = samplePlayer6
-        engine7.output = samplePlayer7
-        engine8.output = samplePlayer8
-        engine9.output = samplePlayer9
-        engine10.output = samplePlayer10
-        engine11.output = samplePlayer11
-        engine12.output = samplePlayer12
+//        engine.output = samplePlayer
+//        engine2.output = samplePlayer2
+//        engine3.output = samplePlayer3
+//        engine4.output = samplePlayer4
+//        engine5.output = samplePlayer5
+//        engine6.output = samplePlayer6
+//        engine7.output = samplePlayer7
+//        engine8.output = samplePlayer8
+//        engine9.output = samplePlayer9
+//        engine10.output = samplePlayer10
+//        engine11.output = samplePlayer11
+//        engine12.output = samplePlayer12
         
         
         //Notes connect
@@ -565,6 +566,17 @@ class FileManageLogic: ObservableObject {
         self.url_B = URL(fileURLWithPath: path_B)
     }
     
+    //直接獲取URL版本播放
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+        }
+    
+    func getFileURL(fileURL: String) -> URL {
+        let path = getDocumentsDirectory().appendingPathComponent(fileURL)
+        return path as URL
+        }
+    
     func playSingle(url: URL, samplePlayer: AudioPlayer, engine: AudioEngine){
         do {
             try engine.start()
@@ -582,56 +594,59 @@ class FileManageLogic: ObservableObject {
     func playSingleTrack(fileURL: String, samplePlayer: AudioPlayer, engine: AudioEngine){
         do {
             try engine.start()
+            
         } catch {
-            print(error)
+            print("引擎失敗")
+            //
         }
         do {
+            print("單獨播放的文件:\(getFileURL(fileURL: fileURL))")
+            try samplePlayer.load(url: getFileURL(fileURL: fileURL))
 
-            try samplePlayer.load(url: geSystemPathWay.getFileURL(fileURL: fileURL))
-            print("正在播放的文件:\(geSystemPathWay.getFileURL(fileURL: fileURL))")
+//            samplePlayer.isLooping = true
             samplePlayer.play()
-            print("當前播放器的狀態:\(samplePlayer.isPlaying)")
-            print("當前引擎的狀態:\(engine.output?.isStarted)")
 
         } catch {
             // couldn't load file :(
+            print("播放器失敗")
         }
     }
     
     func playResuting(){
         self.isPause = false
-        //self-Looping version
-        for i in 1..<13 {
-            print("第\(i)次掃描")
-//            if self.whichToPlay[i] {
-//                self.playSingle(fileURL: fileNames["track\(i)"]!["fileWay"]!, samplePlayer: self.samplePlayer, engine: self.engine)
+//        playSingle(url: url_D, samplePlayer: samplePlayer_D, engine: engine_D)
+        playSingleTrack(fileURL: fileNames["track1"]!["fileWay"]!, samplePlayer: self.samplePlayer, engine: self.engine)
+//        for i in 1..<13 {
+//            print("第\(i)次掃描")
+////            if self.whichToPlay[i] {
+////                self.playSingle(fileURL: fileNames["track\(i)"]!["fileWay"]!, samplePlayer: self.samplePlayer, engine: self.engine)
+////            }
+//            if self.whichToPlay[i] && i == 1 {
+//                self.playSingleTrack(fileURL: fileNames["track1"]!["fileWay"]!, samplePlayer: self.samplePlayer, engine: self.engine)
+//            } else if i == 2 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track2"]!["fileWay"]!, samplePlayer: self.samplePlayer2, engine: self.engine2)
+//            } else if i == 3 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track3"]!["fileWay"]!, samplePlayer: self.samplePlayer3, engine: self.engine3)
+//            } else if i == 4 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track4"]!["fileWay"]!, samplePlayer: self.samplePlayer4, engine: self.engine4)
+//            } else if i == 5 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track5"]!["fileWay"]!, samplePlayer: self.samplePlayer5, engine: self.engine5)
+//            } else if i == 6 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track6"]!["fileWay"]!, samplePlayer: self.samplePlayer6, engine: self.engine6)
+//            } else if i == 7 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track7"]!["fileWay"]!, samplePlayer: self.samplePlayer7, engine: self.engine7)
+//            } else if i == 8 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track8"]!["fileWay"]!, samplePlayer: self.samplePlayer8, engine: self.engine8)
+//            } else if i == 9 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track9"]!["fileWay"]!, samplePlayer: self.samplePlayer9, engine: self.engine9)
+//            } else if i == 10 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track10"]!["fileWay"]!, samplePlayer: self.samplePlayer10, engine: self.engine10)
+//            } else if i == 11 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track11"]!["fileWay"]!, samplePlayer: self.samplePlayer11, engine: self.engine11)
+//            } else if i == 12 && self.whichToPlay[i] {
+//                self.playSingleTrack(fileURL: fileNames["track12"]!["fileWay"]!, samplePlayer: self.samplePlayer12, engine: self.engine12)
 //            }
-            if self.whichToPlay[i] && i == 1 {
-                self.playSingleTrack(fileURL: fileNames["track1"]!["fileWay"]!, samplePlayer: self.samplePlayer, engine: self.engine)
-            } else if i == 2 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track2"]!["fileWay"]!, samplePlayer: self.samplePlayer2, engine: self.engine2)
-            } else if i == 3 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track3"]!["fileWay"]!, samplePlayer: self.samplePlayer3, engine: self.engine3)
-            } else if i == 4 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track4"]!["fileWay"]!, samplePlayer: self.samplePlayer4, engine: self.engine4)
-            } else if i == 5 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track5"]!["fileWay"]!, samplePlayer: self.samplePlayer5, engine: self.engine5)
-            } else if i == 6 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track6"]!["fileWay"]!, samplePlayer: self.samplePlayer6, engine: self.engine6)
-            } else if i == 7 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track7"]!["fileWay"]!, samplePlayer: self.samplePlayer7, engine: self.engine7)
-            } else if i == 8 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track8"]!["fileWay"]!, samplePlayer: self.samplePlayer8, engine: self.engine8)
-            } else if i == 9 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track9"]!["fileWay"]!, samplePlayer: self.samplePlayer9, engine: self.engine9)
-            } else if i == 10 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track10"]!["fileWay"]!, samplePlayer: self.samplePlayer10, engine: self.engine10)
-            } else if i == 11 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track11"]!["fileWay"]!, samplePlayer: self.samplePlayer11, engine: self.engine11)
-            } else if i == 12 && self.whichToPlay[i] {
-                self.playSingleTrack(fileURL: fileNames["track12"]!["fileWay"]!, samplePlayer: self.samplePlayer12, engine: self.engine12)
-            }
-        }
+//        }
         
 //        Timer.scheduledTimer(withTimeInterval: 60 / Double(110) * 8, repeats: true) { timer in
 //            print("track1:\(self.isWish)")
@@ -659,28 +674,28 @@ class FileManageLogic: ObservableObject {
 //                self.pauseThepProcessing()
 //            }
 //        }
-        
-        if self.isPause == true {
-            self.pauseThepProcessing()
-        }
+//
+//        if self.isPause == true {
+//            self.pauseThepProcessing()
+//        }
 
     }
     
     //Stop play
     func pauseThepProcessing(){
         self.isPause = true
-//        engine.stop()
-//        engine2.stop()
-//        engine3.stop()
-//        engine4.stop()
-//        engine5.stop()
-//        engine6.stop()
-//        engine7.stop()
-//        engine8.stop()
-//        engine9.stop()
-//        engine10.stop()
-//        engine11.stop()
-//        engine12.stop()
+        engine.stop()
+        engine2.stop()
+        engine3.stop()
+        engine4.stop()
+        engine5.stop()
+        engine6.stop()
+        engine7.stop()
+        engine8.stop()
+        engine9.stop()
+        engine10.stop()
+        engine11.stop()
+        engine12.stop()
         
         samplePlayer.stop()
         samplePlayer2.stop()

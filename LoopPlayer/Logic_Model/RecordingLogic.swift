@@ -237,7 +237,7 @@ class RecordingLogic: ObservableObject {
 //                let audioSession = AVAudioSession.sharedInstance()
 //                do {
 //
-////                    try audioSession.setActive(false)
+//                    try audioSession.setActive(false)
 //                } catch {
 //                    print(error)
 //                }

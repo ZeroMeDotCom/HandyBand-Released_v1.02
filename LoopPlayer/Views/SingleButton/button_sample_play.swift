@@ -15,10 +15,11 @@ struct button_sample_play: View {
     @EnvironmentObject var fileManage : FileManageLogic
     
     @State private var selection = 0
+    
     //Delay: varible for slider
     @State private var delay_balance : Double = 0.5
-    @State private var delay_feedback : Double = 0.5
-    @State private var delay_time : Double = 0.01
+    @State private var delay_feedback : Double = 50
+    @State private var delay_time : Double = 0.1
     @State private var value : Double = 50
     @State private var isOn = false
     var trackID : String
@@ -59,7 +60,6 @@ struct button_sample_play: View {
                 })
             }
 
-            
             Slider(value: $value, in: 0...100, onEditingChanged: {_ in
                 samplePlyer.changeVolume(value: $value.wrappedValue)
             })
@@ -71,15 +71,16 @@ struct button_sample_play: View {
             }.pickerStyle(.segmented)
             
             if selection == 0 {
+                
                 //Delay Setting
-                Slider(value: $delay_time, in: 0...0.5, onEditingChanged: {_ in
+                Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
                     samplePlyer.changeDelay_time(delay_time: $delay_time.wrappedValue)
                 })
             
-                Slider(value: $delay_feedback, in: 0...10, onEditingChanged: {_ in
+                Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
                     samplePlyer.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
                 })
-                Slider(value: $delay_balance, in: 0...50, onEditingChanged: {_ in
+                Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
                     samplePlyer.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
                 })
             } else if selection == 1 {

@@ -14,9 +14,7 @@ import AudioUnit
 import AudioKit
 import SoundpipeAudioKit
 
-class SamplePlyer {
-//    let engine = AudioEngine()
-//    var samplePlayer = AudioPlayer()
+class SamplePlyer : ObservableObject {
     let engine: AudioEngine
     var samplePlayer: AudioPlayer
     var isLooping : Bool
@@ -46,7 +44,7 @@ class SamplePlyer {
     
     
     init(fileURL: String, filename: String, url: URL, path: String, engine: AudioEngine, samplePlayer: AudioPlayer, isLooping: Bool) {
-        self.filename = filename
+        self.filename = "sample_drum_110_8_one.wav"
 //        self.samplePlayer.isLooping = isLooping
         self.isLooping = isLooping
         self.path = Bundle.main.path(forResource: filename, ofType:nil)!
@@ -71,7 +69,7 @@ class SamplePlyer {
         //Reverb
         reverb = Reverb(samplePlayer)
         reverb.dryWetMix = 100
-        reverb.loadFactoryPreset(.mediumHall2)
+        reverb.loadFactoryPreset(.cathedral)
         reverbMixer = DryWetMixer(convolutionMixer, reverb, balance: AUValue(0.5))
         
         
@@ -92,7 +90,6 @@ class SamplePlyer {
     func change_reverb(place: String) {
         switch place {
         case "mediumChamber":
-            print("mediumChamber")
             reverb.loadFactoryPreset(.mediumChamber)
 //            engine.output = reverb
         case "cathedral":
@@ -151,12 +148,12 @@ class SamplePlyer {
             //
         }
         do {
-            try samplePlayer.load(url: getFileURL(fileURL: fileURL))
+//            try samplePlayer.load(url: getFileURL(fileURL: fileURL))
             print("單獨播放的文件:\(getFileURL(fileURL: fileURL))")
-//            samplePlayer.load(url: url)
+            try samplePlayer.load(url: url)
             //Delay Setting
             delay.feedback = 0.9
-            delay.time = 0.01
+            delay.time = 0.1
             
             //convolution start
             convolutionSalt_one.start()
