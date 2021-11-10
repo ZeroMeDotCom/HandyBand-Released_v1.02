@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AudioKit
 
 struct NewStylePlayButton: View {
     @EnvironmentObject var fileManage : FileManageLogic
@@ -13,6 +14,7 @@ struct NewStylePlayButton: View {
     @State private var delay_balance : Double = 0.5
     @State private var delay_feedback : Double = 50
     @State private var delay_time : Double = 0.1
+    @State private var saltMixerBalance : AUValue = 0.5
     var body: some View {
         VStack {
             Button("T") {
@@ -47,6 +49,11 @@ struct NewStylePlayButton: View {
     //            print("Selected Unit: \(places[newValue])", "Selected Index: \(newValue)")
                 fileManage.changeDelay_balance(delay_balance: 0)
                 fileManage.change_reverb(place: places[newValue])
+            })
+            
+            Slider(value: $saltMixerBalance, in: 0...1, onEditingChanged: {_ in
+                fileManage.changeConvolution_balance(convolution_balance: $saltMixerBalance.wrappedValue)
+                print("\($saltMixerBalance.wrappedValue)")
             })
         }
 
