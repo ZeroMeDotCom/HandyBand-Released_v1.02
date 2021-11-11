@@ -28,7 +28,7 @@ class RecordingLogic: ObservableObject {
     @Published var isListening: Bool = false
     
     //Button controller - Flag array -> Which track is recoding
-    @Published var buttonLights : [Bool] = [true, false, false, false, false, false, false, false, false, false, false, false, false]
+    @Published var buttonLights : [Bool] = [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
     //Which track is recoding
     @Published var whichButtonLight : Int = 0
     

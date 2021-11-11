@@ -33,8 +33,14 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[1] ? Image(systemName: "1.circle.fill") : Image(systemName: "1.circle")
-
+                    recorderPlayer.buttonLights[1] ?
+                    Image(systemName: "1.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "1.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
                 })
                     // 2
                 Button(action: {
@@ -46,7 +52,14 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[2] ? Image(systemName: "2.circle.fill") : Image(systemName: "2.circle")
+                    recorderPlayer.buttonLights[2] ?
+                    Image(systemName: "2.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "2.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
                     
@@ -60,7 +73,14 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[3] ? Image(systemName: "3.circle.fill") : Image(systemName: "3.circle")
+                    recorderPlayer.buttonLights[3] ?
+                    Image(systemName: "3.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "3.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
                     // 4
@@ -73,7 +93,14 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[4] ? Image(systemName: "4.circle.fill") : Image(systemName: "4.circle")
+                    recorderPlayer.buttonLights[4] ?
+                    Image(systemName: "4.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "4.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
                     // 5
@@ -86,7 +113,14 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[5] ? Image(systemName: "5.circle.fill") : Image(systemName: "5.circle")
+                    recorderPlayer.buttonLights[5] ?
+                    Image(systemName: "5.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "5.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
                     
@@ -100,7 +134,14 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[6] ? Image(systemName: "6.circle.fill") : Image(systemName: "6.circle")
+                    recorderPlayer.buttonLights[6] ?
+                    Image(systemName: "6.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "6.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
                     // 7
@@ -113,7 +154,14 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[7] ? Image(systemName: "7.circle.fill") : Image(systemName: "7.circle")
+                    recorderPlayer.buttonLights[7] ?
+                    Image(systemName: "7.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "7.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
                     // 8
@@ -126,10 +174,19 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[8] ? Image(systemName: "8.circle.fill") : Image(systemName: "8.circle")
+                    recorderPlayer.buttonLights[8] ?
+                    Image(systemName: "8.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "8.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
                     
+            }
+                Group {
                     // 9
                 Button(action: {
                     if recorderPlayer.buttonLights[9] {
@@ -140,7 +197,14 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[9] ? Image(systemName: "9.circle.fill") : Image(systemName: "9.circle")
+                    recorderPlayer.buttonLights[9] ?
+                    Image(systemName: "9.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "9.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
                     // 10
@@ -153,12 +217,16 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[10] ? Image(systemName: "10.circle.fill") : Image(systemName: "10.circle")
+                    recorderPlayer.buttonLights[10] ?
+                    Image(systemName: "10.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "10.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
-                    
-            }
-                Group {
                     // 11
                 Button(action: {
                     if recorderPlayer.buttonLights[11] {
@@ -169,7 +237,14 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[9] ? Image(systemName: "11.circle.fill") : Image(systemName: "11.circle")
+                    recorderPlayer.buttonLights[9] ?
+                    Image(systemName: "11.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "11.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
                     // 12
@@ -182,10 +257,77 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[12] ? Image(systemName: "12.circle.fill") : Image(systemName: "12.circle")
+                    recorderPlayer.buttonLights[12] ?
+                    Image(systemName: "12.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "12.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
 
                 })
-                }
+                    // 13
+                Button(action: {
+                    if recorderPlayer.buttonLights[13] {
+                        recorderPlayer.buttonLights[13] = false
+                    } else {
+                        recorderPlayer.onlyOneButtonLights(index: 13)
+                        recorderPlayer.whichButtonLight = 13
+                    }
+
+                }, label: {
+                    recorderPlayer.buttonLights[13] ?
+                    Image(systemName: "13.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "13.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+
+                })
+                    // 14
+                Button(action: {
+                    if recorderPlayer.buttonLights[14] {
+                        recorderPlayer.buttonLights[14] = false
+                    } else {
+                        recorderPlayer.onlyOneButtonLights(index: 14)
+                        recorderPlayer.whichButtonLight = 14
+                    }
+
+                }, label: {
+                    recorderPlayer.buttonLights[12] ?
+                    Image(systemName: "14.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "14.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+
+                })
+                    // 15
+                Button(action: {
+                    if recorderPlayer.buttonLights[15] {
+                        recorderPlayer.buttonLights[15] = false
+                    } else {
+                        recorderPlayer.onlyOneButtonLights(index: 15)
+                        recorderPlayer.whichButtonLight = 15
+                    }
+
+                }, label: {
+                    recorderPlayer.buttonLights[15] ?
+                    Image(systemName: "15.circle.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    :
+                    Image(systemName: "15.circle")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+
+                })
+            }
              
                 // Recording
                 Button(action: {

@@ -16,7 +16,9 @@ struct LoopPlayerApp: App {
     @State private var selection = 0
     var body: some Scene {
         WindowGroup {
-            VStack(alignment: .center) {
+            VStack(
+                alignment: .center
+            ) {
                 VStack {
                     //ControlPan
                     HStack {
@@ -62,7 +64,6 @@ struct LoopPlayerApp: App {
                 .border(.black, width: 3)
                 .padding(0)
             }
-
 
         }
 

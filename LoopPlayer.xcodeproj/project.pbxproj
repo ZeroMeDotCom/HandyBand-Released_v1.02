@@ -227,6 +227,7 @@
 				2B38A37227382D040041B1EC /* Bass */,
 				2B38A35527382CE20041B1EC /* String */,
 				2B38A33C27382CC20041B1EC /* Piano */,
+				2B78051A273D33E600E18FA2 /* Test_sample */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -394,6 +395,27 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		2B78051A273D33E600E18FA2 /* Test_sample */ = {
+			isa = PBXGroup;
+			children = (
+				2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */,
+				2B781361272AA477002A8972 /* sample_drum_one.mp3 */,
+				2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */,
+				2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */,
+				2B81F689272BC0460081BCB6 /* sample_drum_110_8_one.wav */,
+				2B81F687272BC0460081BCB6 /* sample_drum_110_8_three.wav */,
+				2B81F688272BC0460081BCB6 /* sample_drum_110_8_two.wav */,
+				2B81F68E272BC1BC0081BCB6 /* sample_bass_110_8_one.wav */,
+				2B81F68D272BC1BC0081BCB6 /* sample_bass_110_8_two.wav */,
+				2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */,
+				2BDB9E902730759C00BADB99 /* Old Dark Ages.mp3 */,
+				2B72799D27311D2A008047DA /* salt_one.wav */,
+				2B72799E27311D2A008047DA /* salt_two.wav */,
+				2B5A799A27366BBB000C5437 /* dangDangDang.m4a */,
+			);
+			path = Test_sample;
+			sourceTree = "<group>";
+		};
 		2B781343272A8A68002A8972 = {
 			isa = PBXGroup;
 			children = (
@@ -419,20 +441,6 @@
 				2B5A795D27341A6A000C5437 /* UI_Design */,
 				2B781353272A8A6A002A8972 /* Assets.xcassets */,
 				2B38A33B27382CB60041B1EC /* Sample */,
-				2B781361272AA477002A8972 /* sample_drum_one.mp3 */,
-				2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */,
-				2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */,
-				2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */,
-				2B81F689272BC0460081BCB6 /* sample_drum_110_8_one.wav */,
-				2B81F687272BC0460081BCB6 /* sample_drum_110_8_three.wav */,
-				2B81F688272BC0460081BCB6 /* sample_drum_110_8_two.wav */,
-				2B81F68E272BC1BC0081BCB6 /* sample_bass_110_8_one.wav */,
-				2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */,
-				2B81F68D272BC1BC0081BCB6 /* sample_bass_110_8_two.wav */,
-				2BDB9E902730759C00BADB99 /* Old Dark Ages.mp3 */,
-				2B72799D27311D2A008047DA /* salt_one.wav */,
-				2B72799E27311D2A008047DA /* salt_two.wav */,
-				2B5A799A27366BBB000C5437 /* dangDangDang.m4a */,
 				2B781355272A8A6A002A8972 /* Preview Content */,
 			);
 			path = LoopPlayer;
