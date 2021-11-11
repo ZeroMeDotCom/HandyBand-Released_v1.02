@@ -3,9 +3,9 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/10/21.
-//  Who is this?
+//  Who is this file?
     // 1. which file to play
-    // 2. loop
+    // 2. loop or not
     // 3. Future plan: how to play based on Live version
 
 import Foundation

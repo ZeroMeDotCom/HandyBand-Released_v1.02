@@ -3,14 +3,19 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/4/21.
-//
+// Who is this file?
+    // 1. Plug-in(Guitar or bass) control
+    // 2. Change the effects
 
 import SwiftUI
 
 struct SoundCardPlugInView: View {
+    // Call SoundCardPlugInLogic class
     @StateObject var soundCardPlugIn = SoundCardPlugInLogic()
+    // Data that comes from environment
     @EnvironmentObject var fileManage : FileManageLogic
     @EnvironmentObject var playCreationModel : playCreationsModel
+    // Whether it's opened or not
     @State var stopFlag: Bool
     
     //Delay
@@ -23,7 +28,7 @@ struct SoundCardPlugInView: View {
     }
     var body: some View {
         HStack {
-            
+            // Effect setting area
             VStack {
                 VStack(alignment: .leading) {
                     HStack {
@@ -38,6 +43,7 @@ struct SoundCardPlugInView: View {
 
         }
             VStack {
+                // Open / Close
                 HStack {
                     Text("Session!!")
                     Button(action: {
@@ -49,7 +55,7 @@ struct SoundCardPlugInView: View {
                     })
                 }
                 
-                //delay
+                //delay control
                 VStack {
                     Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
                         soundCardPlugIn.changeDelay_time(delay_time: $delay_time.wrappedValue)

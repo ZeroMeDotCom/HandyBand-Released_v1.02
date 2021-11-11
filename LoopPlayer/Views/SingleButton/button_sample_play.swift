@@ -5,7 +5,7 @@
 //  Created by Dan on 10/28/21.
 //  What's this file for?
         //Define the play button
-        //.. and teh slider
+        //.. and the slider
         //Whether the file to play in next loop
 
 import SwiftUI

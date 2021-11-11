@@ -3,10 +3,10 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/6/21.
-// What is DangDangDang:
+// What is DangDangDang View:
     // 1.show the navagation
     // 2.show all the status
-    // 3.metro, speed, recordiing? which track light, playResutingButton, timeDate, StudentNumber
+    // 3.speed, is recording or not, which track light, playResutingButton, timeDate, StudentNumber
 
 import SwiftUI
 

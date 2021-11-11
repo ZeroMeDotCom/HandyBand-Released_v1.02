@@ -3,7 +3,8 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/9/21.
-//
+// Who is this file?
+    // 1. Track file mange model
 
 import Foundation
 
@@ -48,14 +49,17 @@ class SavedFileNames {
 
     ]
     
+    // Future - update the file from internet
     func update() {
         
     }
     
+    // Future - delete files
     func delete() {
         
     }
     
+    // Future - might be useful
     func chooseFileName() {
         
     }

@@ -3,13 +3,17 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/11/21.
-//
+// Who's this file?
+    // Model for Track view
 
 import SwiftUI
 import AudioKit
 
 struct TrackPlayControl_MODEL: View {
+    // Data that comes from enviroment
     @EnvironmentObject var fileManage : FileManageLogic
+    
+    // Data that is used within this view 
     @State private var selection: Int = 0
     @State private var delay_balance : Double = 0.5
     @State private var delay_feedback : Double = 50
@@ -18,13 +22,14 @@ struct TrackPlayControl_MODEL: View {
 
     var body: some View {
         VStack {
+            // Play button
             Button("T") {
                 fileManage.playNewButton(engine: fileManage.engine1, samplePlayer: fileManage.samplePlayer1, fileURL: fileManage.savedFileNames.fileNames["track1"]!["fileWay"]!)
             }
             .buttonStyle(MyButtonStyle2(color: .gray))
             .clipShape(Circle())
             
-            //Delay Setting
+            // Delay Setting slider
             Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
                 fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay1)
             })
@@ -36,6 +41,7 @@ struct TrackPlayControl_MODEL: View {
                 fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer1)
             })
             
+            // Reverb picker
             Picker(selection: self.$selection, label: myPickerStyleLabel()) {
                 Text("cathedral").tag(0)
                 Text("largeHall").tag(1)
@@ -52,6 +58,7 @@ struct TrackPlayControl_MODEL: View {
                 fileManage.change_reverb(place: places[newValue], reverb: fileManage.reverb1)
             })
             
+            // Convolution slider
             Slider(value: $saltMixerBalance, in: 0...1, onEditingChanged: {_ in
                 fileManage.changeConvolution_balance(convolution_balance: $saltMixerBalance.wrappedValue, saltMixer: fileManage.saltMixer1)
                 print("\($saltMixerBalance.wrappedValue)")

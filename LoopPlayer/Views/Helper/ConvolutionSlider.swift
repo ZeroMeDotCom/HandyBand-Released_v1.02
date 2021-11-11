@@ -3,7 +3,8 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/2/21.
-//
+//  Who is this file?
+    // The Convilution Slider View
 
 import SwiftUI
 import AudioToolbox

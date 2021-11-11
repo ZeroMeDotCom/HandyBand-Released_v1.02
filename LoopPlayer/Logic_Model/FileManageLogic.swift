@@ -3,14 +3,14 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/6/21.
-//
-
-//
-//  FileManageLogic.swift
-//  LoopPlayer
-//
-//  Created by Dan on 11/6/21.
-//
+// Who is this file?
+    // 1. File management of this application
+        // 1.1 how to store the tracks
+        // 1.2 which track can be palyed
+        // 1.3 instrument resources
+    // 2. Manage the engines and players
+        // 2.1 effect setting
+        // 2.2 player resource
 
 import Foundation
 import AudioUnit
@@ -18,11 +18,15 @@ import AudioKit
 import SoundpipeAudioKit
 
 class FileManageLogic: ObservableObject {
+    // Call the
     var savedFileNames = SavedFileNames()
+    // Which track can be played - Bool array
     @Published var whichToPlay: [Bool] = [true, false, false, false, false, false, false, false, false, false, false, false, false, true]
+   
+    // String type of trackID
     private var trackID : String = ""
-//    var geSystemPathWay = GetSystemPathWay()
-    //需要刪除優化？
+
+    //Tracks' files data
     var fileNames : [String : [String : String]] = [
         "track1" : ["isPause" : "true",
                     "fileWay" : "track1_drum1.m4a",
@@ -63,6 +67,7 @@ class FileManageLogic: ObservableObject {
 
     ]
     
+    //Bass resource - file mapping
     var BassNoteFileNames : [String : String] = [
         "C" : "bass_C3.mp3",
         "#C" : "bass_#C3.mp3",
@@ -78,6 +83,7 @@ class FileManageLogic: ObservableObject {
         "B" : "bass_B3.mp3",
     ]
     
+    //String resource - file mapping
     var StringNoteFileNames : [String : String] = [
         "C" : "BackgroundSound_C5.mp3",
         "#C" : "BackgroundSound_#C5.mp3",
@@ -93,6 +99,7 @@ class FileManageLogic: ObservableObject {
         "B" : "BackgroundSound_B5.mp3",
     ]
     
+    //Piano resource - file mapping
     var PianoNoteFileNames : [String : String] = [
         "C" : "Piano_C3.mp3",
         "#C" : "Piano_#C3.mp3",
@@ -108,7 +115,7 @@ class FileManageLogic: ObservableObject {
         "B" : "Piano_B3.mp3",
     ]
     
-    //Notes
+    //Notes: engine, player, url, path
     //C
     var singleFileName_C: String
     var url_C : URL
@@ -194,92 +201,72 @@ class FileManageLogic: ObservableObject {
     @Published var engine_B = AudioEngine()
     @Published var samplePlayer_B = AudioPlayer()
     
+    
     //Samples
-    //The tracks
+    //The tracks:
+        // 1. url, path
+        // 2. iswith : will be played or not
+    //Pause flag
     @Published var isPause: Bool = true
     
     var singleFileName: String
     var url : URL
     var path : String
-//    @Published var engine = AudioEngine()
-//    @Published var samplePlayer = AudioPlayer()
     @Published var isWish: Bool = false
     
     var singleFileName2: String
     var url2 : URL
     var path2 : String
-//    @Published var engine2 = AudioEngine()
-//    @Published var samplePlayer2 = AudioPlayer()
     @Published var isWish2: Bool = false
     
     var singleFileName3: String
     var url3 : URL
     var path3 : String
-//    @Published var engine3 = AudioEngine()
-//    @Published var samplePlayer3 = AudioPlayer()
     @Published var isWish3: Bool = false
     
     var singleFileName4: String
     var url4 : URL
     var path4 : String
-//    @Published var engine4 = AudioEngine()
-//    @Published var samplePlayer4 = AudioPlayer()
     @Published var isWish4: Bool = false
     
     var singleFileName5: String
     var url5 : URL
     var path5 : String
-//    @Published var engine5 = AudioEngine()
-//    @Published var samplePlayer5 = AudioPlayer()
     @Published var isWish5: Bool = false
     
     var singleFileName6: String
     var url6 : URL
     var path6 : String
-//    @Published var engine6 = AudioEngine()
-//    @Published var samplePlayer6 = AudioPlayer()
     @Published var isWish6: Bool = false
     
     var singleFileName7: String
     var url7 : URL
     var path7 : String
-//    @Published var engine7 = AudioEngine()
-//    @Published var samplePlayer7 = AudioPlayer()
     @Published var isWish7: Bool = false
     
     var singleFileName8: String
     var url8 : URL
     var path8 : String
-//    @Published var engine8 = AudioEngine()
-//    @Published var samplePlayer8 = AudioPlayer()
     @Published var isWish8: Bool = false
     
     var singleFileName9: String
     var url9 : URL
     var path9 : String
-//    @Published var engine9 = AudioEngine()
-//    @Published var samplePlayer9 = AudioPlayer()
     @Published var isWish9: Bool = false
     
     var singleFileName10: String
     var url10 : URL
     var path10 : String
-//    @Published var engine10 = AudioEngine()
-//    @Published var samplePlayer10 = AudioPlayer()
     @Published var isWish10: Bool = false
     
     var singleFileName11: String
     var url11 : URL
     var path11 : String
-//    @Published var engine11 = AudioEngine()
-//    @Published var samplePlayer11 = AudioPlayer()
     @Published var isWish11: Bool = false
     
     var singleFileName12: String
     var url12 : URL
     var path12 : String
-//    @Published var engine12 = AudioEngine()
-//    @Published var samplePlayer12 = AudioPlayer()
     @Published var isWish12: Bool = false
     
     
@@ -914,6 +901,7 @@ class FileManageLogic: ObservableObject {
     }
     
     
+    // Change current instrument into Bass
     func changeInstrumentToBass() {
         //Notes Init C~B
         self.singleFileName_C = BassNoteFileNames["C"]!
@@ -965,6 +953,7 @@ class FileManageLogic: ObservableObject {
         self.url_B = URL(fileURLWithPath: path_B)
     }
     
+    // Change current instrument into String
     func changeInstrumentToString() {
         //Notes Init C~B
         self.singleFileName_C = StringNoteFileNames["C"]!
@@ -1016,6 +1005,7 @@ class FileManageLogic: ObservableObject {
         self.url_B = URL(fileURLWithPath: path_B)
     }
     
+    // Change current instrument into Piano
     func changeInstrumentToPiano() {
         //Notes Init C~B
         self.singleFileName_C = PianoNoteFileNames["C"]!
@@ -1067,17 +1057,19 @@ class FileManageLogic: ObservableObject {
         self.url_B = URL(fileURLWithPath: path_B)
     }
     
-    //直接獲取URL版本播放
+    //Return the file path
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
         }
-    
+    //Return the file path as URL type
     func getFileURL(fileURL: String) -> URL {
         let path = getDocumentsDirectory().appendingPathComponent(fileURL)
         return path as URL
         }
     
+    
+    // Play a single file
     func playSingle(url: URL, samplePlayer: AudioPlayer, engine: AudioEngine){
         do {
             try engine.start()
@@ -1092,27 +1084,27 @@ class FileManageLogic: ObservableObject {
         }
     }
     
+    // Play a single track
     func playSingleTrack(fileURL: String, samplePlayer: AudioPlayer, engine: AudioEngine){
         do {
             try engine.start()
             
         } catch {
-            print("引擎失敗")
             //
         }
         do {
-            print("單獨播放的文件:\(getFileURL(fileURL: fileURL))")
+
             try samplePlayer.load(url: getFileURL(fileURL: fileURL))
 
 //            samplePlayer.isLooping = true
             samplePlayer.play()
 
         } catch {
-            // couldn't load file :(
-            print("播放器失敗")
+            print("player fail..")
         }
     }
     
+    // Play the tracks - final creation
     func playResuting(){
         self.isPause = false
         for i in 1..<13 {
@@ -1211,6 +1203,7 @@ class FileManageLogic: ObservableObject {
         
     }
     
+    // Helper - set track flag - close the track
     func setToEdit(trackID: String) {
         self.trackID = trackID
         switch self.trackID {
@@ -1256,6 +1249,7 @@ class FileManageLogic: ObservableObject {
         }
     }
     
+    // Helper - Which track is going to record
     func setReady(trackID: String) {
         self.trackID = trackID
         switch self.trackID {
@@ -1300,11 +1294,11 @@ class FileManageLogic: ObservableObject {
 //            return whichToPlay[13]
         }
     }
-    
+    // Helper - clear recording flags
     func reloding(){
         
     }
-    
+    // Helper - Which track is going to play - add to bus
     func addingToPlayNextTime(trackID: String) -> Bool {
         self.trackID = trackID
         switch self.trackID {
@@ -1356,6 +1350,7 @@ class FileManageLogic: ObservableObject {
         saltMixer.balance = convolution_balance
     }
     
+    //Reverb setting
     func change_reverb(place: String, reverb: Reverb) {
         switch place {
         case "mediumChamber":
@@ -1380,18 +1375,20 @@ class FileManageLogic: ObservableObject {
 
     }
 
+    // Delay balance setting
     func changeDelay_balance(delay_balance: Double, dryWetMixer: DryWetMixer) {
         dryWetMixer.balance = AUValue(delay_balance)
     }
-    
+    // Delay feedback setting
     func changeDelay_feedback(delay_feedback: Double, delay: Delay) {
         delay.feedback = AUValue(delay_feedback)
     }
-    
+    // Delay time setting
     func changeDelay_time(delay_time: Double, delay: Delay) {
         delay.time = AUValue(delay_time)
     }
     
+    // Start track - press the button to start
     func playNewButton(engine: AudioEngine, samplePlayer: AudioPlayer, fileURL: String) {
         do {
             try engine.start()

@@ -3,33 +3,36 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/6/21.
-//
+// Who is the file?
+    // frame setting
+    // position setting
+    // Height, width setting
 
 import Foundation
 import UIKit
 
-//屏幕寬度
+//Screen Width
 let screenW = UIScreen.main.bounds.width
-//屏幕高度
+//Screen Height
 let screenH = UIScreen.main.bounds.height
-//控制區域大小
-let controlPanW = (screenW - 20) //兩邊留 10
+//Control area
+let controlPanW = (screenW - 20) // 10 at each side
 let controlPanH = (screenH / 16)
-//四個組別的整體大小
+//4 Groups
 let TrackWholeW = (screenW - 20)
 let TrackWholeH = (screenH / 2)
-//每個組別的大小
-let TrackW = ((TrackWholeW - 10) / 2) // 中間留 10
-let TrackH = ((TrackWholeH - 10 ) / 2) //中間留 10
-//樂器整體大小
+// Each Track Group
+let TrackW = ((TrackWholeW - 10) / 2) // 10 in the middle
+let TrackH = ((TrackWholeH - 10 ) / 2) // 10 in the middle
+//Instrument area
 let InstrumentW = (screenW - 20)
 let InstrumentH = (screenH / 3)
-//鍵盤區域大小
+//keyboard area
 let KeyboradW = (screenW - 20)
 let KeyboradH = (screenH / 4)
-//吉他音效調解大小
+//plug-in setting area
 let GuitarEffectChangeW = ((screenW - 20) / 3)
 let GuitarEffectChangeH = (screenH / 4)
-//吉他介面預選項大小
+//plug-in effect preview area
 let GuitarEffecPreW = ((screenW - 20) / 3)
 let GuitarEffecPreH = (screenH / 4)

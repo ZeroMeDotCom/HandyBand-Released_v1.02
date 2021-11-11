@@ -3,7 +3,8 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/7/21.
-//
+// Who is this file?
+    // Keyborad View
 
 import SwiftUI
 import AudioKit
@@ -710,6 +711,7 @@ struct PodKeyBoard: View {
     }
 }
 
+// Each Keybord style
 struct PodKeyStyle: ButtonStyle {
       var color: Color = .green
       

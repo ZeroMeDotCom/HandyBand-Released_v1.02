@@ -55,18 +55,17 @@ class SamplePlyer : ObservableObject {
         self.samplePlayer.isLooping = self.isLooping
         
         
-        //Convolution
+        //Convolution setting
         //Path for convolution
         self.url_convolutionSalt_one = Bundle.main.url(forResource: "salt_one", withExtension: "wav")!
         self.url_convolutionSalt_two = Bundle.main.url(forResource: "salt_two", withExtension: "wav")!
         convolutionSalt_one = Convolution(samplePlayer, impulseResponseFileURL: url_convolutionSalt_one, partitionLength: 8_192)
         convolutionSalt_two = Convolution(samplePlayer, impulseResponseFileURL: url_convolutionSalt_two, partitionLength: 8_192)
-        
         //make a mixser
         saltMixer = DryWetMixer(convolutionSalt_one, convolutionSalt_two, balance: AUValue(0.5))
         convolutionMixer = DryWetMixer(samplePlayer, saltMixer, balance: AUValue(0.5))
 
-        //Reverb
+        //Reverb setting
         reverb = Reverb(samplePlayer)
         reverb.dryWetMix = 100
         reverb.loadFactoryPreset(.cathedral)
@@ -83,10 +82,12 @@ class SamplePlyer : ObservableObject {
         dryWetMixer.balance = delaySetting.balance
         
 
+        // connect engine and player
         engine.output = convolutionMixer
         samplePlayer.volume = AUValue(self.volume)
     }
     
+    // Change reverb function
     func change_reverb(place: String) {
         switch place {
         case "mediumChamber":
@@ -111,27 +112,31 @@ class SamplePlyer : ObservableObject {
 
     }
     
+    // Change convolution balance function
     func changeConvolution_balance(convolution_balance: AUValue){
         saltMixer.balance = convolution_balance
     }
-
+    // Change delay balance function
     func changeDelay_balance(delay_balance: Double) {
         dryWetMixer.balance = AUValue(delay_balance)
     }
     
+    // Change delay feedback function
     func changeDelay_feedback(delay_feedback: Double) {
         delay.feedback = AUValue(delay_feedback)
     }
     
+    // Change delay time function
     func changeDelay_time(delay_time: Double) {
         delay.time = AUValue(delay_time)
     }
     
+    // Change volumefunction
     func changeVolume(value: Double) {
         samplePlayer.volume = AUValue(value)
     }
     
-    //直接獲取URL版本播放
+    //Get and return the file path as URL type
     func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
@@ -141,6 +146,7 @@ class SamplePlyer : ObservableObject {
         return path as URL
         }
     
+    // Start engine and player
     func play() {
         do {
             try engine.start()
@@ -149,7 +155,7 @@ class SamplePlyer : ObservableObject {
         }
         do {
 //            try samplePlayer.load(url: getFileURL(fileURL: fileURL))
-            print("單獨播放的文件:\(getFileURL(fileURL: fileURL))")
+
             try samplePlayer.load(url: url)
             //Delay Setting
             delay.feedback = 0.9
@@ -164,11 +170,12 @@ class SamplePlyer : ObservableObject {
 //            dryWetMixer.play()
 
         } catch {
-            // couldn't load file :(
+            //
         }
         
     }
 
+    // Stop the engie
     func stop() {
         engine.stop()
     }

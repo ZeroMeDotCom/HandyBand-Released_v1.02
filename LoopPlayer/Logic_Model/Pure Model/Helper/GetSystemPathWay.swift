@@ -3,12 +3,12 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/10/21.
-//
+//  Who is this file? -> Get file path as URL type MODEL
 
 import Foundation
 
 public class GetSystemPathWay {
-    //直接獲取URL版本播放
+
     func getFileURL(fileURL: String) -> URL {
         let path = self.getDocumentsDirectory().appendingPathComponent(fileURL)
         return path as URL

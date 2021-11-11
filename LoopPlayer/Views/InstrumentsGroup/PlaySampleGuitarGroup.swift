@@ -3,7 +3,8 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/11/21.
-//
+// Who is the file?
+    // Guitar group view
 
 import SwiftUI
 

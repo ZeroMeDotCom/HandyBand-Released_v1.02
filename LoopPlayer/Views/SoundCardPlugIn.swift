@@ -3,7 +3,8 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/4/21.
-//
+// Who is this file?
+    // 1. Futrue - another version of plug-in interface
 
 import SwiftUI
 

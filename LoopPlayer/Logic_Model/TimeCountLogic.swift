@@ -3,15 +3,15 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/6/21.
-// What is the file?
+// Who is the file?
     // 1. counter, text speed
-    // 2. after 4 counters, start recording and stop at metroWish
+    // 2. after 4 counters, start recording and stop at the wanting segement
 
 import Foundation
 import AudioKit
 
 class TimeCountLogic: ObservableObject {
-//    var audioInputRecorder = RecordingLogic()
+
     var engine = AudioEngine()
     var dangDangDangPlayer = AudioPlayer()
     var url: URL
@@ -20,7 +20,7 @@ class TimeCountLogic: ObservableObject {
     @Published var isOpening: Bool = false
     var timerDeliver = Timer()
     var metros: Int = 1
-    var metroWish: Int = 5 //真正的是8 - 4
+    var metroWish: Int = 5 //read is 8 - 4
     
     init() {
         path = Bundle.main.path(forResource: "dangDangDang.m4a", ofType:nil)!
@@ -34,10 +34,11 @@ class TimeCountLogic: ObservableObject {
         }
     }
     
+    // Count stop function
     func oldStyleCountStop() {
         self.dangDangDangStop()
         }
-    
+    // Count start function
     func oldStyleCount(speed: Double) {
         do {
             try engine.start()
@@ -57,37 +58,14 @@ class TimeCountLogic: ObservableObject {
             if self.metros == self.metroWish {
                 print(self.metros)
                 timerDeliver.invalidate()
-                print("老 變回來之前: \(self.isOpening)")
                 self.isOpening = !self.isOpening
-                print("老 變回來之後: \(self.isOpening)")
                 self.metros = 1
                 
-//                sleep(1)
-//                self.readyDangDang(speed: speed)
-                
-                //開始錄製
                 
             }
         }
 
     }
-//
-//    func readyDangDang(speed: Double) {
-//        Timer.scheduledTimer(withTimeInterval: 60 / speed, repeats: true) { timerDeliver in
-//            if self.isOpening {
-//                self.dangDangDang()
-//                self.metros += 1
-//                print(self.metros)
-//            }
-//
-//            if self.metros == self.metroWish {
-//                print(self.metros)
-//                timerDeliver.invalidate()
-//                self.metros = 1
-//
-//            }
-//        }
-//    }
     
     func dangDangDang() {
         dangDangDangPlayer.play()

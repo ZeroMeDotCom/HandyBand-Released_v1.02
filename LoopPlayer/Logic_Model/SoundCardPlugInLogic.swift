@@ -3,7 +3,9 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/4/21.
-//
+// Who's this file?
+    // 1. Manage the plug-in
+    // 2. Change the effects of plug-in sign
 
 import Foundation
 import AudioKit
@@ -11,6 +13,7 @@ import AVFoundation
 import SoundpipeAudioKit
 
 class SoundCardPlugInLogic: ObservableObject {
+    //Engine, input handler, mixer
     var engine = AudioEngine()
     var inputSession: AudioEngine.InputNode?
     var soundSession: AVAudioOutputNode?

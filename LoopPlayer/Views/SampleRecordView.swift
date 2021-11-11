@@ -3,14 +3,17 @@
 //  LoopPlayer
 //
 //  Created by Dan on 11/8/21.
-//
-
+//   Who is the file?
+    // Recording view
+    // 1. It Has been transfered into "DangDangDangView"
+    // 2. Future - It might be useful
+ 
 import SwiftUI
 
 struct SampleRecordView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        //轉移到統一DangDangDang的上頭介面
+
     }
 }
 
