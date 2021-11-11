@@ -30,7 +30,14 @@ struct Track_Nine: View {
                     print(fileManage.whichToPlay)
                     
                 }, label: {
-                    Image(systemName: fileManage.addingToPlayNextTime(trackID: "track9") ? "arrow.up.circle.fill" : "arrow.up.circle")
+                    fileManage.addingToPlayNextTime(trackID: "track9") ?
+                    Image(systemName: fileManage.sendToBusIconPressed)
+                        .resizable()
+                        .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
+                    :
+                    Image(systemName: fileManage.sendToBusIcon)
+                        .resizable()
+                        .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
                 })
             }
 

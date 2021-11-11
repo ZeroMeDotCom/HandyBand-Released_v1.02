@@ -10,6 +10,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 //Screen Width
 let screenW = UIScreen.main.bounds.width
@@ -39,10 +40,22 @@ let GuitarEffecPreH = (screenH / 4)
 
 
 // Recording Button
-let ReocordingButtonH = controlPanH / 2
+let ReocordingButtonH = controlPanH / 2.5
 
 // Stepper - BPM & Counter
 let StepperH = controlPanW / 8
 
 // Control Spacer configration
 let ControlSpacerH = controlPanW / 16
+
+// Color theme
+let BackgroundColor = Color(red: 244 / 255, green: 244 / 255, blue: 244 / 255)
+
+// Send to bus button size
+let SendToBusButtonH = controlPanH / 2.5
+
+//Play Button
+let PlayButtonColor = SwiftUI.Color.yellow
+let PlayButtonImage:String = "play.circle"
+let PlayButtonImagePressed:String = "stop.circle.fill"
+let PlayButtonSizeH = controlPanH

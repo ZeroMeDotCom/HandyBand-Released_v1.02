@@ -18,6 +18,7 @@ struct PlaySampleDrumsGroup: View {
             Track_Three().environmentObject(fileManage)
             
         }
+        
     }
 }
 

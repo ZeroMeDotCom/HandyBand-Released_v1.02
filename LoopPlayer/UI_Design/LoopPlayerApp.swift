@@ -16,55 +16,58 @@ struct LoopPlayerApp: App {
     @State private var selection = 0
     var body: some Scene {
         WindowGroup {
-            VStack(
-                alignment: .center
-            ) {
-                VStack {
-                    //ControlPan
-                    HStack {
-                        DangDangDangView()
-                            .environmentObject(recorderPlayer)
-                        PlayYourCreationView().environmentObject(fileManage)
-                    }
-                    .frame(width: controlPanW, height: controlPanH, alignment: .center)
-                    .border(.green, width: 2)
-                    
-                    
+            ZStack {
+                //BackgondColor
+                Color(UIColor(BackgroundColor))
+                VStack(
+                    alignment: .center
+                )
+                {
                     VStack {
-                        ContentView()
-                            .environmentObject(fileManage)
-                            .environmentObject(playCreationModel)
-                    }
-                    //整體四個
-                    .frame(width: TrackWholeW, height: TrackWholeH, alignment: .center)
-
-                    .border(.yellow, width: 2)
-                }
-
-                    
-                VStack {
-                    Picker(selection: $selection, label: Text("Plug-in or Build-in")) {
-                        Text("Build-in").tag(0)
-                        Text("Plug-in").tag(1)
-                    }.pickerStyle(.segmented)
-                    if selection == 0 {
-                        PodKeyBoard().environmentObject(fileManage)
-  
-
-                    } else if selection == 1 {
-                        //PlUGIN-Guitar/Bass
-                        PlugInView()
-                            .environmentObject(fileManage)
-                            .environmentObject(playCreationModel)
-                        .border(.red, width: 1)
+                        //ControlPan
+                        HStack {
+                            DangDangDangView()
+                                .environmentObject(recorderPlayer)
+                            PlayYourCreationView().environmentObject(fileManage)
+                        }
+                        .frame(width: controlPanW, height: controlPanH, alignment: .center)
+                        .background(RoundedRectangle(cornerRadius: 17).fill(Color(UIColor.white)))
+                        
+                        
+                        VStack {
+                            ContentView()
+                                .environmentObject(fileManage)
+                                .environmentObject(playCreationModel)
+                        }
+                        //整體四個
+                        .frame(width: TrackWholeW, height: TrackWholeH, alignment: .center)
 
                     }
-                }
 
-                .border(.black, width: 3)
-                .padding(0)
+                        
+                    VStack {
+                        Picker(selection: $selection, label: Text("Plug-in or Build-in")) {
+                            Text("Build-in").tag(0)
+                            Text("Plug-in").tag(1)
+                        }.pickerStyle(.segmented)
+                        if selection == 0 {
+                            PodKeyBoard().environmentObject(fileManage)
+      
+
+                        } else if selection == 1 {
+                            //PlUGIN-Guitar/Bass
+                            PlugInView()
+                                .environmentObject(fileManage)
+                                .environmentObject(playCreationModel)
+                            .border(.red, width: 1)
+
+                        }
+                    }
+                    .background(RoundedRectangle(cornerRadius: 17).fill(Color(UIColor.white)))
+                    .border(.black, width: 3)
+                    .padding(0)
+                }
             }
-
         }
 
     }

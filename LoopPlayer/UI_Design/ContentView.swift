@@ -25,7 +25,8 @@ struct ContentView: View {
                         .environmentObject(playCreationModel)
                 }
                 .frame(width: TrackW, height: TrackH, alignment: .center)
-                .border(.blue, width: 4)
+                .background(RoundedRectangle(cornerRadius: 17).fill(Color(UIColor.white)))
+                
 
 
                 VStack {
@@ -39,11 +40,11 @@ struct ContentView: View {
                             .environmentObject(playCreationModel)
                     }
                 .frame(width: TrackW, height: TrackH, alignment: .center)
-                .border(.blue, width: 4)
+                .background(RoundedRectangle(cornerRadius: 17).fill(Color(UIColor.white)))
 
             }
-//            .position(x: TrackWholeW / 2, y: controlPanH + 40)
-            }
+
+        }
 
 
             
@@ -58,7 +59,7 @@ struct ContentView: View {
                         .environmentObject(playCreationModel)
                 }
                 .frame(width: TrackW, height: TrackH, alignment: .center)
-                .border(.blue, width: 4)
+                .background(RoundedRectangle(cornerRadius: 17).fill(Color(UIColor.white)))
                    
 
                 VStack(alignment: .leading) {
@@ -71,11 +72,10 @@ struct ContentView: View {
                         .environmentObject(playCreationModel)
                 }
                 .frame(width: TrackW, height: TrackH, alignment: .center)
-                .border(.blue, width: 4)
+                .background(RoundedRectangle(cornerRadius: 17).fill(Color(UIColor.white)))
 
             }
                 
-
         }
         //整体四个
     }

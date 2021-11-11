@@ -22,7 +22,7 @@ struct Track_Eleven: View {
                 Button("T") {
                     fileManage.playNewButton(engine: fileManage.engine11, samplePlayer: fileManage.samplePlayer11, fileURL: fileManage.savedFileNames.fileNames["track11"]!["fileWay"]!)
                 }
-                .buttonStyle(MyButtonStyle2(color: .gray))
+                .buttonStyle(MyButtonStyle2(color: .yellow))
                 .clipShape(Circle())
                 
                 Button(action: {
@@ -30,7 +30,14 @@ struct Track_Eleven: View {
                     print(fileManage.whichToPlay)
                     
                 }, label: {
-                    Image(systemName: fileManage.addingToPlayNextTime(trackID: "track11") ? "arrow.up.circle.fill" : "arrow.up.circle")
+                    fileManage.addingToPlayNextTime(trackID: "track11") ?
+                    Image(systemName: fileManage.sendToBusIconPressed)
+                        .resizable()
+                        .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
+                    :
+                    Image(systemName: fileManage.sendToBusIcon)
+                        .resizable()
+                        .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
                 })
             }
 

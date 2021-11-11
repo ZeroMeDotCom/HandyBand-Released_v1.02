@@ -237,7 +237,7 @@ struct DangDangDangView: View {
                     }
 
                 }, label: {
-                    recorderPlayer.buttonLights[9] ?
+                    recorderPlayer.buttonLights[11] ?
                     Image(systemName: "11.circle.fill")
                         .resizable()
                         .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)

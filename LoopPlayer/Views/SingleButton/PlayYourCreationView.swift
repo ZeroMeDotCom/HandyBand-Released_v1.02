@@ -12,12 +12,26 @@ import SwiftUI
 struct PlayYourCreationView: View {
     @EnvironmentObject var fileManage : FileManageLogic
     var body: some View {
-        Button(action: {
-            fileManage.isPause = !fileManage.isPause
-            fileManage.isPause ? fileManage.pauseThepProcessing() : fileManage.playResuting()
-        }, label: {
-            Image(systemName: fileManage.isPause ? "infinity.circle" : "infinity.circle.fill")
-        })
+        HStack {
+            Spacer()
+                .frame(width: ControlSpacerH, alignment: .center)
+            Button(action: {
+                fileManage.isPause = !fileManage.isPause
+                fileManage.isPause ? fileManage.pauseThepProcessing() : fileManage.playResuting()
+            }, label: {
+                fileManage.isPause ?
+                Image(systemName:  "infinity.circle")
+                    .resizable()
+                    .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    .foregroundColor(.purple)
+                :
+                Image(systemName: "infinity.circle.fill")
+                    .resizable()
+                    .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                    .foregroundColor(.purple)
+            })
+        }
+
     }
 }
 

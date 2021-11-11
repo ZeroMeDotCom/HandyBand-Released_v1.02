@@ -11,6 +11,7 @@
     // 2. Manage the engines and players
         // 2.1 effect setting
         // 2.2 player resource
+    // 3. Icon image manage
 
 import Foundation
 import AudioUnit
@@ -75,6 +76,9 @@ class FileManageLogic: ObservableObject {
                    ],
 
     ]
+    
+    @Published var sendToBusIcon : String = "paperplane.circle"
+    @Published var sendToBusIconPressed : String = "paperplane.circle.fill"
     
     //Bass resource - file mapping
     var BassNoteFileNames : [String : String] = [
@@ -1266,6 +1270,11 @@ class FileManageLogic: ObservableObject {
         } catch {
             print("player fail..")
         }
+    }
+    // Stop a single track
+    func stopSingleTrack(fileURL: String, samplePlayer: AudioPlayer, engine: AudioEngine){
+        samplePlayer.stop()
+        engine.stop()
     }
     
     // Play the tracks - final creation
