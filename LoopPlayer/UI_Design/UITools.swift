@@ -40,3 +40,9 @@ let GuitarEffecPreH = (screenH / 4)
 
 // Recording Button
 let ReocordingButtonH = controlPanH / 2
+
+// Stepper - BPM & Counter
+let StepperH = controlPanW / 8
+
+// Control Spacer configration
+let ControlSpacerH = controlPanW / 16

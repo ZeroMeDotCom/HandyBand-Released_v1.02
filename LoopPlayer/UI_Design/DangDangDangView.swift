@@ -328,7 +328,10 @@ struct DangDangDangView: View {
 
                 })
             }
-             
+                
+                // Specer
+
+                
                 // Recording
                 Button(action: {
                     print("開始的時候: \(recorderPlayer.isRecording)")
@@ -337,9 +340,31 @@ struct DangDangDangView: View {
                     recorderPlayer.isRecording ? recorderPlayer.startRecording(toWhichLights: recorderPlayer.whichButtonLight) : recorderPlayer.stopRecording()
 //                    recorderPlayer.isRecording = !recorderPlayer.isRecording
                 }, label: {
-                    Image(systemName: recorderPlayer.isRecording ?  "record.circle.fill" : "record.circle" )
+                    HStack {
+                        recorderPlayer.isRecording ?
+                        Image(systemName: "record.circle.fill")
+                            .resizable()
+                            .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                            .foregroundColor(.red)
+                        :
+                        Image(systemName: "record.circle")
+                            .resizable()
+                            .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                            .foregroundColor(.red)
+                        
+                        recorderPlayer.isCountFour ?
+                        Text("Rec")
+                            .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                            .foregroundColor(.red)
+                        :
+                        Text("\(recorderPlayer.currentMetro)/4")
+                            .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                            .foregroundColor(.red)
+                    }
+
                 })
-                // Listening 等會兒會被下面真正的按鈕取代
+                
+                // Listen the lastest recording
 //                Button(action: {
 //                    recorderPlayer.isListening = !recorderPlayer.isListening
 //                    recorderPlayer.isListening ? recorderPlayer.playThePotencial(filename: recorderPlayer.audioFileName2, samplePlayer: recorderPlayer.samplePlayer, engine: recorderPlayer.engine) : recorderPlayer.listeningStop()
@@ -351,26 +376,46 @@ struct DangDangDangView: View {
             }
             
             //Counter view: adjust speed, start count button
-            Button(action: {
-//                isSpeedCountOpen = !isSpeedCountOpen
-                dangDangDangModel.isOpening = !dangDangDangModel.isOpening
-                dangDangDangModel.isOpening ? dangDangDangModel.oldStyleCount(speed: Double(speedValue)) : dangDangDangModel.oldStyleCountStop()
+//            Button(action: {
+////                isSpeedCountOpen = !isSpeedCountOpen
 //                dangDangDangModel.isOpening = !dangDangDangModel.isOpening
-            }) {
-                Image(systemName: dangDangDangModel.isOpening ? "pause.circle" : "play.circle")
-                Text("Ready?:\(dangDangDangModel.metros)")
-            }
+//                dangDangDangModel.isOpening ? dangDangDangModel.oldStyleCount(speed: Double(speedValue)) : dangDangDangModel.oldStyleCountStop()
+////                dangDangDangModel.isOpening = !dangDangDangModel.isOpening
+//            }) {
+//                Image(systemName: dangDangDangModel.isOpening ? "pause.circle" : "play.circle")
+//                Text("Ready?:\(dangDangDangModel.metros)")
+//            }
             HStack
             {
-                Stepper("BPM: \(recorderPlayer.speed)", onIncrement: {
+                //Current Recording Count
+                Stepper(onIncrement: {
+                    recorderPlayer.metroWish += 1
+                }, onDecrement: {
+                    recorderPlayer.metroWish -= 1
+                }, onEditingChanged: {_ in 
+                    print("Current wish change")
+                }) {
+                    Image(systemName: "c.square.fill")
+                        .resizable()
+                        .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                        .foregroundColor(.yellow)
+                    Text("\(recorderPlayer.currentRecordingCount)/\(recorderPlayer.metroWish)")
+                }
+                .frame(width: StepperH, alignment: .center)
+                
+                Spacer()
+                    .frame(width: ControlSpacerH, height: controlPanH, alignment: .center)
+                    
+                Stepper("BPM: \(Int(recorderPlayer.speed))", onIncrement: {
                     recorderPlayer.speed += 1
                 }, onDecrement: {
                     recorderPlayer.speed -= 1
                 }, onEditingChanged: {_ in
                     print("Create a new speed")
                 })
-                .frame(width: 300, alignment: .trailing)
+                .frame(width: StepperH, alignment: .center)
             }
+            
         }
 
     }

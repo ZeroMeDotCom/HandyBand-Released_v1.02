@@ -17,15 +17,17 @@ class RecordingLogic: ObservableObject {
     // Recoding speed(BPM: beat per minute)
     @Published var speed: Double = 60
     //Current place of a recording
-    private var currentMetro: Int = 1
+    @Published var currentMetro: Int = 0
+    @Published var currentRecordingCount: Int = 0
     // The total segements to record
-    private var metroWish: Int = 8 // how many metro wishing to record based on current speed, after 4 intro beats
+    @Published var metroWish: Int = 8 // how many metro wishing to record based on current speed, after 4 intro beats
     
 
     // Whether it's recording now
     @Published var isRecording: Bool = false
     // Whether it's listening the last recording
     @Published var isListening: Bool = false
+    @Published var isCountFour: Bool = false
     
     //Button controller - Flag array -> Which track is recoding
     @Published var buttonLights : [Bool] = [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false]
@@ -146,18 +148,18 @@ class RecordingLogic: ObservableObject {
                     //play "dang" sound
                     self.smallDangDang.dangDangDang()
                     //Count "dang"
-                    print(self.currentMetro)
                     self.currentMetro += 1
-                    
+                    print("現在的\(self.currentMetro)")
+
                     // sound "dand" 4 times
-                    if self.currentMetro > 4 {
-                        print(self.currentMetro)
+                    if self.currentMetro > 3 {
+                        self.isCountFour = true
                         timerDeliver.invalidate()
-                        self.currentMetro = 1
+                        self.currentMetro = 0
                                             
                         //Start recording current track
                         print(" 4.休眠開始 。。")
-                        sleep(1)
+//                        sleep(1)
                         print(" 5.休眠結束 。。")
 //                        usleep(useconds_t(1000000 * Double(doubleStr)))
                         
@@ -169,15 +171,16 @@ class RecordingLogic: ObservableObject {
                         //Based on how many segements wishing to record. After certain segement, stop record
                         Timer.scheduledTimer(withTimeInterval: 60 / self.speed, repeats: true) { timerDeliver in
 //                            self.smallDangDang.dangDangDang()
-                            print(self.currentMetro)
-                            self.currentMetro += 1
-                            
-                            if self.currentMetro > self.metroWish {
-                                print("8.现在第\(self.currentMetro)拍")
+//                            self.currentMetro += 1
+                            self.currentRecordingCount += 1
+                            print("8.现在第\(self.currentRecordingCount)拍")
+                            if self.currentRecordingCount > self.metroWish {
+                                self.stopRecording()
                                 timerDeliver.invalidate()
                                 self.isRecording = !self.isRecording
-                                self.currentMetro = 1
-                                self.stopRecording()
+                                self.isCountFour = false
+                                self.currentRecordingCount = 0
+//                                self.currentMetro = 0
                                 print(" 9.開始結束 。。")
                             }
                         }
