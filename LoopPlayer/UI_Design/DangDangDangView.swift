@@ -143,8 +143,49 @@ struct DangDangDangView: View {
                     recorderPlayer.buttonLights[9] ? Image(systemName: "9.circle.fill") : Image(systemName: "9.circle")
 
                 })
+                    // 10
+                Button(action: {
+                    if recorderPlayer.buttonLights[10] {
+                        recorderPlayer.buttonLights[10] = false
+                    } else {
+                        recorderPlayer.onlyOneButtonLights(index: 10)
+                        recorderPlayer.whichButtonLight = 10
+                    }
+
+                }, label: {
+                    recorderPlayer.buttonLights[10] ? Image(systemName: "10.circle.fill") : Image(systemName: "10.circle")
+
+                })
                     
             }
+                Group {
+                    // 11
+                Button(action: {
+                    if recorderPlayer.buttonLights[11] {
+                        recorderPlayer.buttonLights[11] = false
+                    } else {
+                        recorderPlayer.onlyOneButtonLights(index: 11)
+                        recorderPlayer.whichButtonLight = 11
+                    }
+
+                }, label: {
+                    recorderPlayer.buttonLights[9] ? Image(systemName: "11.circle.fill") : Image(systemName: "11.circle")
+
+                })
+                    // 12
+                Button(action: {
+                    if recorderPlayer.buttonLights[12] {
+                        recorderPlayer.buttonLights[12] = false
+                    } else {
+                        recorderPlayer.onlyOneButtonLights(index: 12)
+                        recorderPlayer.whichButtonLight = 12
+                    }
+
+                }, label: {
+                    recorderPlayer.buttonLights[12] ? Image(systemName: "12.circle.fill") : Image(systemName: "12.circle")
+
+                })
+                }
              
                 // Recording
                 Button(action: {
@@ -166,12 +207,11 @@ struct DangDangDangView: View {
 //                })
 
             }
+            
             //Counter view: adjust speed, start count button
             Button(action: {
 //                isSpeedCountOpen = !isSpeedCountOpen
-                print("老 剛開始: \(dangDangDangModel.isOpening)")
                 dangDangDangModel.isOpening = !dangDangDangModel.isOpening
-                print("點了之後: \(dangDangDangModel.isOpening)")
                 dangDangDangModel.isOpening ? dangDangDangModel.oldStyleCount(speed: Double(speedValue)) : dangDangDangModel.oldStyleCountStop()
 //                dangDangDangModel.isOpening = !dangDangDangModel.isOpening
             }) {

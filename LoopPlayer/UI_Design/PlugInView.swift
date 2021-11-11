@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct PlugInView: View {
+    @EnvironmentObject var fileManage : FileManageLogic
+    @EnvironmentObject var playCreationModel : playCreationsModel
     var body: some View {
         SoundCardPlugInView()
+            .environmentObject(fileManage)
+            .environmentObject(playCreationModel)
     }
 }
 

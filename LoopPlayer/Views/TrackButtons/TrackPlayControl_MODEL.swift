@@ -67,32 +67,6 @@ struct myPickerStyleLabel: View {
         Text("Reverb")
     }
 }
-
-struct MyButtonStyle2: ButtonStyle {
-      var color: Color = .gray
-      
-      public func makeBody(configuration: MyButtonStyle2.Configuration) -> some View {
-          MyButton(configuration: configuration, color: color)
-      }
-      
-      struct MyButton: View {
-          let configuration: MyButtonStyle2.Configuration
-          let color: Color
-          
-          var body: some View {
-              
-              return configuration.label
-                  .foregroundColor(.white)
-                  .padding(15)
-                  .frame(width: 50, height: 50)
-                  .background(RoundedRectangle(cornerRadius: 5).fill(color))
-                  .compositingGroup()
-                  .shadow(color: .black, radius: 3)
-                  .opacity(configuration.isPressed ? 0.5 : 1.0)
-          }
-      }
-  
-  }
     
     
 struct NewStylePlayButton_Previews: PreviewProvider {

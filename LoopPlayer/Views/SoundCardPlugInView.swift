@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SoundCardPlugInView: View {
     @StateObject var soundCardPlugIn = SoundCardPlugInLogic()
+    @EnvironmentObject var fileManage : FileManageLogic
+    @EnvironmentObject var playCreationModel : playCreationsModel
     @State var stopFlag: Bool
     
     //Delay
@@ -20,32 +22,49 @@ struct SoundCardPlugInView: View {
         self.stopFlag = true
     }
     var body: some View {
-        VStack {
-            HStack {
-                Text("Session!!")
-                Button(action: {
-                    self.stopFlag ? self.soundCardPlugIn.stopSession() : self.soundCardPlugIn.openSession()
-                    self.stopFlag = !self.stopFlag
-                    
-                }, label: {
-                    Image(systemName: self.stopFlag ? "stop.fill" : "play.fill")
-                })
-            }
+        HStack {
             
-            //delay
             VStack {
-                Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
-                    soundCardPlugIn.changeDelay_time(delay_time: $delay_time.wrappedValue)
-                })
-                Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
-                    soundCardPlugIn.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
-                })
-                Slider(value: $delay_balance, in: 0...99, onEditingChanged: {_ in
-                    soundCardPlugIn.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
-                })
-            }
-        }
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Guitar").foregroundColor(.yellow)
+                        Image(systemName: "guitars").foregroundColor(.yellow)
+                    }
+                    PlaySampleBassGroup()
+                        .environmentObject(fileManage)
+                        .environmentObject(playCreationModel)
+                }
+            .border(.blue, width: 4)
 
+        }
+            VStack {
+                HStack {
+                    Text("Session!!")
+                    Button(action: {
+                        self.stopFlag ? self.soundCardPlugIn.stopSession() : self.soundCardPlugIn.openSession()
+                        self.stopFlag = !self.stopFlag
+                        
+                    }, label: {
+                        Image(systemName: self.stopFlag ? "powerplug,fill" : "powerplug")
+                    })
+                }
+                
+                //delay
+                VStack {
+                    Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
+                        soundCardPlugIn.changeDelay_time(delay_time: $delay_time.wrappedValue)
+                    })
+                    Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                        soundCardPlugIn.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
+                    })
+                    Slider(value: $delay_balance, in: 0...99, onEditingChanged: {_ in
+                        soundCardPlugIn.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
+                    })
+                }
+            }
+
+
+        }
 
     }
 }

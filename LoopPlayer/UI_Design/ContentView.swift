@@ -13,46 +13,69 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-            HStack(alignment: .top) {
-                VStack{
-                    Text("Drum Group").border(.black, width: 1)
+            HStack() {
+                VStack(alignment: .leading){
+                    HStack {
+                        Text("Drum").foregroundColor(.yellow)
+                        Image(systemName: "square.grid.3x3.fill").foregroundColor(.yellow)
+                    }
                     PlaySampleDrumsGroup()
                         .environmentObject(fileManage)
                         .environmentObject(playCreationModel)
                 }
-                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                .frame(width: TrackW, height: TrackH, alignment: .center)
+                .border(.blue, width: 4)
+
 
                 VStack {
-                    Text("Bass Group")
-                    PlaySampleBassGroup()
-                        .environmentObject(fileManage)
-                        .environmentObject(playCreationModel)
-                }
-                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Bass").foregroundColor(.yellow)
+                            Image(systemName: "square.grid.3x3.fill").foregroundColor(.yellow)
+                        }
+                        PlaySampleBassGroup()
+                            .environmentObject(fileManage)
+                            .environmentObject(playCreationModel)
+                    }
+                .frame(width: TrackW, height: TrackH, alignment: .center)
+                .border(.blue, width: 4)
+
             }
-            .border(Color.blue, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+//            .position(x: TrackWholeW / 2, y: controlPanH + 40)
+            }
+
+
             
             HStack {
-                VStack {
-                    Text("String Group")
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("String").foregroundColor(.yellow)
+                        Image(systemName: "square.grid.3x3.fill").foregroundColor(.yellow)
+                    }
                     PlaySampleStringsGroup()
                         .environmentObject(fileManage)
                         .environmentObject(playCreationModel)
                 }
-                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
-                
-                VStack {
-                    Text("Piano Group")
+                .frame(width: TrackW, height: TrackH, alignment: .center)
+                .border(.blue, width: 4)
+                   
+
+                VStack(alignment: .leading) {
+                    HStack {
+                        Text("Piano").foregroundColor(.yellow)
+                        Image(systemName: "square.grid.3x3.fill").foregroundColor(.yellow)
+                    }
                     PlaySamplePianoGroup()
                         .environmentObject(fileManage)
                         .environmentObject(playCreationModel)
                 }
-                .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                .frame(width: TrackW, height: TrackH, alignment: .center)
+                .border(.blue, width: 4)
+
             }
-            .border(Color.blue, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                
+
         }
-        .border(.yellow, width: 2)
-        .padding(0)
         //整体四个
     }
 }

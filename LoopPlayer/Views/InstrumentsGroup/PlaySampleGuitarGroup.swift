@@ -1,15 +1,14 @@
 //
-//  PlaySampleBassGroup.swift
+//  PlaySampleGuitarGroup.swift
 //  LoopPlayer
 //
-//  Created by Dan on 10/29/21.
+//  Created by Dan on 11/11/21.
 //
 
 import SwiftUI
 
-struct PlaySampleBassGroup: View {
+struct PlaySampleGuitarGroup: View {
     @EnvironmentObject var fileManage : FileManageLogic
-
     var body: some View {
         HStack {
             
@@ -21,9 +20,8 @@ struct PlaySampleBassGroup: View {
     }
 }
 
-
-struct PlaySampleBassGroup_Previews: PreviewProvider {
+struct PlaySampleGuitarGroup_Previews: PreviewProvider {
     static var previews: some View {
-        PlaySampleBassGroup()
+        PlaySampleGuitarGroup()
     }
 }
