@@ -16,15 +16,33 @@ struct Track_Eight: View {
     @State private var delay_feedback : Double = 50
     @State private var delay_time : Double = 0.1
     @State private var saltMixerBalance : AUValue = 0.5
+    @State private var isOn: Bool = false
     var body: some View {
         VStack {
             HStack {
-                Button("T") {
+                Button(action: {
+                    //
+                }, label: {
+                    self.isOn ?
+                    Image(systemName: PlayButtonImagePressed)
+                        .resizable()
+                        .frame(width: PlayButtonSizeH, height: PlayButtonSizeH, alignment: .center)
+                        .foregroundColor(PlayButtonColor)
+                    :
+                    Image(systemName: PlayButtonImage)
+                        .resizable()
+                        .frame(width: PlayButtonSizeH, height: PlayButtonSizeH, alignment: .center)
+                        .foregroundColor(PlayButtonColor)
+
+                })
+                .gesture(TapGesture(count: 1).onEnded {
                     fileManage.playNewButton(engine: fileManage.engine8, samplePlayer: fileManage.samplePlayer8, fileURL: fileManage.savedFileNames.fileNames["track8"]!["fileWay"]!)
-                }
-                .buttonStyle(MyButtonStyle2(color: .gray))
-                
-                .clipShape(Circle())
+                    self.isOn = true
+                })
+                .simultaneousGesture(TapGesture(count: 2).onEnded {
+                    fileManage.stopSingleTrack(fileURL: fileManage.savedFileNames.fileNames["track8"]!["fileWay"]!, samplePlayer: fileManage.samplePlayer8, engine: fileManage.engine8)
+                    self.isOn = false
+                })
                 
                 Button(action: {
                     fileManage.addingToPlayNextTime(trackID: "track8") ? fileManage.setToEdit(trackID: "track8") : fileManage.setReady(trackID: "track8")

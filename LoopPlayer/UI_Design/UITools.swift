@@ -50,6 +50,7 @@ let ControlSpacerH = controlPanW / 16
 
 // Color theme
 let BackgroundColor = Color(red: 244 / 255, green: 244 / 255, blue: 244 / 255)
+let PlayerBorderColor = SwiftUI.Color.purple
 
 // Send to bus button size
 let SendToBusButtonH = controlPanH / 2.5
@@ -59,3 +60,7 @@ let PlayButtonColor = SwiftUI.Color.yellow
 let PlayButtonImage:String = "play.circle"
 let PlayButtonImagePressed:String = "stop.circle.fill"
 let PlayButtonSizeH = controlPanH
+
+//Single Track Group Specer
+let SingleTrackGroupSpecerH = screenW / 63
+let SingleTrackGroupSpecerBottomH = screenH / 63

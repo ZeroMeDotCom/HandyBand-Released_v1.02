@@ -13,9 +13,26 @@ struct PlaySampleDrumsGroup: View {
 
     var body: some View {
         HStack {
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
             Track_One().environmentObject(fileManage)
+                .background(RoundedRectangle(cornerRadius: 25).fill(Color(UIColor.white)))
+
+
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
             Track_Two().environmentObject(fileManage)
+                .background(RoundedRectangle(cornerRadius: 25).fill(Color(UIColor.white)))
+
+
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
             Track_Three().environmentObject(fileManage)
+                .background(RoundedRectangle(cornerRadius: 25).fill(Color(UIColor.white)))
+
+
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
             
         }
         

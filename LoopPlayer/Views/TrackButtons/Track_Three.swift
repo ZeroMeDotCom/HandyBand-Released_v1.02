@@ -21,7 +21,6 @@ struct Track_Three: View {
         VStack {
             HStack {
                 Button(action: {
-//                    fileManage.playNewButton(engine: fileManage.engine3, samplePlayer: fileManage.samplePlayer3, fileURL: fileManage.savedFileNames.fileNames["track3"]!["fileWay"]!)
                     //
                 }, label: {
                     self.isOn ?
@@ -62,6 +61,7 @@ struct Track_Three: View {
                         .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
                 })
             }
+            
             
             Picker(selection: self.$selection_effect, label: myPickerStyleLabel()) {
                 Text("Delay").tag(0)
@@ -108,8 +108,6 @@ struct Track_Three: View {
                 })
              
             }
-            
-            
 
         }
 
