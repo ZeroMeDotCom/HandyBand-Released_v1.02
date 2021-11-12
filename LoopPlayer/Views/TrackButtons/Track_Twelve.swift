@@ -44,7 +44,9 @@ struct Track_Twelve: View {
                     fileManage.stopSingleTrack(fileURL: fileManage.savedFileNames.fileNames["track12"]!["fileWay"]!, samplePlayer: fileManage.samplePlayer12, engine: fileManage.engine12)
                     self.isOn = false
                 })
-                
+                    
+
+                //Send to Bus
                 Button(action: {
                     fileManage.addingToPlayNextTime(trackID: "track12") ? fileManage.setToEdit(trackID: "track12") : fileManage.setReady(trackID: "track12")
                     print(fileManage.whichToPlay)
@@ -72,74 +74,121 @@ struct Track_Twelve: View {
                         .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
                         .padding(.top, -EffectIconH * 1.5)
                 }
-            }
 
+            }
+            
+            
             Picker(selection: self.$selection_effect, label: myPickerStyleLabel()) {
                 Text("Delay").tag(0)
                 Text("Reverb").tag(1)
                 Text("Conv").tag(2)
             }.pickerStyle(.segmented)
             if selection_effect == 0 {
-                
-                //Delay Setting
-                HStack {
-                    Image(systemName: DelyTimeIcon)
-                        .foregroundColor(EffectIconColor)
-                        .frame(width: EffectIconH, height: EffectIconH, alignment: .bottom)
+                VStack {
+                    //Delay Setting
+                    HStack {
+                        Image(systemName: DelyTimeIcon)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .bottom)
 
-                    
-                    Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
-                        fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay12)
-                    })
+                        
+                        Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
+                            fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay12)
+                        })
+
+                    }
+                    .frame(alignment: .center)
+
+                    HStack {
+                        Image(systemName: DelayFeedbackIcon)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+
+                        Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                            fileManage.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue, delay: fileManage.delay12)
+                        })
+                    }
+                    HStack {
+                        Image(systemName: DelayBalanceIcon)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+
+                        Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
+                            fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer12)
+                        })
+                    }
+
 
                 }
-                .frame(alignment: .center)
+                .frame( height: SegmentH, alignment: .center)
 
-                HStack {
-                    Image(systemName: DelayFeedbackIcon)
-                        .foregroundColor(EffectIconColor)
-                        .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
-
-                    Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
-                        fileManage.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue, delay: fileManage.delay12)
-                    })
-                }
-                HStack {
-                    Image(systemName: DelayBalanceIcon)
-                        .foregroundColor(EffectIconColor)
-                        .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
-
-                    Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
-                        fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer12)
-                    })
-                }
                 
             } else if selection_effect == 1 {
-                
-                Picker(selection: self.$selection, label: myPickerStyleLabel()) {
-                    Text("cathedral").tag(0)
-                    Text("largeHall").tag(1)
-                    Text("largeHall2").tag(2)
-                    Text("largeRoom").tag(3)
-                    Text("mediumChamber").tag(4)
+
+                VStack {
+                    HStack {
+                        Image(systemName: DecorationIcon)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        Text("Try Anther Place")
+                            .foregroundColor(EffectIconColor)
+                        Image(systemName: DecorationIcon)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+
+                    }
+                    HStack
+                    {
+                        Image(systemName: InstructionIcon)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        Picker(selection: self.$selection, label: myPickerStyleLabel()) {
+                            Text("cathedral").tag(0)
+                            Text("largeHall").tag(1)
+                            Text("largeHall2").tag(2)
+                            Text("largeRoom").tag(3)
+                            Text("mediumChamber").tag(4)
+
+                        }
+                        .pickerStyle(.menu)
+                        .onChange(of: selection, perform: {
+                            newValue in
+                            fileManage.changeDelay_balance(delay_balance: 0, dryWetMixer: fileManage.dryWetMixer12)
+                            fileManage.change_reverb(place: places[newValue], reverb: fileManage.reverb12)
+                        })
+                    }
 
                 }
-                .pickerStyle(.menu)
-                .onChange(of: selection, perform: {
-                    newValue in
-                    fileManage.changeDelay_balance(delay_balance: 0, dryWetMixer: fileManage.dryWetMixer12)
-                    fileManage.change_reverb(place: places[newValue], reverb: fileManage.reverb12)
-                })
+                .frame(height: SegmentH, alignment: .center)
+
      
             } else {
-                
-                Slider(value: $saltMixerBalance, in: 0...1, onEditingChanged: {_ in
-                    fileManage.changeConvolution_balance(convolution_balance: $saltMixerBalance.wrappedValue, saltMixer: fileManage.saltMixer12)
-                    print("\($saltMixerBalance.wrappedValue)")
-                })
+                VStack {
+                    HStack {
+                        Image(systemName: ConvolutionIconLeft)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        Text("Add Some Flavor")
+                            .foregroundColor(EffectIconColor)
+                        Image(systemName: ConvolutionIconRight)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+
+                    }
+                    Slider(value: $saltMixerBalance, in: 0...1, onEditingChanged: {_ in
+                        fileManage.changeConvolution_balance(convolution_balance: $saltMixerBalance.wrappedValue, saltMixer: fileManage.saltMixer12)
+                        print("\($saltMixerBalance.wrappedValue)")
+                    })
+                    
+                    
+                }
+                .frame( height: SegmentH, alignment: .center)
+
              
             }
+
         }
+
     }
 }
 

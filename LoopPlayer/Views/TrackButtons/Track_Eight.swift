@@ -44,7 +44,9 @@ struct Track_Eight: View {
                     fileManage.stopSingleTrack(fileURL: fileManage.savedFileNames.fileNames["track8"]!["fileWay"]!, samplePlayer: fileManage.samplePlayer8, engine: fileManage.engine8)
                     self.isOn = false
                 })
-                
+                    
+
+                //Send to Bus
                 Button(action: {
                     fileManage.addingToPlayNextTime(trackID: "track8") ? fileManage.setToEdit(trackID: "track8") : fileManage.setReady(trackID: "track8")
                     print(fileManage.whichToPlay)
@@ -72,49 +74,57 @@ struct Track_Eight: View {
                         .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
                         .padding(.top, -EffectIconH * 1.5)
                 }
-            }
 
+            }
+            
+            
             Picker(selection: self.$selection_effect, label: myPickerStyleLabel()) {
                 Text("Delay").tag(0)
                 Text("Reverb").tag(1)
                 Text("Conv").tag(2)
             }.pickerStyle(.segmented)
-            
             if selection_effect == 0 {
-                //Delay Setting
-                HStack {
-                    Image(systemName: DelyTimeIcon)
-                        .foregroundColor(EffectIconColor)
-                        .frame(width: EffectIconH, height: EffectIconH, alignment: .bottom)
+                VStack {
+                    //Delay Setting
+                    HStack {
+                        Image(systemName: DelyTimeIcon)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .bottom)
 
-                    
-                    Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
-                        fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay8)
-                    })
+                        
+                        Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
+                            fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay8)
+                        })
+
+                    }
+                    .frame(alignment: .center)
+
+                    HStack {
+                        Image(systemName: DelayFeedbackIcon)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+
+                        Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                            fileManage.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue, delay: fileManage.delay8)
+                        })
+                    }
+                    HStack {
+                        Image(systemName: DelayBalanceIcon)
+                            .foregroundColor(EffectIconColor)
+                            .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+
+                        Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
+                            fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer8)
+                        })
+                    }
+
 
                 }
-                .frame(alignment: .center)
+                .frame( height: SegmentH, alignment: .center)
 
-                HStack {
-                    Image(systemName: DelayFeedbackIcon)
-                        .foregroundColor(EffectIconColor)
-                        .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
-
-                    Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
-                        fileManage.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue, delay: fileManage.delay8)
-                    })
-                }
-                HStack {
-                    Image(systemName: DelayBalanceIcon)
-                        .foregroundColor(EffectIconColor)
-                        .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
-
-                    Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
-                        fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer8)
-                    })
-                }
                 
             } else if selection_effect == 1 {
+
                 VStack {
                     HStack {
                         Image(systemName: DecorationIcon)
@@ -150,9 +160,9 @@ struct Track_Eight: View {
 
                 }
                 .frame(height: SegmentH, alignment: .center)
+
      
             } else {
-                
                 VStack {
                     HStack {
                         Image(systemName: ConvolutionIconLeft)
@@ -173,9 +183,13 @@ struct Track_Eight: View {
                     
                 }
                 .frame( height: SegmentH, alignment: .center)
+                .border(.red, width: 3)
+
+             
             }
- 
+
         }
+
     }
 }
 

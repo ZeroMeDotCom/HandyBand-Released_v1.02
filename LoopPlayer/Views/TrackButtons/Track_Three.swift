@@ -183,7 +183,6 @@ struct Track_Three: View {
                     
                 }
                 .frame( height: SegmentH, alignment: .center)
-                .border(.red, width: 3)
 
              
             }
