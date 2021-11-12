@@ -43,6 +43,6 @@ struct MovableButtonPlusA: View {
 
 struct MovableButtonPlusA_Previews: PreviewProvider {
     static var previews: some View {
-        MovableButtonPlusA(exclusiveColor: StringColor)
+        MovableButtonPlusA(exclusiveColor: BassColor)
     }
 }

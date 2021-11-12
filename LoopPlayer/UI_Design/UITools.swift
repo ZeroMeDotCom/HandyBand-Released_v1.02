@@ -33,10 +33,9 @@ let TopSpacerH = (InstrumentH / 20)
 let ColumeSpacerW = (InstrumentW / 60)
 let MoveAreaW = (InstrumentW - ColumeSpacerW * 2)
 let MoveAreaH = (InstrumentH * 6 / 8)
-@available(iOS 15.0, *)
-let BassColor = SwiftUI.Color.brown
+let BassColor = SwiftUI.Color.yellow
 let StringColor = SwiftUI.Color.blue
-let PianoColor = SwiftUI.Color.black
+let PianoColor = SwiftUI.Color.purple
 //keyboard area
 let KeyboradW = (screenW - 20)
 let KeyboradH = (screenH / 4)

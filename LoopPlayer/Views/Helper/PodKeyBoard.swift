@@ -9,7 +9,6 @@
 import SwiftUI
 import AudioKit
 
-@available(iOS 15.0, *)
 struct PodKeyBoard: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @State private var selection = 0
@@ -176,6 +175,154 @@ struct PodKeyBoard: View {
                 VStack{
                     HStack {
                         Group {
+                            MovableButtonC(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+
+                            MovableButtonPlusC(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+
+                            MovableButtonD(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonPlusD(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonE(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonF(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+                            
+                            
+                            MovableButtonPlusF(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonG(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonPlusG(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonA(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+                            
+                        }
+                        Group {
+                            
+                            MovableButtonPlusA(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonB(exclusiveColor: BassColor)
+                                .environmentObject(fileManage)
+                        }
+                    }
+    //                HStack {
+    //                    Group {
+    //                        Button("C4") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("#C4") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("D4") {
+    //                           print("button pressed!")
+    //                       }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("#D4") {
+    //                           print("button pressed!")
+    //                       }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("E4") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("F4") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("#F4") {
+    //                           print("button pressed!")
+    //                       }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("G4") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("#G") {
+    //                           print("button pressed!")
+    //                       }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("A4") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //                    }
+    //                    Group {
+    //                        Button("#A4") {
+    //                           print("button pressed!")
+    //                       }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("B4") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //                    }
+    //
+    //                }
+    //                HStack {
+    //                    Group {
+    //                        Button("#C5") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("#C5") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("D5") {
+    //                           print("button pressed!")
+    //                       }.buttonStyle(PodKeyStyle(color: .pink))
+    //                        Button("#D5") {
+    //                           print("button pressed!")
+    //                       }.buttonStyle(PodKeyStyle(color: .pink))
+    //                        Button("E5") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //                        Button("F5") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //                        Button("#F5") {
+    //                           print("button pressed!")
+    //                       }.buttonStyle(PodKeyStyle(color: .pink))
+    //                        Button("G5") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //                        Button("#G5") {
+    //                           print("button pressed!")
+    //                       }.buttonStyle(PodKeyStyle(color: .pink))
+    //                        Button("A5") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //                    }
+    //                    Group {
+    //                        Button("#A5") {
+    //                           print("button pressed!")
+    //                       }.buttonStyle(PodKeyStyle(color: .pink))
+    //
+    //                        Button("B5") {
+    //                            print("button pressed!")
+    //                        }.buttonStyle(PodKeyStyle(color: .pink))
+    //                    }
+    //                }
+                }
+                .onAppear(){
+                    fileManage.changeInstrumentToBass()
+                }
+            } else if selection == 2 {
+                //StringKeyboard
+                VStack{
+                    HStack {
+                        Group {
                             MovableButtonC(exclusiveColor: StringColor)
                                 .environmentObject(fileManage)
 
@@ -315,177 +462,6 @@ struct PodKeyBoard: View {
     //                    }
     //                }
                 }
-                .onAppear(){
-                    fileManage.changeInstrumentToBass()
-                }
-            } else if selection == 2 {
-                //StringKeyboard
-                VStack{
-                    HStack {
-                        Group {
-                            Button("C3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_C, samplePlayer: fileManage.samplePlayer_C, engine: fileManage.engine_C)
-                            }
-                            .buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("#C3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusC, samplePlayer: fileManage.samplePlayer_PlusC, engine: fileManage.engine_PlusC)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("D3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_D, samplePlayer: fileManage.samplePlayer_D, engine: fileManage.engine_D)
-                                
-                           }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("#D3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusD, samplePlayer: fileManage.samplePlayer_PlusD, engine: fileManage.engine_PlusD)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("E3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_E, samplePlayer: fileManage.samplePlayer_E, engine: fileManage.engine_E)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("F3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_F, samplePlayer: fileManage.samplePlayer_F, engine: fileManage.engine_F)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("#F3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusF, samplePlayer: fileManage.samplePlayer_PlusF, engine: fileManage.engine_PlusF)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("G3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_G, samplePlayer: fileManage.samplePlayer_G, engine: fileManage.engine_G)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("#G3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusG, samplePlayer: fileManage.samplePlayer_PlusG, engine: fileManage.engine_PlusG)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("A3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_A, samplePlayer: fileManage.samplePlayer_A, engine: fileManage.engine_A)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
-                        }
-                        Group {
-                            Button("#A3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusA, samplePlayer: fileManage.samplePlayer_PlusA, engine: fileManage.engine_PlusA)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("B3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_B, samplePlayer: fileManage.samplePlayer_B, engine: fileManage.engine_B)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
-                        }
-                    }
-    //                HStack {
-    //                    Group {
-    //                        Button("C4") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("#C4") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("D4") {
-    //                           print("button pressed!")
-    //                       }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("#D4") {
-    //                           print("button pressed!")
-    //                       }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("E4") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("F4") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("#F4") {
-    //                           print("button pressed!")
-    //                       }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("G4") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("#G") {
-    //                           print("button pressed!")
-    //                       }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("A4") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //                    }
-    //                    Group {
-    //                        Button("#A4") {
-    //                           print("button pressed!")
-    //                       }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("B4") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //                    }
-    //
-    //                }
-    //                HStack {
-    //                    Group {
-    //                        Button("#C5") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("#C5") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("D5") {
-    //                           print("button pressed!")
-    //                       }.buttonStyle(PodKeyStyle(color: .pink))
-    //                        Button("#D5") {
-    //                           print("button pressed!")
-    //                       }.buttonStyle(PodKeyStyle(color: .pink))
-    //                        Button("E5") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //                        Button("F5") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //                        Button("#F5") {
-    //                           print("button pressed!")
-    //                       }.buttonStyle(PodKeyStyle(color: .pink))
-    //                        Button("G5") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //                        Button("#G5") {
-    //                           print("button pressed!")
-    //                       }.buttonStyle(PodKeyStyle(color: .pink))
-    //                        Button("A5") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //                    }
-    //                    Group {
-    //                        Button("#A5") {
-    //                           print("button pressed!")
-    //                       }.buttonStyle(PodKeyStyle(color: .pink))
-    //
-    //                        Button("B5") {
-    //                            print("button pressed!")
-    //                        }.buttonStyle(PodKeyStyle(color: .pink))
-    //                    }
-    //                }
-                }
                 .onAppear() {
                     fileManage.changeInstrumentToString()
                 }
@@ -494,68 +470,44 @@ struct PodKeyBoard: View {
                 VStack{
                     HStack {
                         Group {
-                            Button("C3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_C, samplePlayer: fileManage.samplePlayer_C, engine: fileManage.engine_C)
-                            }
-                            .buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonC(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
+
+                            MovableButtonPlusC(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
+
+                            MovableButtonD(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
                             
-                            Button("#C3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusC, samplePlayer: fileManage.samplePlayer_PlusC, engine: fileManage.engine_PlusC)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusD(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
                             
-                            Button("D3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_D, samplePlayer: fileManage.samplePlayer_D, engine: fileManage.engine_D)
-                                
-                           }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonE(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
                             
-                            Button("#D3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusD, samplePlayer: fileManage.samplePlayer_PlusD, engine: fileManage.engine_PlusD)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonF(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
                             
-                            Button("E3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_E, samplePlayer: fileManage.samplePlayer_E, engine: fileManage.engine_E)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusF(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
                             
-                            Button("F3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_F, samplePlayer: fileManage.samplePlayer_F, engine: fileManage.engine_F)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonG(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
                             
-                            Button("#F3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusF, samplePlayer: fileManage.samplePlayer_PlusF, engine: fileManage.engine_PlusF)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusG(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
                             
-                            Button("G3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_G, samplePlayer: fileManage.samplePlayer_G, engine: fileManage.engine_G)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonA(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
                             
-                            Button("#G3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusG, samplePlayer: fileManage.samplePlayer_PlusG, engine: fileManage.engine_PlusG)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("A3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_A, samplePlayer: fileManage.samplePlayer_A, engine: fileManage.engine_A)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
                         }
                         Group {
-                            Button("#A3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusA, samplePlayer: fileManage.samplePlayer_PlusA, engine: fileManage.engine_PlusA)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
                             
-                            Button("B3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_B, samplePlayer: fileManage.samplePlayer_B, engine: fileManage.engine_B)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusA(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonB(exclusiveColor: PianoColor)
+                                .environmentObject(fileManage)
                         }
                     }
     //                HStack {

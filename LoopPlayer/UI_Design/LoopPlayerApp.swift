@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-@available(iOS 15.0, *)
 @main
 struct LoopPlayerApp: App {
     var fileManage = FileManageLogic()
