@@ -4,13 +4,21 @@
 //
 //  Created by Dan on 11/11/21.
 // Who is the file?
-    // Buttonstyke UI Setting
+    // Buttonstyke UI Helper
+    // Picker style UI Helper
 
 import SwiftUI
 
 struct ButtonViewStyle: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+}
+
+//Reverb Picker
+struct myPickerStyleLabel: View {
+    var body: some View {
+        Text("Reverb")
     }
 }
 

@@ -7,6 +7,7 @@
     // frame setting
     // position setting
     // Height, width setting
+    // Image, Icon setting
 
 import Foundation
 import UIKit
@@ -71,6 +72,11 @@ let EffectIconColor = SwiftUI.Color.purple
 let EffectIconH = (PlayButtonSizeH / 6)
 
 //Volumee size
-let TrackVolumeSizeH = controlPanH 
+let TrackVolumeSizeH = controlPanH
+
+//Dely
+let DelyTimeIcon: String = "timer"
+let DelayFeedbackIcon: String = "arrow.uturn.backward"
+let DelayBalanceIcon: String = "equal"
 
 

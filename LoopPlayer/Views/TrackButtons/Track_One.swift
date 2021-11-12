@@ -82,16 +82,37 @@ struct Track_One: View {
             
             if selection_effect == 0 {
                 //Delay Setting
-                Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
-                    fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay1)
-                })
-            
-                Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
-                    fileManage.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue, delay: fileManage.delay1)
-                })
-                Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
-                    fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer1)
-                })
+                HStack {
+                    Image(systemName: DelyTimeIcon)
+                        .foregroundColor(EffectIconColor)
+                        .frame(width: EffectIconH, height: EffectIconH, alignment: .bottom)
+
+                    
+                    Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
+                        fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay1)
+                    })
+
+                }
+                .frame(alignment: .center)
+
+                HStack {
+                    Image(systemName: DelayFeedbackIcon)
+                        .foregroundColor(EffectIconColor)
+                        .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+
+                    Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                        fileManage.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue, delay: fileManage.delay1)
+                    })
+                }
+                HStack {
+                    Image(systemName: DelayBalanceIcon)
+                        .foregroundColor(EffectIconColor)
+                        .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+
+                    Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
+                        fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer1)
+                    })
+                }
                 
             } else if selection_effect == 1 {
                

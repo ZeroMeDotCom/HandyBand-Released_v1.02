@@ -14,10 +14,26 @@ struct PlaySampleBassGroup: View {
     var body: some View {
         HStack {
             
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
             Track_Four().environmentObject(fileManage)
-            Track_Five().environmentObject(fileManage)
-            Track_Six().environmentObject(fileManage)
+                .background(RoundedRectangle(cornerRadius: 25).fill(Color(UIColor.white)))
 
+
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
+            Track_Five().environmentObject(fileManage)
+                .background(RoundedRectangle(cornerRadius: 25).fill(Color(UIColor.white)))
+
+
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
+            Track_Six().environmentObject(fileManage)
+                .background(RoundedRectangle(cornerRadius: 25).fill(Color(UIColor.white)))
+
+
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
         }
     }
 }

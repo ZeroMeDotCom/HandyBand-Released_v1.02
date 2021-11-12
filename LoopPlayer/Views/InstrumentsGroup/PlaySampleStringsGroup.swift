@@ -13,17 +13,26 @@ struct PlaySampleStringsGroup: View {
 //    @EnvironmentObject var playCreationModel : playCreationsModel
     var body: some View {
         HStack {
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
             Track_Seven().environmentObject(fileManage)
+                .background(RoundedRectangle(cornerRadius: 25).fill(Color(UIColor.white)))
+
+
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
             Track_Eight().environmentObject(fileManage)
+                .background(RoundedRectangle(cornerRadius: 25).fill(Color(UIColor.white)))
+
+
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
             Track_Nine().environmentObject(fileManage)
-//            button_sample_play(fileURL: fileManage.savedFileNames.fileNames["track7"]!["fileWay"]!, filename: fileManage.singleFileName, url: fileManage.url, path: fileManage.path, engine: fileManage.engine, samplePlayer: fileManage.samplePlayer, isLooping: false, trackID: "track7")
-//                .environmentObject(fileManage)
-//            
-//            button_sample_play(fileURL: fileManage.savedFileNames.fileNames["track8"]!["fileWay"]!, filename: fileManage.singleFileName2, url: fileManage.url2, path: fileManage.path2, engine: fileManage.engine2, samplePlayer: fileManage.samplePlayer2, isLooping: false, trackID: "track8")
-//                .environmentObject(fileManage)
-//            
-//            button_sample_play(fileURL: fileManage.savedFileNames.fileNames["track9"]!["fileWay"]!, filename: fileManage.singleFileName3, url: fileManage.url3, path: fileManage.path3, engine: fileManage.engine3, samplePlayer: fileManage.samplePlayer3, isLooping: false, trackID: "track9")
-//                .environmentObject(fileManage)
+                .background(RoundedRectangle(cornerRadius: 25).fill(Color(UIColor.white)))
+
+
+            Spacer()
+                .frame(width: SingleTrackGroupSpecerH)
         }
     }
 }
