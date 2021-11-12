@@ -78,6 +78,16 @@
 		2B780519273D1E4500E18FA2 /* PlaySampleGuitarGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B780518273D1E4500E18FA2 /* PlaySampleGuitarGroup.swift */; };
 		2B78051D273EE9B800E18FA2 /* MovableButtonC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78051C273EE9B800E18FA2 /* MovableButtonC.swift */; };
 		2B78051F273EED7F00E18FA2 /* MovableButtonPlusC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78051E273EED7E00E18FA2 /* MovableButtonPlusC.swift */; };
+		2B780521273EEE5A00E18FA2 /* MovableButtonD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B780520273EEE5A00E18FA2 /* MovableButtonD.swift */; };
+		2B780523273EEE6100E18FA2 /* MovableButtonPlusD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B780522273EEE6100E18FA2 /* MovableButtonPlusD.swift */; };
+		2B780525273EEE6800E18FA2 /* MovableButtonE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B780524273EEE6800E18FA2 /* MovableButtonE.swift */; };
+		2B780527273EEE6E00E18FA2 /* MovableButtonF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B780526273EEE6E00E18FA2 /* MovableButtonF.swift */; };
+		2B780529273EEE7A00E18FA2 /* MovableButtonPlusF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B780528273EEE7A00E18FA2 /* MovableButtonPlusF.swift */; };
+		2B78052B273EEE8100E18FA2 /* MovableButtonG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78052A273EEE8100E18FA2 /* MovableButtonG.swift */; };
+		2B78052D273EEE8900E18FA2 /* MovableButtonPlusG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78052C273EEE8900E18FA2 /* MovableButtonPlusG.swift */; };
+		2B78052F273EEE9100E18FA2 /* MovableButtonA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78052E273EEE9100E18FA2 /* MovableButtonA.swift */; };
+		2B780531273EEEB100E18FA2 /* MovableButtonPlusA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B780530273EEEB100E18FA2 /* MovableButtonPlusA.swift */; };
+		2B780533273EEEBA00E18FA2 /* MovableButtonB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B780532273EEEBA00E18FA2 /* MovableButtonB.swift */; };
 		2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */; };
 		2B781352272A8A68002A8972 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B781351272A8A68002A8972 /* ContentView.swift */; };
 		2B781354272A8A6A002A8972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B781353272A8A6A002A8972 /* Assets.xcassets */; };
@@ -182,6 +192,16 @@
 		2B780518273D1E4500E18FA2 /* PlaySampleGuitarGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySampleGuitarGroup.swift; sourceTree = "<group>"; };
 		2B78051C273EE9B800E18FA2 /* MovableButtonC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonC.swift; sourceTree = "<group>"; };
 		2B78051E273EED7E00E18FA2 /* MovableButtonPlusC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonPlusC.swift; sourceTree = "<group>"; };
+		2B780520273EEE5A00E18FA2 /* MovableButtonD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonD.swift; sourceTree = "<group>"; };
+		2B780522273EEE6100E18FA2 /* MovableButtonPlusD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonPlusD.swift; sourceTree = "<group>"; };
+		2B780524273EEE6800E18FA2 /* MovableButtonE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonE.swift; sourceTree = "<group>"; };
+		2B780526273EEE6E00E18FA2 /* MovableButtonF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonF.swift; sourceTree = "<group>"; };
+		2B780528273EEE7A00E18FA2 /* MovableButtonPlusF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonPlusF.swift; sourceTree = "<group>"; };
+		2B78052A273EEE8100E18FA2 /* MovableButtonG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonG.swift; sourceTree = "<group>"; };
+		2B78052C273EEE8900E18FA2 /* MovableButtonPlusG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonPlusG.swift; sourceTree = "<group>"; };
+		2B78052E273EEE9100E18FA2 /* MovableButtonA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonA.swift; sourceTree = "<group>"; };
+		2B780530273EEEB100E18FA2 /* MovableButtonPlusA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonPlusA.swift; sourceTree = "<group>"; };
+		2B780532273EEEBA00E18FA2 /* MovableButtonB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonB.swift; sourceTree = "<group>"; };
 		2B78134C272A8A68002A8972 /* LoopPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoopPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopPlayerApp.swift; sourceTree = "<group>"; };
 		2B781351272A8A68002A8972 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -425,6 +445,16 @@
 			children = (
 				2B78051C273EE9B800E18FA2 /* MovableButtonC.swift */,
 				2B78051E273EED7E00E18FA2 /* MovableButtonPlusC.swift */,
+				2B780520273EEE5A00E18FA2 /* MovableButtonD.swift */,
+				2B780522273EEE6100E18FA2 /* MovableButtonPlusD.swift */,
+				2B780524273EEE6800E18FA2 /* MovableButtonE.swift */,
+				2B780526273EEE6E00E18FA2 /* MovableButtonF.swift */,
+				2B780528273EEE7A00E18FA2 /* MovableButtonPlusF.swift */,
+				2B78052A273EEE8100E18FA2 /* MovableButtonG.swift */,
+				2B78052C273EEE8900E18FA2 /* MovableButtonPlusG.swift */,
+				2B78052E273EEE9100E18FA2 /* MovableButtonA.swift */,
+				2B780530273EEEB100E18FA2 /* MovableButtonPlusA.swift */,
+				2B780532273EEEBA00E18FA2 /* MovableButtonB.swift */,
 			);
 			path = KeyBoradMovableButton;
 			sourceTree = "<group>";
@@ -614,17 +644,23 @@
 				2B6D9E3C273AE2B800273A83 /* PlayCreationsModel.swift in Sources */,
 				2B78050C273C6ADC00E18FA2 /* Track_Eight.swift in Sources */,
 				2B781352272A8A68002A8972 /* ContentView.swift in Sources */,
+				2B780533273EEEBA00E18FA2 /* MovableButtonB.swift in Sources */,
+				2B78052D273EEE8900E18FA2 /* MovableButtonPlusG.swift in Sources */,
 				2B5A7999273667AD000C5437 /* TimeCountLogic.swift in Sources */,
 				2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */,
 				2BBD242627385F80003FC4B2 /* SampleRecordView.swift in Sources */,
 				2B780514273C6C2D00E18FA2 /* Track_Twelve.swift in Sources */,
+				2B780525273EEE6800E18FA2 /* MovableButtonE.swift in Sources */,
+				2B780529273EEE7A00E18FA2 /* MovableButtonPlusF.swift in Sources */,
 				2B5A79932735B04A000C5437 /* PlaySampleStringsGroup.swift in Sources */,
 				2B5A799D27366E31000C5437 /* DangDangDangView.swift in Sources */,
 				2B780504273C690B00E18FA2 /* Track_Four.swift in Sources */,
 				2BF6F8BA2736CED100FA1C26 /* FileManageLogic.swift in Sources */,
 				2B6D9E3F273AF34A00273A83 /* GetSystemPathWay.swift in Sources */,
 				2B6D9E382739AF7700273A83 /* SavedFileNames.swift in Sources */,
+				2B780523273EEE6100E18FA2 /* MovableButtonPlusD.swift in Sources */,
 				2BF6F8E92736E93000FA1C26 /* PlayYourCreationView.swift in Sources */,
+				2B780521273EEE5A00E18FA2 /* MovableButtonD.swift in Sources */,
 				2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */,
 				2B780516273C737400E18FA2 /* ButtonViewStyle.swift in Sources */,
 				2B5A79972735B2BB000C5437 /* UITools.swift in Sources */,
@@ -634,11 +670,15 @@
 				2B5A79952735B08A000C5437 /* PlaySamplePianoGroup.swift in Sources */,
 				2B780512273C6BDF00E18FA2 /* Track_Eleven.swift in Sources */,
 				2B78051F273EED7F00E18FA2 /* MovableButtonPlusC.swift in Sources */,
+				2B780531273EEEB100E18FA2 /* MovableButtonPlusA.swift in Sources */,
+				2B78052F273EEE9100E18FA2 /* MovableButtonA.swift in Sources */,
 				2B81F698272BF5640081BCB6 /* VolumeSlider.swift in Sources */,
 				2B78050A273C6AA000E18FA2 /* Track_Seven.swift in Sources */,
 				2B780510273C6B8D00E18FA2 /* Track_Ten.swift in Sources */,
 				2BDB9E8F272EDC1E00BADB99 /* ReverbPicker.swift in Sources */,
 				2B78050E273C6B2D00E18FA2 /* Track_Nine.swift in Sources */,
+				2B78052B273EEE8100E18FA2 /* MovableButtonG.swift in Sources */,
+				2B780527273EEE6E00E18FA2 /* MovableButtonF.swift in Sources */,
 				2B78135E272A8B0B002A8972 /* button_sample_play.swift in Sources */,
 				2B5A795F27341B01000C5437 /* SoundCardPlugIn.swift in Sources */,
 				2B81F686272B2E770081BCB6 /* PlaySampleBassGroup.swift in Sources */,

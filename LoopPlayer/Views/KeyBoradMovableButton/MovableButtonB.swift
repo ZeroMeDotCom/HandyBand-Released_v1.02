@@ -1,5 +1,5 @@
 //
-//  MovableButtonC.swift
+//  MovableButtonB.swift
 //  LoopPlayer
 //
 //  Created by Dan on 11/13/21.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MovableButtonC: View {
+struct MovableButtonB: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @State private var dragAmount: CGPoint?
     var body: some View {
@@ -15,7 +15,7 @@ struct MovableButtonC: View {
             ZStack {
                 Button(action: self.performAction) {
                     ZStack {
-                        Text("C")
+                        Text("B")
                             .foregroundColor(.white)
                             .font(.system(.caption, design: .serif))
                     }
@@ -27,19 +27,18 @@ struct MovableButtonC: View {
                     DragGesture()
                         .onChanged { self.dragAmount = $0.location})
             }
-            .frame(width: MoveAreaW, height: MoveAreaH, alignment: .center) // full space
+            .frame(maxWidth: .infinity, maxHeight: .infinity) // full space
         }
     }
     
     func performAction() {
         print("button pressed")
-        fileManage.playSingle(url: fileManage.url_C, samplePlayer: fileManage.samplePlayer_C, engine: fileManage.engine_C)
+        fileManage.playSingle(url: fileManage.url_B, samplePlayer: fileManage.samplePlayer_B, engine: fileManage.engine_B)
     }
 }
 
-struct MovableButtonC_Previews: PreviewProvider {
+struct MovableButtonB_Previews: PreviewProvider {
     static var previews: some View {
-        MovableButtonC()
+        MovableButtonB()
     }
 }
-

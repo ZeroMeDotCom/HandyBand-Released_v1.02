@@ -28,70 +28,43 @@ struct PodKeyBoard: View {
                         Group {
                             MovableButtonC()
                                 .environmentObject(fileManage)
-//                            Button("C3") {
-//                                print("button pressed!")
-//                                fileManage.playSingle(url: fileManage.url_C, samplePlayer: fileManage.samplePlayer_C, engine: fileManage.engine_C)
-//                            }
-//                            .buttonStyle(PodKeyStyle(color: .purple))
-//
+
                             MovableButtonPlusC()
                                 .environmentObject(fileManage)
-//                            Button("#C3") {
-//                                print("button pressed!")
-//                                fileManage.playSingle(url: fileManage.url_PlusC, samplePlayer: fileManage.samplePlayer_PlusC, engine: fileManage.engine_PlusC)
-//                            }.buttonStyle(PodKeyStyle(color: .pink))
-//
-                            Button("D3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_D, samplePlayer: fileManage.samplePlayer_D, engine: fileManage.engine_D)
-                                
-                           }.buttonStyle(PodKeyStyle(color: .pink))
+
+                            MovableButtonD()
+                                .environmentObject(fileManage)
                             
-                            Button("#D3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusD, samplePlayer: fileManage.samplePlayer_PlusD, engine: fileManage.engine_PlusD)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusD()
+                                .environmentObject(fileManage)
                             
-                            Button("E3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_E, samplePlayer: fileManage.samplePlayer_E, engine: fileManage.engine_E)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonE()
+                                .environmentObject(fileManage)
                             
-                            Button("F3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_F, samplePlayer: fileManage.samplePlayer_F, engine: fileManage.engine_F)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonF()
+                                .environmentObject(fileManage)
                             
-                            Button("#F3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusF, samplePlayer: fileManage.samplePlayer_PlusF, engine: fileManage.engine_PlusF)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
                             
-                            Button("G3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_G, samplePlayer: fileManage.samplePlayer_G, engine: fileManage.engine_G)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusF()
+                                .environmentObject(fileManage)
                             
-                            Button("#G3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusG, samplePlayer: fileManage.samplePlayer_PlusG, engine: fileManage.engine_PlusG)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonG()
+                                .environmentObject(fileManage)
                             
-                            Button("A3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_A, samplePlayer: fileManage.samplePlayer_A, engine: fileManage.engine_A)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusG()
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonA()
+                                .environmentObject(fileManage)
+                            
                         }
                         Group {
-                            Button("#A3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusA, samplePlayer: fileManage.samplePlayer_PlusA, engine: fileManage.engine_PlusA)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
                             
-                            Button("B3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_B, samplePlayer: fileManage.samplePlayer_B, engine: fileManage.engine_B)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusA()
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonB()
+                                .environmentObject(fileManage)
                         }
                     }
                     //兩排按鈕備註掉
