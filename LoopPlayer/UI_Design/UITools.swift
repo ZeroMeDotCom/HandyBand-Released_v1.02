@@ -29,6 +29,8 @@ let TrackH = ((TrackWholeH - 10 ) / 2) // 10 in the middle
 //Instrument area
 let InstrumentW = (screenW - 20)
 let InstrumentH = (screenH / 3)
+let TopSpacerH = (InstrumentH / 20)
+let ColumeSpacerW = (InstrumentW / 60)
 //keyboard area
 let KeyboradW = (screenW - 20)
 let KeyboradH = (screenH / 4)
@@ -87,5 +89,6 @@ let ConvolutionIconRight:String = "signpost.right"
 //Reverb
 let InstructionIcon: String = "hand.point.right"
 let DecorationIcon: String = "circle.dotted"
+
 
 

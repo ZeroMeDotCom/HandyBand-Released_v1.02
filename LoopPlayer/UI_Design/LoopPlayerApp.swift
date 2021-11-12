@@ -46,25 +46,40 @@ struct LoopPlayerApp: App {
 
                         
                     VStack {
-                        Picker(selection: $selection, label: Text("Plug-in or Build-in")) {
-                            Text("Build-in").tag(0)
-                            Text("Plug-in").tag(1)
-                        }.pickerStyle(.segmented)
-                        if selection == 0 {
-                            PodKeyBoard().environmentObject(fileManage)
-      
+                        Spacer()
+                            .frame(height: TopSpacerH, alignment: .center)
+                        HStack {
+                            Spacer()
+                                .frame(width: ColumeSpacerW, alignment: .center)
+                            
+                            VStack {
+                                Picker(selection: $selection, label: Text("Plug-in or Build-in")) {
+                                    Text("Build-in").tag(0)
+                                    Text("Plug-in").tag(1)
+                                }.pickerStyle(.segmented)
+                                if selection == 0 {
+                                    
+                                    PodKeyBoard().environmentObject(fileManage)
+              
 
-                        } else if selection == 1 {
-                            //PlUGIN-Guitar/Bass
-                            PlugInView()
-                                .environmentObject(fileManage)
-                                .environmentObject(playCreationModel)
-                            .border(.red, width: 1)
+                                } else if selection == 1 {
+                                    //PlUGIN-Guitar/Bass
+                                    PlugInView()
+                                        .environmentObject(fileManage)
+                                        .environmentObject(playCreationModel)
+                                    .border(.red, width: 1)
+
+                                }
+                            }
+                            
+                            Spacer()
+                                .frame(width: ColumeSpacerW, alignment: .center)
 
                         }
+
                     }
+                    .frame(width: InstrumentW, height: InstrumentH, alignment: .topLeading)
                     .background(RoundedRectangle(cornerRadius: 17).fill(Color(UIColor.white)))
-                    .border(.black, width: 3)
                     .padding(0)
                 }
             }

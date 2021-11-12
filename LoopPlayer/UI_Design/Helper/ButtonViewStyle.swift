@@ -15,6 +15,34 @@ struct ButtonViewStyle: View {
     }
 }
 
+// Each Keybord style
+struct PodKeyStyle: ButtonStyle {
+      var color: Color = .green
+      
+      public func makeBody(configuration: MyButtonStyle.Configuration) -> some View {
+          MyButton(configuration: configuration, color: color)
+      }
+      
+      struct MyButton: View {
+          let configuration: PodKeyStyle.Configuration
+          let color: Color
+          
+          var body: some View {
+              
+              return configuration.label
+                  .foregroundColor(.white)
+                  .padding(15)
+                  .background(Circle().fill(color))
+                  .compositingGroup()
+                  .shadow(color: .black, radius: 3)
+                  .opacity(configuration.isPressed ? 0.5 : 1.0)
+                  .scaleEffect(configuration.isPressed ? 0.8 : 1.0)
+          }
+      }
+  
+  }
+
+
 //Reverb Picker
 struct myPickerStyleLabel: View {
     var body: some View {

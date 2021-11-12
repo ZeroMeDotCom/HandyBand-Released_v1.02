@@ -29,7 +29,7 @@ struct PodKeyBoard: View {
                             print("button pressed!")
                             fileManage.playSingle(url: fileManage.url_C, samplePlayer: fileManage.samplePlayer_C, engine: fileManage.engine_C)
                         }
-                        .buttonStyle(PodKeyStyle(color: .pink))
+                        .buttonStyle(PodKeyStyle(color: .purple))
                         
                         Button("#C3") {
                             print("button pressed!")
@@ -711,31 +711,7 @@ struct PodKeyBoard: View {
     }
 }
 
-// Each Keybord style
-struct PodKeyStyle: ButtonStyle {
-      var color: Color = .green
-      
-      public func makeBody(configuration: MyButtonStyle.Configuration) -> some View {
-          MyButton(configuration: configuration, color: color)
-      }
-      
-      struct MyButton: View {
-          let configuration: PodKeyStyle.Configuration
-          let color: Color
-          
-          var body: some View {
-              
-              return configuration.label
-                  .foregroundColor(.white)
-                  .padding(15)
-                  .background(RoundedRectangle(cornerRadius: 5).fill(color))
-                  .compositingGroup()
-                  .shadow(color: .black, radius: 3)
-                  .opacity(configuration.isPressed ? 0.5 : 1.0)
-          }
-      }
-  
-  }
+
 
 
 struct PodKeyBoard_Previews: PreviewProvider {
