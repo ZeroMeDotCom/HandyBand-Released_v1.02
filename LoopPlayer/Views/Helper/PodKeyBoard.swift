@@ -13,31 +13,34 @@ struct PodKeyBoard: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @State private var selection = 0
     var body: some View {
-        Picker(selection: $selection, label: Text("InstrumentPIcker")) {
-            Text("DrumsSound").tag(0)
-            Text("BassSound").tag(1)
-            Text("StringSound").tag(2)
-            Text("PianoSound").tag(3)
-        }.pickerStyle(.segmented)
-        
-        // Movable place
-        GeometryReader { gp in
+        VStack {
+            Picker(selection: $selection, label: Text("InstrumentPIcker")) {
+                Text("DrumsSound").tag(0)
+                Text("BassSound").tag(1)
+                Text("StringSound").tag(2)
+                Text("PianoSound").tag(3)
+            }.pickerStyle(.segmented)
+            
             if selection == 0 {
                 //TEMP - Drums
                 VStack{
                     HStack {
                         Group {
-                            Button("C3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_C, samplePlayer: fileManage.samplePlayer_C, engine: fileManage.engine_C)
-                            }
-                            .buttonStyle(PodKeyStyle(color: .purple))
-                            
-                            Button("#C3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusC, samplePlayer: fileManage.samplePlayer_PlusC, engine: fileManage.engine_PlusC)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
-                            
+                            MovableButtonC()
+                                .environmentObject(fileManage)
+//                            Button("C3") {
+//                                print("button pressed!")
+//                                fileManage.playSingle(url: fileManage.url_C, samplePlayer: fileManage.samplePlayer_C, engine: fileManage.engine_C)
+//                            }
+//                            .buttonStyle(PodKeyStyle(color: .purple))
+//
+                            MovableButtonPlusC()
+                                .environmentObject(fileManage)
+//                            Button("#C3") {
+//                                print("button pressed!")
+//                                fileManage.playSingle(url: fileManage.url_PlusC, samplePlayer: fileManage.samplePlayer_PlusC, engine: fileManage.engine_PlusC)
+//                            }.buttonStyle(PodKeyStyle(color: .pink))
+//
                             Button("D3") {
                                print("button pressed!")
                                 fileManage.playSingle(url: fileManage.url_D, samplePlayer: fileManage.samplePlayer_D, engine: fileManage.engine_D)
@@ -710,7 +713,7 @@ struct PodKeyBoard: View {
                 
             }
         }
-
+       
 
     }
 }

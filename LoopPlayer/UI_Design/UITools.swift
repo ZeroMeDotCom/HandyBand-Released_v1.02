@@ -31,6 +31,8 @@ let InstrumentW = (screenW - 20)
 let InstrumentH = (screenH / 3)
 let TopSpacerH = (InstrumentH / 20)
 let ColumeSpacerW = (InstrumentW / 60)
+let MoveAreaW = (InstrumentW - ColumeSpacerW * 2)
+let MoveAreaH = (InstrumentH * 6 / 8)
 //keyboard area
 let KeyboradW = (screenW - 20)
 let KeyboradH = (screenH / 4)

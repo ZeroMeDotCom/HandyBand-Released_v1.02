@@ -31,7 +31,7 @@ struct PodKeyStyle: ButtonStyle {
               
               return configuration.label
                   .foregroundColor(.white)
-                  .padding(15)
+                  .padding(35)
                   .background(Circle().fill(color))
                   .compositingGroup()
                   .shadow(color: .black, radius: 3)

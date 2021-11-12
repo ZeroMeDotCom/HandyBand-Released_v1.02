@@ -58,8 +58,12 @@ struct LoopPlayerApp: App {
                                     Text("Plug-in").tag(1)
                                 }.pickerStyle(.segmented)
                                 if selection == 0 {
-                                    
-                                    PodKeyBoard().environmentObject(fileManage)
+                                    VStack{
+                                        PodKeyBoard().environmentObject(fileManage)
+                                    }
+                                    .frame(maxWidth: MoveAreaW, maxHeight: MoveAreaH, alignment: .topLeading)
+                                    .border(.black, width: 3)
+
               
 
                                 } else if selection == 1 {
