@@ -17,7 +17,7 @@ struct MovableButtonF: View {
     var body: some View {
         GeometryReader { gp in // just to center initial position
             ZStack {
-                Button(action: self.performAction) {
+                Button(action: self.playSound) {
                     ZStack {
                         Text("F")
                             .foregroundColor(.white)
@@ -35,10 +35,8 @@ struct MovableButtonF: View {
         }
     }
     
-    func performAction() {
-        print("button pressed")
+    func playSound() {
         fileManage.playSingle(url: fileManage.url_F, samplePlayer: fileManage.samplePlayer_F, engine: fileManage.engine_F)
-        
     }
 }
 

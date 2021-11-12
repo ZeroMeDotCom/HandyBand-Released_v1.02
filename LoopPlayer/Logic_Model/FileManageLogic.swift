@@ -1302,6 +1302,11 @@ class FileManageLogic: ObservableObject {
             // couldn't load file :(
         }
     }
+    // Stop a single file
+    func stopSingle(url: URL, samplePlayer: AudioPlayer, engine: AudioEngine){
+        engine.stop()
+        samplePlayer.stop()
+    }
     
     // Play a single track
     func playSingleTrack(fileURL: String, samplePlayer: AudioPlayer, engine: AudioEngine){
@@ -1362,37 +1367,6 @@ class FileManageLogic: ObservableObject {
                 playNewButton(engine: engine1, samplePlayer: samplePlayer12, fileURL: fileNames["track12"]!["fileWay"]!)
             }
         }
-        
-//        Timer.scheduledTimer(withTimeInterval: 60 / Double(110) * 8, repeats: true) { timer in
-//            print("track1:\(self.isWish)")
-//            if self.isWish == true {
-//                print("play tack1....")
-//                self.playSingle(url: self.url, samplePlayer: self.samplePlayer, engine: self.engine)
-//            }
-//            if self.isWish2 == true {
-//                print("play tack2....")
-//                self.playSingle(url: self.url2, samplePlayer: self.samplePlayer2, engine: self.engine2)
-//            }
-//            if self.isWish3 == true {
-//                print("play tack2....")
-//                self.playSingle(url: self.url3, samplePlayer: self.samplePlayer3, engine: self.engine3)
-//            }
-
-//            self.playSingle(url: self.url2, samplePlayer: self.samplePlayer2, engine: self.engine2)
-//
-//            self.playSingle(url: self.url3, samplePlayer: self.samplePlayer3, engine: self.engine3)
-//
-//            self.playSingle(url: self.url4, samplePlayer: self.samplePlayer4, engine: self.engine4)
-        
-//            if self.isPause == true {
-//    //                timer.invalidate()
-//                self.pauseThepProcessing()
-//            }
-//        }
-//
-//        if self.isPause == true {
-//            self.pauseThepProcessing()
-//        }
 
     }
     
