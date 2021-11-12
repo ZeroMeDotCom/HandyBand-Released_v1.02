@@ -16,6 +16,7 @@ struct Track_Twelve: View {
     @State private var delay_feedback : Double = 50
     @State private var delay_time : Double = 0.1
     @State private var saltMixerBalance : AUValue = 0.5
+    @State private var volumeValue : Double = 50
     @State private var isOn: Bool = false
     var body: some View {
         VStack {
@@ -58,6 +59,19 @@ struct Track_Twelve: View {
                         .resizable()
                         .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
                 })
+                
+                VStack {
+                    Slider(value: $volumeValue, in: 0...100, onEditingChanged: {_ in
+                        fileManage.changeVolume(value: $volumeValue.wrappedValue, samplePlayer: fileManage.samplePlayer12)
+                    })
+                        .rotationEffect(.degrees(-90))
+                        .frame(width: TrackVolumeSizeH, height: TrackVolumeSizeH , alignment: .topLeading)
+                    
+                    Image(systemName: "speaker.wave.2.fill")
+                        .foregroundColor(EffectIconColor)
+                        .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        .padding(.top, -EffectIconH * 1.5)
+                }
             }
 
             Picker(selection: self.$selection_effect, label: myPickerStyleLabel()) {

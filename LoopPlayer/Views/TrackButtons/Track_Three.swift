@@ -16,6 +16,7 @@ struct Track_Three: View {
     @State private var delay_feedback : Double = 50
     @State private var delay_time : Double = 0.1
     @State private var saltMixerBalance : AUValue = 0.5
+    @State private var volumeValue : Double = 50
     @State private var isOn: Bool = false
     var body: some View {
         VStack {
@@ -60,6 +61,20 @@ struct Track_Three: View {
                         .resizable()
                         .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
                 })
+                
+                VStack {
+                    Slider(value: $volumeValue, in: 0...100, onEditingChanged: {_ in
+                        fileManage.changeVolume(value: $volumeValue.wrappedValue, samplePlayer: fileManage.samplePlayer3)
+                    })
+                        .rotationEffect(.degrees(-90))
+                        .frame(width: TrackVolumeSizeH, height: TrackVolumeSizeH , alignment: .topLeading)
+                    
+                    Image(systemName: "speaker.wave.2.fill")
+                        .foregroundColor(EffectIconColor)
+                        .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        .padding(.top, -EffectIconH * 1.5)
+                }
+
             }
             
             
@@ -69,43 +84,55 @@ struct Track_Three: View {
                 Text("Conv").tag(2)
             }.pickerStyle(.segmented)
             if selection_effect == 0 {
-                //Delay Setting
-                Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
-                    fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay3)
-                })
-            
-                Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
-                    fileManage.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue, delay: fileManage.delay3)
-                })
-                Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
-                    fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer3)
-                })
+                VStack {
+                    //Delay Setting
+                    Slider(value: $delay_time, in: 0...10, onEditingChanged: {_ in
+                        fileManage.changeDelay_time(delay_time: $delay_time.wrappedValue, delay: fileManage.delay3)
+                    })
+                
+                    Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                        fileManage.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue, delay: fileManage.delay3)
+                    })
+                    Slider(value: $delay_balance, in: 0...100, onEditingChanged: {_ in
+                        fileManage.changeDelay_balance(delay_balance: $delay_balance.wrappedValue, dryWetMixer: fileManage.dryWetMixer3)
+                    })
+                }
+                .frame( height: SegmentH, alignment: .center)
+                .border(.red, width: 3)
+
                 
             } else if selection_effect == 1 {
 
-                
-                Picker(selection: self.$selection, label: myPickerStyleLabel()) {
-                    Text("cathedral").tag(0)
-                    Text("largeHall").tag(1)
-                    Text("largeHall2").tag(2)
-                    Text("largeRoom").tag(3)
-                    Text("mediumChamber").tag(4)
+                VStack {
+                    Picker(selection: self.$selection, label: myPickerStyleLabel()) {
+                        Text("cathedral").tag(0)
+                        Text("largeHall").tag(1)
+                        Text("largeHall2").tag(2)
+                        Text("largeRoom").tag(3)
+                        Text("mediumChamber").tag(4)
 
+                    }
+                    .pickerStyle(.menu)
+                    .onChange(of: selection, perform: {
+                        newValue in
+                        fileManage.changeDelay_balance(delay_balance: 0, dryWetMixer: fileManage.dryWetMixer3)
+                        fileManage.change_reverb(place: places[newValue], reverb: fileManage.reverb3)
+                    })
                 }
-                .pickerStyle(.menu)
-                .onChange(of: selection, perform: {
-                    newValue in
-                    fileManage.changeDelay_balance(delay_balance: 0, dryWetMixer: fileManage.dryWetMixer3)
-                    fileManage.change_reverb(place: places[newValue], reverb: fileManage.reverb3)
-                })
+                .frame( height: SegmentH, alignment: .center)
+                .border(.red, width: 3)
+
      
             } else {
-                
-                
-                Slider(value: $saltMixerBalance, in: 0...1, onEditingChanged: {_ in
-                    fileManage.changeConvolution_balance(convolution_balance: $saltMixerBalance.wrappedValue, saltMixer: fileManage.saltMixer3)
-                    print("\($saltMixerBalance.wrappedValue)")
-                })
+                VStack {
+                    Slider(value: $saltMixerBalance, in: 0...1, onEditingChanged: {_ in
+                        fileManage.changeConvolution_balance(convolution_balance: $saltMixerBalance.wrappedValue, saltMixer: fileManage.saltMixer3)
+                        print("\($saltMixerBalance.wrappedValue)")
+                    })
+                }
+                .frame( height: SegmentH, alignment: .center)
+                .border(.red, width: 3)
+
              
             }
 

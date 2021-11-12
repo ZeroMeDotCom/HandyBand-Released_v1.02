@@ -61,6 +61,16 @@ let PlayButtonImage:String = "play.circle"
 let PlayButtonImagePressed:String = "stop.circle.fill"
 let PlayButtonSizeH = controlPanH
 
-//Single Track Group Specer
+//Single Track
 let SingleTrackGroupSpecerH = screenW / 63
 let SingleTrackGroupSpecerBottomH = screenH / 63
+let SegmentH = (TrackH * 2 / 5)
+
+//Effects icon color
+let EffectIconColor = SwiftUI.Color.purple
+let EffectIconH = (PlayButtonSizeH / 6)
+
+//Volumee size
+let TrackVolumeSizeH = controlPanH 
+
+

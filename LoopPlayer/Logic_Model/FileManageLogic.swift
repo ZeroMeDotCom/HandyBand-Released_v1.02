@@ -11,6 +11,7 @@
     // 2. Manage the engines and players
         // 2.1 effect setting
         // 2.2 player resource
+        // 3.2 volume setting
     // 3. Icon image manage
 
 import Foundation
@@ -26,6 +27,8 @@ class FileManageLogic: ObservableObject {
    
     // String type of trackID
     private var trackID : String = ""
+    // Track colume initial
+    private var singleTrackVolumeInitial : Double = 50 // Max - > 100; Min -> 0
 
     //Tracks' files data
     var fileNames : [String : [String : String]] = [
@@ -302,6 +305,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 1
     var engine1 = AudioEngine()
     var samplePlayer1 = AudioPlayer()
+    //Track volume setting
+    var volume1 : Double = 1
     //Delay Setting
     var delay1 : Delay
     var dryWetMixer1 : DryWetMixer
@@ -320,6 +325,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 2
     var engine2 = AudioEngine()
     var samplePlayer2 = AudioPlayer()
+    //Track volume setting
+    var volume2 : Double = 1
     //Delay Setting
     var delay2 : Delay
     var dryWetMixer2 : DryWetMixer
@@ -338,6 +345,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 3
     var engine3 = AudioEngine()
     var samplePlayer3 = AudioPlayer()
+    //Track volume setting
+    var volume3 : Double = 1
     //Delay Setting
     var delay3 : Delay
     var dryWetMixer3 : DryWetMixer
@@ -356,6 +365,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 4
     var engine4 = AudioEngine()
     var samplePlayer4 = AudioPlayer()
+    //Track volume setting
+    var volume4 : Double = 1
     //Delay Setting
     var delay4 : Delay
     var dryWetMixer4 : DryWetMixer
@@ -374,6 +385,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 5
     var engine5 = AudioEngine()
     var samplePlayer5 = AudioPlayer()
+    //Track volume setting
+    var volume5 : Double = 1
     //Delay Setting
     var delay5 : Delay
     var dryWetMixer5 : DryWetMixer
@@ -392,6 +405,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 6
     var engine6 = AudioEngine()
     var samplePlayer6 = AudioPlayer()
+    //Track volume setting
+    var volume6 : Double = 1
     //Delay Setting
     var delay6 : Delay
     var dryWetMixer6 : DryWetMixer
@@ -410,6 +425,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 7
     var engine7 = AudioEngine()
     var samplePlayer7 = AudioPlayer()
+    //Track volume setting
+    var volume7 : Double = 1
     //Delay Setting
     var delay7 : Delay
     var dryWetMixer7 : DryWetMixer
@@ -428,6 +445,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 8
     var engine8 = AudioEngine()
     var samplePlayer8 = AudioPlayer()
+    //Track volume setting
+    var volume8 : Double = 1
     //Delay Setting
     var delay8 : Delay
     var dryWetMixer8 : DryWetMixer
@@ -446,6 +465,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 9
     var engine9 = AudioEngine()
     var samplePlayer9 = AudioPlayer()
+    //Track volume setting
+    var volume9 : Double = 1
     //Delay Setting
     var delay9 : Delay
     var dryWetMixer9 : DryWetMixer
@@ -464,6 +485,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 10
     var engine10 = AudioEngine()
     var samplePlayer10 = AudioPlayer()
+    //Track volume setting
+    var volume10 : Double = 1
     //Delay Setting
     var delay10 : Delay
     var dryWetMixer10 : DryWetMixer
@@ -482,6 +505,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 11
     var engine11 = AudioEngine()
     var samplePlayer11 = AudioPlayer()
+    //Track volume setting
+    var volume11 : Double = 1
     //Delay Setting
     var delay11 : Delay
     var dryWetMixer11 : DryWetMixer
@@ -500,6 +525,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 12
     var engine12 = AudioEngine()
     var samplePlayer12 = AudioPlayer()
+    //Track volume setting
+    var volume12 : Double = 1
     //Delay Setting
     var delay12 : Delay
     var dryWetMixer12 : DryWetMixer
@@ -518,6 +545,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 13
     var engine13 = AudioEngine()
     var samplePlayer13 = AudioPlayer()
+    //Track volume setting
+    var volume13 : Double = 1
     //Delay Setting
     var delay13 : Delay
     var dryWetMixer13 : DryWetMixer
@@ -536,6 +565,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 14
     var engine14 = AudioEngine()
     var samplePlayer14 = AudioPlayer()
+    //Track volume setting
+    var volume14 : Double = 1
     //Delay Setting
     var delay14 : Delay
     var dryWetMixer14 : DryWetMixer
@@ -554,6 +585,8 @@ class FileManageLogic: ObservableObject {
     //Engine and Player - 15
     var engine15 = AudioEngine()
     var samplePlayer15 = AudioPlayer()
+    //Track volume setting
+    var volume15 : Double = 1
     //Delay Setting
     var delay15 : Delay
     var dryWetMixer15 : DryWetMixer
@@ -572,6 +605,8 @@ class FileManageLogic: ObservableObject {
     init() {
         
         //Engine and Player - 1
+        //Track volume setting
+        volume1 = self.singleTrackVolumeInitial
         //Delay
         delay1 = Delay(samplePlayer1)
         dryWetMixer1 = DryWetMixer(samplePlayer1, delay1, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -597,6 +632,7 @@ class FileManageLogic: ObservableObject {
         
         
         //Engine and Player - 2
+        volume2 = self.singleTrackVolumeInitial
         //Delay
         delay2 = Delay(samplePlayer2)
         dryWetMixer2 = DryWetMixer(samplePlayer2, delay2, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -621,6 +657,7 @@ class FileManageLogic: ObservableObject {
         engine2.output = convolutionMixer2
         
         //Engine and Player - 3
+        volume3 = self.singleTrackVolumeInitial
         //Delay
         delay3 = Delay(samplePlayer3)
         dryWetMixer3 = DryWetMixer(samplePlayer3, delay3, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -642,10 +679,13 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer3 = DryWetMixer(convolutionSalt_one3, convolutionSalt_two3, balance: AUValue(0.5))
         convolutionMixer3 = DryWetMixer(reverbMixer3, saltMixer3, balance: AUValue(0.5))
+        convolutionSalt_one3.stop()
+        convolutionSalt_two3.stop()
         engine3.output = convolutionMixer3
         
         
         //Engine and Player - 4
+        volume4 = self.singleTrackVolumeInitial
         //Delay
         delay4 = Delay(samplePlayer4)
         dryWetMixer4 = DryWetMixer(samplePlayer4, delay4, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -670,6 +710,7 @@ class FileManageLogic: ObservableObject {
         engine4.output = convolutionMixer4
         
         //Engine and Player - 5
+        volume5 = self.singleTrackVolumeInitial
         //Delay
         delay5 = Delay(samplePlayer5)
         dryWetMixer5 = DryWetMixer(samplePlayer5, delay5, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -695,6 +736,7 @@ class FileManageLogic: ObservableObject {
         
         
         //Engine and Player - 6
+        volume6 = self.singleTrackVolumeInitial
         //Delay
         delay6 = Delay(samplePlayer6)
         dryWetMixer6 = DryWetMixer(samplePlayer6, delay6, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -719,6 +761,7 @@ class FileManageLogic: ObservableObject {
         engine6.output = convolutionMixer6
         
         //Engine and Player - 7
+        volume7 = self.singleTrackVolumeInitial
         //Delay
         delay7 = Delay(samplePlayer7)
         dryWetMixer7 = DryWetMixer(samplePlayer7, delay7, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -744,6 +787,7 @@ class FileManageLogic: ObservableObject {
         
         
         //Engine and Player - 8
+        volume8 = self.singleTrackVolumeInitial
         //Delay
         delay8 = Delay(samplePlayer8)
         dryWetMixer8 = DryWetMixer(samplePlayer8, delay8, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -768,6 +812,7 @@ class FileManageLogic: ObservableObject {
         engine8.output = convolutionMixer8
         
         //Engine and Player - 9
+        volume9 = self.singleTrackVolumeInitial
         //Delay
         delay9 = Delay(samplePlayer9)
         dryWetMixer9 = DryWetMixer(samplePlayer9, delay9, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -793,6 +838,7 @@ class FileManageLogic: ObservableObject {
         
         
         //Engine and Player - 10
+        volume10 = self.singleTrackVolumeInitial
         //Delay
         delay10 = Delay(samplePlayer10)
         dryWetMixer10 = DryWetMixer(samplePlayer10, delay10, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -817,6 +863,7 @@ class FileManageLogic: ObservableObject {
         engine10.output = convolutionMixer10
         
         //Engine and Player - 11
+        volume11 = self.singleTrackVolumeInitial
         //Delay
         delay11 = Delay(samplePlayer11)
         dryWetMixer11 = DryWetMixer(samplePlayer11, delay11, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -842,6 +889,7 @@ class FileManageLogic: ObservableObject {
         
         
         //Engine and Player - 12
+        volume12 = self.singleTrackVolumeInitial
         //Delay
         delay12 = Delay(samplePlayer12)
         dryWetMixer12 = DryWetMixer(samplePlayer12, delay12, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -866,6 +914,7 @@ class FileManageLogic: ObservableObject {
         engine12.output = convolutionMixer12
         
         //Engine and Player - 13
+        volume13 = self.singleTrackVolumeInitial
         //Delay
         delay13 = Delay(samplePlayer13)
         dryWetMixer13 = DryWetMixer(samplePlayer13, delay13, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -890,6 +939,7 @@ class FileManageLogic: ObservableObject {
         engine10.output = convolutionMixer10
         
         //Engine and Player - 14
+        volume14 = self.singleTrackVolumeInitial
         //Delay
         delay14 = Delay(samplePlayer14)
         dryWetMixer14 = DryWetMixer(samplePlayer14, delay14, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -915,6 +965,7 @@ class FileManageLogic: ObservableObject {
         
         
         //Engine and Player - 15
+        volume15 = self.singleTrackVolumeInitial
         //Delay
         delay15 = Delay(samplePlayer15)
         dryWetMixer15 = DryWetMixer(samplePlayer15, delay15, balance: AUValue(0.5)) //Using reverbMixers as input
@@ -1519,6 +1570,11 @@ class FileManageLogic: ObservableObject {
     
     
     //Sound effects Settings
+    // Track volume change
+    func changeVolume(value: Double, samplePlayer: AudioPlayer) {
+        samplePlayer.volume = AUValue(value)
+    }
+    // Convolution
     func changeConvolution_balance(convolution_balance: AUValue, saltMixer: DryWetMixer){
         saltMixer.balance = convolution_balance
     }
