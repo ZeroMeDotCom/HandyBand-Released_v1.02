@@ -66,6 +66,7 @@ let PlayButtonSizeH = controlPanH
 let SingleTrackGroupSpecerH = screenW / 63
 let SingleTrackGroupSpecerBottomH = screenH / 63
 let SegmentH = (TrackH * 2 / 5)
+let singleTrackW = ((TrackW - SingleTrackGroupSpecerH * 3) / 3)
 
 //Effects icon color
 let EffectIconColor = SwiftUI.Color.purple
@@ -78,5 +79,13 @@ let TrackVolumeSizeH = controlPanH
 let DelyTimeIcon: String = "timer"
 let DelayFeedbackIcon: String = "arrow.uturn.backward"
 let DelayBalanceIcon: String = "equal"
+
+//Convolution
+let ConvolutionIconLeft:String = "signpost.left"
+let ConvolutionIconRight:String = "signpost.right"
+
+//Reverb
+let InstructionIcon: String = "hand.point.right"
+let DecorationIcon: String = "circle.dotted"
 
 
