@@ -9,6 +9,7 @@
 import SwiftUI
 import AudioKit
 
+@available(iOS 15.0, *)
 struct PodKeyBoard: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @State private var selection = 0
@@ -26,44 +27,44 @@ struct PodKeyBoard: View {
                 VStack{
                     HStack {
                         Group {
-                            MovableButtonC()
+                            MovableButtonC(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
 
-                            MovableButtonPlusC()
+                            MovableButtonPlusC(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
 
-                            MovableButtonD()
+                            MovableButtonD(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonPlusD()
+                            MovableButtonPlusD(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonE()
+                            MovableButtonE(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonF()
+                            MovableButtonF(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
                             
                             
-                            MovableButtonPlusF()
+                            MovableButtonPlusF(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonG()
+                            MovableButtonG(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonPlusG()
+                            MovableButtonPlusG(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonA()
+                            MovableButtonA(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
                             
                         }
                         Group {
                             
-                            MovableButtonPlusA()
+                            MovableButtonPlusA(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonB()
+                            MovableButtonB(exclusiveColor: BassColor)
                                 .environmentObject(fileManage)
                         }
                     }
@@ -175,68 +176,44 @@ struct PodKeyBoard: View {
                 VStack{
                     HStack {
                         Group {
-                            Button("C3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_C, samplePlayer: fileManage.samplePlayer_C, engine: fileManage.engine_C)
-                            }
-                            .buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonC(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
+
+                            MovableButtonPlusC(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
+
+                            MovableButtonD(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
                             
-                            Button("#C3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusC, samplePlayer: fileManage.samplePlayer_PlusC, engine: fileManage.engine_PlusC)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusD(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
                             
-                            Button("D3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_D, samplePlayer: fileManage.samplePlayer_D, engine: fileManage.engine_D)
-                                
-                           }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonE(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
                             
-                            Button("#D3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusD, samplePlayer: fileManage.samplePlayer_PlusD, engine: fileManage.engine_PlusD)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonF(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
                             
-                            Button("E3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_E, samplePlayer: fileManage.samplePlayer_E, engine: fileManage.engine_E)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusF(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
                             
-                            Button("F3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_F, samplePlayer: fileManage.samplePlayer_F, engine: fileManage.engine_F)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonG(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
                             
-                            Button("#F3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusF, samplePlayer: fileManage.samplePlayer_PlusF, engine: fileManage.engine_PlusF)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusG(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
                             
-                            Button("G3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_G, samplePlayer: fileManage.samplePlayer_G, engine: fileManage.engine_G)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonA(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
                             
-                            Button("#G3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusG, samplePlayer: fileManage.samplePlayer_PlusG, engine: fileManage.engine_PlusG)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
-                            
-                            Button("A3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_A, samplePlayer: fileManage.samplePlayer_A, engine: fileManage.engine_A)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
                         }
                         Group {
-                            Button("#A3") {
-                               print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_PlusA, samplePlayer: fileManage.samplePlayer_PlusA, engine: fileManage.engine_PlusA)
-                           }.buttonStyle(PodKeyStyle(color: .pink))
                             
-                            Button("B3") {
-                                print("button pressed!")
-                                fileManage.playSingle(url: fileManage.url_B, samplePlayer: fileManage.samplePlayer_B, engine: fileManage.engine_B)
-                            }.buttonStyle(PodKeyStyle(color: .pink))
+                            MovableButtonPlusA(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
+                            
+                            MovableButtonB(exclusiveColor: StringColor)
+                                .environmentObject(fileManage)
                         }
                     }
     //                HStack {

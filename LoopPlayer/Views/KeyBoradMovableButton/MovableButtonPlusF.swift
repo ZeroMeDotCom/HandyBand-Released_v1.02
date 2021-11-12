@@ -10,6 +10,10 @@ import SwiftUI
 struct MovableButtonPlusF: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @State private var dragAmount: CGPoint?
+    private var exclusiveColor: SwiftUI.Color!
+    init(exclusiveColor: SwiftUI.Color) {
+        self.exclusiveColor = exclusiveColor
+    }
     var body: some View {
         GeometryReader { gp in // just to center initial position
             ZStack {
@@ -20,7 +24,7 @@ struct MovableButtonPlusF: View {
                             .font(.system(.caption, design: .serif))
                     }
                 }
-                .buttonStyle(PodKeyStyle(color: .purple))
+                .buttonStyle(PodKeyStyle(color: self.exclusiveColor))
                 .animation(.default)
                 .position(self.dragAmount ?? CGPoint(x: gp.size.width / 2, y: gp.size.height / 2))
                 .highPriorityGesture(  // << to do no action on drag !!
@@ -40,6 +44,6 @@ struct MovableButtonPlusF: View {
 
 struct MovableButtonPlusF_Previews: PreviewProvider {
     static var previews: some View {
-        MovableButtonPlusF()
+        MovableButtonPlusF(exclusiveColor: StringColor)
     }
 }
