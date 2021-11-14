@@ -108,6 +108,9 @@
 		2B81F692272BC1BD0081BCB6 /* sample_bass_110_8_three.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */; };
 		2B81F695272BC73E0081BCB6 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B81F694272BC73E0081BCB6 /* AudioKit */; };
 		2B81F698272BF5640081BCB6 /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81F697272BF5640081BCB6 /* VolumeSlider.swift */; };
+		2B89FF842741A51A008450BE /* Track_Thirteen_PlugIn_One.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89FF832741A51A008450BE /* Track_Thirteen_PlugIn_One.swift */; };
+		2B89FF8A2741A74B008450BE /* Track_Fourteen_PlugIn_Two.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89FF892741A74B008450BE /* Track_Fourteen_PlugIn_Two.swift */; };
+		2B89FF902741A7AC008450BE /* Track_Fifteen_PlugIn_Three.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B89FF8F2741A7AC008450BE /* Track_Fifteen_PlugIn_Three.swift */; };
 		2B9DA5FC272C6C250085365C /* SliderView_PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */; };
 		2BBD242427385D10003FC4B2 /* RecordingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBD242327385D10003FC4B2 /* RecordingLogic.swift */; };
 		2BBD242627385F80003FC4B2 /* SampleRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBD242527385F80003FC4B2 /* SampleRecordView.swift */; };
@@ -222,6 +225,9 @@
 		2B81F68E272BC1BC0081BCB6 /* sample_bass_110_8_one.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_bass_110_8_one.wav; sourceTree = "<group>"; };
 		2B81F68F272BC1BD0081BCB6 /* sample_bass_110_8_three.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_bass_110_8_three.wav; sourceTree = "<group>"; };
 		2B81F697272BF5640081BCB6 /* VolumeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
+		2B89FF832741A51A008450BE /* Track_Thirteen_PlugIn_One.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track_Thirteen_PlugIn_One.swift; sourceTree = "<group>"; };
+		2B89FF892741A74B008450BE /* Track_Fourteen_PlugIn_Two.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track_Fourteen_PlugIn_Two.swift; sourceTree = "<group>"; };
+		2B89FF8F2741A7AC008450BE /* Track_Fifteen_PlugIn_Three.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track_Fifteen_PlugIn_Three.swift; sourceTree = "<group>"; };
 		2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView_PlayButton.swift; sourceTree = "<group>"; };
 		2BBD242327385D10003FC4B2 /* RecordingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingLogic.swift; sourceTree = "<group>"; };
 		2BBD242527385F80003FC4B2 /* SampleRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRecordView.swift; sourceTree = "<group>"; };
@@ -363,10 +369,11 @@
 			isa = PBXGroup;
 			children = (
 				2B780517273C737800E18FA2 /* Helper */,
-				2B5A799C27366E31000C5437 /* DangDangDangView.swift */,
+				2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */,
 				2B5A79962735B2BB000C5437 /* UITools.swift */,
-				2B5A7966273426A1000C5437 /* PlugInView.swift */,
+				2B5A799C27366E31000C5437 /* DangDangDangView.swift */,
 				2B781351272A8A68002A8972 /* ContentView.swift */,
+				2B5A7966273426A1000C5437 /* PlugInView.swift */,
 				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
 			);
 			path = UI_Design;
@@ -394,6 +401,7 @@
 		2B7804F7273C488800E18FA2 /* TrackButtons */ = {
 			isa = PBXGroup;
 			children = (
+				2B89FF822741A4F4008450BE /* Plug-in */,
 				2B7804F5273C373700E18FA2 /* TrackPlayControl_MODEL.swift */,
 				2B780501273C4BA000E18FA2 /* Track_Three.swift */,
 				2B78050B273C6ADC00E18FA2 /* Track_Eight.swift */,
@@ -504,13 +512,22 @@
 				2B7804F7273C488800E18FA2 /* TrackButtons */,
 				2BBD242527385F80003FC4B2 /* SampleRecordView.swift */,
 				2B5A7969273580E9000C5437 /* SoundCardPlugInControl.swift */,
-				2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */,
 				2B5A795E27341B01000C5437 /* SoundCardPlugIn.swift */,
 				2B5A795B273419B9000C5437 /* Helper */,
 				2B5A79592734196B000C5437 /* SingleButton */,
 				2B5A795A2734199E000C5437 /* InstrumentsGroup */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2B89FF822741A4F4008450BE /* Plug-in */ = {
+			isa = PBXGroup;
+			children = (
+				2B89FF832741A51A008450BE /* Track_Thirteen_PlugIn_One.swift */,
+				2B89FF892741A74B008450BE /* Track_Fourteen_PlugIn_Two.swift */,
+				2B89FF8F2741A7AC008450BE /* Track_Fifteen_PlugIn_Three.swift */,
+			);
+			path = "Plug-in";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -647,16 +664,19 @@
 				2B780533273EEEBA00E18FA2 /* MovableButtonB.swift in Sources */,
 				2B78052D273EEE8900E18FA2 /* MovableButtonPlusG.swift in Sources */,
 				2B5A7999273667AD000C5437 /* TimeCountLogic.swift in Sources */,
+				2B89FF902741A7AC008450BE /* Track_Fifteen_PlugIn_Three.swift in Sources */,
 				2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */,
 				2BBD242627385F80003FC4B2 /* SampleRecordView.swift in Sources */,
 				2B780514273C6C2D00E18FA2 /* Track_Twelve.swift in Sources */,
 				2B780525273EEE6800E18FA2 /* MovableButtonE.swift in Sources */,
 				2B780529273EEE7A00E18FA2 /* MovableButtonPlusF.swift in Sources */,
 				2B5A79932735B04A000C5437 /* PlaySampleStringsGroup.swift in Sources */,
+				2B89FF842741A51A008450BE /* Track_Thirteen_PlugIn_One.swift in Sources */,
 				2B5A799D27366E31000C5437 /* DangDangDangView.swift in Sources */,
 				2B780504273C690B00E18FA2 /* Track_Four.swift in Sources */,
 				2BF6F8BA2736CED100FA1C26 /* FileManageLogic.swift in Sources */,
 				2B6D9E3F273AF34A00273A83 /* GetSystemPathWay.swift in Sources */,
+				2B89FF8A2741A74B008450BE /* Track_Fourteen_PlugIn_Two.swift in Sources */,
 				2B6D9E382739AF7700273A83 /* SavedFileNames.swift in Sources */,
 				2B780523273EEE6100E18FA2 /* MovableButtonPlusD.swift in Sources */,
 				2BF6F8E92736E93000FA1C26 /* PlayYourCreationView.swift in Sources */,

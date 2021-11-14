@@ -67,11 +67,36 @@ struct LoopPlayerApp: App {
               
 
                                 } else if selection == 1 {
-                                    //PlUGIN-Guitar/Bass
-                                    PlugInView()
-                                        .environmentObject(fileManage)
-                                        .environmentObject(playCreationModel)
-                                    .border(.red, width: 1)
+                                    HStack {
+                                        //預設定音效
+                                        List {
+                                            Text("The Ocean")
+                                            Text("Deep Breath")
+                                            Text("Jack Chen")
+                                            Text("Kirk Hammet")
+                                            Text("Chi-La-He-CHi-La")
+                                        }
+                                        .frame(width: GuitarEffecPreW, height: GuitarEffecPreH, alignment: .center)
+                                        
+                                        // Plugin record area
+                                        VStack(alignment: .leading) {
+                                            HStack {
+                                                Text("Guitar").foregroundColor(.yellow)
+                                                Image(systemName: "guitars").foregroundColor(.yellow)
+                                            }
+                                            PlaySampleGuitarGroup()
+                                                .environmentObject(fileManage)
+                                                .environmentObject(playCreationModel)
+                                        }
+                                        .frame(width: TrackW, alignment: .center)
+                                          
+                                        
+                                        //PlUGIN-Guitar/Bass
+                                        PlugInView()
+                                            .environmentObject(fileManage)
+                                            .environmentObject(playCreationModel)
+                                    }
+
 
                                 }
                             }

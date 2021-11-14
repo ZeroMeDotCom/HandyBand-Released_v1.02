@@ -12,9 +12,13 @@ struct PlugInView: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @EnvironmentObject var playCreationModel : playCreationsModel
     var body: some View {
-        SoundCardPlugInView()
-            .environmentObject(fileManage)
-            .environmentObject(playCreationModel)
+        HStack {
+            SoundCardPlugInView()
+                .environmentObject(fileManage)
+                .environmentObject(playCreationModel)
+        }
+        .frame(width: GuitarEffectChangeW, alignment: .center)
+        .border(.green, width: 4)
     }
 }
 

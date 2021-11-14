@@ -13,9 +13,9 @@ struct PlaySampleGuitarGroup: View {
     var body: some View {
         HStack {
             
-            Track_Four().environmentObject(fileManage)
-            Track_Five().environmentObject(fileManage)
-            Track_Six().environmentObject(fileManage)
+            Track_Thirteen_PlugIn_One().environmentObject(fileManage)
+            Track_Fourteen_PlugIn_Two().environmentObject(fileManage)
+            Track_Fifteen_PlugIn_Three().environmentObject(fileManage)
 
         }
     }

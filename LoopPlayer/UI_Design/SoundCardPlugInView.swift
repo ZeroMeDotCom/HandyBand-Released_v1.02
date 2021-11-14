@@ -29,21 +29,22 @@ struct SoundCardPlugInView: View {
     var body: some View {
         HStack {
             // Effect setting area
-            VStack {
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Guitar").foregroundColor(.yellow)
-                        Image(systemName: "guitars").foregroundColor(.yellow)
-                    }
-                    PlaySampleBassGroup()
-                        .environmentObject(fileManage)
-                        .environmentObject(playCreationModel)
-                }
-            .border(.blue, width: 4)
+//            VStack {
+//                VStack(alignment: .leading) {
+//                    HStack {
+//                        Text("Guitar").foregroundColor(.yellow)
+//                        Image(systemName: "guitars").foregroundColor(.yellow)
+//                    }
+//                    PlaySampleGuitarGroup()
+//                        .environmentObject(fileManage)
+//                        .environmentObject(playCreationModel)
+//                }
+//                .frame(width: TrackW, alignment: .center)
+//
+//        }
 
-        }
             VStack {
-                // Open / Close
+                // Open / Close Plug-in signal
                 HStack {
                     Text("Session!!")
                     Button(action: {
@@ -51,7 +52,7 @@ struct SoundCardPlugInView: View {
                         self.stopFlag = !self.stopFlag
                         
                     }, label: {
-                        Image(systemName: self.stopFlag ? "powerplug,fill" : "powerplug")
+                        Image(systemName: self.stopFlag ? "powerplug.fill" : "powerplug")
                     })
                 }
                 
@@ -68,7 +69,7 @@ struct SoundCardPlugInView: View {
                     })
                 }
             }
-
+            .frame(width: GuitarEffectChangeW, alignment: .center)
 
         }
 

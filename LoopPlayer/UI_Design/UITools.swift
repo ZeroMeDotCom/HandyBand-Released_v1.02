@@ -40,10 +40,10 @@ let PianoColor = SwiftUI.Color.purple
 let KeyboradW = (screenW - 20)
 let KeyboradH = (screenH / 4)
 //plug-in setting area
-let GuitarEffectChangeW = ((screenW - 20) / 3)
+let GuitarEffectChangeW = (((screenW - 20) - TrackW - ColumeSpacerW * 2) / 2)
 let GuitarEffectChangeH = (screenH / 4)
 //plug-in effect preview area
-let GuitarEffecPreW = ((screenW - 20) / 3)
+let GuitarEffecPreW = (((screenW - 20) - TrackW - ColumeSpacerW * 2) / 2)
 let GuitarEffecPreH = (screenH / 4)
 
 
