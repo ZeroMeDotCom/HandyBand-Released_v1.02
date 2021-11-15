@@ -18,6 +18,9 @@ struct Track_Two: View {
     @State private var saltMixerBalance : AUValue = 0.5
     @State private var volumeValue : Double = 50
     @State private var isOn: Bool = false
+    @State private var convIsOpeningBoth: Bool = false
+    @State private var convIsOpeningLeft: Bool = false
+    @State private var convIsOpeningRight: Bool = false
     var body: some View {
         VStack {
             HStack {
@@ -180,6 +183,79 @@ struct Track_Two: View {
                         print("\($saltMixerBalance.wrappedValue)")
                     })
                     
+                    HStack {
+                        // Button - Left close/open
+                        Button(action: {
+                            self.convIsOpeningLeft = !self.convIsOpeningLeft
+                            if self.convIsOpeningLeft {
+                                fileManage.switchOnConvolutionLeftHalf(convolutionSalt_one: fileManage.convolutionSalt_one2, convolutionSalt_two: fileManage.convolutionSalt_two2)
+                                self.convIsOpeningRight = false
+                                self.convIsOpeningBoth = false
+                            } else {
+                                fileManage.switchffConvolutionLeftHalf(convolutionSalt_one: fileManage.convolutionSalt_one2, convolutionSalt_two: fileManage.convolutionSalt_two2)
+                            }
+
+                        }, label: {
+                            self.convIsOpeningLeft ?
+                            Image(systemName: LeftFlavor)
+                                .foregroundColor(FlaborOpenColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                            :
+                            Image(systemName: LeftFlavor)
+                                .foregroundColor(FlaborClosedColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        })
+                        
+                        Spacer()
+                            .frame(width: FloverSpacerH, alignment: .center)
+                        
+                        // Button - Both close/open
+                        Button(action: {
+                            self.convIsOpeningBoth = !self.convIsOpeningBoth
+                            if self.convIsOpeningBoth {
+                                fileManage.switchOnConvolutionBoth(convolutionSalt_one: fileManage.convolutionSalt_one2, convolutionSalt_two: fileManage.convolutionSalt_two2)
+                                self.convIsOpeningRight = false
+                                self.convIsOpeningLeft = false
+                            } else {
+                                fileManage.switchffConvolutionBoth(convolutionSalt_one: fileManage.convolutionSalt_one2, convolutionSalt_two: fileManage.convolutionSalt_two2)
+                            }
+
+                        }, label: {
+                            self.convIsOpeningBoth ?
+                            Image(systemName: BothFlavorOpen)
+                                .foregroundColor(FlaborOpenColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                            :
+                            Image(systemName: BothFlavorClose)
+                                .foregroundColor(FlaborClosedColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        })
+                        
+                        Spacer()
+                            .frame(width: FloverSpacerH, alignment: .center)
+                        
+                        // Button - Right close/open
+                        Button(action: {
+                            self.convIsOpeningRight = !self.convIsOpeningRight
+                            if self.convIsOpeningBoth {
+                                fileManage.switchOnConvolutionRightHalf(convolutionSalt_one: fileManage.convolutionSalt_one2, convolutionSalt_two: fileManage.convolutionSalt_two2)
+                                self.convIsOpeningBoth = false
+                                self.convIsOpeningLeft = false
+                            } else {
+                                fileManage.switchffConvolutionRightHalf(convolutionSalt_one: fileManage.convolutionSalt_one2, convolutionSalt_two: fileManage.convolutionSalt_two2)
+                            }
+
+                        }, label: {
+                            self.convIsOpeningRight ?
+                            Image(systemName: RightFlavor)
+                                .foregroundColor(FlaborOpenColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                            :
+                            Image(systemName: RightFlavor)
+                                .foregroundColor(FlaborClosedColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        })
+                    }
                     
                 }
                 .frame( height: SegmentH, alignment: .center)

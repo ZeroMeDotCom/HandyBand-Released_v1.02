@@ -18,6 +18,9 @@ struct Track_Six: View {
     @State private var saltMixerBalance : AUValue = 0.5
     @State private var volumeValue : Double = 50
     @State private var isOn: Bool = false
+    @State private var convIsOpeningBoth: Bool = false
+    @State private var convIsOpeningLeft: Bool = false
+    @State private var convIsOpeningRight: Bool = false
     var body: some View {
         VStack {
             HStack {
@@ -37,7 +40,7 @@ struct Track_Six: View {
 
                 })
                 .gesture(TapGesture(count: 1).onEnded {
-                    fileManage.playNewButton(engine: fileManage.engine3, samplePlayer: fileManage.samplePlayer6, fileURL: fileManage.savedFileNames.fileNames["track6"]!["fileWay"]!)
+                    fileManage.playNewButton(engine: fileManage.engine6, samplePlayer: fileManage.samplePlayer6, fileURL: fileManage.savedFileNames.fileNames["track6"]!["fileWay"]!)
                     self.isOn = true
                 })
                 .simultaneousGesture(TapGesture(count: 2).onEnded {
@@ -179,6 +182,80 @@ struct Track_Six: View {
                         fileManage.changeConvolution_balance(convolution_balance: $saltMixerBalance.wrappedValue, saltMixer: fileManage.saltMixer6)
                         print("\($saltMixerBalance.wrappedValue)")
                     })
+                    
+                    HStack {
+                        // Button - Left close/open
+                        Button(action: {
+                            self.convIsOpeningLeft = !self.convIsOpeningLeft
+                            if self.convIsOpeningLeft {
+                                fileManage.switchOnConvolutionLeftHalf(convolutionSalt_one: fileManage.convolutionSalt_one6, convolutionSalt_two: fileManage.convolutionSalt_two6)
+                                self.convIsOpeningRight = false
+                                self.convIsOpeningBoth = false
+                            } else {
+                                fileManage.switchffConvolutionLeftHalf(convolutionSalt_one: fileManage.convolutionSalt_one6, convolutionSalt_two: fileManage.convolutionSalt_two6)
+                            }
+
+                        }, label: {
+                            self.convIsOpeningLeft ?
+                            Image(systemName: LeftFlavor)
+                                .foregroundColor(FlaborOpenColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                            :
+                            Image(systemName: LeftFlavor)
+                                .foregroundColor(FlaborClosedColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        })
+                        
+                        Spacer()
+                            .frame(width: FloverSpacerH, alignment: .center)
+                        
+                        // Button - Both close/open
+                        Button(action: {
+                            self.convIsOpeningBoth = !self.convIsOpeningBoth
+                            if self.convIsOpeningBoth {
+                                fileManage.switchOnConvolutionBoth(convolutionSalt_one: fileManage.convolutionSalt_one6, convolutionSalt_two: fileManage.convolutionSalt_two6)
+                                self.convIsOpeningRight = false
+                                self.convIsOpeningLeft = false
+                            } else {
+                                fileManage.switchffConvolutionBoth(convolutionSalt_one: fileManage.convolutionSalt_one6, convolutionSalt_two: fileManage.convolutionSalt_two6)
+                            }
+
+                        }, label: {
+                            self.convIsOpeningBoth ?
+                            Image(systemName: BothFlavorOpen)
+                                .foregroundColor(FlaborOpenColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                            :
+                            Image(systemName: BothFlavorClose)
+                                .foregroundColor(FlaborClosedColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        })
+                        
+                        Spacer()
+                            .frame(width: FloverSpacerH, alignment: .center)
+                        
+                        // Button - Right close/open
+                        Button(action: {
+                            self.convIsOpeningRight = !self.convIsOpeningRight
+                            if self.convIsOpeningBoth {
+                                fileManage.switchOnConvolutionRightHalf(convolutionSalt_one: fileManage.convolutionSalt_one6, convolutionSalt_two: fileManage.convolutionSalt_two6)
+                                self.convIsOpeningBoth = false
+                                self.convIsOpeningLeft = false
+                            } else {
+                                fileManage.switchffConvolutionRightHalf(convolutionSalt_one: fileManage.convolutionSalt_one6, convolutionSalt_two: fileManage.convolutionSalt_two6)
+                            }
+
+                        }, label: {
+                            self.convIsOpeningRight ?
+                            Image(systemName: RightFlavor)
+                                .foregroundColor(FlaborOpenColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                            :
+                            Image(systemName: RightFlavor)
+                                .foregroundColor(FlaborClosedColor)
+                                .frame(width: EffectIconH, height: EffectIconH, alignment: .center)
+                        })
+                    }
                     
                     
                 }

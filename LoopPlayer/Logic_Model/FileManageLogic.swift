@@ -1552,6 +1552,30 @@ class FileManageLogic: ObservableObject {
     func changeConvolution_balance(convolution_balance: AUValue, saltMixer: DryWetMixer){
         saltMixer.balance = convolution_balance
     }
+    func switchOnConvolutionBoth(convolutionSalt_one: Convolution, convolutionSalt_two: Convolution) {
+        convolutionSalt_one.start()
+        convolutionSalt_two.start()
+    }
+    func switchffConvolutionBoth(convolutionSalt_one: Convolution, convolutionSalt_two: Convolution) {
+        convolutionSalt_one.stop()
+        convolutionSalt_two.stop()
+    }
+    func switchOnConvolutionLeftHalf(convolutionSalt_one: Convolution, convolutionSalt_two: Convolution) {
+        convolutionSalt_one.start()
+        convolutionSalt_two.stop()
+    }
+    func switchffConvolutionLeftHalf(convolutionSalt_one: Convolution, convolutionSalt_two: Convolution) {
+        convolutionSalt_one.stop()
+        convolutionSalt_two.stop()
+    }
+    func switchOnConvolutionRightHalf(convolutionSalt_one: Convolution, convolutionSalt_two: Convolution) {
+        convolutionSalt_one.stop()
+        convolutionSalt_two.start()
+    }
+    func switchffConvolutionRightHalf(convolutionSalt_one: Convolution, convolutionSalt_two: Convolution) {
+        convolutionSalt_one.stop()
+        convolutionSalt_two.stop()
+    }
     
     //Reverb setting
     func change_reverb(place: String, reverb: Reverb) {

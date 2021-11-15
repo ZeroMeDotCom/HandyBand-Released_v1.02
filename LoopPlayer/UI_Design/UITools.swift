@@ -90,7 +90,13 @@ let DelayBalanceIcon: String = "equal"
 //Convolution
 let ConvolutionIconLeft:String = "signpost.left"
 let ConvolutionIconRight:String = "signpost.right"
-
+let LeftFlavor: String = "circle.lefthalf.filled"
+let RightFlavor: String = "circle.righthalf.filled"
+let BothFlavorClose: String = "circle"
+let BothFlavorOpen: String = "circle.fill"
+let FlaborClosedColor = SwiftUI.Color.black
+let FlaborOpenColor = SwiftUI.Color.purple
+let FloverSpacerH = EffectIconH * 2
 //Reverb
 let InstructionIcon: String = "hand.point.right"
 let DecorationIcon: String = "circle.dotted"
