@@ -628,6 +628,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer1 = DryWetMixer(convolutionSalt_one1, convolutionSalt_two1, balance: AUValue(0.5))
         convolutionMixer1 = DryWetMixer(reverbMixer1, saltMixer1, balance: AUValue(0.5))
+        convolutionSalt_one1.stop()
+        convolutionSalt_two1.stop()
         engine1.output = convolutionMixer1
         
         
@@ -654,6 +656,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer2 = DryWetMixer(convolutionSalt_one2, convolutionSalt_two2, balance: AUValue(0.5))
         convolutionMixer2 = DryWetMixer(reverbMixer2, saltMixer2, balance: AUValue(0.5))
+        convolutionSalt_one2.stop()
+        convolutionSalt_two2.stop()
         engine2.output = convolutionMixer2
         
         //Engine and Player - 3
@@ -707,6 +711,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer4 = DryWetMixer(convolutionSalt_one4, convolutionSalt_two4, balance: AUValue(0.5))
         convolutionMixer4 = DryWetMixer(reverbMixer4, saltMixer4, balance: AUValue(0.5))
+        convolutionSalt_one4.stop()
+        convolutionSalt_two4.stop()
         engine4.output = convolutionMixer4
         
         //Engine and Player - 5
@@ -732,6 +738,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer5 = DryWetMixer(convolutionSalt_one5, convolutionSalt_two5, balance: AUValue(0.5))
         convolutionMixer5 = DryWetMixer(reverbMixer5, saltMixer5, balance: AUValue(0.5))
+        convolutionSalt_one5.stop()
+        convolutionSalt_two5.stop()
         engine5.output = convolutionMixer5
         
         
@@ -758,6 +766,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer6 = DryWetMixer(convolutionSalt_one6, convolutionSalt_two6, balance: AUValue(0.5))
         convolutionMixer6 = DryWetMixer(reverbMixer6, saltMixer6, balance: AUValue(0.5))
+        convolutionSalt_one6.stop()
+        convolutionSalt_two6.stop()
         engine6.output = convolutionMixer6
         
         //Engine and Player - 7
@@ -783,6 +793,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer7 = DryWetMixer(convolutionSalt_one7, convolutionSalt_two7, balance: AUValue(0.5))
         convolutionMixer7 = DryWetMixer(reverbMixer7, saltMixer7, balance: AUValue(0.5))
+        convolutionSalt_one7.stop()
+        convolutionSalt_two7.stop()
         engine7.output = convolutionMixer7
         
         
@@ -809,6 +821,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer8 = DryWetMixer(convolutionSalt_one8, convolutionSalt_two8, balance: AUValue(0.5))
         convolutionMixer8 = DryWetMixer(reverbMixer8, saltMixer8, balance: AUValue(0.5))
+        convolutionSalt_one8.stop()
+        convolutionSalt_two8.stop()
         engine8.output = convolutionMixer8
         
         //Engine and Player - 9
@@ -834,6 +848,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer9 = DryWetMixer(convolutionSalt_one9, convolutionSalt_two9, balance: AUValue(0.5))
         convolutionMixer9 = DryWetMixer(reverbMixer9, saltMixer9, balance: AUValue(0.5))
+        convolutionSalt_one9.stop()
+        convolutionSalt_two9.stop()
         engine9.output = convolutionMixer9
         
         
@@ -860,6 +876,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer10 = DryWetMixer(convolutionSalt_one10, convolutionSalt_two10, balance: AUValue(0.5))
         convolutionMixer10 = DryWetMixer(reverbMixer10, saltMixer10, balance: AUValue(0.5))
+        convolutionSalt_one10.stop()
+        convolutionSalt_two10.stop()
         engine10.output = convolutionMixer10
         
         //Engine and Player - 11
@@ -885,6 +903,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer11 = DryWetMixer(convolutionSalt_one11, convolutionSalt_two11, balance: AUValue(0.5))
         convolutionMixer11 = DryWetMixer(reverbMixer11, saltMixer11, balance: AUValue(0.5))
+        convolutionSalt_one11.stop()
+        convolutionSalt_two11.stop()
         engine11.output = convolutionMixer11
         
         
@@ -911,6 +931,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer12 = DryWetMixer(convolutionSalt_one12, convolutionSalt_two12, balance: AUValue(0.5))
         convolutionMixer12 = DryWetMixer(reverbMixer12, saltMixer12, balance: AUValue(0.5))
+        convolutionSalt_one12.stop()
+        convolutionSalt_two12.stop()
         engine12.output = convolutionMixer12
         
         //Engine and Player - 13
@@ -936,7 +958,9 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer13 = DryWetMixer(convolutionSalt_one13, convolutionSalt_two13, balance: AUValue(0.5))
         convolutionMixer13 = DryWetMixer(reverbMixer13, saltMixer13, balance: AUValue(0.5))
-        engine10.output = convolutionMixer10
+        convolutionSalt_one13.stop()
+        convolutionSalt_two13.stop()
+        engine13.output = convolutionMixer13
         
         //Engine and Player - 14
         volume14 = self.singleTrackVolumeInitial
@@ -961,6 +985,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer14 = DryWetMixer(convolutionSalt_one14, convolutionSalt_two14, balance: AUValue(0.5))
         convolutionMixer14 = DryWetMixer(reverbMixer14, saltMixer14, balance: AUValue(0.5))
+        convolutionSalt_one14.stop()
+        convolutionSalt_two14.stop()
         engine14.output = convolutionMixer14
         
         
@@ -987,6 +1013,8 @@ class FileManageLogic: ObservableObject {
         //make a mixser
         saltMixer15 = DryWetMixer(convolutionSalt_one15, convolutionSalt_two15, balance: AUValue(0.5))
         convolutionMixer15 = DryWetMixer(reverbMixer15, saltMixer15, balance: AUValue(0.5))
+        convolutionSalt_one15.stop()
+        convolutionSalt_two15.stop()
         engine15.output = convolutionMixer15
         
         
