@@ -20,12 +20,12 @@ struct MovableButtonPlusD: View {
                 Button(action: self.playSound) {
                     ZStack {
                         Text("#D")
-                            .foregroundColor(self.exclusiveColor)
+                            .foregroundColor(.white)
                             .font(.system(.caption, design: .serif))
                     }
                 }
-                .buttonStyle(PodKeyStyle(color: exclusiveColor))
-                .animation(.default)
+                .buttonStyle(PodKeyStyle(color: self.exclusiveColor))
+//                .animation(.default)
                 .position(self.dragAmount ?? CGPoint(x: gp.size.width / 2, y: gp.size.height / 2))
                 .highPriorityGesture(  // << to do no action on drag !!
                     DragGesture()

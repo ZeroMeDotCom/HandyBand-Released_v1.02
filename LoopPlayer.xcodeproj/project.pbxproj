@@ -42,8 +42,6 @@
 		2B38A38527382D550041B1EC /* bass_G3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B38A37B27382D550041B1EC /* bass_G3.mp3 */; };
 		2B38A38627382D550041B1EC /* bass_#G3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B38A37C27382D550041B1EC /* bass_#G3.mp3 */; };
 		2B38A38827382E1A0041B1EC /* Piano_B3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B38A38727382E1A0041B1EC /* Piano_B3.mp3 */; };
-		2B38A38F27383DBF0041B1EC /* bass_#A3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B38A38D27383DBF0041B1EC /* bass_#A3.mp3 */; };
-		2B38A39027383DBF0041B1EC /* bass_B3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B38A38E27383DBF0041B1EC /* bass_B3.mp3 */; };
 		2B5A795F27341B01000C5437 /* SoundCardPlugIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A795E27341B01000C5437 /* SoundCardPlugIn.swift */; };
 		2B5A796127341B6C000C5437 /* SoundCardPlugInLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */; };
 		2B5A79652734233B000C5437 /* SoundCardPlugInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */; };
@@ -114,6 +112,8 @@
 		2B9DA5FC272C6C250085365C /* SliderView_PlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */; };
 		2BBD242427385D10003FC4B2 /* RecordingLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBD242327385D10003FC4B2 /* RecordingLogic.swift */; };
 		2BBD242627385F80003FC4B2 /* SampleRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BBD242527385F80003FC4B2 /* SampleRecordView.swift */; };
+		2BBF1B34274DACCC00CB645E /* bass_#A3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2BBF1B32274DACCC00CB645E /* bass_#A3.mp3 */; };
+		2BBF1B35274DACCC00CB645E /* bass_B3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2BBF1B33274DACCC00CB645E /* bass_B3.mp3 */; };
 		2BC8725D272D8A4B00AD500A /* DelaySetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC8725C272D8A4B00AD500A /* DelaySetting.swift */; };
 		2BC87260272D8C5400AD500A /* SoundpipeAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2BC8725F272D8C5400AD500A /* SoundpipeAudioKit */; };
 		2BDB9E8F272EDC1E00BADB99 /* ReverbPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */; };
@@ -158,8 +158,6 @@
 		2B38A37B27382D550041B1EC /* bass_G3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bass_G3.mp3; sourceTree = "<group>"; };
 		2B38A37C27382D550041B1EC /* bass_#G3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bass_#G3.mp3"; sourceTree = "<group>"; };
 		2B38A38727382E1A0041B1EC /* Piano_B3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano_B3.mp3; sourceTree = "<group>"; };
-		2B38A38D27383DBF0041B1EC /* bass_#A3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "bass_#A3.mp3"; path = "../../../../../../delect me/sample/all-samples/bass/bass_#A3.mp3"; sourceTree = "<group>"; };
-		2B38A38E27383DBF0041B1EC /* bass_B3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bass_B3.mp3; path = "../../../../../../delect me/sample/all-samples/bass/bass_B3.mp3"; sourceTree = "<group>"; };
 		2B5A795E27341B01000C5437 /* SoundCardPlugIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugIn.swift; sourceTree = "<group>"; };
 		2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugInLogic.swift; sourceTree = "<group>"; };
 		2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugInView.swift; sourceTree = "<group>"; };
@@ -231,6 +229,9 @@
 		2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView_PlayButton.swift; sourceTree = "<group>"; };
 		2BBD242327385D10003FC4B2 /* RecordingLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingLogic.swift; sourceTree = "<group>"; };
 		2BBD242527385F80003FC4B2 /* SampleRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleRecordView.swift; sourceTree = "<group>"; };
+		2BBF1B30274DAA4C00CB645E /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		2BBF1B32274DACCC00CB645E /* bass_#A3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bass_#A3.mp3"; sourceTree = "<group>"; };
+		2BBF1B33274DACCC00CB645E /* bass_B3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bass_B3.mp3; sourceTree = "<group>"; };
 		2BC8725C272D8A4B00AD500A /* DelaySetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelaySetting.swift; sourceTree = "<group>"; };
 		2BDB9E8E272EDC1E00BADB99 /* ReverbPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverbPicker.swift; sourceTree = "<group>"; };
 		2BDB9E902730759C00BADB99 /* Old Dark Ages.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Old Dark Ages.mp3"; sourceTree = "<group>"; };
@@ -303,8 +304,8 @@
 		2B38A37227382D040041B1EC /* Bass */ = {
 			isa = PBXGroup;
 			children = (
-				2B38A38D27383DBF0041B1EC /* bass_#A3.mp3 */,
-				2B38A38E27383DBF0041B1EC /* bass_B3.mp3 */,
+				2BBF1B32274DACCC00CB645E /* bass_#A3.mp3 */,
+				2BBF1B33274DACCC00CB645E /* bass_B3.mp3 */,
 				2B38A37527382D550041B1EC /* bass_#C3.mp3 */,
 				2B38A37727382D550041B1EC /* bass_#D3.mp3 */,
 				2B38A37627382D550041B1EC /* bass_#F3.mp3 */,
@@ -472,6 +473,7 @@
 			children = (
 				2B78134E272A8A68002A8972 /* LoopPlayer */,
 				2B78134D272A8A68002A8972 /* Products */,
+				2BBF1B2F274DAA4C00CB645E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -528,6 +530,14 @@
 				2B89FF8F2741A7AC008450BE /* Track_Fifteen_PlugIn_Three.swift */,
 			);
 			path = "Plug-in";
+			sourceTree = "<group>";
+		};
+		2BBF1B2F274DAA4C00CB645E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2BBF1B30274DAA4C00CB645E /* CoreAudioKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -623,7 +633,7 @@
 				2B38A35427382CD90041B1EC /* Piano_D3.mp3 in Resources */,
 				2B38A37127382CF50041B1EC /* BackgroundSound_F5.mp3 in Resources */,
 				2B38A38027382D550041B1EC /* bass_#F3.mp3 in Resources */,
-				2B38A38F27383DBF0041B1EC /* bass_#A3.mp3 in Resources */,
+				2BBF1B34274DACCC00CB645E /* bass_#A3.mp3 in Resources */,
 				2B7279A027311D2A008047DA /* salt_two.wav in Resources */,
 				2B81F68C272BC0460081BCB6 /* sample_drum_110_8_one.wav in Resources */,
 				2B38A36427382CF50041B1EC /* BackgroundSound_B5.mp3 in Resources */,
@@ -633,7 +643,7 @@
 				2B38A38427382D550041B1EC /* bass_C3.mp3 in Resources */,
 				2B81F691272BC1BD0081BCB6 /* sample_bass_110_8_one.wav in Resources */,
 				2B81F684272B2DBF0081BCB6 /* sample_drum_two.wav in Resources */,
-				2B38A39027383DBF0041B1EC /* bass_B3.mp3 in Resources */,
+				2BBF1B35274DACCC00CB645E /* bass_B3.mp3 in Resources */,
 				2B38A36F27382CF50041B1EC /* BackgroundSound_#F5.mp3 in Resources */,
 				2B38A38227382D550041B1EC /* bass_E3.mp3 in Resources */,
 				2B38A36727382CF50041B1EC /* BackgroundSound_G5.mp3 in Resources */,
@@ -781,6 +791,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -835,6 +846,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -857,7 +869,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -889,7 +901,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -23,7 +23,7 @@ struct MovableButtonC: View {
                 }) {
                     ZStack {
                         Text("C")
-                            .foregroundColor(exclusiveColor)
+                            .foregroundColor(.white)
                             .font(.system(.caption, design: .serif))
                     }
                 }
@@ -42,7 +42,7 @@ struct MovableButtonC: View {
                     }
                 })
                 .buttonStyle(PodKeyStyle(color: self.exclusiveColor))
-                .animation(.default)
+//                .animation(.default)
                 .position(self.dragAmount ?? CGPoint(x: gp.size.width / 2, y: gp.size.height / 2))
                 .highPriorityGesture(  // << to do no action on drag !!
                     DragGesture()
