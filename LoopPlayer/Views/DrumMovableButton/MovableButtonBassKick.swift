@@ -1,15 +1,16 @@
 //
-//  MovableButtonB.swift
+//  MovableButtonBassKick.swift
 //  LoopPlayer
 //
-//  Created by Dan on 11/13/21.
+//  Created by DanTereson on 06/12/2021.
 //
 
 import SwiftUI
 
-struct MovableButtonB: View {
+struct MovableButtonBassKick: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @State private var dragAmount: CGPoint?
+    @State private var isPressed: Bool = false
     private var exclusiveColor: SwiftUI.Color!
     init(exclusiveColor: SwiftUI.Color) {
         self.exclusiveColor = exclusiveColor
@@ -21,7 +22,7 @@ struct MovableButtonB: View {
                 //
                 }) {
                     ZStack {
-                        Text("B")
+                        Text("BassKick")
                             .foregroundColor(.white)
                             .font(.system(.caption, design: .serif))
                     }
@@ -48,12 +49,15 @@ struct MovableButtonB: View {
     }
     
     func playSound() {
-        fileManage.playSingle(url: fileManage.url_B, samplePlayer: fileManage.samplePlayer_B, engine: fileManage.engine_B)
+        fileManage.playSingle(url: fileManage.url_PlusC, samplePlayer: fileManage.samplePlayer_PlusC, engine: fileManage.engine_PlusC)
+    }
+    func stopSound() {
+        fileManage.stopSingle(url: fileManage.url_PlusC, samplePlayer: fileManage.samplePlayer_PlusC, engine: fileManage.engine_PlusC)
     }
 }
 
-struct MovableButtonB_Previews: PreviewProvider {
+struct MovableButtonBassKick_Previews: PreviewProvider {
     static var previews: some View {
-        MovableButtonB(exclusiveColor: BassColor)
+        MovableButtonBassKick(exclusiveColor: .white)
     }
 }

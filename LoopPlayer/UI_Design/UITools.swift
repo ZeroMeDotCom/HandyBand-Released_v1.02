@@ -33,6 +33,7 @@ let TopSpacerH = (InstrumentH / 20)
 let ColumeSpacerW = (InstrumentW / 60)
 let MoveAreaW = (InstrumentW - ColumeSpacerW * 2)
 let MoveAreaH = (InstrumentH * 6 / 8)
+let DrumColor = SwiftUI.Color.cyan
 let BassColor = SwiftUI.Color.yellow
 let StringColor = SwiftUI.Color.blue
 let PianoColor = SwiftUI.Color.purple

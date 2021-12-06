@@ -164,7 +164,7 @@ class RecordingLogic: ObservableObject {
 //                        usleep(useconds_t(1000000 * Double(doubleStr)))
                         
                         //Start recording
-                        recorder.record()
+//                        recorder.record()
                         print(" 6.開始錄製了 。。")
                         print("7.現在的錄製狀態: \(self.isRecording)")
                         
@@ -174,6 +174,10 @@ class RecordingLogic: ObservableObject {
 //                            self.currentMetro += 1
                             self.currentRecordingCount += 1
                             print("8.现在第\(self.currentRecordingCount)拍")
+                            if self.currentRecordingCount == 1 {
+                                //Start recording
+                                recorder.record()
+                            }
                             if self.currentRecordingCount > self.metroWish {
                                 self.stopRecording()
                                 timerDeliver.invalidate()

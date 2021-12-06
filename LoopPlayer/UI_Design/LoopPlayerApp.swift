@@ -62,7 +62,6 @@ struct LoopPlayerApp: App {
                                         PodKeyBoard().environmentObject(fileManage)
                                     }
                                     .frame(maxWidth: MoveAreaW, maxHeight: MoveAreaH, alignment: .topLeading)
-                                    .border(.black, width: 3)
 
               
 

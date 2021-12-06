@@ -17,13 +17,25 @@ struct MovableButtonD: View {
     var body: some View {
         GeometryReader { gp in // just to center initial position
             ZStack {
-                Button(action: self.playSound) {
+                Button(action: {
+                //
+                }) {
                     ZStack {
                         Text("D")
                             .foregroundColor(.white)
                             .font(.system(.caption, design: .serif))
                     }
                 }
+                .onLongPressGesture(perform: {
+                    //
+                }, onPressingChanged: { pressing in
+                    print(pressing.description)
+                    if pressing {
+                        self.playSound()
+                    } else {
+//                        self.stopSound()
+                    }
+                })
                 .buttonStyle(PodKeyStyle(color: self.exclusiveColor))
 //                .animation(.default)
                 .position(self.dragAmount ?? CGPoint(x: gp.size.width / 2, y: gp.size.height / 2))
@@ -31,7 +43,7 @@ struct MovableButtonD: View {
                     DragGesture()
                         .onChanged { self.dragAmount = $0.location})
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity) // full space
+            .frame(width: MoveAreaW, height: MoveAreaH, alignment: .center) // full space
         }
     }
     

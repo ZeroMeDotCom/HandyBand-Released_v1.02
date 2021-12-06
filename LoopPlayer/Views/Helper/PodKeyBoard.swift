@@ -26,44 +26,44 @@ struct PodKeyBoard: View {
                 VStack{
                     HStack {
                         Group {
-                            MovableButtonC(exclusiveColor: BassColor)
+                            MovableButtonKick(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
 
-                            MovableButtonPlusC(exclusiveColor: BassColor)
+                            MovableButtonBassKick(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
 
-                            MovableButtonD(exclusiveColor: BassColor)
+                            MovableButtonSnare(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonPlusD(exclusiveColor: BassColor)
+                            MovableButtonSnareTwo(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonE(exclusiveColor: BassColor)
+                            MovableButtonClap(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonF(exclusiveColor: BassColor)
+                            MovableButtonSideStick(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
                             
                             
-                            MovableButtonPlusF(exclusiveColor: BassColor)
+                            MovableButtonHITOM(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonG(exclusiveColor: BassColor)
+                            MovableButtonFloorTom(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonPlusG(exclusiveColor: BassColor)
+                            MovableButtonHihat(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonA(exclusiveColor: BassColor)
+                            MovableButtonCrash(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
                             
                         }
                         Group {
                             
-                            MovableButtonPlusA(exclusiveColor: BassColor)
+                            MovableButtonCrashTwo(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
                             
-                            MovableButtonB(exclusiveColor: BassColor)
+                            MovableButtonLatin(exclusiveColor: DrumColor)
                                 .environmentObject(fileManage)
                         }
                     }
@@ -168,7 +168,7 @@ struct PodKeyBoard: View {
     //                }
                 }
                 .onAppear(){
-                    fileManage.changeInstrumentToBass()
+                    fileManage.changeInstrumentToDrum()
                 }
             } else if selection == 1 {
                 //BassKeyboard

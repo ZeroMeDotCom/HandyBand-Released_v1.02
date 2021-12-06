@@ -1,15 +1,16 @@
 //
-//  MovableButtonB.swift
+//  MovableButtonLatin.swift
 //  LoopPlayer
 //
-//  Created by Dan on 11/13/21.
+//  Created by DanTereson on 06/12/2021.
 //
 
 import SwiftUI
 
-struct MovableButtonB: View {
+struct MovableButtonLatin: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @State private var dragAmount: CGPoint?
+    @State private var isPressed: Bool = false
     private var exclusiveColor: SwiftUI.Color!
     init(exclusiveColor: SwiftUI.Color) {
         self.exclusiveColor = exclusiveColor
@@ -21,7 +22,7 @@ struct MovableButtonB: View {
                 //
                 }) {
                     ZStack {
-                        Text("B")
+                        Text("Latin")
                             .foregroundColor(.white)
                             .font(.system(.caption, design: .serif))
                     }
@@ -50,10 +51,13 @@ struct MovableButtonB: View {
     func playSound() {
         fileManage.playSingle(url: fileManage.url_B, samplePlayer: fileManage.samplePlayer_B, engine: fileManage.engine_B)
     }
+    func stopSound() {
+        fileManage.stopSingle(url: fileManage.url_B, samplePlayer: fileManage.samplePlayer_B, engine: fileManage.engine_B)
+    }
 }
 
-struct MovableButtonB_Previews: PreviewProvider {
+struct MovableButtonLatin_Previews: PreviewProvider {
     static var previews: some View {
-        MovableButtonB(exclusiveColor: BassColor)
+        MovableButtonLatin(exclusiveColor: .white)
     }
 }

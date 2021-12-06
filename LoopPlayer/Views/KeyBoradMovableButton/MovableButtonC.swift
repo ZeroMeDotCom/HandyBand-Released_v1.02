@@ -27,19 +27,25 @@ struct MovableButtonC: View {
                             .font(.system(.caption, design: .serif))
                     }
                 }
-                .onLongPressGesture(minimumDuration: 0.01, perform: {
+                .onLongPressGesture(perform: {
                     //
-                }, onPressingChanged: {_ in
-                    print("coming")
-                    self.isPressed = !self.isPressed
-                    print(isPressed)
-                    if self.isPressed {
-                        print("play")
+                }, onPressingChanged: { pressing in
+                    print(pressing.description)
+                    if pressing {
                         self.playSound()
                     } else {
-                        print("stop")
-                        self.stopSound()
+//                        self.stopSound()
                     }
+//                    print("coming")
+//                    self.isPressed = !self.isPressed
+//                    print(isPressed)
+//                    if self.isPressed {
+//                        print("play")
+//                        self.playSound()
+//                    } else {
+//                        print("stop")
+//                        self.stopSound()
+//                    }
                 })
                 .buttonStyle(PodKeyStyle(color: self.exclusiveColor))
 //                .animation(.default)

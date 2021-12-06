@@ -4,7 +4,7 @@
 //
 //  Created by Dan on 11/6/21.
 // What is DangDangDang View:
-    // 1.show the navagation
+    // 1.show the navigation above
     // 2.show all the status
     // 3.speed, is recording or not, which track light, playResutingButton, timeDate, StudentNumber
 

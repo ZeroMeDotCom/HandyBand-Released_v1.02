@@ -83,6 +83,22 @@ class FileManageLogic: ObservableObject {
     @Published var sendToBusIcon : String = "paperplane.circle"
     @Published var sendToBusIconPressed : String = "paperplane.circle.fill"
     
+    //Drum resource - file mapping
+    var DrumNoteFileNames : [String : String] = [
+        "C" : "kick.mp3",
+        "#C" : "BassKick2.mp3",
+        "D" : "snare.mp3",
+        "#D" : "snare2.mp3",
+        "E" : "clap.mp3",
+        "F" : "sideStick.mp3",
+        "#F" : "Tom_Mid.mp3",
+        "G" : "Tom_Floor.mp3",
+        "#G" : "hihat.mp3",
+        "A" : "crash.mp3",
+        "#A" : "crash2.mp3",
+        "B" : "Latin2.mp3",
+    ]
+    
     //Bass resource - file mapping
     var BassNoteFileNames : [String : String] = [
         "C" : "bass_C3.mp3",
@@ -1147,6 +1163,57 @@ class FileManageLogic: ObservableObject {
         engine_B.output = samplePlayer_B
     }
     
+    // Change current instrument into Drum
+    func changeInstrumentToDrum() {
+        //Notes Init C~B
+        self.singleFileName_C = DrumNoteFileNames["C"]!
+        self.path_C = Bundle.main.path(forResource: singleFileName_C, ofType:nil)!
+        self.url_C = URL(fileURLWithPath: path_C)
+        
+        self.singleFileName_PlusC = DrumNoteFileNames["#C"]!
+        self.path_PlusC = Bundle.main.path(forResource: singleFileName_PlusC, ofType:nil)!
+        self.url_PlusC = URL(fileURLWithPath: path_PlusC)
+        
+        self.singleFileName_D = DrumNoteFileNames["D"]!
+        self.path_D = Bundle.main.path(forResource: singleFileName_D, ofType:nil)!
+        self.url_D = URL(fileURLWithPath: path_D)
+        
+        self.singleFileName_PlusD = DrumNoteFileNames["#D"]!
+        self.path_PlusD = Bundle.main.path(forResource: singleFileName_PlusD, ofType:nil)!
+        self.url_PlusD = URL(fileURLWithPath: path_PlusD)
+        
+        self.singleFileName_E = DrumNoteFileNames["E"]!
+        self.path_E = Bundle.main.path(forResource: singleFileName_E, ofType:nil)!
+        self.url_E = URL(fileURLWithPath: path_E)
+        
+        self.singleFileName_F = DrumNoteFileNames["F"]!
+        self.path_F = Bundle.main.path(forResource: singleFileName_F, ofType:nil)!
+        self.url_F = URL(fileURLWithPath: path_F)
+        
+        self.singleFileName_PlusF = DrumNoteFileNames["#F"]!
+        self.path_PlusF = Bundle.main.path(forResource: singleFileName_PlusF, ofType:nil)!
+        self.url_PlusF = URL(fileURLWithPath: path_PlusF)
+        
+        self.singleFileName_G = DrumNoteFileNames["G"]!
+        self.path_G = Bundle.main.path(forResource: singleFileName_G, ofType:nil)!
+        self.url_G = URL(fileURLWithPath: path_G)
+        
+        self.singleFileName_PlusG = DrumNoteFileNames["#G"]!
+        self.path_PlusG = Bundle.main.path(forResource: singleFileName_PlusG, ofType:nil)!
+        self.url_PlusG = URL(fileURLWithPath: path_PlusG)
+        
+        self.singleFileName_A = DrumNoteFileNames["A"]!
+        self.path_A = Bundle.main.path(forResource: singleFileName_A, ofType:nil)!
+        self.url_A = URL(fileURLWithPath: path_A)
+        
+        self.singleFileName_PlusA = DrumNoteFileNames["#A"]!
+        self.path_PlusA = Bundle.main.path(forResource: singleFileName_PlusA, ofType:nil)!
+        self.url_PlusA = URL(fileURLWithPath: path_PlusA)
+        
+        self.singleFileName_B = DrumNoteFileNames["B"]!
+        self.path_B = Bundle.main.path(forResource: singleFileName_B, ofType:nil)!
+        self.url_B = URL(fileURLWithPath: path_B)
+    }
     
     // Change current instrument into Bass
     func changeInstrumentToBass() {
