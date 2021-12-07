@@ -72,10 +72,10 @@ class FileManageLogic: ObservableObject {
                     "fileWay" : "track13_guitar1.m4a",
                    ],
         "track14" : ["isPause" : "true",
-                    "fileWay" : "track11_guitar2.m4a",
+                    "fileWay" : "track14_guitar2.m4a",
                    ],
         "track15" : ["isPause" : "true",
-                    "fileWay" : "track12_guitar3.m4a",
+                    "fileWay" : "track15_guitar3.m4a",
                    ],
 
     ]
@@ -117,34 +117,34 @@ class FileManageLogic: ObservableObject {
     
     //String resource - file mapping
     var StringNoteFileNames : [String : String] = [
-        "C" : "BackgroundSound_C5.mp3",
-        "#C" : "BackgroundSound_#C5.mp3",
-        "D" : "BackgroundSound_D5.mp3",
-        "#D" : "BackgroundSound_#D5.mp3",
-        "E" : "BackgroundSound_E5.mp3",
-        "F" : "BackgroundSound_F5.mp3",
-        "#F" : "BackgroundSound_#F5.mp3",
-        "G" : "BackgroundSound_G5.mp3",
-        "#G" : "BackgroundSound_#G5.mp3",
-        "A" : "BackgroundSound_A5.mp3",
-        "#A" : "BackgroundSound_#A5.mp3",
-        "B" : "BackgroundSound_B5.mp3",
+        "C" : "BackgroundSound_C4.mp3",
+        "#C" : "BackgroundSound_#C4.mp3",
+        "D" : "BackgroundSound_D4.mp3",
+        "#D" : "BackgroundSound_#D4.mp3",
+        "E" : "BackgroundSound_E4.mp3",
+        "F" : "BackgroundSound_F4.mp3",
+        "#F" : "BackgroundSound_#F4.mp3",
+        "G" : "BackgroundSound_G4.mp3",
+        "#G" : "BackgroundSound_#G4.mp3",
+        "A" : "BackgroundSound_A4.mp3",
+        "#A" : "BackgroundSound_#A4.mp3",
+        "B" : "BackgroundSound_B4.mp3",
     ]
     
     //Piano resource - file mapping
     var PianoNoteFileNames : [String : String] = [
-        "C" : "Piano_C3.mp3",
-        "#C" : "Piano_#C3.mp3",
-        "D" : "Piano_D3.mp3",
-        "#D" : "Piano_#D3.mp3",
-        "E" : "Piano_E3.mp3",
-        "F" : "Piano_F3.mp3",
-        "#F" : "Piano_#F3.mp3",
-        "G" : "Piano_G3.mp3",
-        "#G" : "Piano_#G3.mp3",
-        "A" : "Piano_A3.mp3",
-        "#A" : "Piano_#A3.mp3",
-        "B" : "Piano_B3.mp3",
+        "C" : "Piano_C4.mp3",
+        "#C" : "Piano_#C4.mp3",
+        "D" : "Piano_D4.mp3",
+        "#D" : "Piano_#D4.mp3",
+        "E" : "Piano_E4.mp3",
+        "F" : "Piano_F4.mp3",
+        "#F" : "Piano_#F4.mp3",
+        "G" : "Piano_G4.mp3",
+        "#G" : "Piano_#G4.mp3",
+        "A" : "Piano_A4.mp3",
+        "#A" : "Piano_#A4.mp3",
+        "B" : "Piano_B4.mp3",
     ]
     
     //Notes: engine, player, url, path
