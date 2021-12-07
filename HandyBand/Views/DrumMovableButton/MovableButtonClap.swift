@@ -1,6 +1,6 @@
 //
 //  MovableButtonClap.swift
-//  LoopPlayer
+//  HandyBand
 //
 //  Created by DanTereson on 06/12/2021.
 //

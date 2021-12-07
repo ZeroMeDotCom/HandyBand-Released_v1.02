@@ -1,6 +1,6 @@
 //
 //  SampleRecordView.swift
-//  LoopPlayer
+//  HandyBand
 //
 //  Created by Dan on 11/8/21.
 //   Who is the file?

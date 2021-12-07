@@ -1,6 +1,6 @@
 //
-//  LoopPlayerApp.swift
-//  LoopPlayer
+//  HandyBand.swift
+//  HandyBand
 //
 //  Created by Dan on 10/28/21.
 // Who is this file?
@@ -9,7 +9,7 @@
 import SwiftUI
 
 @main
-struct LoopPlayerApp: App {
+struct HandyBandApp: App {
     var fileManage = FileManageLogic()
     var recorderPlayer = RecordingLogic()
     var playCreationModel = playCreationsModel()

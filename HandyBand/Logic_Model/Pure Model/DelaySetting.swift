@@ -1,6 +1,6 @@
 //
 //  DelaySetting.swift
-//  LoopPlayer
+//  HandyBand
 //
 //  Created by Dan on 10/30/21.
 // Who is this file?

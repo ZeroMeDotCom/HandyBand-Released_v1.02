@@ -1,6 +1,6 @@
 //
 //  PlugInView.swift
-//  LoopPlayer
+//  HandyBand
 //
 //  Created by Dan on 11/4/21.
 // Who is this file?

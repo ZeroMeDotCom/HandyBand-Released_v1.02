@@ -1,6 +1,6 @@
 //
 //  TrackPlayControl_MODEL.swift
-//  LoopPlayer
+//  HandyBand
 //
 //  Created by Dan on 11/11/21.
 // Who's this file?
