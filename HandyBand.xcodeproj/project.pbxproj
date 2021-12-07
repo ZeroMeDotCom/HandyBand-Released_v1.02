@@ -184,11 +184,11 @@
 		2B38A37B27382D550041B1EC /* bass_G3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bass_G3.mp3; sourceTree = "<group>"; };
 		2B38A37C27382D550041B1EC /* bass_#G3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bass_#G3.mp3"; sourceTree = "<group>"; };
 		2B38A38727382E1A0041B1EC /* Piano_B3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Piano_B3.mp3; sourceTree = "<group>"; };
+		2B588D3D276012B700C75FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B5A795E27341B01000C5437 /* SoundCardPlugIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugIn.swift; sourceTree = "<group>"; };
 		2B5A796027341B6B000C5437 /* SoundCardPlugInLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugInLogic.swift; sourceTree = "<group>"; };
 		2B5A79642734233B000C5437 /* SoundCardPlugInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugInView.swift; sourceTree = "<group>"; };
 		2B5A7966273426A1000C5437 /* PlugInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlugInView.swift; sourceTree = "<group>"; };
-		2B5A796827344D74000C5437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		2B5A7969273580E9000C5437 /* SoundCardPlugInControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCardPlugInControl.swift; sourceTree = "<group>"; };
 		2B5A79922735B04A000C5437 /* PlaySampleStringsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySampleStringsGroup.swift; sourceTree = "<group>"; };
 		2B5A79942735B08A000C5437 /* PlaySamplePianoGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySamplePianoGroup.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		2B78052E273EEE9100E18FA2 /* MovableButtonA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonA.swift; sourceTree = "<group>"; };
 		2B780530273EEEB100E18FA2 /* MovableButtonPlusA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonPlusA.swift; sourceTree = "<group>"; };
 		2B780532273EEEBA00E18FA2 /* MovableButtonB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonB.swift; sourceTree = "<group>"; };
-		2B78134C272A8A68002A8972 /* LoopPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoopPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B78134C272A8A68002A8972 /* HandyBand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyBand.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopPlayerApp.swift; sourceTree = "<group>"; };
 		2B781351272A8A68002A8972 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2B781353272A8A6A002A8972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -524,7 +524,7 @@
 		2B781343272A8A68002A8972 = {
 			isa = PBXGroup;
 			children = (
-				2B78134E272A8A68002A8972 /* LoopPlayer */,
+				2B78134E272A8A68002A8972 /* HandyBand */,
 				2B78134D272A8A68002A8972 /* Products */,
 				2BBF1B2F274DAA4C00CB645E /* Frameworks */,
 			);
@@ -533,15 +533,15 @@
 		2B78134D272A8A68002A8972 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B78134C272A8A68002A8972 /* LoopPlayer.app */,
+				2B78134C272A8A68002A8972 /* HandyBand.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B78134E272A8A68002A8972 /* LoopPlayer */ = {
+		2B78134E272A8A68002A8972 /* HandyBand */ = {
 			isa = PBXGroup;
 			children = (
-				2B5A796827344D74000C5437 /* Info.plist */,
+				2B588D3D276012B700C75FA7 /* Info.plist */,
 				2B5A795C27341A1E000C5437 /* Logic_Model */,
 				2B81F696272BCE210081BCB6 /* Views */,
 				2B5A795D27341A6A000C5437 /* UI_Design */,
@@ -549,7 +549,7 @@
 				2B38A33B27382CB60041B1EC /* Sample */,
 				2B781355272A8A6A002A8972 /* Preview Content */,
 			);
-			path = LoopPlayer;
+			path = HandyBand;
 			sourceTree = "<group>";
 		};
 		2B781355272A8A6A002A8972 /* Preview Content */ = {
@@ -637,9 +637,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B78134B272A8A68002A8972 /* LoopPlayer */ = {
+		2B78134B272A8A68002A8972 /* HandyBand */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B78135A272A8A6A002A8972 /* Build configuration list for PBXNativeTarget "LoopPlayer" */;
+			buildConfigurationList = 2B78135A272A8A6A002A8972 /* Build configuration list for PBXNativeTarget "HandyBand" */;
 			buildPhases = (
 				2B781348272A8A68002A8972 /* Sources */,
 				2B781349272A8A68002A8972 /* Frameworks */,
@@ -649,13 +649,13 @@
 			);
 			dependencies = (
 			);
-			name = LoopPlayer;
+			name = HandyBand;
 			packageProductDependencies = (
 				2B81F694272BC73E0081BCB6 /* AudioKit */,
 				2BC8725F272D8C5400AD500A /* SoundpipeAudioKit */,
 			);
 			productName = LoopPlayer;
-			productReference = 2B78134C272A8A68002A8972 /* LoopPlayer.app */;
+			productReference = 2B78134C272A8A68002A8972 /* HandyBand.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -673,7 +673,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2B781347272A8A68002A8972 /* Build configuration list for PBXProject "LoopPlayer" */;
+			buildConfigurationList = 2B781347272A8A68002A8972 /* Build configuration list for PBXProject "HandyBand" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -690,7 +690,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B78134B272A8A68002A8972 /* LoopPlayer */,
+				2B78134B272A8A68002A8972 /* HandyBand */,
 			);
 		};
 /* End PBXProject section */
@@ -978,13 +978,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LoopPlayer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HandyBand/Preview Content\"";
 				DEVELOPMENT_TEAM = KC6UBJYB5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoopPlayer/Info.plist;
+				INFOPLIST_FILE = HandyBand/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "plase allow Microphone setting";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1010,13 +1009,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"LoopPlayer/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"HandyBand/Preview Content\"";
 				DEVELOPMENT_TEAM = KC6UBJYB5C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LoopPlayer/Info.plist;
+				INFOPLIST_FILE = HandyBand/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "plase allow Microphone setting";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1038,7 +1036,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B781347272A8A68002A8972 /* Build configuration list for PBXProject "LoopPlayer" */ = {
+		2B781347272A8A68002A8972 /* Build configuration list for PBXProject "HandyBand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B781358272A8A6A002A8972 /* Debug */,
@@ -1047,7 +1045,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B78135A272A8A6A002A8972 /* Build configuration list for PBXNativeTarget "LoopPlayer" */ = {
+		2B78135A272A8A6A002A8972 /* Build configuration list for PBXNativeTarget "HandyBand" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B78135B272A8A6A002A8972 /* Debug */,
