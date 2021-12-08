@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1F464D276133C100845BD7 /* HandyBandLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B1F464C276133C100845BD7 /* HandyBandLaunchScreen.storyboard */; };
 		2B38A3382737F4820041B1EC /* PodKeyBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B38A3372737F4820041B1EC /* PodKeyBoard.swift */; };
 		2B38A37D27382D550041B1EC /* bass_F3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B38A37327382D550041B1EC /* bass_F3.mp3 */; };
 		2B38A37E27382D550041B1EC /* bass_D3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B38A37427382D550041B1EC /* bass_D3.mp3 */; };
@@ -151,6 +152,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1F464C276133C100845BD7 /* HandyBandLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HandyBandLaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B38A3372737F4820041B1EC /* PodKeyBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodKeyBoard.swift; sourceTree = "<group>"; };
 		2B38A37327382D550041B1EC /* bass_F3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bass_F3.mp3; sourceTree = "<group>"; };
 		2B38A37427382D550041B1EC /* bass_D3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bass_D3.mp3; sourceTree = "<group>"; };
@@ -481,6 +483,7 @@
 		2B780517273C737800E18FA2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2B1F464C276133C100845BD7 /* HandyBandLaunchScreen.storyboard */,
 				2B780515273C737400E18FA2 /* ButtonViewStyle.swift */,
 			);
 			path = Helper;
@@ -722,6 +725,7 @@
 				2B781362272AA477002A8972 /* sample_drum_one.mp3 in Resources */,
 				2BCD2518275E865600ADE793 /* Tom_Mid.mp3 in Resources */,
 				2B588D642760168C00C75FA7 /* BackgroundSound_#A4.mp3 in Resources */,
+				2B1F464D276133C100845BD7 /* HandyBandLaunchScreen.storyboard in Resources */,
 				2BCD2522275E865600ADE793 /* kick.mp3 in Resources */,
 				2B588D522760167C00C75FA7 /* Piano_#A4.mp3 in Resources */,
 				2B38A37F27382D550041B1EC /* bass_#C3.mp3 in Resources */,
@@ -994,6 +998,8 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "plase allow Microphone setting";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = HandyBandLaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -1025,6 +1031,8 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "plase allow Microphone setting";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = HandyBandLaunchScreen;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
