@@ -46,7 +46,7 @@ let GuitarEffectChangeH = (screenH / 4)
 //plug-in effect preview area
 let GuitarEffecPreW = (((screenW - 20) - TrackW - ColumeSpacerW * 2) / 2)
 let GuitarEffecPreH = (screenH / 4)
-
+let EffectsSliderH = ((GuitarEffecPreH * 3) / 5)
 
 // Recording Button
 let ReocordingButtonH = controlPanH / 2.5

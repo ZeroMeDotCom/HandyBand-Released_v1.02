@@ -87,7 +87,7 @@
 		2B78052F273EEE9100E18FA2 /* MovableButtonA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78052E273EEE9100E18FA2 /* MovableButtonA.swift */; };
 		2B780531273EEEB100E18FA2 /* MovableButtonPlusA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B780530273EEEB100E18FA2 /* MovableButtonPlusA.swift */; };
 		2B780533273EEEBA00E18FA2 /* MovableButtonB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B780532273EEEBA00E18FA2 /* MovableButtonB.swift */; };
-		2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */; };
+		2B781350272A8A68002A8972 /* HandyBandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78134F272A8A68002A8972 /* HandyBandApp.swift */; };
 		2B781352272A8A68002A8972 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B781351272A8A68002A8972 /* ContentView.swift */; };
 		2B781354272A8A6A002A8972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B781353272A8A6A002A8972 /* Assets.xcassets */; };
 		2B781357272A8A6A002A8972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B781356272A8A6A002A8972 /* Preview Assets.xcassets */; };
@@ -95,6 +95,7 @@
 		2B781360272AA025002A8972 /* PlaySample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B78135F272AA025002A8972 /* PlaySample.swift */; };
 		2B781362272AA477002A8972 /* sample_drum_one.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B781361272AA477002A8972 /* sample_drum_one.mp3 */; };
 		2B781368272AAB40002A8972 /* sample_drum_one_Edited.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */; };
+		2B79FCBF2760B66F00D6D904 /* DunneAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B79FCBE2760B66F00D6D904 /* DunneAudioKit */; };
 		2B81F680272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */; };
 		2B81F683272B2DBF0081BCB6 /* sample_drum_three.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */; };
 		2B81F684272B2DBF0081BCB6 /* sample_drum_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */; };
@@ -231,7 +232,7 @@
 		2B780530273EEEB100E18FA2 /* MovableButtonPlusA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonPlusA.swift; sourceTree = "<group>"; };
 		2B780532273EEEBA00E18FA2 /* MovableButtonB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovableButtonB.swift; sourceTree = "<group>"; };
 		2B78134C272A8A68002A8972 /* HandyBand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyBand.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoopPlayerApp.swift; sourceTree = "<group>"; };
+		2B78134F272A8A68002A8972 /* HandyBandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandyBandApp.swift; sourceTree = "<group>"; };
 		2B781351272A8A68002A8972 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2B781353272A8A6A002A8972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B781356272A8A6A002A8972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -298,6 +299,7 @@
 			files = (
 				2BC87260272D8C5400AD500A /* SoundpipeAudioKit in Frameworks */,
 				2B81F695272BC73E0081BCB6 /* AudioKit in Frameworks */,
+				2B79FCBF2760B66F00D6D904 /* DunneAudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +430,7 @@
 				2B5A799C27366E31000C5437 /* DangDangDangView.swift */,
 				2B781351272A8A68002A8972 /* ContentView.swift */,
 				2B5A7966273426A1000C5437 /* PlugInView.swift */,
-				2B78134F272A8A68002A8972 /* LoopPlayerApp.swift */,
+				2B78134F272A8A68002A8972 /* HandyBandApp.swift */,
 			);
 			path = UI_Design;
 			sourceTree = "<group>";
@@ -653,6 +655,7 @@
 			packageProductDependencies = (
 				2B81F694272BC73E0081BCB6 /* AudioKit */,
 				2BC8725F272D8C5400AD500A /* SoundpipeAudioKit */,
+				2B79FCBE2760B66F00D6D904 /* DunneAudioKit */,
 			);
 			productName = LoopPlayer;
 			productReference = 2B78134C272A8A68002A8972 /* HandyBand.app */;
@@ -685,6 +688,7 @@
 			packageReferences = (
 				2B81F693272BC73E0081BCB6 /* XCRemoteSwiftPackageReference "AudioKit" */,
 				2BC8725E272D8C5400AD500A /* XCRemoteSwiftPackageReference "SoundpipeAudioKit" */,
+				2B79FCBD2760B66F00D6D904 /* XCRemoteSwiftPackageReference "DunneAudioKit" */,
 			);
 			productRefGroup = 2B78134D272A8A68002A8972 /* Products */;
 			projectDirPath = "";
@@ -841,7 +845,7 @@
 				2B78051D273EE9B800E18FA2 /* MovableButtonC.swift in Sources */,
 				2B7804FE273C495800E18FA2 /* Track_One.swift in Sources */,
 				2B5A79652734233B000C5437 /* SoundCardPlugInView.swift in Sources */,
-				2B781350272A8A68002A8972 /* LoopPlayerApp.swift in Sources */,
+				2B781350272A8A68002A8972 /* HandyBandApp.swift in Sources */,
 				2B9DA5FC272C6C250085365C /* SliderView_PlayButton.swift in Sources */,
 				2BCD252D275E95F300ADE793 /* MovableButtonSnareTwo.swift in Sources */,
 				2B781360272AA025002A8972 /* PlaySample.swift in Sources */,
@@ -1057,6 +1061,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2B79FCBD2760B66F00D6D904 /* XCRemoteSwiftPackageReference "DunneAudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/DunneAudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		2B81F693272BC73E0081BCB6 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AudioKit/AudioKit";
@@ -1076,6 +1088,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2B79FCBE2760B66F00D6D904 /* DunneAudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B79FCBD2760B66F00D6D904 /* XCRemoteSwiftPackageReference "DunneAudioKit" */;
+			productName = DunneAudioKit;
+		};
 		2B81F694272BC73E0081BCB6 /* AudioKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2B81F693272BC73E0081BCB6 /* XCRemoteSwiftPackageReference "AudioKit" */;

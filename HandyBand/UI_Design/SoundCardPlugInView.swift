@@ -8,6 +8,7 @@
     // 2. Change the effects
 
 import SwiftUI
+import AudioToolbox
 
 struct SoundCardPlugInView: View {
     // Call SoundCardPlugInLogic class
@@ -16,63 +17,138 @@ struct SoundCardPlugInView: View {
     @EnvironmentObject var fileManage : FileManageLogic
     @EnvironmentObject var playCreationModel : playCreationsModel
     // Whether it's opened or not
-    @State var stopFlag: Bool
+    @State var plugInFlag: Bool = false
+    // Whether the Reset button pressed or not
+    @State var resetButtonPressed: Bool = false
+    // Picker selection
+    @State private var pickerSelection = 0
     
     //Delay
-    @State private var delay_balance : Double = 0.5
-    @State private var delay_feedback : Double = 0.5
-    @State private var delay_time : Double = 0.01
+    @State private var delay_feedback : Double = 0.0
+    @State private var delay_time : Double = 0.0
+    
+    //Wah
+    @State private var wah_Value: AUValue = 0.0
+    @State private var wah_Mix: AUValue = 0.0
+    @State private var wah_Amplitude: AUValue = 0.0
+    
+    //Chorus
+    @State private var chorus_Frequency: AUValue = 0.0
+    @State private var chorus_Depth: AUValue = 0.0
+    @State private var chorus_Feedback: AUValue = 0.0
     
     init() {
-        self.stopFlag = true
+        self.plugInFlag = false
+        self.resetButtonPressed = false
     }
     var body: some View {
         HStack {
-            // Effect setting area
-//            VStack {
-//                VStack(alignment: .leading) {
-//                    HStack {
-//                        Text("Guitar").foregroundColor(.yellow)
-//                        Image(systemName: "guitars").foregroundColor(.yellow)
-//                    }
-//                    PlaySampleGuitarGroup()
-//                        .environmentObject(fileManage)
-//                        .environmentObject(playCreationModel)
-//                }
-//                .frame(width: TrackW, alignment: .center)
-//
-//        }
-
+            // Preview effects are
+            List {
+                Text("The Ocean")
+                Text("Deep Breath")
+                Text("Jack Chen")
+                Text("Kirk Hammet")
+                Text("Chi-La-He-CHi-La")
+            }
+            .frame(width: GuitarEffecPreW, height: GuitarEffecPreH, alignment: .center)
+            
+            // Effect control area
             VStack {
-                // Open / Close Plug-in signal
+
                 HStack {
+                    // Reset effects button
+                    Button(action: {
+                        self.reset()
+                    }, label: {
+                        Image(systemName: self.resetButtonPressed ? "r.circle.fill" : "r.circle")
+                    })
+                        .onLongPressGesture(perform: {
+                            //
+                        }, onPressingChanged: { pressing in
+                            if pressing {
+                                resetButtonPressed = true
+                            } else {
+                                resetButtonPressed = false
+                            }
+                        })
+                    
+                    // Open / Close Plug-in signal
                     Text("Session!!")
                     Button(action: {
-                        self.stopFlag ? self.soundCardPlugIn.stopSession() : self.soundCardPlugIn.openSession()
-                        self.stopFlag = !self.stopFlag
+                        self.plugInFlag = !self.plugInFlag
+                        self.plugInFlag ? self.soundCardPlugIn.openSession() : self.soundCardPlugIn.stopSession()
                         
                     }, label: {
-                        Image(systemName: self.stopFlag ? "powerplug.fill" : "powerplug")
+                        Image(systemName: self.plugInFlag ? "powerplug.fill" : "powerplug")
                     })
                 }
                 
-                //delay control
-                VStack {
-                    Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
-                        soundCardPlugIn.changeDelay_time(delay_time: $delay_time.wrappedValue)
-                    })
-                    Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
-                        soundCardPlugIn.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
-                    })
-                    Slider(value: $delay_balance, in: 0...99, onEditingChanged: {_ in
-                        soundCardPlugIn.changeDelay_balance(delay_balance: $delay_balance.wrappedValue)
-                    })
+                // Effect controller picker
+                Picker(selection: $pickerSelection, label: Text("effects")) {
+                    Text("delay").tag(0)
+                    Text("wah").tag(1)
+                    Text("chorus").tag(2)
+                }.pickerStyle(.segmented)
+                if pickerSelection == 0 {
+                    //Two delay sliders
+                    VStack {
+                        Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
+                            soundCardPlugIn.changeDelay_time(delay_time: $delay_time.wrappedValue)
+                        })
+                        Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                            soundCardPlugIn.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
+                        })
+                    }
+                    .frame(height: EffectsSliderH, alignment: .center)
+                } else if pickerSelection == 1 {
+                    //Three wah sliders
+                    VStack {
+                        Slider(value: $wah_Value, in: 0...100, onEditingChanged: {_ in
+                            soundCardPlugIn.changeWah_wahValue(wah_value: Double($wah_Value.wrappedValue))
+                        })
+                        Slider(value: $wah_Mix, in: 0...100, onEditingChanged: {_ in
+                            soundCardPlugIn.changeWah_mix(wah_mix: Double($wah_Mix.wrappedValue))
+                        })
+                        Slider(value: $wah_Amplitude, in: 0...100, onEditingChanged: {_ in
+                            soundCardPlugIn.changeWah_amplitude(wah_amplitude: Double($wah_Amplitude.wrappedValue))
+                        })
+                    }
+                    .frame(height: EffectsSliderH, alignment: .center)
+                } else if pickerSelection == 2 {
+                    //Three chorus sliders
+                    VStack {
+                        Slider(value: $chorus_Frequency, in: 0...100, onEditingChanged: {_ in
+                            soundCardPlugIn.changeChorus_frequency(chorus_frequency: Double($chorus_Frequency.wrappedValue))
+                        })
+                        Slider(value: $chorus_Depth, in: 0...100, onEditingChanged: {_ in
+                            soundCardPlugIn.changeChorus_depth(chorus_depth: Double($chorus_Depth.wrappedValue))
+                        })
+                        Slider(value: $chorus_Feedback, in: 0...100, onEditingChanged: {_ in
+                            soundCardPlugIn.changeChorus_feedback(chorus_feedback: Double($chorus_Feedback.wrappedValue))
+                        })
+                    }
+                    .frame(height: EffectsSliderH, alignment: .center)
                 }
+               
             }
             .frame(width: GuitarEffectChangeW, alignment: .center)
 
         }
 
+    }
+    
+    func reset() {
+        self.delay_feedback = 0.0
+        self.delay_time = 0.0
+        
+        self.wah_Value = 0.0
+        self.wah_Mix = 0.0
+        self.wah_Amplitude = 0.0
+        
+        self.chorus_Frequency = 0.0
+        self.chorus_Depth = 0.0
+        self.chorus_Feedback = 0.0
     }
 }
 

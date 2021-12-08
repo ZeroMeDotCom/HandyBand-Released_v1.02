@@ -17,8 +17,7 @@ struct PlugInView: View {
                 .environmentObject(fileManage)
                 .environmentObject(playCreationModel)
         }
-        .frame(width: GuitarEffectChangeW, alignment: .center)
-        .border(.green, width: 4)
+        .frame(width: GuitarEffectChangeW + GuitarEffecPreW, alignment: .center)
     }
 }
 

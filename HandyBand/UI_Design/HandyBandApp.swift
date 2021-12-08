@@ -33,13 +33,12 @@ struct HandyBandApp: App {
                         .frame(width: controlPanW, height: controlPanH, alignment: .center)
                         .background(RoundedRectangle(cornerRadius: 17).fill(Color(UIColor.white)))
                         
-                        
+                        //Four Groups Area
                         VStack {
                             ContentView()
                                 .environmentObject(fileManage)
                                 .environmentObject(playCreationModel)
                         }
-                        //整體四個
                         .frame(width: TrackWholeW, height: TrackWholeH, alignment: .center)
 
                     }
@@ -52,11 +51,13 @@ struct HandyBandApp: App {
                             Spacer()
                                 .frame(width: ColumeSpacerW, alignment: .center)
                             
+                            // Instruments Area
                             VStack {
                                 Picker(selection: $selection, label: Text("Plug-in or Build-in")) {
                                     Text("Build-in").tag(0)
                                     Text("Plug-in").tag(1)
                                 }.pickerStyle(.segmented)
+                                //Build-in instruments
                                 if selection == 0 {
                                     VStack{
                                         PodKeyBoard().environmentObject(fileManage)
@@ -64,19 +65,9 @@ struct HandyBandApp: App {
                                     .frame(maxWidth: MoveAreaW, maxHeight: MoveAreaH, alignment: .topLeading)
 
               
-
+                                    //Plug-in View
                                 } else if selection == 1 {
                                     HStack {
-                                        //預設定音效
-                                        List {
-                                            Text("The Ocean")
-                                            Text("Deep Breath")
-                                            Text("Jack Chen")
-                                            Text("Kirk Hammet")
-                                            Text("Chi-La-He-CHi-La")
-                                        }
-                                        .frame(width: GuitarEffecPreW, height: GuitarEffecPreH, alignment: .center)
-                                        
                                         // Plugin record area
                                         VStack(alignment: .leading) {
                                             HStack {
