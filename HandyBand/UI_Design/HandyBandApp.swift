@@ -29,6 +29,7 @@ struct HandyBandApp: App {
                             DangDangDangView()
                                 .environmentObject(recorderPlayer)
                             PlayYourCreationView().environmentObject(fileManage)
+                            BroswerView()
                         }
                         .frame(width: controlPanW, height: controlPanH, alignment: .center)
                         .background(RoundedRectangle(cornerRadius: 17).fill(Color(UIColor.white)))

@@ -354,7 +354,7 @@ struct DangDangDangView: View {
                         
                         recorderPlayer.isCountFour ?
                         Text("Rec")
-                            .frame(width: ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
+                            .frame(width: ReocordingButtonH + ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
                             .foregroundColor(.red)
                         :
                         Text("\(recorderPlayer.currentMetro)/4")
@@ -363,6 +363,8 @@ struct DangDangDangView: View {
                     }
 
                 })
+                Spacer()
+                    .frame(width:ReocordingButtonH, height: ReocordingButtonH, alignment: .center)
                 
                 // Listen the lastest recording
 //                Button(action: {

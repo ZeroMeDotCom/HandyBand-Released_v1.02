@@ -96,6 +96,7 @@
 		2B781362272AA477002A8972 /* sample_drum_one.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2B781361272AA477002A8972 /* sample_drum_one.mp3 */; };
 		2B781368272AAB40002A8972 /* sample_drum_one_Edited.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */; };
 		2B79FCBF2760B66F00D6D904 /* DunneAudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2B79FCBE2760B66F00D6D904 /* DunneAudioKit */; };
+		2B79FCC12760C81D00D6D904 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B79FCC02760C81D00D6D904 /* BrowserView.swift */; };
 		2B81F680272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */; };
 		2B81F683272B2DBF0081BCB6 /* sample_drum_three.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */; };
 		2B81F684272B2DBF0081BCB6 /* sample_drum_two.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */; };
@@ -240,6 +241,7 @@
 		2B78135F272AA025002A8972 /* PlaySample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySample.swift; sourceTree = "<group>"; };
 		2B781361272AA477002A8972 /* sample_drum_one.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample_drum_one.mp3; sourceTree = "<group>"; };
 		2B781367272AAB40002A8972 /* sample_drum_one_Edited.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_one_Edited.wav; sourceTree = "<group>"; };
+		2B79FCC02760C81D00D6D904 /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
 		2B81F67F272B2BD70081BCB6 /* PlaySampleDrumsGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySampleDrumsGroup.swift; sourceTree = "<group>"; };
 		2B81F681272B2DBF0081BCB6 /* sample_drum_three.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_three.wav; sourceTree = "<group>"; };
 		2B81F682272B2DBF0081BCB6 /* sample_drum_two.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sample_drum_two.wav; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 		2B5A795B273419B9000C5437 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2B79FCC02760C81D00D6D904 /* BrowserView.swift */,
 				2B38A3372737F4820041B1EC /* PodKeyBoard.swift */,
 				2B81F697272BF5640081BCB6 /* VolumeSlider.swift */,
 				2B9DA5FB272C6C250085365C /* SliderView_PlayButton.swift */,
@@ -807,6 +810,7 @@
 				2BF6F8E92736E93000FA1C26 /* PlayYourCreationView.swift in Sources */,
 				2BCD253B275E972C00ADE793 /* MovableButtonCrashTwo.swift in Sources */,
 				2B780521273EEE5A00E18FA2 /* MovableButtonD.swift in Sources */,
+				2B79FCC12760C81D00D6D904 /* BrowserView.swift in Sources */,
 				2B7279A22731256F008047DA /* ConvolutionSlider.swift in Sources */,
 				2B780516273C737400E18FA2 /* ButtonViewStyle.swift in Sources */,
 				2B5A79972735B2BB000C5437 /* UITools.swift in Sources */,

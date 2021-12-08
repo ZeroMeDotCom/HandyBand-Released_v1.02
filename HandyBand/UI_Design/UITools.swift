@@ -7,7 +7,7 @@
     // frame setting
     // position setting
     // Height, width setting
-    // Image, Icon setting
+    // Image, Icon setting - All the images/Icons(string name are all provided by Apple Inc) are created by Apple Inc. and it's free to use
 
 import Foundation
 import UIKit
@@ -47,6 +47,16 @@ let GuitarEffectChangeH = (screenH / 4)
 let GuitarEffecPreW = (((screenW - 20) - TrackW - ColumeSpacerW * 2) / 2)
 let GuitarEffecPreH = (screenH / 4)
 let EffectsSliderH = ((GuitarEffecPreH * 3) / 5)
+let EffectRestIcon : String = "r.circle"
+let EffectRestPressedIcon : String = "r.circle.fill"
+let PlugInIcon : String = "powerplug"
+let PlugInOpenIcon : String = "powerplug.fill"
+let WahValueIcon: String = "scribble.variable"
+let WahMixIcon: String = "square.stack.3d.down.right"
+let WahAmplitudeIcon: String = "lasso"
+let ChorusDepthIcon: String = "square.stack.3d.up"
+let ChorusFrequencyIcon: String = "skew"
+let ChorusFeedbackIcon: String = "arrow.backward"
 
 // Recording Button
 let ReocordingButtonH = controlPanH / 2.5
@@ -102,5 +112,10 @@ let FloverSpacerH = EffectIconH * 2
 let InstructionIcon: String = "hand.point.right"
 let DecorationIcon: String = "circle.dotted"
 
+//Info
+let InfoIcon: String = "info.circle"
+let InfoIconPressed: String = "info.circle.fill"
+let InfoIconColor = SwiftUI.Color.gray
+let InfoWebsite: String = "https://teresonmusic.com/2021/11/23/handle-band/" // The website created and published by Dan.
 
 

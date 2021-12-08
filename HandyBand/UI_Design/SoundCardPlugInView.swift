@@ -21,7 +21,7 @@ struct SoundCardPlugInView: View {
     // Whether the Reset button pressed or not
     @State var resetButtonPressed: Bool = false
     // Picker selection
-    @State private var pickerSelection = 0
+    @State private var pickerSelection = 1
     
     //Delay
     @State private var delay_feedback : Double = 0.0
@@ -61,7 +61,7 @@ struct SoundCardPlugInView: View {
                     Button(action: {
                         self.reset()
                     }, label: {
-                        Image(systemName: self.resetButtonPressed ? "r.circle.fill" : "r.circle")
+                        Image(systemName: self.resetButtonPressed ? EffectRestPressedIcon : EffectRestIcon)
                     })
                         .onLongPressGesture(perform: {
                             //
@@ -74,13 +74,12 @@ struct SoundCardPlugInView: View {
                         })
                     
                     // Open / Close Plug-in signal
-                    Text("Session!!")
                     Button(action: {
                         self.plugInFlag = !self.plugInFlag
                         self.plugInFlag ? self.soundCardPlugIn.openSession() : self.soundCardPlugIn.stopSession()
                         
                     }, label: {
-                        Image(systemName: self.plugInFlag ? "powerplug.fill" : "powerplug")
+                        Image(systemName: self.plugInFlag ? PlugInOpenIcon : PlugInIcon)
                     })
                 }
                 
@@ -93,40 +92,73 @@ struct SoundCardPlugInView: View {
                 if pickerSelection == 0 {
                     //Two delay sliders
                     VStack {
-                        Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
-                            soundCardPlugIn.changeDelay_time(delay_time: $delay_time.wrappedValue)
-                        })
-                        Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
-                            soundCardPlugIn.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
-                        })
+                        HStack {
+                            Image(systemName: DelyTimeIcon)
+                                .foregroundColor(FlaborOpenColor)
+                            Slider(value: $delay_time, in: 0...1, onEditingChanged: {_ in
+                                soundCardPlugIn.changeDelay_time(delay_time: $delay_time.wrappedValue)
+                            })
+                        }
+                        HStack {
+                            Image(systemName: DelayFeedbackIcon)
+                                .foregroundColor(FlaborOpenColor)
+                            Slider(value: $delay_feedback, in: 0...100, onEditingChanged: {_ in
+                                soundCardPlugIn.changeDelay_feedback(delay_feedback: $delay_feedback.wrappedValue)
+                            })
+                        }
                     }
                     .frame(height: EffectsSliderH, alignment: .center)
                 } else if pickerSelection == 1 {
                     //Three wah sliders
                     VStack {
-                        Slider(value: $wah_Value, in: 0...100, onEditingChanged: {_ in
-                            soundCardPlugIn.changeWah_wahValue(wah_value: Double($wah_Value.wrappedValue))
-                        })
-                        Slider(value: $wah_Mix, in: 0...100, onEditingChanged: {_ in
-                            soundCardPlugIn.changeWah_mix(wah_mix: Double($wah_Mix.wrappedValue))
-                        })
-                        Slider(value: $wah_Amplitude, in: 0...100, onEditingChanged: {_ in
-                            soundCardPlugIn.changeWah_amplitude(wah_amplitude: Double($wah_Amplitude.wrappedValue))
-                        })
+                        HStack {
+                            Image(systemName: WahValueIcon)
+                                .foregroundColor(FlaborOpenColor)
+                            Slider(value: $wah_Value, in: 0...100, onEditingChanged: {_ in
+                                soundCardPlugIn.changeWah_wahValue(wah_value: Double($wah_Value.wrappedValue))
+                            })
+                        }
+                        HStack {
+                            Image(systemName: WahMixIcon)
+                                .foregroundColor(FlaborOpenColor)
+                            Slider(value: $wah_Mix, in: 0...100, onEditingChanged: {_ in
+                                soundCardPlugIn.changeWah_mix(wah_mix: Double($wah_Mix.wrappedValue))
+                            })
+                        }
+                        HStack {
+                            Image(systemName: WahAmplitudeIcon)
+                                .foregroundColor(FlaborOpenColor)
+                            Slider(value: $wah_Amplitude, in: 0...100, onEditingChanged: {_ in
+                                soundCardPlugIn.changeWah_amplitude(wah_amplitude: Double($wah_Amplitude.wrappedValue))
+                            })
+                        }
+
                     }
                     .frame(height: EffectsSliderH, alignment: .center)
                 } else if pickerSelection == 2 {
                     //Three chorus sliders
                     VStack {
-                        Slider(value: $chorus_Frequency, in: 0...100, onEditingChanged: {_ in
-                            soundCardPlugIn.changeChorus_frequency(chorus_frequency: Double($chorus_Frequency.wrappedValue))
-                        })
-                        Slider(value: $chorus_Depth, in: 0...100, onEditingChanged: {_ in
-                            soundCardPlugIn.changeChorus_depth(chorus_depth: Double($chorus_Depth.wrappedValue))
-                        })
-                        Slider(value: $chorus_Feedback, in: 0...100, onEditingChanged: {_ in
-                            soundCardPlugIn.changeChorus_feedback(chorus_feedback: Double($chorus_Feedback.wrappedValue))
-                        })
+                        HStack {
+                            Image(systemName: ChorusFrequencyIcon)
+                                .foregroundColor(FlaborOpenColor)
+                            Slider(value: $chorus_Frequency, in: 0...100, onEditingChanged: {_ in
+                                soundCardPlugIn.changeChorus_frequency(chorus_frequency: Double($chorus_Frequency.wrappedValue))
+                            })
+                        }
+                        HStack {
+                            Image(systemName: ChorusDepthIcon)
+                                .foregroundColor(FlaborOpenColor)
+                            Slider(value: $chorus_Depth, in: 0...100, onEditingChanged: {_ in
+                                soundCardPlugIn.changeChorus_depth(chorus_depth: Double($chorus_Depth.wrappedValue))
+                            })
+                        }
+                        HStack {
+                            Image(systemName: ChorusFeedbackIcon)
+                                .foregroundColor(FlaborOpenColor)
+                            Slider(value: $chorus_Feedback, in: 0...100, onEditingChanged: {_ in
+                                soundCardPlugIn.changeChorus_feedback(chorus_feedback: Double($chorus_Feedback.wrappedValue))
+                            })
+                        }
                     }
                     .frame(height: EffectsSliderH, alignment: .center)
                 }
