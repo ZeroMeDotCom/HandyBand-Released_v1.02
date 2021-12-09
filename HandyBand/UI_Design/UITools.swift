@@ -57,47 +57,36 @@ let WahAmplitudeIcon: String = "lasso"
 let ChorusDepthIcon: String = "square.stack.3d.up"
 let ChorusFrequencyIcon: String = "skew"
 let ChorusFeedbackIcon: String = "arrow.backward"
-
 // Recording Button
 let ReocordingButtonH = controlPanH / 2.5
-
 // Stepper - BPM & Counter
 let StepperH = controlPanW / 8
-
 // Control Spacer configration
 let ControlSpacerH = controlPanW / 16
-
 // Color theme
 let BackgroundColor = Color(red: 244 / 255, green: 244 / 255, blue: 244 / 255)
 let PlayerBorderColor = SwiftUI.Color.purple
-
 // Send to bus button size
 let SendToBusButtonH = controlPanH / 2.5
-
 //Play Button
 let PlayButtonColor = SwiftUI.Color.yellow
 let PlayButtonImage:String = "play.circle"
 let PlayButtonImagePressed:String = "stop.circle.fill"
 let PlayButtonSizeH = controlPanH
-
 //Single Track
 let SingleTrackGroupSpecerH = screenW / 63
 let SingleTrackGroupSpecerBottomH = screenH / 63
 let SegmentH = (TrackH * 2 / 5)
 let singleTrackW = ((TrackW - SingleTrackGroupSpecerH * 3) / 3)
-
 //Effects icon color
 let EffectIconColor = SwiftUI.Color.purple
 let EffectIconH = (PlayButtonSizeH / 6)
-
 //Volumee size
 let TrackVolumeSizeH = controlPanH
-
 //Dely
 let DelyTimeIcon: String = "timer"
 let DelayFeedbackIcon: String = "arrow.uturn.backward"
 let DelayBalanceIcon: String = "equal"
-
 //Convolution
 let ConvolutionIconLeft:String = "signpost.left"
 let ConvolutionIconRight:String = "signpost.right"
@@ -111,7 +100,6 @@ let FloverSpacerH = EffectIconH * 2
 //Reverb
 let InstructionIcon: String = "hand.point.right"
 let DecorationIcon: String = "circle.dotted"
-
 //Info
 let InfoIcon: String = "info.circle"
 let InfoIconPressed: String = "info.circle.fill"

@@ -13,7 +13,7 @@ import SwiftUI
 // Create UIApplication Delegate
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        Thread.sleep(forTimeInterval: 3.0)
+        Thread.sleep(forTimeInterval: 1.0)
         return true
     }
 }

@@ -1431,7 +1431,7 @@ class FileManageLogic: ObservableObject {
     // Play the tracks - final creation
     func playResuting(){
         self.isPause = false
-        for i in 1..<13 {
+        for i in 1..<16 {
             print("第\(i)次掃描")
 //            if self.whichToPlay[i] {
 //                self.playSingle(fileURL: fileNames["track\(i)"]!["fileWay"]!, samplePlayer: self.samplePlayer, engine: self.engine)
@@ -1459,7 +1459,13 @@ class FileManageLogic: ObservableObject {
             } else if i == 11 && self.whichToPlay[i] {
                 playNewButton(engine: engine11, samplePlayer: samplePlayer11, fileURL: fileNames["track11"]!["fileWay"]!)
             } else if i == 12 && self.whichToPlay[i] {
-                playNewButton(engine: engine1, samplePlayer: samplePlayer12, fileURL: fileNames["track12"]!["fileWay"]!)
+                playNewButton(engine: engine12, samplePlayer: samplePlayer12, fileURL: fileNames["track12"]!["fileWay"]!)
+            } else if i == 13 && self.whichToPlay[i] {
+                playNewButton(engine: engine13, samplePlayer: samplePlayer13, fileURL: fileNames["track13"]!["fileWay"]!)
+            } else if i == 14 && self.whichToPlay[i] {
+                playNewButton(engine: engine14, samplePlayer: samplePlayer14, fileURL: fileNames["track14"]!["fileWay"]!)
+            } else if i == 15 && self.whichToPlay[i] {
+                playNewButton(engine: engine15, samplePlayer: samplePlayer15, fileURL: fileNames["track15"]!["fileWay"]!)
             }
         }
 
@@ -1480,6 +1486,9 @@ class FileManageLogic: ObservableObject {
         engine10.stop()
         engine11.stop()
         engine12.stop()
+        engine13.stop()
+        engine14.stop()
+        engine15.stop()
         
         samplePlayer1.stop()
         samplePlayer2.stop()
@@ -1493,6 +1502,9 @@ class FileManageLogic: ObservableObject {
         samplePlayer10.stop()
         samplePlayer11.stop()
         samplePlayer12.stop()
+        samplePlayer13.stop()
+        samplePlayer14.stop()
+        samplePlayer15.stop()
         
     }
     
@@ -1536,9 +1548,18 @@ class FileManageLogic: ObservableObject {
         case "track12":
             whichToPlay[12] = false
 //            return whichToPlay[12]
-        default:
+        case "track13":
             whichToPlay[13] = false
 //            return whichToPlay[13]
+        case "track14":
+            whichToPlay[14] = false
+//            return whichToPlay[14]
+        case "track15":
+            whichToPlay[15] = false
+//            return whichToPlay[15]
+        default:
+            whichToPlay[16] = false
+//            return whichToPlay[16]
         }
     }
     
@@ -1582,9 +1603,18 @@ class FileManageLogic: ObservableObject {
         case "track12":
             whichToPlay[12] = true
 //            return whichToPlay[12]
-        default:
-            whichToPlay[13] = false
+        case "track13":
+            whichToPlay[13] = true
 //            return whichToPlay[13]
+        case "track14":
+            whichToPlay[14] = true
+//            return whichToPlay[14]
+        case "track15":
+            whichToPlay[15] = true
+//            return whichToPlay[15]
+        default:
+            whichToPlay[16] = false
+//            return whichToPlay[16]
         }
     }
     // Helper - clear recording flags
@@ -1631,9 +1661,18 @@ class FileManageLogic: ObservableObject {
         case "track12":
 //            whichToPlay[12] = true
             return whichToPlay[12]
+        case "track13":
+//            whichToPlay[13] = true
+            return whichToPlay[10]
+        case "track14":
+//            whichToPlay[14] = true
+            return whichToPlay[14]
+        case "track15":
+//            whichToPlay[15] = true
+            return whichToPlay[15]
         default:
-//            whichToPlay[13] = false
-            return whichToPlay[13]
+//            whichToPlay[16] = false
+            return whichToPlay[16]
         }
     }
     

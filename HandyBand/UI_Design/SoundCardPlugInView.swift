@@ -22,6 +22,8 @@ struct SoundCardPlugInView: View {
     @State var resetButtonPressed: Bool = false
     // Picker selection
     @State private var pickerSelection = 1
+    // Default Effects Selection
+    @State private var defaultEffectSelection: String?
     
     //Delay
     @State private var delay_feedback : Double = 0.0
@@ -43,13 +45,35 @@ struct SoundCardPlugInView: View {
     }
     var body: some View {
         HStack {
+
             // Preview effects are
             List {
-                Text("The Ocean")
-                Text("Deep Breath")
-                Text("Jack Chen")
-                Text("Kirk Hammet")
-                Text("Chi-La-He-CHi-La")
+                Button(action: {
+                    self.changeToOcean()
+                }, label: {
+                    Text("The Ocean")
+                })
+                Button(action: {
+                    
+                }, label: {
+                    Text("Deep Breath")
+                })
+                Button(action: {
+                    
+                }, label: {
+                    Text("Jack Chen")
+                })
+                Button(action: {
+                    
+                }, label: {
+                    Text("Kirk Hammet")
+                })
+                Button(action: {
+                    
+                }, label: {
+                    Text("Chi-La-He-CHi-La")
+                })
+                
             }
             .frame(width: GuitarEffecPreW, height: GuitarEffecPreH, alignment: .center)
             
@@ -168,6 +192,17 @@ struct SoundCardPlugInView: View {
 
         }
 
+    }
+    
+    func changeToOcean() {
+        self.delay_feedback = 0.1
+        self.delay_time = 0.1
+        self.wah_Value = 10
+        self.wah_Mix = 10
+        self.wah_Amplitude = 5
+        self.chorus_Frequency = 60
+        self.chorus_Depth = 80
+        self.chorus_Feedback = 10
     }
     
     func reset() {

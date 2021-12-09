@@ -37,7 +37,7 @@ struct Track_Thirteen_PlugIn_One: View {
 
                 })
                 .gesture(TapGesture(count: 1).onEnded {
-                    fileManage.playNewButton(engine: fileManage.engine13, samplePlayer: fileManage.samplePlayer13, fileURL: fileManage.savedFileNames.fileNames["track13"]!["fileWay"]!)
+                    fileManage.playNewButton(engine: fileManage.engine13, samplePlayer: fileManage.samplePlayer13, fileURL: fileManage.savedFileNames.fileNames["track13 "]!["fileWay"]!)
                     self.isOn = true
                 })
                 .simultaneousGesture(TapGesture(count: 2).onEnded {

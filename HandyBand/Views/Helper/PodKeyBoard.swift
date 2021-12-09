@@ -11,7 +11,7 @@ import AudioKit
 
 struct PodKeyBoard: View {
     @EnvironmentObject var fileManage : FileManageLogic
-    @State private var selection = 0
+    @State private var selection = 1
     var body: some View {
         VStack {
             Picker(selection: $selection, label: Text("InstrumentPIcker")) {
