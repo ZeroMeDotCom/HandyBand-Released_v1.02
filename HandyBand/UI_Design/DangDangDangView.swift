@@ -11,7 +11,7 @@
 import SwiftUI
 
 struct DangDangDangView: View {
-    @State var speedValue: Int = 60
+    @State var speedValue: Int = 50
     @State var isSpeedCountOpen: Bool = true
     @StateObject var dangDangDangModel = TimeCountLogic()
     @EnvironmentObject var recorderPlayer : RecordingLogic

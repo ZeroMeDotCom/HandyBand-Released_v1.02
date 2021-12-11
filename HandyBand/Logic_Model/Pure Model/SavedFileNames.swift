@@ -47,13 +47,13 @@ class SavedFileNames {
                     "fileWay" : "track12_piano3.m4a",
                    ],
         "track13" : ["isPause" : "true",
-                    "fileWay" : "track13_piano1.m4a",
+                    "fileWay" : "track13_guitar1.m4a",
                    ],
         "track14" : ["isPause" : "true",
-                    "fileWay" : "track14_piano2.m4a",
+                    "fileWay" : "track14_guitar2.m4a",
                    ],
         "track15" : ["isPause" : "true",
-                    "fileWay" : "track15_piano3.m4a",
+                    "fileWay" : "track15_guitar3.m4a",
                    ],
 
     ]

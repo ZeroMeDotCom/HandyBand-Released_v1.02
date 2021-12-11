@@ -5,6 +5,10 @@
 //  Created by Dan on 11/11/21.
 // Who's this file?
     // Model for Track view
+        // 1. play/stop button
+        // 2. send to bus button
+        // 3. effects contoller: Delay, Reverb, Convolution
+        // 4. volume slider
 
 import SwiftUI
 import AudioKit

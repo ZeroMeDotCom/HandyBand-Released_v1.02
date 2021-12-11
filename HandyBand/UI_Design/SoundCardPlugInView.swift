@@ -54,14 +54,14 @@ struct SoundCardPlugInView: View {
                     Text("The Ocean")
                 })
                 Button(action: {
-                    
+                    self.changeToDeepBreath()
                 }, label: {
                     Text("Deep Breath")
                 })
                 Button(action: {
                     
                 }, label: {
-                    Text("Jack Chen")
+                    Text("Jackie Chen")
                 })
                 Button(action: {
                     
@@ -205,6 +205,16 @@ struct SoundCardPlugInView: View {
         self.chorus_Feedback = 10
     }
     
+    func changeToDeepBreath() {
+        self.delay_feedback = 0.3
+        self.delay_time = 0.5
+        self.wah_Value = 50
+        self.wah_Mix = 70
+        self.wah_Amplitude = 60
+        self.chorus_Frequency = 10
+        self.chorus_Depth = 70
+        self.chorus_Feedback = 50
+    }
     func reset() {
         self.delay_feedback = 0.0
         self.delay_time = 0.0

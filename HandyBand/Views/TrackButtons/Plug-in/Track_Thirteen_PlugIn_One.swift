@@ -3,7 +3,8 @@
 //  HandyBand
 //
 //  Created by Dan on 11/15/21.
-//
+//Who is this file?
+    // 1. Plug-in track 1 view
 
 import SwiftUI
 import AudioKit
@@ -37,7 +38,9 @@ struct Track_Thirteen_PlugIn_One: View {
 
                 })
                 .gesture(TapGesture(count: 1).onEnded {
-                    fileManage.playNewButton(engine: fileManage.engine13, samplePlayer: fileManage.samplePlayer13, fileURL: fileManage.savedFileNames.fileNames["track13 "]!["fileWay"]!)
+                    print("This is a demo")
+                    print(fileManage.savedFileNames.fileNames["track13"]!["fileWay"]!)
+                    fileManage.playNewButton(engine: fileManage.engine13, samplePlayer: fileManage.samplePlayer13, fileURL: fileManage.savedFileNames.fileNames["track13"]!["fileWay"]!)
                     self.isOn = true
                 })
                 .simultaneousGesture(TapGesture(count: 2).onEnded {

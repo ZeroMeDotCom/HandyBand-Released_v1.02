@@ -3,8 +3,8 @@
 //  HandyBand
 //
 //  Created by Dan on 11/13/21.
-//
-
+//Who is this file?
+    // 1. circulr keyboard - E
 import SwiftUI
 
 struct MovableButtonE: View {

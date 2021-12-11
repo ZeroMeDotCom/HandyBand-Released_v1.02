@@ -15,7 +15,7 @@ class RecordingLogic: ObservableObject {
     //Call TimeCountLogic class
     private var smallDangDang = TimeCountLogic()
     // Recoding speed(BPM: beat per minute)
-    @Published var speed: Double = 60
+    @Published var speed: Double = 50
     //Current place of a recording
     @Published var currentMetro: Int = 0
     @Published var currentRecordingCount: Int = 0
@@ -110,6 +110,12 @@ class RecordingLogic: ObservableObject {
             audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track11"]!["fileWay"]!)
         case 12:
             audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track12"]!["fileWay"]!)
+        case 13:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track13"]!["fileWay"]!)
+        case 14:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track14"]!["fileWay"]!)
+        case 15:
+            audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track15"]!["fileWay"]!)
         default:
             audioFileURL = directoryURL!.appendingPathComponent(saveFileNames.fileNames["track1"]!["fileWay"]!)
         }

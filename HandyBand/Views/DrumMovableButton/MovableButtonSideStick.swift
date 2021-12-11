@@ -3,7 +3,8 @@
 //  HandyBand
 //
 //  Created by DanTereson on 06/12/2021.
-//
+//Who is this file?
+    // 1. drum sidestick view
 
 import SwiftUI
 
