@@ -48,22 +48,28 @@ struct Track_Four: View {
                     self.isOn = false
                 })
                     
+                VStack {
+                    //Send to Bus
+                    Button(action: {
+                        fileManage.addingToPlayNextTime(trackID: "track4") ? fileManage.setToEdit(trackID: "track4") : fileManage.setReady(trackID: "track4")
+                        print(fileManage.whichToPlay)
+                        
+                    }, label: {
+                        fileManage.addingToPlayNextTime(trackID: "track4") ?
+                        Image(systemName: fileManage.sendToBusIconPressed )
+                            .resizable()
+                            .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
+                        :
+                        Image(systemName: fileManage.sendToBusIcon)
+                            .resizable()
+                            .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
+                    })
+                    // Track order
+                    Image(systemName: "4.square")
+                        .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
+                        .foregroundColor(TrackNumberColor)
+                }
 
-                //Send to Bus
-                Button(action: {
-                    fileManage.addingToPlayNextTime(trackID: "track4") ? fileManage.setToEdit(trackID: "track4") : fileManage.setReady(trackID: "track4")
-                    print(fileManage.whichToPlay)
-                    
-                }, label: {
-                    fileManage.addingToPlayNextTime(trackID: "track4") ?
-                    Image(systemName: fileManage.sendToBusIconPressed )
-                        .resizable()
-                        .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
-                    :
-                    Image(systemName: fileManage.sendToBusIcon)
-                        .resizable()
-                        .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
-                })
                 
                 VStack {
                     Slider(value: $volumeValue, in: 0...100, onEditingChanged: {_ in

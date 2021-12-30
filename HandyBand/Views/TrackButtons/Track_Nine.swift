@@ -48,22 +48,29 @@ struct Track_Nine: View {
                     self.isOn = false
                 })
                     
-
-                //Send to Bus
-                Button(action: {
-                    fileManage.addingToPlayNextTime(trackID: "track9") ? fileManage.setToEdit(trackID: "track9") : fileManage.setReady(trackID: "track9")
-                    print(fileManage.whichToPlay)
+                VStack {
+                    //Send to Bus
+                    Button(action: {
+                        fileManage.addingToPlayNextTime(trackID: "track9") ? fileManage.setToEdit(trackID: "track9") : fileManage.setReady(trackID: "track9")
+                        print(fileManage.whichToPlay)
+                        
+                    }, label: {
+                        fileManage.addingToPlayNextTime(trackID: "track9") ?
+                        Image(systemName: fileManage.sendToBusIconPressed )
+                            .resizable()
+                            .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
+                        :
+                        Image(systemName: fileManage.sendToBusIcon)
+                            .resizable()
+                            .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
+                    })
                     
-                }, label: {
-                    fileManage.addingToPlayNextTime(trackID: "track9") ?
-                    Image(systemName: fileManage.sendToBusIconPressed )
-                        .resizable()
+                    // Track order
+                    Image(systemName: "9.square")
                         .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
-                    :
-                    Image(systemName: fileManage.sendToBusIcon)
-                        .resizable()
-                        .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
-                })
+                        .foregroundColor(TrackNumberColor)
+                }
+
                 
                 VStack {
                     Slider(value: $volumeValue, in: 0...100, onEditingChanged: {_ in

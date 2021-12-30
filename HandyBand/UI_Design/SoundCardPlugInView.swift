@@ -59,17 +59,17 @@ struct SoundCardPlugInView: View {
                     Text("Deep Breath")
                 })
                 Button(action: {
-                    
+                    self.changeToJackieChen()
                 }, label: {
                     Text("Jackie Chen")
                 })
                 Button(action: {
-                    
+                    self.changeToKirkHammet()
                 }, label: {
                     Text("Kirk Hammet")
                 })
                 Button(action: {
-                    
+                    self.changeToCHILAHECHILA()
                 }, label: {
                     Text("Chi-La-He-CHi-La")
                 })
@@ -215,6 +215,40 @@ struct SoundCardPlugInView: View {
         self.chorus_Depth = 70
         self.chorus_Feedback = 50
     }
+    
+    func changeToJackieChen() {
+        self.delay_feedback = 0.2
+        self.delay_time = 0.1
+        self.wah_Value = 10
+        self.wah_Mix = 10
+        self.wah_Amplitude = 65
+        self.chorus_Frequency = 50
+        self.chorus_Depth = 20
+        self.chorus_Feedback = 5
+    }
+    
+    func changeToKirkHammet() {
+        self.delay_feedback = 0.1
+        self.delay_time = 0.5
+        self.wah_Value = 50
+        self.wah_Mix = 50
+        self.wah_Amplitude = 60
+        self.chorus_Frequency = 10
+        self.chorus_Depth = 25
+        self.chorus_Feedback = 25
+    }
+    
+    func changeToCHILAHECHILA() {
+        self.delay_feedback = 0.3
+        self.delay_time = 0.5
+        self.wah_Value = 20
+        self.wah_Mix = 70
+        self.wah_Amplitude = 60
+        self.chorus_Frequency = 10
+        self.chorus_Depth = 19
+        self.chorus_Feedback = 60
+    }
+    
     func reset() {
         self.delay_feedback = 0.0
         self.delay_time = 0.0

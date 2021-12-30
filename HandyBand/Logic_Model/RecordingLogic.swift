@@ -155,7 +155,7 @@ class RecordingLogic: ObservableObject {
                     self.smallDangDang.dangDangDang()
                     //Count "dang"
                     self.currentMetro += 1
-                    print("現在的\(self.currentMetro)")
+//                    print("現在的\(self.currentMetro)")
 
                     // sound "dand" 4 times
                     if self.currentMetro > 3 {
@@ -164,22 +164,22 @@ class RecordingLogic: ObservableObject {
                         self.currentMetro = 0
                                             
                         //Start recording current track
-                        print(" 4.休眠開始 。。")
+//                        print(" 4.休眠開始 。。")
 //                        sleep(1)
-                        print(" 5.休眠結束 。。")
+//                        print(" 5.休眠結束 。。")
 //                        usleep(useconds_t(1000000 * Double(doubleStr)))
                         
                         //Start recording
 //                        recorder.record()
-                        print(" 6.開始錄製了 。。")
-                        print("7.現在的錄製狀態: \(self.isRecording)")
+//                        print(" 6.開始錄製了 。。")
+//                        print("7.現在的錄製狀態: \(self.isRecording)")
                         
                         //Based on how many segements wishing to record. After certain segement, stop record
                         Timer.scheduledTimer(withTimeInterval: 60 / self.speed, repeats: true) { timerDeliver in
 //                            self.smallDangDang.dangDangDang()
 //                            self.currentMetro += 1
                             self.currentRecordingCount += 1
-                            print("8.现在第\(self.currentRecordingCount)拍")
+//                            print("8.现在第\(self.currentRecordingCount)拍")
                             if self.currentRecordingCount == 1 {
                                 //Start recording
                                 recorder.record()
@@ -191,7 +191,7 @@ class RecordingLogic: ObservableObject {
                                 self.isCountFour = false
                                 self.currentRecordingCount = 0
 //                                self.currentMetro = 0
-                                print(" 9.開始結束 。。")
+//                                print(" 9.開始結束 。。")
                             }
                         }
                     }

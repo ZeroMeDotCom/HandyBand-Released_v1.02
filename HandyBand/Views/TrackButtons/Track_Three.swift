@@ -49,21 +49,29 @@ struct Track_Three: View {
                 })
                     
 
-                //Send to Bus
-                Button(action: {
-                    fileManage.addingToPlayNextTime(trackID: "track3") ? fileManage.setToEdit(trackID: "track3") : fileManage.setReady(trackID: "track3")
-                    print(fileManage.whichToPlay)
+                VStack {
+                    //Send to Bus
+                    Button(action: {
+                        fileManage.addingToPlayNextTime(trackID: "track3") ? fileManage.setToEdit(trackID: "track3") : fileManage.setReady(trackID: "track3")
+                        print(fileManage.whichToPlay)
+                        
+                    }, label: {
+                        fileManage.addingToPlayNextTime(trackID: "track3") ?
+                        Image(systemName: fileManage.sendToBusIconPressed )
+                            .resizable()
+                            .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
+                        :
+                        Image(systemName: fileManage.sendToBusIcon)
+                            .resizable()
+                            .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
+                    })
                     
-                }, label: {
-                    fileManage.addingToPlayNextTime(trackID: "track3") ?
-                    Image(systemName: fileManage.sendToBusIconPressed )
-                        .resizable()
+                    //Track order
+                    Image(systemName: "3.square")
                         .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
-                    :
-                    Image(systemName: fileManage.sendToBusIcon)
-                        .resizable()
-                        .frame(width: SendToBusButtonH, height: SendToBusButtonH, alignment: .center)
-                })
+                        .foregroundColor(TrackNumberColor)
+                }
+
                 
                 VStack {
                     Slider(value: $volumeValue, in: 0...100, onEditingChanged: {_ in
