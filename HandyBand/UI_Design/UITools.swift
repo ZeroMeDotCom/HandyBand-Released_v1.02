@@ -101,7 +101,7 @@ let FloverSpacerH = EffectIconH * 2
 let InstructionIcon: String = "hand.point.right"
 let DecorationIcon: String = "circle.dotted"
 //Track number
-let TrackNumberColor = SwiftUI.Color.red
+let TrackNumberColor = SwiftUI.Color.pink
 //Info
 let InfoIcon: String = "info.circle"
 let InfoIconPressed: String = "info.circle.fill"
